@@ -223,7 +223,11 @@ export default function GalleryPage() {
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-white border-white hover:bg-white hover:text-[#333333]"
+              >
                 Contact Us
               </Button>
             </Link>

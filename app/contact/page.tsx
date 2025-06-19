@@ -29,7 +29,7 @@ export default function ContactPage() {
 
       toast({
         title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
+        description: "We'll get back to you at hosewaterpw@gmail.com as soon as possible.",
       })
 
       // Clear form
@@ -63,24 +63,40 @@ export default function ContactPage() {
       <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-2">
         <Card>
           <CardContent className="p-6">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" name="contact" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact" />
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
-                  <Input id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+                  <Input id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="How can we help you?"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
@@ -103,7 +119,7 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="text-xl font-bold">Phone</h3>
-              <p className="text-gray-500 mt-1">(555) 123-4567</p>
+              <p className="text-gray-500 mt-1">207-370-8667</p>
               <p className="text-sm text-muted-foreground mt-1">
                 Monday - Friday: 8am - 6pm
                 <br />
@@ -118,7 +134,7 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="text-xl font-bold">Email</h3>
-              <p className="text-gray-500 mt-1">info@hosewaterpw.com</p>
+              <p className="text-gray-500 mt-1">hosewaterpw@gmail.com</p>
               <p className="text-sm text-muted-foreground mt-1">We typically respond within 24 hours</p>
             </div>
           </div>
@@ -131,8 +147,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold">Service Area</h3>
               <p className="text-gray-500 mt-1">Southern Maine and New Hampshire</p>
               <p className="text-sm text-muted-foreground mt-1">
-                We service residential and commercial properties within a 40-mile radius of North Berwick, including
-                York County Maine and surrounding areas in New Hampshire
+                We service residential and commercial properties throughout Southern Maine and New Hampshire
               </p>
             </div>
           </div>

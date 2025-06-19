@@ -24,7 +24,6 @@ export default function EstimatePage() {
   const [phone, setPhone] = useState("")
   const [address, setAddress] = useState("")
   const [description, setDescription] = useState("")
-  const [houseType, setHouseType] = useState("")
   const [stories, setStories] = useState("")
   const [exteriorType, setExteriorType] = useState("")
   const [services, setServices] = useState<string[]>([])
@@ -76,10 +75,10 @@ export default function EstimatePage() {
 
     setIsSubmitting(true)
 
-    // In a real application, you would upload the files and form data to your server
+    // In a real application, you would send this form data to hosewaterpw@gmail.com
     // This is a mock implementation
     try {
-      // Simulate API call
+      // Simulate API call - in production, this would email the form data to hosewaterpw@gmail.com
       await new Promise((resolve) => setTimeout(resolve, 2000))
 
       toast({
@@ -93,7 +92,6 @@ export default function EstimatePage() {
       setPhone("")
       setAddress("")
       setDescription("")
-      setHouseType("")
       setStories("")
       setExteriorType("")
       setServices([])
@@ -127,26 +125,54 @@ export default function EstimatePage() {
       <div className="mx-auto mt-12 max-w-3xl">
         <Card>
           <CardContent className="p-6">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-6"
+              name="estimate"
+              method="POST"
+              data-netlify="true"
+              encType="multipart/form-data"
+            >
+              <input type="hidden" name="form-name" value="estimate" />
               <div className="space-y-4">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name</Label>
-                    <Input id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+                    <Input id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="address">Property Address</Label>
-                    <Input id="address" value={address} onChange={(e) => setAddress(e.target.value)} required />
+                    <Input
+                      id="address"
+                      name="address"
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
+                      required
+                    />
                   </div>
                 </div>
 
@@ -154,110 +180,8 @@ export default function EstimatePage() {
                   <h3 className="text-lg font-medium">Property Details</h3>
 
                   <div className="space-y-3">
-                    <Label>House Type</Label>
-                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                      <div
-                        className={`cursor-pointer rounded-lg border p-3 text-center hover:border-primary ${
-                          houseType === "single-family" ? "border-primary bg-primary/5" : ""
-                        }`}
-                        onClick={() => setHouseType("single-family")}
-                      >
-                        <div className="relative mx-auto mb-2 h-20 w-20">
-                          <Image
-                            src="/placeholder.svg?height=80&width=80"
-                            alt="Single Family Home"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Single Family</span>
-                      </div>
-                      <div
-                        className={`cursor-pointer rounded-lg border p-3 text-center hover:border-primary ${
-                          houseType === "townhouse" ? "border-primary bg-primary/5" : ""
-                        }`}
-                        onClick={() => setHouseType("townhouse")}
-                      >
-                        <div className="relative mx-auto mb-2 h-20 w-20">
-                          <Image
-                            src="/placeholder.svg?height=80&width=80"
-                            alt="Townhouse"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Townhouse</span>
-                      </div>
-                      <div
-                        className={`cursor-pointer rounded-lg border p-3 text-center hover:border-primary ${
-                          houseType === "multi-family" ? "border-primary bg-primary/5" : ""
-                        }`}
-                        onClick={() => setHouseType("multi-family")}
-                      >
-                        <div className="relative mx-auto mb-2 h-20 w-20">
-                          <Image
-                            src="/placeholder.svg?height=80&width=80"
-                            alt="Multi-Family"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Multi-Family</span>
-                      </div>
-                      <div
-                        className={`cursor-pointer rounded-lg border p-3 text-center hover:border-primary ${
-                          houseType === "ranch" ? "border-primary bg-primary/5" : ""
-                        }`}
-                        onClick={() => setHouseType("ranch")}
-                      >
-                        <div className="relative mx-auto mb-2 h-20 w-20">
-                          <Image
-                            src="/placeholder.svg?height=80&width=80"
-                            alt="Ranch"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Ranch</span>
-                      </div>
-                      <div
-                        className={`cursor-pointer rounded-lg border p-3 text-center hover:border-primary ${
-                          houseType === "colonial" ? "border-primary bg-primary/5" : ""
-                        }`}
-                        onClick={() => setHouseType("colonial")}
-                      >
-                        <div className="relative mx-auto mb-2 h-20 w-20">
-                          <Image
-                            src="/placeholder.svg?height=80&width=80"
-                            alt="Colonial"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Colonial</span>
-                      </div>
-                      <div
-                        className={`cursor-pointer rounded-lg border p-3 text-center hover:border-primary ${
-                          houseType === "other" ? "border-primary bg-primary/5" : ""
-                        }`}
-                        onClick={() => setHouseType("other")}
-                      >
-                        <div className="relative mx-auto mb-2 h-20 w-20">
-                          <Image
-                            src="/placeholder.svg?height=80&width=80"
-                            alt="Other House Type"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium">Other</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3">
                     <Label htmlFor="stories">Number of Stories</Label>
-                    <Select value={stories} onValueChange={setStories}>
+                    <Select value={stories} onValueChange={setStories} name="stories">
                       <SelectTrigger id="stories">
                         <SelectValue placeholder="Select number of stories" />
                       </SelectTrigger>
@@ -269,11 +193,12 @@ export default function EstimatePage() {
                         <SelectItem value="3">3+ Stories</SelectItem>
                       </SelectContent>
                     </Select>
+                    <input type="hidden" name="stories" value={stories} />
                   </div>
 
                   <div className="space-y-3">
                     <Label htmlFor="exteriorType">Exterior Type</Label>
-                    <Select value={exteriorType} onValueChange={setExteriorType}>
+                    <Select value={exteriorType} onValueChange={setExteriorType} name="exteriorType">
                       <SelectTrigger id="exteriorType">
                         <SelectValue placeholder="Select exterior type" />
                       </SelectTrigger>
@@ -288,10 +213,12 @@ export default function EstimatePage() {
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
+                    <input type="hidden" name="exteriorType" value={exteriorType} />
                   </div>
 
                   <div className="space-y-3">
                     <Label>Services Needed (Select all that apply)</Label>
+                    <input type="hidden" name="services" value={services.join(", ")} />
                     <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                       <div className="flex items-center space-x-2">
                         <Checkbox
@@ -353,6 +280,16 @@ export default function EstimatePage() {
                           Gutter Cleaning
                         </Label>
                       </div>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id="other"
+                          checked={services.includes("other")}
+                          onCheckedChange={() => handleServiceChange("other")}
+                        />
+                        <Label htmlFor="other" className="text-sm font-normal">
+                          Other
+                        </Label>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -386,7 +323,14 @@ export default function EstimatePage() {
                         <Camera className="h-8 w-8 text-muted-foreground" />
                         <span className="text-xs text-muted-foreground">Add Photo</span>
                       </div>
-                      <Input type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
+                      <Input
+                        type="file"
+                        name="photos"
+                        accept="image/*"
+                        onChange={handleFileChange}
+                        className="hidden"
+                        multiple
+                      />
                     </label>
                   </div>
                 </div>
@@ -395,6 +339,7 @@ export default function EstimatePage() {
                   <Label htmlFor="description">Additional Information</Label>
                   <Textarea
                     id="description"
+                    name="description"
                     placeholder="Tell us about any special requirements or areas that need attention..."
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}

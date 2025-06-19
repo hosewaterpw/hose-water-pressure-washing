@@ -78,7 +78,7 @@ export default function ServicesPage() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Professional Pressure Washing Services in Southern Maine
+              Professional Pressure Washing Services
             </h1>
             <p className="max-w-[700px] text-gray-500 md:text-xl">
               Complete pressure washing services for residential and commercial properties throughout Southern Maine and
@@ -101,9 +101,9 @@ export default function ServicesPage() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold">House Washing Services</h2>
               <p className="text-gray-500">
-                Our professional house washing service removes dirt, mold, mildew, and other contaminants from your
+                Our professional house washing service removes dirt, mold, mildew, and other organic material from your
                 home's exterior surfaces. We use professional-grade equipment and techniques to safely clean vinyl
-                siding, brick, stucco, and other exterior materials throughout our service area.
+                siding, brick, stucco, and other exterior materials.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
@@ -116,7 +116,7 @@ export default function ServicesPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-yellow-500 font-bold">•</span>
-                  <span>Improves curb appeal and property value throughout York County</span>
+                  <span>Improves curb appeal and property value</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-yellow-500 font-bold">•</span>
@@ -152,8 +152,7 @@ export default function ServicesPage() {
               <h2 className="text-3xl font-bold">Patio & Walkway Cleaning</h2>
               <p className="text-gray-500">
                 Our concrete cleaning service removes dirt, grime, and other unsightly marks from patios, walkways, and
-                sidewalks throughout our service area. We use surface cleaners and appropriate pressure to ensure a
-                thorough, even clean without damaging the concrete.
+                sidewalks.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
@@ -203,7 +202,7 @@ export default function ServicesPage() {
               <p className="text-gray-500">
                 Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew, and
                 weathering. We carefully adjust our pressure washing techniques based on the material of your deck to
-                ensure safe and effective cleaning throughout our service area.
+                ensure safe and effective cleaning.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
@@ -253,7 +252,7 @@ export default function ServicesPage() {
               <p className="text-gray-500">
                 Our roof cleaning service safely removes black streaks, moss, and algae from your roof. We use
                 low-pressure washing techniques and appropriate cleaning solutions to protect your roof while
-                effectively removing unsightly growth and stains throughout our service area.
+                effectively removing unsightly growth and stains.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
@@ -267,10 +266,6 @@ export default function ServicesPage() {
                 <li className="flex items-start gap-2">
                   <span className="text-yellow-500 font-bold">•</span>
                   <span>Extends roof life and improves appearance</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Safe for all roof types</span>
                 </li>
               </ul>
               <div className="flex gap-4">
@@ -303,7 +298,7 @@ export default function ServicesPage() {
               <p className="text-gray-500">
                 Our fence washing service restores the appearance of wooden, vinyl, or metal fences by removing dirt,
                 mold, mildew, and algae. We adjust our cleaning techniques based on your fence material to ensure safe
-                and effective cleaning throughout our service area.
+                and effective cleaning.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
@@ -351,9 +346,7 @@ export default function ServicesPage() {
             <div className="order-2 md:order-1 space-y-4">
               <h2 className="text-3xl font-bold">Commercial Pressure Washing Services</h2>
               <p className="text-gray-500">
-                Our commercial pressure washing services help maintain your business property's appearance and safety
-                throughout our service area. We offer flexible scheduling to minimize disruption to your business
-                operations and can create a customized cleaning plan for your specific needs.
+                Our commercial pressure washing services help maintain your business property's appearance and safety.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
@@ -390,10 +383,9 @@ export default function ServicesPage() {
         {/* CTA Section */}
         <section className="mt-24 py-12 px-6 bg-[#333333] text-white rounded-lg">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold">Ready to Transform Your York County Property?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold">Ready to Transform Your Property?</h2>
             <p className="max-w-[600px]">
-              Contact us today to schedule pressure washing services or request a free estimate for your York County
-              property.
+              Contact us today to schedule pressure washing services or request a free estimate for your property.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link href="/estimate">
@@ -402,7 +394,11 @@ export default function ServicesPage() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-white border-white hover:bg-white hover:text-[#333333]"
+                >
                   Contact Us
                 </Button>
               </Link>

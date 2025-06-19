@@ -102,12 +102,12 @@ export default function Home() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Professional Pressure Washing Services in Southern Maine
+                    Professional Pressure Washing Services
                   </h1>
                   <p className="max-w-[600px] text-gray-300 md:text-xl">
                     Transform your property with our expert pressure washing services. We make the dirty surfaces of
                     your home look brand new again. Family-owned and operated since 2022, serving residential and
-                    commercial properties throughout the region.
+                    commercial properties throughout southern maine and new hampshire.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -280,8 +280,7 @@ export default function Home() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Service Area</h2>
                 <p className="max-w-[700px] text-gray-500 md:text-xl">
-                  We provide professional pressure washing services throughout Southern Maine and New Hampshire within a
-                  40-mile radius of North Berwick.
+                  We provide professional pressure washing services throughout Southern Maine and New Hampshire.
                 </p>
               </div>
             </div>

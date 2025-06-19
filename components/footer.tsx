@@ -69,15 +69,15 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <div className="flex items-start gap-2">
                 <Phone className="h-5 w-5 text-yellow-400 mt-0.5" />
-                <span className="text-sm">(555) 123-4567</span>
+                <span className="text-sm">207-370-8667</span>
               </div>
               <div className="flex items-start gap-2">
                 <Mail className="h-5 w-5 text-yellow-400 mt-0.5" />
-                <span className="text-sm">info@hosewaterpw.com</span>
+                <span className="text-sm">hosewaterpw@gmail.com</span>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="h-5 w-5 text-yellow-400 mt-0.5" />
-                <span className="text-sm">Serving Southern Maine and New Hampshire within 40-mile radius</span>
+                <span className="text-sm">Serving Southern Maine and New Hampshire</span>
               </div>
               <div className="flex gap-4 mt-2">
                 <Link href="https://g.co/kgs/ehG2MEi" target="_blank" rel="noopener noreferrer">

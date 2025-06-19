@@ -111,8 +111,8 @@ export default function RootLayout({
               description:
                 "Professional pressure washing services for residential and commercial properties throughout Southern Maine and New Hampshire",
               url: "https://hosewaterpw.com",
-              telephone: "(555) 123-4567", // Replace with your actual phone number
-              email: "info@hosewaterpw.com",
+              telephone: "207-370-8667", // Replace with your actual phone number
+              email: "hosewaterpw@gmail.com",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "North Berwick",
@@ -125,15 +125,16 @@ export default function RootLayout({
                 latitude: "43.3048",
                 longitude: "-70.7342",
               },
-              areaServed: {
-                "@type": "GeoCircle",
-                geoMidpoint: {
-                  "@type": "GeoCoordinates",
-                  latitude: "43.3048",
-                  longitude: "-70.7342",
+              areaServed: [
+                {
+                  "@type": "AdministrativeArea",
+                  name: "Maine",
                 },
-                geoRadius: "64374", // 40 miles in meters
-              },
+                {
+                  "@type": "AdministrativeArea",
+                  name: "New Hampshire",
+                },
+              ],
               serviceType: [
                 "Pressure Washing",
                 "Power Washing",
