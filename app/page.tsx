@@ -117,8 +117,8 @@ export default function Home() {
                     </Button>
                   </Link>
                   <Link href="/contact">
-                    <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                      Call (555) 123-4567
+                    <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 bg-transparent">
+                      Call (207) 370-8667
                     </Button>
                   </Link>
                 </div>

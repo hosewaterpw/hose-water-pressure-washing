@@ -69,7 +69,7 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <div className="flex items-start gap-2">
                 <Phone className="h-5 w-5 text-yellow-400 mt-0.5" />
-                <span className="text-sm">207-370-8667</span>
+                <span className="text-sm">(207) 370-8667</span>
               </div>
               <div className="flex items-start gap-2">
                 <Mail className="h-5 w-5 text-yellow-400 mt-0.5" />
@@ -85,10 +85,18 @@ export default function Footer() {
                     G
                   </div>
                 </Link>
-                <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <Link
+                  href="https://www.facebook.com/profile.php?id=100083339862959"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Facebook className="h-5 w-5 text-gray-300 hover:text-yellow-400" />
                 </Link>
-                <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <Link
+                  href="https://www.instagram.com/hosewaterpressurewashing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Instagram className="h-5 w-5 text-gray-300 hover:text-yellow-400" />
                 </Link>
               </div>
