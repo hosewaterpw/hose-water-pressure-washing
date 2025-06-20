@@ -1,53 +1,13 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
 
 export default function ContactPage() {
-  const { toast } = useToast()
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [message, setMessage] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you at hosewaterpw@gmail.com as soon as possible.",
-      })
-
-      // Clear form
-      setName("")
-      setEmail("")
-      setPhone("")
-      setMessage("")
-    } catch (error) {
-      toast({
-        title: "Something went wrong",
-        description: "Please try again later.",
-        variant: "destructive",
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
   return (
     <div className="container px-4 py-12 md:px-6 md:py-24">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -63,34 +23,20 @@ export default function ContactPage() {
       <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-2">
         <Card>
           <CardContent className="p-6">
-            <form onSubmit={handleSubmit} className="space-y-6" name="contact" method="POST" data-netlify="true">
+            <form action="/contact-success" method="POST" name="contact" data-netlify="true" className="space-y-6">
               <input type="hidden" name="form-name" value="contact" />
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
-                  <Input id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
+                  <Input id="name" name="name" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
+                  <Input id="email" name="email" type="email" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    required
-                  />
+                  <Input id="phone" name="phone" type="tel" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
@@ -98,15 +44,13 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     placeholder="How can we help you?"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
                     className="min-h-[150px]"
                     required
                   />
                 </div>
               </div>
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send Message"}
+              <Button type="submit" className="w-full">
+                Send Message
               </Button>
             </form>
           </CardContent>
