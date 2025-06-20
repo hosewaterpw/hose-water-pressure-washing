@@ -96,34 +96,41 @@ export default function Home() {
 
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-[#333333] to-gray-800 text-white">
-          <div className="container px-4 md:px-6">
+        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gradient-to-b from-[#333333] to-gray-800 text-white">
+          <div className="container px-4 sm:px-6 md:px-8">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+              <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
+                <div className="space-y-3">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter leading-tight">
                     Professional Pressure Washing Services
                   </h1>
-                  <p className="max-w-[600px] text-gray-300 md:text-xl">
+                  <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-[600px] mx-auto lg:mx-0">
                     Transform your property with our expert pressure washing services. We make the dirty surfaces of
                     your home look brand new again. Family-owned and operated since 2022, serving residential and
                     commercial properties throughout southern maine and new hampshire.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Link href="/estimate">
-                    <Button size="lg" className="gap-2 bg-yellow-400 text-[#333333] hover:bg-yellow-500">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center lg:items-start">
+                  <Link href="/estimate" className="w-full sm:w-auto">
+                    <Button
+                      size="lg"
+                      className="w-full sm:w-auto gap-2 bg-yellow-400 text-[#333333] hover:bg-yellow-500 text-base px-6 py-3"
+                    >
                       Get Free Estimate <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
-                  <Link href="/contact">
-                    <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 bg-transparent">
+                  <Link href="/contact" className="w-full sm:w-auto">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full sm:w-auto text-white border-white hover:bg-white/10 bg-transparent text-base px-6 py-3"
+                    >
                       Call (207) 370-8667
                     </Button>
                   </Link>
                 </div>
               </div>
-              <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
+              <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden mt-6 lg:mt-0">
                 <Image
                   src="/house-washing.png"
                   alt="Professional pressure washing services in North Berwick Maine - house washing in progress"
@@ -137,17 +144,19 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32">
+          <div className="container px-4 sm:px-6 md:px-8">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-12">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Pressure Washing Services</h2>
-                <p className="max-w-[700px] text-gray-500 md:text-xl">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
+                  Our Pressure Washing Services
+                </h2>
+                <p className="max-w-[700px] text-gray-500 text-base sm:text-lg md:text-xl leading-relaxed">
                   We offer a variety of professional pressure washing services to keep your property looking its best.
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               <ServiceCard
                 title="House Washing"
                 description="Remove dirt, mold, and mildew from your home's exterior surfaces with our professional house washing service."
@@ -195,50 +204,50 @@ export default function Home() {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gray-50">
+          <div className="container px-4 sm:px-6 md:px-8">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-12">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
                   Why Choose Hose Water Pressure Washing
                 </h2>
-                <p className="max-w-[700px] text-gray-500 md:text-xl">
+                <p className="max-w-[700px] text-gray-500 text-base sm:text-lg md:text-xl leading-relaxed">
                   Hose Water Pressure Washing LLC is committed to excellence in every aspect of our pressure washing
                   service.
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-              <Card>
-                <CardContent className="flex flex-col items-center p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <Card className="text-center">
+                <CardContent className="flex flex-col items-center p-4 sm:p-6">
                   <div className="mb-4 rounded-full bg-yellow-400/10 p-3">
                     <Check className="h-6 w-6 text-yellow-500" />
                   </div>
-                  <h3 className="text-xl font-bold">Experienced Professionals</h3>
-                  <p className="text-center text-gray-500 mt-2">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2">Experienced Professionals</h3>
+                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
                     Our team has years of experience in the pressure washing industry serving York County Maine
                     residents.
                   </p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardContent className="flex flex-col items-center p-6">
+              <Card className="text-center">
+                <CardContent className="flex flex-col items-center p-4 sm:p-6">
                   <div className="mb-4 rounded-full bg-yellow-400/10 p-3">
                     <Check className="h-6 w-6 text-yellow-500" />
                   </div>
-                  <h3 className="text-xl font-bold">Professional Equipment</h3>
-                  <p className="text-center text-gray-500 mt-2">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2">Professional Equipment</h3>
+                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
                     We use commercial-grade pressure washing equipment to deliver superior cleaning results.
                   </p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardContent className="flex flex-col items-center p-6">
+              <Card className="text-center md:col-span-2 lg:col-span-1">
+                <CardContent className="flex flex-col items-center p-4 sm:p-6">
                   <div className="mb-4 rounded-full bg-yellow-400/10 p-3">
                     <Check className="h-6 w-6 text-yellow-500" />
                   </div>
-                  <h3 className="text-xl font-bold">Satisfaction Guaranteed</h3>
-                  <p className="text-center text-gray-500 mt-2">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2">Satisfaction Guaranteed</h3>
+                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
                     We're not happy until you're happy with the results of our pressure washing work.
                   </p>
                 </CardContent>
@@ -248,24 +257,24 @@ export default function Home() {
         </section>
 
         {/* Before & After Gallery Preview */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32">
+          <div className="container px-4 sm:px-6 md:px-8">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-12">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
                   Pressure Washing Before & After Results
                 </h2>
-                <p className="max-w-[700px] text-gray-500 md:text-xl">
+                <p className="max-w-[700px] text-gray-500 text-base sm:text-lg md:text-xl leading-relaxed">
                   See the dramatic difference our professional pressure washing services can make on your property.
                 </p>
               </div>
             </div>
-            <div className="mt-8">
+            <div className="mb-6 sm:mb-8">
               <BeforeAfterGallery />
             </div>
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center">
               <Link href="/gallery">
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" className="text-base px-6 py-3">
                   View Full Gallery
                 </Button>
               </Link>
@@ -274,12 +283,12 @@ export default function Home() {
         </section>
 
         {/* Service Area */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container px-4 md:px-6">
+        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gray-50">
+          <div className="container px-4 sm:px-6 md:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Service Area</h2>
-                <p className="max-w-[700px] text-gray-500 md:text-xl">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">Our Service Area</h2>
+                <p className="max-w-[700px] text-gray-500 text-base sm:text-lg md:text-xl leading-relaxed">
                   We provide professional pressure washing services throughout Southern Maine and New Hampshire.
                 </p>
               </div>
@@ -288,45 +297,49 @@ export default function Home() {
         </section>
 
         {/* Google Reviews Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32">
+          <div className="container px-4 sm:px-6 md:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
                   What Our North Berwick Customers Say
                 </h2>
-                <p className="max-w-[700px] text-gray-500 md:text-xl">
+                <p className="max-w-[700px] text-gray-500 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8">
                   Read reviews from satisfied customers in York County Maine.
                 </p>
               </div>
-              <div className="mt-8">
-                <Link href="https://g.co/kgs/ehG2MEi" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="gap-2 bg-yellow-400 text-[#333333] hover:bg-yellow-500">
-                    Read Our Google Reviews <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
+              <Link href="https://g.co/kgs/ehG2MEi" target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="gap-2 bg-yellow-400 text-[#333333] hover:bg-yellow-500 text-base px-6 py-3"
+                >
+                  Read Our Google Reviews <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-[#333333] text-white">
-          <div className="container px-4 md:px-6">
+        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-[#333333] text-white">
+          <div className="container px-4 sm:px-6 md:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Ready to Transform Your Property?</h2>
-                <p className="max-w-[700px] md:text-xl">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
+                  Ready to Transform Your Property?
+                </h2>
+                <p className="max-w-[700px] text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8">
                   Get a free pressure washing estimate today by answering a few simple questions about your property.
                 </p>
               </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="/estimate">
-                  <Button size="lg" className="gap-2 bg-yellow-400 text-[#333333] hover:bg-yellow-500">
-                    Get Free Estimate <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
+              <Link href="/estimate" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto gap-2 bg-yellow-400 text-[#333333] hover:bg-yellow-500 text-base px-6 py-3"
+                >
+                  Get Free Estimate <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
