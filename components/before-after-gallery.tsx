@@ -5,25 +5,25 @@ import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-// Sample data with real before/after images
+// Sample data with placeholder images
 const galleryItems = [
   {
     id: 1,
     title: "House Exterior",
-    before: "/house-before.png",
-    after: "/house-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=House+Before",
+    after: "/placeholder.svg?height=400&width=600&text=House+After",
   },
   {
     id: 2,
     title: "Concrete Driveway",
-    before: "/driveway-before.png",
-    after: "/driveway-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=Driveway+Before",
+    after: "/placeholder.svg?height=400&width=600&text=Driveway+After",
   },
   {
     id: 3,
     title: "Wooden Deck",
-    before: "/deck-before.png",
-    after: "/deck-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=Deck+Before",
+    after: "/placeholder.svg?height=400&width=600&text=Deck+After",
   },
 ]
 

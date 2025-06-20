@@ -8,70 +8,70 @@ import { ArrowLeft } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
-// Sample data with real before/after images
+// Sample data with placeholder images
 const galleryItems = [
   {
     id: 1,
     category: "house",
     title: "House Exterior",
-    before: "/house-before.png",
-    after: "/house-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=House+Before",
+    after: "/placeholder.svg?height=400&width=600&text=House+After",
   },
   {
     id: 2,
     category: "driveway",
     title: "Concrete Driveway",
-    before: "/driveway-before.png",
-    after: "/driveway-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=Driveway+Before",
+    after: "/placeholder.svg?height=400&width=600&text=Driveway+After",
   },
   {
     id: 3,
     category: "deck",
     title: "Wooden Deck",
-    before: "/deck-before.png",
-    after: "/deck-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=Deck+Before",
+    after: "/placeholder.svg?height=400&width=600&text=Deck+After",
   },
   {
     id: 4,
     category: "house",
     title: "Vinyl Siding",
-    before: "/siding-before.png",
-    after: "/siding-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=Siding+Before",
+    after: "/placeholder.svg?height=400&width=600&text=Siding+After",
   },
   {
     id: 5,
     category: "driveway",
     title: "Brick Patio",
-    before: "/patio-before.png",
-    after: "/patio-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=Patio+Before",
+    after: "/placeholder.svg?height=400&width=600&text=Patio+After",
   },
   {
     id: 6,
     category: "fence",
     title: "Wooden Fence",
-    before: "/fence-before.png",
-    after: "/fence-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=Fence+Before",
+    after: "/placeholder.svg?height=400&width=600&text=Fence+After",
   },
   {
     id: 7,
     category: "roof",
     title: "Asphalt Roof",
-    before: "/roof-before.png",
-    after: "/roof-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=Roof+Before",
+    after: "/placeholder.svg?height=400&width=600&text=Roof+After",
   },
   {
     id: 8,
     category: "commercial",
     title: "Storefront",
-    before: "/commercial-before.png",
-    after: "/commercial-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=Commercial+Before",
+    after: "/placeholder.svg?height=400&width=600&text=Commercial+After",
   },
   {
     id: 9,
     category: "commercial",
     title: "Restaurant Patio",
-    before: "/restaurant-before.png",
-    after: "/restaurant-after.png",
+    before: "/placeholder.svg?height=400&width=600&text=Restaurant+Before",
+    after: "/placeholder.svg?height=400&width=600&text=Restaurant+After",
   },
 ]
 

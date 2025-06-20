@@ -397,7 +397,7 @@ export default function ServicesPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-white border-white hover:bg-white hover:text-[#333333]"
+                  className="border-white hover:bg-white hover:text-[#333333] bg-transparent bg-transparent bg-transparent bg-transparent bg-transparent bg-transparent-none shadow-none text-white"
                 >
                   Contact Us
                 </Button>
