@@ -23,8 +23,7 @@ export default function ContactPage() {
       <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-2">
         <Card>
           <CardContent className="p-6">
-            <form action="/contact-success" method="POST" name="contact" data-netlify="true" className="space-y-6">
-              <input type="hidden" name="form-name" value="contact" />
+            <form action="/api/contact" method="POST" className="space-y-6">
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>

@@ -8,13 +8,15 @@
 [build.environment]
   NEXT_PRIVATE_TARGET = "server"
 
-# Form handling
+# Static file serving for success pages
 [[redirects]]
   from = "/contact-success"
   to = "/contact-success.html"
   status = 200
+  force = false
 
 [[redirects]]
   from = "/estimate-success"  
   to = "/estimate-success.html"
   status = 200
+  force = false
