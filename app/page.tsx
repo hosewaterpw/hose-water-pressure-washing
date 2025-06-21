@@ -165,13 +165,6 @@ export default function Home() {
                 serviceId="house-washing"
               />
               <ServiceCard
-                title="Patio & Walkway Cleaning"
-                description="Remove dirt and grime from concrete patios and walkways with our cleaning service."
-                icon="road"
-                imageSrc="/patio-cleaning.png"
-                serviceId="patio"
-              />
-              <ServiceCard
                 title="Deck Cleaning"
                 description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
                 icon="layout"

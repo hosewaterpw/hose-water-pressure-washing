@@ -101,18 +101,6 @@ export default function EstimatePage() {
                       <div className="flex items-center space-x-2">
                         <input
                           type="checkbox"
-                          id="driveway"
-                          name="services"
-                          value="driveway"
-                          className="h-4 w-4 rounded border-gray-300"
-                        />
-                        <Label htmlFor="driveway" className="text-sm font-normal">
-                          Driveway Cleaning
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
                           id="deck"
                           name="services"
                           value="deck"

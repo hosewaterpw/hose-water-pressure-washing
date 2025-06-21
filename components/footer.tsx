@@ -49,9 +49,6 @@ export default function Footer() {
               <Link href="/services#house-washing" className="text-sm hover:text-yellow-400 transition-colors">
                 House Washing
               </Link>
-              <Link href="/services#patio" className="text-sm hover:text-yellow-400 transition-colors">
-                Patio & Walkway Cleaning
-              </Link>
               <Link href="/services#deck" className="text-sm hover:text-yellow-400 transition-colors">
                 Deck Cleaning
               </Link>

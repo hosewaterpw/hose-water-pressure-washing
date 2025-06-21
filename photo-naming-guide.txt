@@ -1,0 +1,98 @@
+HOSE WATER PRESSURE WASHING LLC - PHOTO NAMING GUIDE
+====================================================
+
+IMPORTANT: All photos should be in JPG or PNG format, optimized for web (under 1MB each)
+
+MAIN WEBSITE PHOTOS (Service Page Headers):
+==========================================
+house-washing.png - Main hero image for house washing service
+deck-cleaning.png - Deck cleaning service header image  
+roof-cleaning.png - Roof cleaning service header image
+fence-cleaning.png - Fence washing service header image
+commercial-cleaning.png - Commercial services header image
+
+SERVICE CARD IMAGES (Homepage):
+==============================
+house-washing-service.png - House washing service card image
+deck-cleaning.png - Deck cleaning service card image (same as above)
+roof-cleaning.png - Roof cleaning service card image (same as above) 
+fence-cleaning.png - Fence washing service card image (same as above)
+commercial-cleaning.png - Commercial service card image (same as above)
+
+GALLERY PHOTOS (Before/After - Use your collages):
+=================================================
+
+HOUSE WASHING CATEGORY:
+- house-exterior-before.jpg - House exterior before cleaning
+- house-exterior-after.jpg - House exterior after cleaning
+- vinyl-siding-before.jpg - Vinyl siding before cleaning
+- vinyl-siding-after.jpg - Vinyl siding after cleaning
+
+DECK CLEANING CATEGORY:
+- wooden-deck-before.jpg - Wooden deck before cleaning
+- wooden-deck-after.jpg - Wooden deck after cleaning
+
+ROOF CLEANING CATEGORY:
+- asphalt-roof-before.jpg - Roof before cleaning
+- asphalt-roof-after.jpg - Roof after cleaning
+
+FENCE WASHING CATEGORY:
+- vinyl-fence-before.jpg - Vinyl fence before cleaning
+- vinyl-fence-after.jpg - Vinyl fence after cleaning
+
+COMMERCIAL CATEGORY:
+- apartment-building-before.jpg - Apartment building before cleaning
+- apartment-building-after.jpg - Apartment building after cleaning
+- patio-before.jpg - Commercial patio before cleaning
+- patio-after.jpg - Commercial patio after cleaning
+
+ABOUT PAGE PHOTOS:
+==================
+owner-portrait.png - Professional photo of Jonathan P. Bilodeau
+work-1.png - Action shot of pressure washing work
+work-2.png - Another work in progress photo
+work-3.png - House washing in action
+work-4.png - Deck cleaning in progress
+
+LOGO:
+=====
+logo.png - Your company logo (transparent background preferred)
+
+NOTES:
+======
+- Since you mentioned no wood fence photos, I updated the gallery to show "Vinyl Fence" instead
+- No storefront photos needed - removed from commercial section
+- Restaurant changed to just "Patio" in commercial gallery
+- All "before" and "after" photos can be your collage format
+- Make sure images are web-optimized (compressed but good quality)
+- Consistent naming helps with organization and SEO
+
+FOLDER STRUCTURE IN YOUR PROJECT:
+=================================
+public/
+├── logo.png
+├── house-washing.png
+├── deck-cleaning.png
+├── roof-cleaning.png
+├── fence-cleaning.png
+├── commercial-cleaning.png
+├── house-washing-service.png
+├── owner-portrait.png
+├── work-1.png
+├── work-2.png
+├── work-3.png
+├── work-4.png
+├── house-exterior-before.jpg
+├── house-exterior-after.jpg
+├── vinyl-siding-before.jpg
+├── vinyl-siding-after.jpg
+├── wooden-deck-before.jpg
+├── wooden-deck-after.jpg
+├── asphalt-roof-before.jpg
+├── asphalt-roof-after.jpg
+├── vinyl-fence-before.jpg
+├── vinyl-fence-after.jpg
+├── apartment-building-before.jpg
+├── apartment-building-after.jpg
+├── patio-before.jpg
+└── patio-after.jpg

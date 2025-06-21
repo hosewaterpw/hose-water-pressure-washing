@@ -18,13 +18,6 @@ const galleryItems = [
     after: "/placeholder.svg?height=400&width=600&text=House+After",
   },
   {
-    id: 2,
-    category: "driveway",
-    title: "Concrete Driveway",
-    before: "/placeholder.svg?height=400&width=600&text=Driveway+Before",
-    after: "/placeholder.svg?height=400&width=600&text=Driveway+After",
-  },
-  {
     id: 3,
     category: "deck",
     title: "Wooden Deck",
@@ -39,16 +32,9 @@ const galleryItems = [
     after: "/placeholder.svg?height=400&width=600&text=Siding+After",
   },
   {
-    id: 5,
-    category: "driveway",
-    title: "Brick Patio",
-    before: "/placeholder.svg?height=400&width=600&text=Patio+Before",
-    after: "/placeholder.svg?height=400&width=600&text=Patio+After",
-  },
-  {
     id: 6,
     category: "fence",
-    title: "Wooden Fence",
+    title: "Vinyl Fence",
     before: "/placeholder.svg?height=400&width=600&text=Fence+Before",
     after: "/placeholder.svg?height=400&width=600&text=Fence+After",
   },
@@ -62,16 +48,16 @@ const galleryItems = [
   {
     id: 8,
     category: "commercial",
-    title: "Storefront",
+    title: "Apartment Building",
     before: "/placeholder.svg?height=400&width=600&text=Commercial+Before",
     after: "/placeholder.svg?height=400&width=600&text=Commercial+After",
   },
   {
     id: 9,
     category: "commercial",
-    title: "Restaurant Patio",
-    before: "/placeholder.svg?height=400&width=600&text=Restaurant+Before",
-    after: "/placeholder.svg?height=400&width=600&text=Restaurant+After",
+    title: "Patio",
+    before: "/placeholder.svg?height=400&width=600&text=Patio+Before",
+    after: "/placeholder.svg?height=400&width=600&text=Patio+After",
   },
 ]
 
@@ -82,7 +68,7 @@ export default function GalleryPage() {
 
   // Set the active tab based on URL parameter
   useEffect(() => {
-    if (filterParam && ["house", "driveway", "deck", "roof", "fence", "commercial"].includes(filterParam)) {
+    if (filterParam && ["house", "deck", "roof", "fence", "commercial"].includes(filterParam)) {
       setActiveTab(filterParam)
     }
   }, [filterParam])
@@ -92,8 +78,6 @@ export default function GalleryPage() {
     switch (activeTab) {
       case "house":
         return "House Washing"
-      case "driveway":
-        return "Driveway & Sidewalk Cleaning"
       case "deck":
         return "Deck & Patio Restoration"
       case "roof":
@@ -131,10 +115,9 @@ export default function GalleryPage() {
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-12">
         <div className="flex justify-center">
-          <TabsList className="grid grid-cols-2 md:grid-cols-7">
+          <TabsList className="grid grid-cols-2 md:grid-cols-6">
             <TabsTrigger value="all">All</TabsTrigger>
             <TabsTrigger value="house">Houses</TabsTrigger>
-            <TabsTrigger value="driveway">Driveways</TabsTrigger>
             <TabsTrigger value="deck">Decks</TabsTrigger>
             <TabsTrigger value="roof">Roofs</TabsTrigger>
             <TabsTrigger value="fence">Fences</TabsTrigger>
@@ -172,7 +155,7 @@ export default function GalleryPage() {
           </div>
         </TabsContent>
 
-        {["house", "driveway", "deck", "roof", "fence", "commercial"].map((category) => (
+        {["house", "deck", "roof", "fence", "commercial"].map((category) => (
           <TabsContent key={category} value={category} className="mt-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {galleryItems
@@ -223,11 +206,7 @@ export default function GalleryPage() {
               </Button>
             </Link>
             <Link href="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-white border-white hover:bg-white hover:text-[#333333]"
-              >
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 bg-transparent">
                 Contact Us
               </Button>
             </Link>

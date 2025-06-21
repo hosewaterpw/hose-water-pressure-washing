@@ -50,9 +50,9 @@ export default function ServicesPage() {
               {
                 "@type": "Service",
                 position: 2,
-                name: "Patio & Walkway Cleaning",
+                name: "Deck Cleaning",
                 description:
-                  "Concrete patio and walkway pressure washing to remove oil stains and grime in York County",
+                  "Deck cleaning and restoration service to revitalize outdoor living spaces in North Berwick",
                 provider: {
                   "@type": "LocalBusiness",
                   name: "Hose Water Pressure Washing LLC",
@@ -61,9 +61,9 @@ export default function ServicesPage() {
               {
                 "@type": "Service",
                 position: 3,
-                name: "Deck Cleaning",
+                name: "Commercial Pressure Washing",
                 description:
-                  "Deck cleaning and restoration service to revitalize outdoor living spaces in North Berwick",
+                  "Commercial pressure washing services for apartment buildings, duplexes, and rental properties in North Berwick Maine",
                 provider: {
                   "@type": "LocalBusiness",
                   name: "Hose Water Pressure Washing LLC",
@@ -128,55 +128,6 @@ export default function ServicesPage() {
                   <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
                 </Link>
                 <Link href="/gallery?filter=house">
-                  <Button variant="outline" className="gap-2">
-                    View Before & After <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Patio & Walkway Cleaning */}
-        <section id="patio" className="mt-24 scroll-mt-20">
-          <div className="grid gap-8 md:grid-cols-2 items-center">
-            <div className="order-1 md:order-2 relative aspect-video overflow-hidden rounded-lg">
-              <Image
-                src="/patio-cleaning.png"
-                alt="Patio and walkway cleaning service in North Berwick Maine"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="order-2 md:order-1 space-y-4">
-              <h2 className="text-3xl font-bold">Patio & Walkway Cleaning</h2>
-              <p className="text-gray-500">
-                Our concrete cleaning service removes dirt, grime, and other unsightly marks from patios, walkways, and
-                sidewalks.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Removes dirt and grime from concrete surfaces</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Prevents slippery surfaces from mold and algae buildup</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Extends the life of concrete patios and walkways</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Improves overall property appearance and curb appeal</span>
-                </li>
-              </ul>
-              <div className="flex gap-4">
-                <Link href="/estimate">
-                  <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
-                </Link>
-                <Link href="/gallery?filter=patio">
                   <Button variant="outline" className="gap-2">
                     View Before & After <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -296,9 +247,9 @@ export default function ServicesPage() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold">Fence Washing</h2>
               <p className="text-gray-500">
-                Our fence washing service restores the appearance of wooden, vinyl, or metal fences by removing dirt,
-                mold, mildew, and algae. We adjust our cleaning techniques based on your fence material to ensure safe
-                and effective cleaning.
+                Our fence washing service restores the appearance of vinyl or metal fences by removing dirt, mold,
+                mildew, and algae. We adjust our cleaning techniques based on your fence material to ensure safe and
+                effective cleaning.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
@@ -315,7 +266,7 @@ export default function ServicesPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-yellow-500 font-bold">•</span>
-                  <span>Prepares wooden fences for staining or sealing</span>
+                  <span>Safe for vinyl and metal fence materials</span>
                 </li>
               </ul>
               <div className="flex gap-4">
@@ -346,24 +297,25 @@ export default function ServicesPage() {
             <div className="order-2 md:order-1 space-y-4">
               <h2 className="text-3xl font-bold">Commercial Pressure Washing Services</h2>
               <p className="text-gray-500">
-                Our commercial pressure washing services help maintain your business property's appearance and safety.
+                Our commercial pressure washing services help maintain your rental properties, apartment buildings, and
+                multi-unit properties' appearance and value.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <span className="text-yellow-500 font-bold">•</span>
-                  <span>Storefront and building exterior cleaning</span>
+                  <span>Apartment building and duplex exterior cleaning</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-yellow-500 font-bold">•</span>
-                  <span>Parking lot and sidewalk cleaning</span>
+                  <span>Rental property maintenance and cleaning</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-yellow-500 font-bold">•</span>
-                  <span>Dumpster pad cleaning and sanitizing</span>
+                  <span>Multi-unit property exterior restoration</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-yellow-500 font-bold">•</span>
-                  <span>Graffiti removal services</span>
+                  <span>Property management company services</span>
                 </li>
               </ul>
               <div className="flex gap-4">
@@ -397,7 +349,7 @@ export default function ServicesPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white hover:bg-white hover:text-[#333333] bg-transparent bg-transparent bg-transparent bg-transparent bg-transparent bg-transparent-none shadow-none text-white"
+                  className="text-white border-white hover:bg-white/10 bg-transparent"
                 >
                   Contact Us
                 </Button>

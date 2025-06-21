@@ -14,12 +14,6 @@ const galleryItems = [
     after: "/placeholder.svg?height=400&width=600&text=House+After",
   },
   {
-    id: 2,
-    title: "Concrete Driveway",
-    before: "/placeholder.svg?height=400&width=600&text=Driveway+Before",
-    after: "/placeholder.svg?height=400&width=600&text=Driveway+After",
-  },
-  {
     id: 3,
     title: "Wooden Deck",
     before: "/placeholder.svg?height=400&width=600&text=Deck+Before",
