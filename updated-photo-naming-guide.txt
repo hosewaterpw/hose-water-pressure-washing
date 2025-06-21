@@ -1,0 +1,108 @@
+HOSE WATER PRESSURE WASHING LLC - UPDATED PHOTO NAMING GUIDE
+============================================================
+
+IMPORTANT: All photos should be in JPG or PNG format, optimized for web (under 1MB each)
+
+MAIN WEBSITE PHOTOS (Service Page Headers):
+==========================================
+house-washing.png - Main hero image for house washing service
+deck-cleaning.png - Deck cleaning service header image  
+roof-cleaning.png - Roof cleaning service header image
+fence-cleaning.png - Fence washing service header image
+commercial-cleaning.png - Commercial services header image
+
+SERVICE CARD IMAGES (Homepage):
+==============================
+house-washing-service.png - House washing service card image
+deck-cleaning.png - Deck cleaning service card image (same as above)
+roof-cleaning.png - Roof cleaning service card image (same as above) 
+fence-cleaning.png - Fence washing service card image (same as above)
+commercial-cleaning.png - Commercial service card image (same as above)
+
+GALLERY PHOTOS (Before/After - Use your collages):
+=================================================
+
+HOUSE WASHING CATEGORY:
+- house-exterior-before.jpg - House exterior before cleaning
+- house-exterior-after.jpg - House exterior after cleaning
+- vinyl-siding-before.jpg - Vinyl siding before cleaning
+- vinyl-siding-after.jpg - Vinyl siding after cleaning
+
+DECK CLEANING CATEGORY (Multiple Photos Allowed):
+- wooden-deck-1-before.jpg - First wooden deck before cleaning
+- wooden-deck-1-after.jpg - First wooden deck after cleaning
+- wooden-deck-2-before.jpg - Second wooden deck before cleaning
+- wooden-deck-2-after.jpg - Second wooden deck after cleaning
+- composite-deck-before.jpg - Composite deck before cleaning
+- composite-deck-after.jpg - Composite deck after cleaning
+- deck-restoration-before.jpg - Deck restoration project before
+- deck-restoration-after.jpg - Deck restoration project after
+
+ROOF CLEANING CATEGORY:
+- asphalt-roof-before.jpg - Roof before cleaning
+- asphalt-roof-after.jpg - Roof after cleaning
+
+FENCE WASHING CATEGORY:
+- vinyl-fence-before.jpg - Vinyl fence before cleaning
+- vinyl-fence-after.jpg - Vinyl fence after cleaning
+
+COMMERCIAL CATEGORY:
+- apartment-building-before.jpg - Apartment building before cleaning
+- apartment-building-after.jpg - Apartment building after cleaning
+- patio-before.jpg - Commercial patio before cleaning
+- patio-after.jpg - Commercial patio after cleaning
+
+ABOUT PAGE PHOTOS:
+==================
+owner-portrait.png - Professional photo of Jonathan P. Bilodeau
+work-1.png - Action shot of pressure washing work
+work-2.png - Another work in progress photo
+work-3.png - House washing in action
+work-4.png - Deck cleaning in progress
+
+LOGO:
+=====
+logo.png - Your company logo (transparent background preferred)
+
+HOW TO ADD MORE PHOTOS TO ANY CATEGORY:
+=======================================
+
+1. ADD THE PHOTO FILES:
+   - Upload your new photos to the public/ folder
+   - Use descriptive names like: wooden-deck-3-before.jpg, wooden-deck-3-after.jpg
+
+2. UPDATE THE GALLERY CODE:
+   - Add new entries to the galleryItems array
+   - Each entry needs: id, category, title, before, after
+   - Example for a new deck:
+   
+   {
+     id: 13,
+     category: "deck",
+     title: "Pressure Treated Deck",
+     before: "/pressure-treated-deck-before.jpg",
+     after: "/pressure-treated-deck-after.jpg",
+   }
+
+3. NAMING PATTERN FOR MULTIPLE PHOTOS:
+   - wooden-deck-1-before.jpg / wooden-deck-1-after.jpg
+   - wooden-deck-2-before.jpg / wooden-deck-2-after.jpg
+   - wooden-deck-3-before.jpg / wooden-deck-3-after.jpg
+   - etc.
+
+EXAMPLE: Adding 5 Wooden Deck Photos
+====================================
+Files to upload:
+- wooden-deck-1-before.jpg & wooden-deck-1-after.jpg
+- wooden-deck-2-before.jpg & wooden-deck-2-after.jpg  
+- wooden-deck-3-before.jpg & wooden-deck-3-after.jpg
+- wooden-deck-4-before.jpg & wooden-deck-4-after.jpg
+- wooden-deck-5-before.jpg & wooden-deck-5-after.jpg
+
+TIPS:
+=====
+- You can add unlimited photos to any category
+- Each photo pair needs a unique ID number
+- Use descriptive titles like "Wooden Deck #1", "Composite Deck", "Deck Restoration"
+- Keep file names consistent and organized
+- The gallery will automatically display all photos in the deck category when someone clicks "Decks"

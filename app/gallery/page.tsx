@@ -8,7 +8,7 @@ import { ArrowLeft } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
-// Sample data with placeholder images
+// Sample data with placeholder images - you can add as many as you want
 const galleryItems = [
   {
     id: 1,
@@ -20,9 +20,30 @@ const galleryItems = [
   {
     id: 3,
     category: "deck",
-    title: "Wooden Deck",
-    before: "/placeholder.svg?height=400&width=600&text=Deck+Before",
-    after: "/placeholder.svg?height=400&width=600&text=Deck+After",
+    title: "Wooden Deck #1",
+    before: "/wooden-deck-1-before.jpg",
+    after: "/wooden-deck-1-after.jpg",
+  },
+  {
+    id: 10,
+    category: "deck",
+    title: "Wooden Deck #2",
+    before: "/wooden-deck-2-before.jpg",
+    after: "/wooden-deck-2-after.jpg",
+  },
+  {
+    id: 11,
+    category: "deck",
+    title: "Composite Deck",
+    before: "/composite-deck-before.jpg",
+    after: "/composite-deck-after.jpg",
+  },
+  {
+    id: 12,
+    category: "deck",
+    title: "Deck Restoration",
+    before: "/deck-restoration-before.jpg",
+    after: "/deck-restoration-after.jpg",
   },
   {
     id: 4,
