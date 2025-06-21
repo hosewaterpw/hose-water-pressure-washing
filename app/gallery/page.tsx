@@ -8,77 +8,61 @@ import { ArrowLeft } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
-// Sample data with placeholder images - you can add as many as you want
+// Updated gallery data - single photos with before/after combined
 const galleryItems = [
   {
     id: 1,
     category: "house",
     title: "House Exterior",
-    before: "/placeholder.svg?height=400&width=600&text=House+Before",
-    after: "/placeholder.svg?height=400&width=600&text=House+After",
+    photo: "/house-exterior-beforeafter.jpg",
+  },
+  {
+    id: 2,
+    category: "house",
+    title: "Vinyl Siding",
+    photo: "/vinyl-siding-beforeafter.jpg",
   },
   {
     id: 3,
-    category: "deck",
+    category: "deck-patio",
     title: "Wooden Deck #1",
-    before: "/wooden-deck-1-before.jpg",
-    after: "/wooden-deck-1-after.jpg",
-  },
-  {
-    id: 10,
-    category: "deck",
-    title: "Wooden Deck #2",
-    before: "/wooden-deck-2-before.jpg",
-    after: "/wooden-deck-2-after.jpg",
-  },
-  {
-    id: 11,
-    category: "deck",
-    title: "Composite Deck",
-    before: "/composite-deck-before.jpg",
-    after: "/composite-deck-after.jpg",
-  },
-  {
-    id: 12,
-    category: "deck",
-    title: "Deck Restoration",
-    before: "/deck-restoration-before.jpg",
-    after: "/deck-restoration-after.jpg",
+    photo: "/wooden-deck-1-beforeafter.jpg",
   },
   {
     id: 4,
-    category: "house",
-    title: "Vinyl Siding",
-    before: "/placeholder.svg?height=400&width=600&text=Siding+Before",
-    after: "/placeholder.svg?height=400&width=600&text=Siding+After",
+    category: "deck-patio",
+    title: "Wooden Deck #2",
+    photo: "/wooden-deck-2-beforeafter.jpg",
+  },
+  {
+    id: 5,
+    category: "deck-patio",
+    title: "Wooden Deck #3",
+    photo: "/wooden-deck-3-beforeafter.jpg",
   },
   {
     id: 6,
-    category: "fence",
-    title: "Vinyl Fence",
-    before: "/placeholder.svg?height=400&width=600&text=Fence+Before",
-    after: "/placeholder.svg?height=400&width=600&text=Fence+After",
+    category: "deck-patio",
+    title: "Patio",
+    photo: "/patio-beforeafter.jpg",
   },
   {
     id: 7,
     category: "roof",
     title: "Asphalt Roof",
-    before: "/placeholder.svg?height=400&width=600&text=Roof+Before",
-    after: "/placeholder.svg?height=400&width=600&text=Roof+After",
+    photo: "/asphalt-roof-beforeafter.jpg",
   },
   {
     id: 8,
-    category: "commercial",
-    title: "Apartment Building",
-    before: "/placeholder.svg?height=400&width=600&text=Commercial+Before",
-    after: "/placeholder.svg?height=400&width=600&text=Commercial+After",
+    category: "fence",
+    title: "Vinyl Fence",
+    photo: "/vinyl-fence-beforeafter.jpg",
   },
   {
     id: 9,
     category: "commercial",
-    title: "Patio",
-    before: "/placeholder.svg?height=400&width=600&text=Patio+Before",
-    after: "/placeholder.svg?height=400&width=600&text=Patio+After",
+    title: "Commercial Garage with Rental Unit",
+    photo: "/commercial-garage-rental-beforeafter.jpg",
   },
 ]
 
@@ -89,8 +73,11 @@ export default function GalleryPage() {
 
   // Set the active tab based on URL parameter
   useEffect(() => {
-    if (filterParam && ["house", "deck", "roof", "fence", "commercial"].includes(filterParam)) {
+    if (filterParam && ["house", "deck-patio", "roof", "fence", "commercial"].includes(filterParam)) {
       setActiveTab(filterParam)
+    } else if (filterParam === "deck") {
+      // Redirect old "deck" filter to new "deck-patio"
+      setActiveTab("deck-patio")
     }
   }, [filterParam])
 
@@ -99,8 +86,8 @@ export default function GalleryPage() {
     switch (activeTab) {
       case "house":
         return "House Washing"
-      case "deck":
-        return "Deck & Patio Restoration"
+      case "deck-patio":
+        return "Deck & Patio Cleaning"
       case "roof":
         return "Roof Cleaning"
       case "fence":
@@ -126,7 +113,7 @@ export default function GalleryPage() {
 
       {filterParam && (
         <div className="mt-6 flex justify-center">
-          <Link href={`/services#${filterParam}`}>
+          <Link href={`/services#${filterParam === "deck-patio" ? "deck" : filterParam}`}>
             <Button variant="outline" className="gap-2">
               <ArrowLeft className="h-4 w-4" /> Back to {getServiceName()}
             </Button>
@@ -139,7 +126,7 @@ export default function GalleryPage() {
           <TabsList className="grid grid-cols-2 md:grid-cols-6">
             <TabsTrigger value="all">All</TabsTrigger>
             <TabsTrigger value="house">Houses</TabsTrigger>
-            <TabsTrigger value="deck">Decks</TabsTrigger>
+            <TabsTrigger value="deck-patio">Decks & Patios</TabsTrigger>
             <TabsTrigger value="roof">Roofs</TabsTrigger>
             <TabsTrigger value="fence">Fences</TabsTrigger>
             <TabsTrigger value="commercial">Commercial</TabsTrigger>
@@ -152,23 +139,14 @@ export default function GalleryPage() {
               <div key={item.id} className="flex flex-col gap-4">
                 <div className="relative aspect-video overflow-hidden rounded-md">
                   <Image
-                    src={item.before || "/placeholder.svg"}
-                    alt={`${item.title} before pressure washing`}
+                    src={item.photo || "/placeholder.svg"}
+                    alt={`${item.title} before and after pressure washing`}
                     fill
                     className="object-cover"
                   />
                   <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
-                    Before
+                    Before & After
                   </div>
-                </div>
-                <div className="relative aspect-video overflow-hidden rounded-md">
-                  <Image
-                    src={item.after || "/placeholder.svg"}
-                    alt={`${item.title} after pressure washing`}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">After</div>
                 </div>
                 <h3 className="text-lg font-medium">{item.title}</h3>
               </div>
@@ -176,7 +154,7 @@ export default function GalleryPage() {
           </div>
         </TabsContent>
 
-        {["house", "deck", "roof", "fence", "commercial"].map((category) => (
+        {["house", "deck-patio", "roof", "fence", "commercial"].map((category) => (
           <TabsContent key={category} value={category} className="mt-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {galleryItems
@@ -185,24 +163,13 @@ export default function GalleryPage() {
                   <div key={item.id} className="flex flex-col gap-4">
                     <div className="relative aspect-video overflow-hidden rounded-md">
                       <Image
-                        src={item.before || "/placeholder.svg"}
-                        alt={`${item.title} before pressure washing`}
+                        src={item.photo || "/placeholder.svg"}
+                        alt={`${item.title} before and after pressure washing`}
                         fill
                         className="object-cover"
                       />
                       <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
-                        Before
-                      </div>
-                    </div>
-                    <div className="relative aspect-video overflow-hidden rounded-md">
-                      <Image
-                        src={item.after || "/placeholder.svg"}
-                        alt={`${item.title} after pressure washing`}
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
-                        After
+                        Before & After
                       </div>
                     </div>
                     <h3 className="text-lg font-medium">{item.title}</h3>
