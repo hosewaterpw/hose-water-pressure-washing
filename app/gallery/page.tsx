@@ -74,7 +74,7 @@ const galleryItems = [
     category: "patio-walkway",
     title: "Concrete Walkway",
     photo: "/concrete-walkway-beforeafter.jpg",
-    orientation: "vertical",
+    orientation: "horizontal",
   },
   // Solar Panels & Windows (2 photos)
   {
@@ -89,7 +89,7 @@ const galleryItems = [
     category: "solar-window",
     title: "Exterior Window Cleaning",
     photo: "/exterior-window-beforeafter.jpg",
-    orientation: "vertical",
+    orientation: "horizontal",
   },
   // Roofs (1 photo)
   {
@@ -97,7 +97,7 @@ const galleryItems = [
     category: "roof",
     title: "Asphalt Roof",
     photo: "/asphalt-roof-beforeafter.jpg",
-    orientation: "horizontal",
+    orientation: "vertical",
   },
   // Commercial (1 photo)
   {
