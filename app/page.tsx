@@ -179,7 +179,7 @@ export default function Home() {
                 description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
                 icon="layout"
                 imageSrc="/deck-cleaning.png"
-                orientation="horizontal"
+                orientation="vertical"
                 serviceId="deck"
               />
               <ServiceCard
@@ -195,7 +195,7 @@ export default function Home() {
                 description="Safely remove black streaks, moss, and algae from your roof with our professional roof cleaning."
                 icon="home"
                 imageSrc="/roof-cleaning.png"
-                orientation="horizontal"
+                orientation="vertical"
                 serviceId="roof"
               />
               <ServiceCard
