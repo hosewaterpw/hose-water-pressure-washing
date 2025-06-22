@@ -6,7 +6,6 @@ import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import ServiceCard from "@/components/service-card"
-import BeforeAfterGallery from "@/components/before-after-gallery"
 
 export const metadata: Metadata = {
   title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
@@ -162,6 +161,7 @@ export default function Home() {
                 description="Remove dirt, mold, and mildew from your home's exterior surfaces with our professional house washing service."
                 icon="home"
                 imageSrc="/house-washing-service.png"
+                orientation="horizontal"
                 serviceId="house-washing"
               />
               <ServiceCard
@@ -169,6 +169,7 @@ export default function Home() {
                 description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
                 icon="layout"
                 imageSrc="/deck-cleaning.png"
+                orientation="horizontal"
                 serviceId="deck"
               />
               <ServiceCard
@@ -176,6 +177,7 @@ export default function Home() {
                 description="Safely remove black streaks, moss, and algae from your roof with our professional roof cleaning."
                 icon="home"
                 imageSrc="/roof-cleaning.png"
+                orientation="horizontal"
                 serviceId="roof"
               />
               <ServiceCard
@@ -183,6 +185,7 @@ export default function Home() {
                 description="Restore concrete, stone, and brick patios and walkways by removing dirt, stains, and organic growth."
                 icon="square"
                 imageSrc="/patio-walkway-cleaning.png"
+                orientation="vertical"
                 serviceId="patio-walkway"
               />
               <ServiceCard
@@ -190,6 +193,7 @@ export default function Home() {
                 description="Maintain your business property's appearance and safety with our commercial pressure washing services."
                 icon="building"
                 imageSrc="/commercial-cleaning.png"
+                orientation="horizontal"
                 serviceId="commercial"
               />
             </div>
@@ -245,32 +249,6 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Before & After Gallery Preview */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32">
-          <div className="container px-4 sm:px-6 md:px-8">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-12">
-              <div className="space-y-2">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
-                  Pressure Washing Before & After Results
-                </h2>
-                <p className="max-w-[700px] text-gray-500 text-base sm:text-lg md:text-xl leading-relaxed">
-                  See the dramatic difference our professional pressure washing services can make on your property.
-                </p>
-              </div>
-            </div>
-            <div className="mb-6 sm:mb-8">
-              <BeforeAfterGallery />
-            </div>
-            <div className="flex justify-center">
-              <Link href="/gallery">
-                <Button variant="outline" size="lg" className="text-base px-6 py-3">
-                  View Full Gallery
-                </Button>
-              </Link>
             </div>
           </div>
         </section>
@@ -335,7 +313,8 @@ export default function Home() {
                 </div>
 
                 <p className="text-xs text-gray-400 mt-6 leading-relaxed">
-                  Professional pressure washing services available in all listed communities and surrounding areas. Contact us to confirm service availability in your specific location.
+                  Professional pressure washing services available in all listed communities and surrounding areas.
+                  Contact us to confirm service availability in your specific location.
                 </p>
               </div>
             </div>

@@ -8,7 +8,7 @@ import { ArrowLeft, X } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
-// Updated gallery data - supports both horizontal and vertical collages
+// Updated gallery data - removed numbers from titles
 const galleryItems = [
   {
     id: 1,
@@ -27,21 +27,21 @@ const galleryItems = [
   {
     id: 3,
     category: "deck-patio",
-    title: "Wooden Deck #1",
+    title: "Wooden Deck",
     photo: "/wooden-deck-1-beforeafter.jpg",
     orientation: "horizontal",
   },
   {
     id: 4,
     category: "deck-patio",
-    title: "Wooden Deck #2",
+    title: "Wooden Deck",
     photo: "/wooden-deck-2-beforeafter.jpg",
     orientation: "vertical",
   },
   {
     id: 5,
     category: "deck-patio",
-    title: "Wooden Deck #3",
+    title: "Wooden Deck",
     photo: "/wooden-deck-3-beforeafter.jpg",
     orientation: "horizontal",
   },

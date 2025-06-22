@@ -9,10 +9,18 @@ interface ServiceCardProps {
   description: string
   icon: string
   imageSrc?: string
+  orientation?: "horizontal" | "vertical"
   serviceId?: string
 }
 
-export default function ServiceCard({ title, description, icon, imageSrc, serviceId }: ServiceCardProps) {
+export default function ServiceCard({
+  title,
+  description,
+  icon,
+  imageSrc,
+  orientation = "horizontal",
+  serviceId,
+}: ServiceCardProps) {
   const getIcon = () => {
     switch (icon) {
       case "home":
@@ -30,10 +38,15 @@ export default function ServiceCard({ title, description, icon, imageSrc, servic
     }
   }
 
+  // Function to get the appropriate aspect ratio class
+  const getAspectRatio = (orientation: string) => {
+    return orientation === "vertical" ? "aspect-[3/4]" : "aspect-video"
+  }
+
   return (
     <Card className="overflow-hidden h-full">
       {imageSrc && (
-        <div className="relative h-40 sm:h-48 w-full">
+        <div className={`relative ${getAspectRatio(orientation)} w-full`}>
           <Image src={imageSrc || "/placeholder.svg"} alt={title} fill className="object-cover" />
         </div>
       )}

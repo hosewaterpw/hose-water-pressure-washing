@@ -95,7 +95,7 @@ export default function AboutPage() {
                   <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Contact Me</Button>
                 </Link>
                 <Link href="/estimate">
-                  <Button variant="outline" className="gap-2">
+                  <Button variant="outline" className="gap-2 bg-transparent hover:bg-gray-50">
                     Get a Quote <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
@@ -218,29 +218,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Photo Gallery */}
-        <section className="mt-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold">On the Job</h2>
-            <p className="mt-2 text-gray-500 max-w-2xl mx-auto">A glimpse of our work in action in [Your City].</p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="relative aspect-square overflow-hidden rounded-lg">
-              <Image src="/work-1.png" alt="Pressure washing in action in [Your City]" fill className="object-cover" />
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-lg">
-              <Image src="/work-2.png" alt="Cleaning a driveway in [Your City]" fill className="object-cover" />
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-lg">
-              <Image src="/work-3.png" alt="House washing in [Your City]" fill className="object-cover" />
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-lg">
-              <Image src="/work-4.png" alt="Deck cleaning in [Your City]" fill className="object-cover" />
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="mt-24 py-12 px-6 bg-[#333333] text-white rounded-lg">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -259,7 +236,7 @@ export default function AboutPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-white border-white hover:bg-white hover:text-[#333333]"
+                  className="text-white border-white hover:bg-white/10 bg-transparent"
                 >
                   Contact Me
                 </Button>

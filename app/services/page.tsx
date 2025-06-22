@@ -26,7 +26,91 @@ export const metadata: Metadata = {
   },
 }
 
+// Service data with orientations
+const services = [
+  {
+    id: "house-washing",
+    title: "House Washing Services",
+    image: "/house-washing.png",
+    orientation: "horizontal",
+    description:
+      "Our professional house washing service removes dirt, mold, mildew, and other organic material from your home's exterior surfaces. We use professional-grade equipment and techniques to safely clean vinyl siding, brick, stucco, and other exterior materials.",
+    features: [
+      "Removes dirt, mold, mildew, and algae from house exteriors",
+      "Safe for all exterior surfaces including vinyl, brick, and stucco",
+      "Improves curb appeal and property value",
+      "Prevents damage from built-up contaminants",
+    ],
+    galleryFilter: "house",
+  },
+  {
+    id: "deck",
+    title: "Deck Cleaning & Restoration",
+    image: "/deck-cleaning.png",
+    orientation: "horizontal",
+    description:
+      "Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew, and weathering. We carefully adjust our pressure washing techniques based on the material of your deck to ensure safe and effective cleaning.",
+    features: [
+      "Removes dirt, mold, and weathering from deck surfaces",
+      "Safe for wood, composite, and stone deck surfaces",
+      "Prepares deck surfaces for staining or sealing",
+      "Extends the life of your outdoor deck spaces",
+    ],
+    galleryFilter: "deck-patio",
+  },
+  {
+    id: "patio-walkway",
+    title: "Patio & Walkway Cleaning",
+    image: "/patio-walkway-cleaning.png",
+    orientation: "vertical",
+    description:
+      "Our patio and walkway cleaning service restores concrete, stone, and brick surfaces by removing dirt, stains, mold, and algae. We use appropriate pressure settings and techniques to clean without damaging your hardscape surfaces.",
+    features: [
+      "Removes dirt, stains, and organic growth from concrete surfaces",
+      "Safe for concrete, stone, brick, and paver surfaces",
+      "Improves safety by removing slippery algae and moss",
+      "Restores original appearance of outdoor living spaces",
+      "Also available: fence cleaning for vinyl and metal fences",
+    ],
+    galleryFilter: "patio-walkway",
+  },
+  {
+    id: "roof",
+    title: "Roof Cleaning",
+    image: "/roof-cleaning.png",
+    orientation: "horizontal",
+    description:
+      "Our roof cleaning service safely removes black streaks, moss, and algae from your roof. We use low-pressure washing techniques and appropriate cleaning solutions to protect your roof while effectively removing unsightly growth and stains.",
+    features: [
+      "Removes black streaks, moss, and algae from roofs",
+      "Prevents damage from organic growth",
+      "Extends roof life and improves appearance",
+    ],
+    galleryFilter: "roof",
+  },
+  {
+    id: "commercial",
+    title: "Commercial Pressure Washing Services",
+    image: "/commercial-cleaning.png",
+    orientation: "horizontal",
+    description:
+      "Our commercial pressure washing services help maintain your rental properties, apartment buildings, and multi-unit properties' appearance and value.",
+    features: [
+      "Apartment building and duplex exterior cleaning",
+      "Rental property maintenance and cleaning",
+      "Multi-unit property exterior restoration",
+      "Property management company services",
+    ],
+    galleryFilter: "commercial",
+  },
+]
+
 export default function ServicesPage() {
+  // Function to get the appropriate aspect ratio class
+  const getAspectRatio = (orientation: string) => {
+    return orientation === "vertical" ? "aspect-[3/4]" : "aspect-video"
+  }
+
   return (
     <>
       {/* Structured Data for Service Pages */}
@@ -36,52 +120,16 @@ export default function ServicesPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            itemListElement: [
-              {
-                "@type": "Service",
-                position: 1,
-                name: "House Washing",
-                description:
-                  "Professional house washing service to remove dirt, mold, and mildew from exterior surfaces in North Berwick Maine",
-                provider: {
-                  "@type": "LocalBusiness",
-                  name: "Hose Water Pressure Washing LLC",
-                },
+            itemListElement: services.map((service, index) => ({
+              "@type": "Service",
+              position: index + 1,
+              name: service.title,
+              description: service.description,
+              provider: {
+                "@type": "LocalBusiness",
+                name: "Hose Water Pressure Washing LLC",
               },
-              {
-                "@type": "Service",
-                position: 2,
-                name: "Deck Cleaning",
-                description:
-                  "Deck cleaning and restoration service to revitalize outdoor living spaces in North Berwick",
-                provider: {
-                  "@type": "LocalBusiness",
-                  name: "Hose Water Pressure Washing LLC",
-                },
-              },
-              {
-                "@type": "Service",
-                position: 3,
-                name: "Patio and Walkway Cleaning",
-                description:
-                  "Patio and walkway pressure washing services for concrete, stone, and brick surfaces in North Berwick Maine",
-                provider: {
-                  "@type": "LocalBusiness",
-                  name: "Hose Water Pressure Washing LLC",
-                },
-              },
-              {
-                "@type": "Service",
-                position: 4,
-                name: "Commercial Pressure Washing",
-                description:
-                  "Commercial pressure washing services for apartment buildings, duplexes, and rental properties in North Berwick Maine",
-                provider: {
-                  "@type": "LocalBusiness",
-                  name: "Hose Water Pressure Washing LLC",
-                },
-              },
-            ],
+            })),
           }),
         }}
       />
@@ -99,254 +147,44 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* House Washing */}
-        <section id="house-washing" className="mt-16 scroll-mt-20">
-          <div className="grid gap-8 md:grid-cols-2 items-center">
-            <div className="relative aspect-video overflow-hidden rounded-lg">
-              <Image
-                src="/house-washing.png"
-                alt="Professional house washing service in North Berwick Maine"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold">House Washing Services</h2>
-              <p className="text-gray-500">
-                Our professional house washing service removes dirt, mold, mildew, and other organic material from your
-                home's exterior surfaces. We use professional-grade equipment and techniques to safely clean vinyl
-                siding, brick, stucco, and other exterior materials.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Removes dirt, mold, mildew, and algae from house exteriors</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Safe for all exterior surfaces including vinyl, brick, and stucco</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Improves curb appeal and property value</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Prevents damage from built-up contaminants</span>
-                </li>
-              </ul>
-              <div className="flex gap-4">
-                <Link href="/estimate">
-                  <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
-                </Link>
-                <Link href="/gallery?filter=house">
-                  <Button variant="outline" className="gap-2">
-                    View Before & After <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
+        {services.map((service, index) => (
+          <section key={service.id} id={service.id} className="mt-16 scroll-mt-20">
+            <div className="grid gap-8 md:grid-cols-2 items-center">
+              <div
+                className={`relative ${getAspectRatio(service.orientation)} overflow-hidden rounded-lg ${index % 2 === 1 ? "order-1 md:order-2" : ""}`}
+              >
+                <Image
+                  src={service.image || "/placeholder.svg"}
+                  alt={`${service.title} in North Berwick Maine`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className={`space-y-4 ${index % 2 === 1 ? "order-2 md:order-1" : ""}`}>
+                <h2 className="text-3xl font-bold">{service.title}</h2>
+                <p className="text-gray-500">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-2">
+                      <span className="text-yellow-500 font-bold">•</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex gap-4">
+                  <Link href="/estimate">
+                    <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
+                  </Link>
+                  <Link href={`/gallery?filter=${service.galleryFilter}`}>
+                    <Button variant="outline" className="gap-2">
+                      View Before & After <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Deck Cleaning */}
-        <section id="deck" className="mt-24 scroll-mt-20">
-          <div className="grid gap-8 md:grid-cols-2 items-center">
-            <div className="relative aspect-video overflow-hidden rounded-lg">
-              <Image
-                src="/deck-cleaning.png"
-                alt="Deck cleaning service in North Berwick Maine"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold">Deck Cleaning & Restoration</h2>
-              <p className="text-gray-500">
-                Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew, and
-                weathering. We carefully adjust our pressure washing techniques based on the material of your deck to
-                ensure safe and effective cleaning.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Removes dirt, mold, and weathering from deck surfaces</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Safe for wood, composite, and stone deck surfaces</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Prepares deck surfaces for staining or sealing</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Extends the life of your outdoor deck spaces</span>
-                </li>
-              </ul>
-              <div className="flex gap-4">
-                <Link href="/estimate">
-                  <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
-                </Link>
-                <Link href="/gallery?filter=deck-patio">
-                  <Button variant="outline" className="gap-2">
-                    View Before & After <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Patio & Walkway Cleaning */}
-        <section id="patio-walkway" className="mt-24 scroll-mt-20">
-          <div className="grid gap-8 md:grid-cols-2 items-center">
-            <div className="order-1 md:order-2 relative aspect-video overflow-hidden rounded-lg">
-              <Image
-                src="/patio-walkway-cleaning.png"
-                alt="Patio and walkway cleaning service in North Berwick Maine"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="order-2 md:order-1 space-y-4">
-              <h2 className="text-3xl font-bold">Patio & Walkway Cleaning</h2>
-              <p className="text-gray-500">
-                Our patio and walkway cleaning service restores concrete, stone, and brick surfaces by removing dirt,
-                stains, mold, and algae. We use appropriate pressure settings and techniques to clean without damaging
-                your hardscape surfaces.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Removes dirt, stains, and organic growth from concrete surfaces</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Safe for concrete, stone, brick, and paver surfaces</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Improves safety by removing slippery algae and moss</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Restores original appearance of outdoor living spaces</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Also available: fence cleaning for vinyl and metal fences</span>
-                </li>
-              </ul>
-              <div className="flex gap-4">
-                <Link href="/estimate">
-                  <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
-                </Link>
-                <Link href="/gallery?filter=patio-walkway">
-                  <Button variant="outline" className="gap-2">
-                    View Before & After <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Roof Cleaning */}
-        <section id="roof" className="mt-24 scroll-mt-20">
-          <div className="grid gap-8 md:grid-cols-2 items-center">
-            <div className="relative aspect-video overflow-hidden rounded-lg">
-              <Image
-                src="/roof-cleaning.png"
-                alt="Roof cleaning service in North Berwick Maine"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold">Roof Cleaning</h2>
-              <p className="text-gray-500">
-                Our roof cleaning service safely removes black streaks, moss, and algae from your roof. We use
-                low-pressure washing techniques and appropriate cleaning solutions to protect your roof while
-                effectively removing unsightly growth and stains.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Removes black streaks, moss, and algae from roofs</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Prevents damage from organic growth</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Extends roof life and improves appearance</span>
-                </li>
-              </ul>
-              <div className="flex gap-4">
-                <Link href="/estimate">
-                  <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
-                </Link>
-                <Link href="/gallery?filter=roof">
-                  <Button variant="outline" className="gap-2">
-                    View Before & After <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Commercial Services */}
-        <section id="commercial" className="mt-24 scroll-mt-20">
-          <div className="grid gap-8 md:grid-cols-2 items-center">
-            <div className="order-1 md:order-2 relative aspect-video overflow-hidden rounded-lg">
-              <Image
-                src="/commercial-cleaning.png"
-                alt="Commercial pressure washing service in North Berwick Maine"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="order-2 md:order-1 space-y-4">
-              <h2 className="text-3xl font-bold">Commercial Pressure Washing Services</h2>
-              <p className="text-gray-500">
-                Our commercial pressure washing services help maintain your rental properties, apartment buildings, and
-                multi-unit properties' appearance and value.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Apartment building and duplex exterior cleaning</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Rental property maintenance and cleaning</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Multi-unit property exterior restoration</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Property management company services</span>
-                </li>
-              </ul>
-              <div className="flex gap-4">
-                <Link href="/estimate">
-                  <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
-                </Link>
-                <Link href="/gallery?filter=commercial">
-                  <Button variant="outline" className="gap-2">
-                    View Before & After <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+        ))}
 
         {/* CTA Section */}
         <section className="mt-24 py-12 px-6 bg-[#333333] text-white rounded-lg">
