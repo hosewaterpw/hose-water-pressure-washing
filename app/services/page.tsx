@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Pressure Washing Services North Berwick Maine | House, Patio, Deck, Roof Cleaning",
+  title: "Pressure Washing Services North Berwick Maine | House, Patio, Deck, Roof, Solar Panel & Window Cleaning",
   description:
-    "Professional pressure washing services in North Berwick Maine and York County. House washing, patio cleaning, deck restoration, roof cleaning, walkway cleaning, and commercial services. Free estimates available.",
+    "Professional pressure washing services in North Berwick Maine and York County. House washing, patio cleaning, deck restoration, roof cleaning, solar panel cleaning, window cleaning, walkway cleaning, and commercial services. Free estimates available.",
   keywords: [
     "pressure washing services North Berwick Maine",
     "house washing North Berwick",
@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "walkway cleaning North Berwick",
     "deck restoration North Berwick",
     "roof cleaning service York County",
+    "solar panel cleaning Maine",
+    "window cleaning North Berwick",
+    "exterior window cleaning Maine",
     "fence washing Maine",
     "commercial pressure washing North Berwick",
     "exterior cleaning services 03906",
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
     description:
-      "Complete pressure washing services including house washing, patio cleaning, walkway cleaning, deck restoration, and more in North Berwick Maine and York County.",
+      "Complete pressure washing services including house washing, patio cleaning, walkway cleaning, deck restoration, solar panel cleaning, window cleaning, and more in North Berwick Maine and York County.",
   },
 }
 
@@ -49,14 +52,14 @@ const services = [
     image: "/deck-cleaning.png",
     orientation: "horizontal",
     description:
-      "Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew and other orangic growth. We carefully adjust our pressure washing techniques based on the material of your deck to ensure safe and effective cleaning.",
+      "Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew and other organic growth. We carefully adjust our pressure washing techniques based on the material of your deck to ensure safe and effective cleaning.",
     features: [
       "Removes dirt, mold, and weathering from deck surfaces",
       "Safe for wood, composite, and stone deck surfaces",
       "Prepares deck surfaces for staining or sealing",
       "Extends the life of your outdoor deck spaces",
     ],
-    galleryFilter: "deck-patio",
+    galleryFilter: "deck",
   },
   {
     id: "patio-walkway",
@@ -64,15 +67,32 @@ const services = [
     image: "/patio-walkway-cleaning.png",
     orientation: "vertical",
     description:
-      "Our patio and walkway cleaning service revive concrete, stone, and brick surfaces by removing dirt, stains, mold, and algae. We use appropriate pressure settings and techniques to clean without damaging your hardscape surfaces.",
+      "Our patio and walkway cleaning service restores concrete, stone, and brick surfaces by removing dirt, stains, mold, and algae. We use appropriate pressure settings and techniques to clean without damaging your hardscape surfaces.",
     features: [
       "Removes dirt, stains, and organic growth from concrete surfaces",
       "Safe for concrete, stone, brick, and paver surfaces",
       "Improves safety by removing slippery algae and moss",
-      "Revive the appearance of outdoor living spaces",
-      "Also available: fence cleaning for vinyl and wooden fences",
+      "Restores original appearance of outdoor living spaces",
+      "Also available: fence cleaning for vinyl and metal fences",
     ],
     galleryFilter: "patio-walkway",
+  },
+  {
+    id: "solar-window",
+    title: "Solar Panel & Window Cleaning",
+    image: "/solar-window-cleaning.png",
+    orientation: "horizontal",
+    description:
+      "Our specialized solar panel and exterior window cleaning service uses a water-fed pole system with deionized water to ensure a spot-free, streak-free finish. This method is safe for delicate surfaces and provides superior cleaning results.",
+    features: [
+      "Water-fed pole system for safe, ground-based cleaning",
+      "Deionized water system leaves no spots or streaks",
+      "Improves solar panel efficiency and energy output",
+      "Crystal clear windows with professional results",
+      "Safe cleaning method that won't damage panels or glass",
+      "Extends the life of solar panels and windows",
+    ],
+    galleryFilter: "solar-window",
   },
   {
     id: "roof",

@@ -10,7 +10,7 @@ import ServiceCard from "@/components/service-card"
 export const metadata: Metadata = {
   title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
   description:
-    "Transform your property with professional pressure washing services in North Berwick Maine and York County. House washing, patio cleaning, deck restoration, roof cleaning. Free estimates. Family-owned since 2022.",
+    "Transform your property with professional pressure washing services in North Berwick Maine and York County. House washing, patio cleaning, deck restoration, roof cleaning, solar panel cleaning, window cleaning. Free estimates. Family-owned since 2022.",
   keywords: [
     "pressure washing North Berwick Maine",
     "power washing services York County",
@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     "patio cleaning Maine",
     "deck restoration North Berwick",
     "roof cleaning services Maine",
+    "solar panel cleaning Maine",
+    "window cleaning North Berwick",
     "residential pressure washing York County",
     "commercial pressure washing North Berwick",
     "exterior cleaning Maine 03906",
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
     description:
-      "Transform your property with professional pressure washing services in North Berwick Maine. House washing, patio cleaning, deck restoration, and more.",
+      "Transform your property with professional pressure washing services in North Berwick Maine. House washing, patio cleaning, deck restoration, solar panel cleaning, window cleaning, and more.",
     images: ["/house-washing.png"],
   },
 }
@@ -85,6 +87,14 @@ export default function Home() {
                     "@type": "Service",
                     name: "Deck Cleaning",
                     description: "Deck cleaning and restoration services",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Solar Panel & Window Cleaning",
+                    description: "Professional solar panel and exterior window cleaning with deionized water system",
                   },
                 },
               ],
@@ -171,6 +181,14 @@ export default function Home() {
                 imageSrc="/deck-cleaning.png"
                 orientation="horizontal"
                 serviceId="deck"
+              />
+              <ServiceCard
+                title="Solar Panel & Window Cleaning"
+                description="Professional solar panel and exterior window cleaning using water-fed pole system with deionized water for spot-free results."
+                icon="square"
+                imageSrc="/solar-window-cleaning.png"
+                orientation="horizontal"
+                serviceId="solar-window"
               />
               <ServiceCard
                 title="Roof Cleaning"

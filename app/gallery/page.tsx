@@ -8,7 +8,7 @@ import { ArrowLeft, X } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
-// Updated gallery data - separated decks from patios, updated counts
+// Updated gallery data - added solar panel & window cleaning category
 const galleryItems = [
   // Houses (4 photos)
   {
@@ -76,9 +76,24 @@ const galleryItems = [
     photo: "/concrete-walkway-beforeafter.jpg",
     orientation: "vertical",
   },
-  // Roofs (1 photo)
+  // Solar Panels & Windows (2 photos)
   {
     id: 10,
+    category: "solar-window",
+    title: "Solar Panel Cleaning",
+    photo: "/solar-panel-beforeafter.jpg",
+    orientation: "horizontal",
+  },
+  {
+    id: 11,
+    category: "solar-window",
+    title: "Exterior Window Cleaning",
+    photo: "/exterior-window-beforeafter.jpg",
+    orientation: "vertical",
+  },
+  // Roofs (1 photo)
+  {
+    id: 12,
     category: "roof",
     title: "Asphalt Roof",
     photo: "/asphalt-roof-beforeafter.jpg",
@@ -86,7 +101,7 @@ const galleryItems = [
   },
   // Commercial (1 photo)
   {
-    id: 11,
+    id: 13,
     category: "commercial",
     title: "Commercial Garage with Rental Unit",
     photo: "/commercial-garage-rental-beforeafter.jpg",
@@ -102,7 +117,7 @@ export default function GalleryPage() {
 
   // Set the active tab based on URL parameter
   useEffect(() => {
-    if (filterParam && ["house", "deck", "patio-walkway", "roof", "commercial"].includes(filterParam)) {
+    if (filterParam && ["house", "deck", "patio-walkway", "solar-window", "roof", "commercial"].includes(filterParam)) {
       setActiveTab(filterParam)
     } else if (filterParam === "deck-patio") {
       setActiveTab("deck")
@@ -120,6 +135,8 @@ export default function GalleryPage() {
         return "Deck Cleaning"
       case "patio-walkway":
         return "Patio & Walkway Cleaning"
+      case "solar-window":
+        return "Solar Panel & Window Cleaning"
       case "roof":
         return "Roof Cleaning"
       case "commercial":
@@ -183,7 +200,7 @@ export default function GalleryPage() {
       {filterParam && (
         <div className="mt-6 flex justify-center">
           <Link
-            href={`/services#${filterParam === "deck" ? "deck" : filterParam === "patio-walkway" ? "patio-walkway" : filterParam}`}
+            href={`/services#${filterParam === "deck" ? "deck" : filterParam === "patio-walkway" ? "patio-walkway" : filterParam === "solar-window" ? "solar-window" : filterParam}`}
           >
             <Button variant="outline" className="gap-2">
               <ArrowLeft className="h-4 w-4" /> Back to {getServiceName()}
@@ -193,12 +210,13 @@ export default function GalleryPage() {
       )}
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-12">
-        <div className="flex justify-center">
-          <TabsList className="grid grid-cols-2 md:grid-cols-6">
+        <div className="flex justify-center overflow-x-auto">
+          <TabsList className="grid grid-cols-3 md:grid-cols-7 min-w-max">
             <TabsTrigger value="all">All</TabsTrigger>
             <TabsTrigger value="house">Houses</TabsTrigger>
             <TabsTrigger value="deck">Decks</TabsTrigger>
             <TabsTrigger value="patio-walkway">Patios & Walkways</TabsTrigger>
+            <TabsTrigger value="solar-window">Solar & Windows</TabsTrigger>
             <TabsTrigger value="roof">Roofs</TabsTrigger>
             <TabsTrigger value="commercial">Commercial</TabsTrigger>
           </TabsList>
@@ -231,7 +249,7 @@ export default function GalleryPage() {
           </div>
         </TabsContent>
 
-        {["house", "deck", "patio-walkway", "roof", "commercial"].map((category) => (
+        {["house", "deck", "patio-walkway", "solar-window", "roof", "commercial"].map((category) => (
           <TabsContent key={category} value={category} className="mt-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {galleryItems

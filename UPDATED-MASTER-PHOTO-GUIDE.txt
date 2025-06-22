@@ -1,0 +1,160 @@
+HOSE WATER PRESSURE WASHING LLC - UPDATED MASTER PHOTO GUIDE
+============================================================
+PRINT THIS GUIDE AND FOLLOW FOR ALL PHOTO UPLOADS
+
+TOTAL PHOTOS NEEDED: 19 photos (UPDATED)
+=========================================
+
+PHOTO FORMAT REQUIREMENTS:
+=========================
+✅ All photos should be JPG or PNG format
+✅ Optimized for web (under 1MB each)
+✅ Before/After COLLAGE format (one image with before & after combined)
+✅ Two orientation options: HORIZONTAL (side-by-side) or VERTICAL (top-and-bottom)
+
+ORIENTATION GUIDE:
+==================
+HORIZONTAL COLLAGES (Side-by-Side Layout):
+- Dimensions: 1200x675 pixels (16:9 ratio)
+- Layout: Before on LEFT, After on RIGHT
+- Best for: Wide shots, landscapes, house exteriors, roof overviews
+
+VERTICAL COLLAGES (Top-and-Bottom Layout):
+- Dimensions: 800x1067 pixels (3:4 ratio)
+- Layout: Before on TOP, After on BOTTOM
+- Best for: Tall shots, close-ups, detail work, vertical surfaces
+
+REQUIRED PHOTOS BY CATEGORY:
+============================
+
+1. MAIN SERVICE HEADER IMAGES (6 photos - UPDATED):
+===================================================
+□ house-washing.png (horizontal - main hero image)
+□ deck-cleaning.png (horizontal - deck service header)
+□ patio-walkway-cleaning.png (vertical - patio/walkway service header)
+□ solar-window-cleaning.png (horizontal - NEW solar panel & window service header)
+□ roof-cleaning.png (horizontal - roof service header)
+□ commercial-cleaning.png (horizontal - commercial service header)
+
+2. HOMEPAGE SERVICE CARDS (1 photo):
+====================================
+□ house-washing-service.png (horizontal - homepage service card)
+Note: Other service cards use the same images as headers above
+
+3. GALLERY PHOTOS (13 photos - UPDATED):
+========================================
+
+HOUSES CATEGORY (4 photos):
+□ house-exterior-beforeafter.jpg (horizontal)
+□ vinyl-siding-beforeafter.jpg (vertical)
+□ house-exterior-2-beforeafter.jpg (horizontal)
+□ house-exterior-3-beforeafter.jpg (vertical)
+
+DECKS CATEGORY (3 photos):
+□ wooden-deck-1-beforeafter.jpg (horizontal)
+□ wooden-deck-2-beforeafter.jpg (vertical)
+□ wooden-deck-3-beforeafter.jpg (horizontal)
+
+PATIOS & WALKWAYS CATEGORY (2 photos):
+□ patio-fireplace-beforeafter.jpg (vertical)
+□ concrete-walkway-beforeafter.jpg (vertical)
+
+SOLAR PANELS & WINDOWS CATEGORY (2 photos - NEW):
+□ solar-panel-beforeafter.jpg (horizontal)
+□ exterior-window-beforeafter.jpg (vertical)
+
+ROOFS CATEGORY (1 photo):
+□ asphalt-roof-beforeafter.jpg (horizontal)
+
+COMMERCIAL CATEGORY (1 photo):
+□ commercial-garage-rental-beforeafter.jpg (horizontal)
+
+4. ABOUT PAGE PHOTOS (3 photos):
+================================
+□ owner-portrait.png (professional photo of Jonathan P. Bilodeau)
+□ work-1.png (action shot of pressure washing work)
+□ work-2.png (another work in progress photo)
+
+5. LOGO:
+========
+□ logo.png (company logo with transparent background preferred)
+
+UPLOAD CHECKLIST BY PRIORITY:
+=============================
+
+HIGH PRIORITY (Website won't work without these):
+□ logo.png
+□ house-washing.png
+□ house-washing-service.png
+□ owner-portrait.png
+
+MEDIUM PRIORITY (Service pages need these):
+□ deck-cleaning.png
+□ patio-walkway-cleaning.png
+□ solar-window-cleaning.png (NEW)
+□ roof-cleaning.png
+□ commercial-cleaning.png
+
+LOW PRIORITY (Gallery enhancement):
+□ All 13 gallery photos listed above
+□ All 2 work photos for about page
+
+NEW SOLAR PANEL & WINDOW CLEANING SERVICE:
+==========================================
+✅ Added to services page with detailed description
+✅ Mentions water-fed pole system with deionized water
+✅ Highlights spot-free, streak-free results
+✅ Added to homepage service cards
+✅ Added to gallery with new "Solar & Windows" category
+✅ Updated SEO keywords and descriptions
+
+FOLDER STRUCTURE IN YOUR PROJECT:
+=================================
+All photos go in the public/ folder:
+
+public/
+├── logo.png
+├── house-washing.png
+├── house-washing-service.png
+├── deck-cleaning.png
+├── patio-walkway-cleaning.png
+├── solar-window-cleaning.png (NEW)
+├── roof-cleaning.png
+├── commercial-cleaning.png
+├── owner-portrait.png
+├── work-1.png
+├── work-2.png
+├── house-exterior-beforeafter.jpg
+├── vinyl-siding-beforeafter.jpg
+├── house-exterior-2-beforeafter.jpg
+├── house-exterior-3-beforeafter.jpg
+├── wooden-deck-1-beforeafter.jpg
+├── wooden-deck-2-beforeafter.jpg
+├── wooden-deck-3-beforeafter.jpg
+├── patio-fireplace-beforeafter.jpg
+├── concrete-walkway-beforeafter.jpg
+├── solar-panel-beforeafter.jpg (NEW)
+├── exterior-window-beforeafter.jpg (NEW)
+├── asphalt-roof-beforeafter.jpg
+└── commercial-garage-rental-beforeafter.jpg
+
+WEBSITE GALLERY STRUCTURE (UPDATED):
+====================================
+- All (shows all 13 gallery photos)
+- Houses (4 photos)
+- Decks (3 photos)
+- Patios & Walkways (2 photos)
+- Solar & Windows (2 photos) ← NEW CATEGORY
+- Roofs (1 photo)
+- Commercial (1 photo)
+
+WHAT'S NEW:
+===========
+✅ Solar Panel & Window Cleaning service added
+✅ Water-fed pole system with deionized water highlighted
+✅ New gallery category "Solar & Windows"
+✅ Updated homepage with 6 service cards
+✅ Updated SEO keywords for solar and window cleaning
+✅ 3 additional photos needed (1 service header + 2 gallery photos)
+
+This updated master guide contains everything you need to prepare and upload all photos for your expanded pressure washing website with solar panel and window cleaning services!
