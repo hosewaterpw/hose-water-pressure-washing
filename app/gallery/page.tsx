@@ -8,8 +8,9 @@ import { ArrowLeft, X } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
-// Updated gallery data - removed numbers from titles
+// Updated gallery data - separated decks from patios, updated counts
 const galleryItems = [
+  // Houses (4 photos)
   {
     id: 1,
     category: "house",
@@ -26,48 +27,66 @@ const galleryItems = [
   },
   {
     id: 3,
-    category: "deck-patio",
+    category: "house",
+    title: "House Exterior",
+    photo: "/house-exterior-2-beforeafter.jpg",
+    orientation: "horizontal",
+  },
+  {
+    id: 4,
+    category: "house",
+    title: "House Exterior",
+    photo: "/house-exterior-3-beforeafter.jpg",
+    orientation: "vertical",
+  },
+  // Decks (3 photos)
+  {
+    id: 5,
+    category: "deck",
     title: "Wooden Deck",
     photo: "/wooden-deck-1-beforeafter.jpg",
     orientation: "horizontal",
   },
   {
-    id: 4,
-    category: "deck-patio",
+    id: 6,
+    category: "deck",
     title: "Wooden Deck",
     photo: "/wooden-deck-2-beforeafter.jpg",
     orientation: "vertical",
   },
   {
-    id: 5,
-    category: "deck-patio",
+    id: 7,
+    category: "deck",
     title: "Wooden Deck",
     photo: "/wooden-deck-3-beforeafter.jpg",
     orientation: "horizontal",
   },
+  // Patios & Walkways (2 photos)
   {
-    id: 6,
-    category: "deck-patio",
-    title: "Patio",
-    photo: "/patio-beforeafter.jpg",
+    id: 8,
+    category: "patio-walkway",
+    title: "Patio Fireplace",
+    photo: "/patio-fireplace-beforeafter.jpg",
     orientation: "vertical",
   },
   {
-    id: 7,
-    category: "roof",
-    title: "Asphalt Roof",
-    photo: "/asphalt-roof-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  {
-    id: 8,
+    id: 9,
     category: "patio-walkway",
     title: "Concrete Walkway",
     photo: "/concrete-walkway-beforeafter.jpg",
     orientation: "vertical",
   },
+  // Roofs (1 photo)
   {
-    id: 9,
+    id: 10,
+    category: "roof",
+    title: "Asphalt Roof",
+    photo: "/asphalt-roof-beforeafter.jpg",
+    orientation: "horizontal",
+  },
+  // Commercial (1 photo)
+  {
+    id: 11,
     category: "commercial",
     title: "Commercial Garage with Rental Unit",
     photo: "/commercial-garage-rental-beforeafter.jpg",
@@ -83,10 +102,10 @@ export default function GalleryPage() {
 
   // Set the active tab based on URL parameter
   useEffect(() => {
-    if (filterParam && ["house", "deck-patio", "roof", "patio-walkway", "commercial"].includes(filterParam)) {
+    if (filterParam && ["house", "deck", "patio-walkway", "roof", "commercial"].includes(filterParam)) {
       setActiveTab(filterParam)
-    } else if (filterParam === "deck") {
-      setActiveTab("deck-patio")
+    } else if (filterParam === "deck-patio") {
+      setActiveTab("deck")
     } else if (filterParam === "fence") {
       setActiveTab("patio-walkway")
     }
@@ -97,12 +116,12 @@ export default function GalleryPage() {
     switch (activeTab) {
       case "house":
         return "House Washing"
-      case "deck-patio":
-        return "Deck & Patio Cleaning"
-      case "roof":
-        return "Roof Cleaning"
+      case "deck":
+        return "Deck Cleaning"
       case "patio-walkway":
         return "Patio & Walkway Cleaning"
+      case "roof":
+        return "Roof Cleaning"
       case "commercial":
         return "Commercial Services"
       default:
@@ -164,7 +183,7 @@ export default function GalleryPage() {
       {filterParam && (
         <div className="mt-6 flex justify-center">
           <Link
-            href={`/services#${filterParam === "deck-patio" ? "deck" : filterParam === "patio-walkway" ? "patio-walkway" : filterParam}`}
+            href={`/services#${filterParam === "deck" ? "deck" : filterParam === "patio-walkway" ? "patio-walkway" : filterParam}`}
           >
             <Button variant="outline" className="gap-2">
               <ArrowLeft className="h-4 w-4" /> Back to {getServiceName()}
@@ -178,7 +197,7 @@ export default function GalleryPage() {
           <TabsList className="grid grid-cols-2 md:grid-cols-6">
             <TabsTrigger value="all">All</TabsTrigger>
             <TabsTrigger value="house">Houses</TabsTrigger>
-            <TabsTrigger value="deck-patio">Decks & Patios</TabsTrigger>
+            <TabsTrigger value="deck">Decks</TabsTrigger>
             <TabsTrigger value="patio-walkway">Patios & Walkways</TabsTrigger>
             <TabsTrigger value="roof">Roofs</TabsTrigger>
             <TabsTrigger value="commercial">Commercial</TabsTrigger>
@@ -212,7 +231,7 @@ export default function GalleryPage() {
           </div>
         </TabsContent>
 
-        {["house", "deck-patio", "patio-walkway", "roof", "commercial"].map((category) => (
+        {["house", "deck", "patio-walkway", "roof", "commercial"].map((category) => (
           <TabsContent key={category} value={category} className="mt-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {galleryItems
