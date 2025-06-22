@@ -1,0 +1,70 @@
+HOSE WATER PRESSURE WASHING LLC - COLLAGE PHOTO GUIDE
+=====================================================
+
+COLLAGE FORMATS SUPPORTED:
+==========================
+
+HORIZONTAL COLLAGES (Side-by-Side):
+- Dimensions: 1200x675 pixels (16:9 ratio)
+- Layout: Before on LEFT, After on RIGHT
+- Best for: Wide shots, landscapes, house exteriors
+- File naming: add "orientation: 'horizontal'" in gallery code
+
+VERTICAL COLLAGES (Top-and-Bottom):
+- Dimensions: 800x1067 pixels (3:4 ratio)  
+- Layout: Before on TOP, After on BOTTOM
+- Best for: Tall shots, decks, fences, close-ups
+- File naming: add "orientation: 'vertical'" in gallery code
+
+PHOTO ASSIGNMENTS WITH ORIENTATIONS:
+===================================
+
+HORIZONTAL COLLAGES (Side-by-Side):
+- house-exterior-beforeafter.jpg (wide house shot)
+- wooden-deck-1-beforeafter.jpg (deck overview)
+- wooden-deck-3-beforeafter.jpg (deck wide angle)
+- asphalt-roof-beforeafter.jpg (roof overview)
+- commercial-garage-rental-beforeafter.jpg (building exterior)
+
+VERTICAL COLLAGES (Top-and-Bottom):
+- vinyl-siding-beforeafter.jpg (close-up siding detail)
+- wooden-deck-2-beforeafter.jpg (deck detail shot)
+- patio-beforeafter.jpg (patio detail)
+- vinyl-fence-beforeafter.jpg (fence section)
+
+HOW THE GALLERY ADAPTS:
+=======================
+
+HORIZONTAL PHOTOS:
+✅ Display in 16:9 aspect ratio (wider)
+✅ Label: "Before & After"
+✅ Icon: ↔ (horizontal arrows)
+✅ Perfect for landscape/wide shots
+
+VERTICAL PHOTOS:
+✅ Display in 3:4 aspect ratio (taller)
+✅ Label: "Before/After" (shorter text)
+✅ Icon: ↕ (vertical arrows)
+✅ Perfect for portrait/detail shots
+
+BENEFITS:
+=========
+✅ Flexible layout - use the best format for each photo
+✅ Automatic sizing - gallery adjusts to each photo's orientation
+✅ Visual indicators - users can see the layout type
+✅ Mobile friendly - both formats work great on phones
+✅ Professional look - mixed orientations create visual interest
+
+UPLOAD INSTRUCTIONS:
+===================
+1. Create your collages in either horizontal OR vertical format
+2. Upload with the exact file names listed above
+3. The gallery will automatically detect and display them correctly
+4. Mix and match orientations based on what looks best for each project
+
+EXAMPLE LAYOUT IN GALLERY:
+=========================
+[Wide House Photo] [Tall Siding Photo] [Wide Deck Photo]
+[Tall Fence Photo] [Wide Roof Photo]   [Tall Patio Photo]
+
+This creates a dynamic, professional gallery layout!

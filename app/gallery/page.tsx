@@ -8,61 +8,70 @@ import { ArrowLeft } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
-// Updated gallery data - single photos with before/after combined
+// Updated gallery data - supports both horizontal and vertical collages
 const galleryItems = [
   {
     id: 1,
     category: "house",
     title: "House Exterior",
     photo: "/house-exterior-beforeafter.jpg",
+    orientation: "horizontal", // or "vertical"
   },
   {
     id: 2,
     category: "house",
     title: "Vinyl Siding",
     photo: "/vinyl-siding-beforeafter.jpg",
+    orientation: "vertical",
   },
   {
     id: 3,
     category: "deck-patio",
     title: "Wooden Deck #1",
     photo: "/wooden-deck-1-beforeafter.jpg",
+    orientation: "horizontal",
   },
   {
     id: 4,
     category: "deck-patio",
     title: "Wooden Deck #2",
     photo: "/wooden-deck-2-beforeafter.jpg",
+    orientation: "vertical",
   },
   {
     id: 5,
     category: "deck-patio",
     title: "Wooden Deck #3",
     photo: "/wooden-deck-3-beforeafter.jpg",
+    orientation: "horizontal",
   },
   {
     id: 6,
     category: "deck-patio",
     title: "Patio",
     photo: "/patio-beforeafter.jpg",
+    orientation: "vertical",
   },
   {
     id: 7,
     category: "roof",
     title: "Asphalt Roof",
     photo: "/asphalt-roof-beforeafter.jpg",
+    orientation: "horizontal",
   },
   {
     id: 8,
     category: "fence",
     title: "Vinyl Fence",
     photo: "/vinyl-fence-beforeafter.jpg",
+    orientation: "vertical",
   },
   {
     id: 9,
     category: "commercial",
     title: "Commercial Garage with Rental Unit",
     photo: "/commercial-garage-rental-beforeafter.jpg",
+    orientation: "horizontal",
   },
 ]
 
@@ -97,6 +106,16 @@ export default function GalleryPage() {
       default:
         return "Before & After Gallery"
     }
+  }
+
+  // Function to get the appropriate aspect ratio class
+  const getAspectRatio = (orientation: string) => {
+    return orientation === "vertical" ? "aspect-[3/4]" : "aspect-video"
+  }
+
+  // Function to get the appropriate label position
+  const getLabelText = (orientation: string) => {
+    return orientation === "vertical" ? "Before/After" : "Before & After"
   }
 
   return (
@@ -137,7 +156,7 @@ export default function GalleryPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {galleryItems.map((item) => (
               <div key={item.id} className="flex flex-col gap-4">
-                <div className="relative aspect-video overflow-hidden rounded-md">
+                <div className={`relative ${getAspectRatio(item.orientation)} overflow-hidden rounded-md`}>
                   <Image
                     src={item.photo || "/placeholder.svg"}
                     alt={`${item.title} before and after pressure washing`}
@@ -145,7 +164,11 @@ export default function GalleryPage() {
                     className="object-cover"
                   />
                   <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
-                    Before & After
+                    {getLabelText(item.orientation)}
+                  </div>
+                  {/* Optional: Add orientation indicator */}
+                  <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 text-xs rounded">
+                    {item.orientation === "vertical" ? "↕" : "↔"}
                   </div>
                 </div>
                 <h3 className="text-lg font-medium">{item.title}</h3>
@@ -161,7 +184,7 @@ export default function GalleryPage() {
                 .filter((item) => item.category === category)
                 .map((item) => (
                   <div key={item.id} className="flex flex-col gap-4">
-                    <div className="relative aspect-video overflow-hidden rounded-md">
+                    <div className={`relative ${getAspectRatio(item.orientation)} overflow-hidden rounded-md`}>
                       <Image
                         src={item.photo || "/placeholder.svg"}
                         alt={`${item.title} before and after pressure washing`}
@@ -169,7 +192,11 @@ export default function GalleryPage() {
                         className="object-cover"
                       />
                       <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
-                        Before & After
+                        {getLabelText(item.orientation)}
+                      </div>
+                      {/* Optional: Add orientation indicator */}
+                      <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 text-xs rounded">
+                        {item.orientation === "vertical" ? "↕" : "↔"}
                       </div>
                     </div>
                     <h3 className="text-lg font-medium">{item.title}</h3>
