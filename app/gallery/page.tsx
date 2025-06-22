@@ -16,7 +16,7 @@ const galleryItems = [
     category: "house",
     title: "House Exterior",
     photo: "/house-exterior-beforeafter.jpg",
-    orientation: "horizontal",
+    orientation: "vertical",
   },
   {
     id: 2,
