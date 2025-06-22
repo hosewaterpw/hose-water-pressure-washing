@@ -34,6 +34,7 @@ export default function EstimatePage() {
                     <Input id="email" name="email" type="email" required />
                   </div>
                 </div>
+
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
@@ -53,7 +54,7 @@ export default function EstimatePage() {
                     <select
                       id="stories"
                       name="stories"
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
                       <option value="">Select number of stories</option>
                       <option value="1">1 Story</option>
@@ -69,7 +70,7 @@ export default function EstimatePage() {
                     <select
                       id="exteriorType"
                       name="exteriorType"
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
                       <option value="">Select exterior type</option>
                       <option value="vinyl">Vinyl Siding</option>
@@ -86,78 +87,27 @@ export default function EstimatePage() {
                   <div className="space-y-3">
                     <Label>Services Needed (Select all that apply)</Label>
                     <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                      <div className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          id="house-washing"
-                          name="services"
-                          value="house-washing"
-                          className="h-4 w-4 rounded border-gray-300"
-                        />
-                        <Label htmlFor="house-washing" className="text-sm font-normal">
-                          House Washing
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          id="deck"
-                          name="services"
-                          value="deck"
-                          className="h-4 w-4 rounded border-gray-300"
-                        />
-                        <Label htmlFor="deck" className="text-sm font-normal">
-                          Deck/Patio Cleaning
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          id="roof"
-                          name="services"
-                          value="roof"
-                          className="h-4 w-4 rounded border-gray-300"
-                        />
-                        <Label htmlFor="roof" className="text-sm font-normal">
-                          Roof Cleaning
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          id="fence"
-                          name="services"
-                          value="fence"
-                          className="h-4 w-4 rounded border-gray-300"
-                        />
-                        <Label htmlFor="fence" className="text-sm font-normal">
-                          Fence Washing
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          id="gutters"
-                          name="services"
-                          value="gutters"
-                          className="h-4 w-4 rounded border-gray-300"
-                        />
-                        <Label htmlFor="gutters" className="text-sm font-normal">
-                          Gutter Cleaning
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          id="other"
-                          name="services"
-                          value="other"
-                          className="h-4 w-4 rounded border-gray-300"
-                        />
-                        <Label htmlFor="other" className="text-sm font-normal">
-                          Other
-                        </Label>
-                      </div>
+                      {[
+                        { id: "house-washing", label: "House Washing" },
+                        { id: "deck", label: "Deck/Patio Cleaning" },
+                        { id: "roof", label: "Roof Cleaning" },
+                        { id: "fence", label: "Fence Washing" },
+                        { id: "gutters", label: "Gutter Cleaning" },
+                        { id: "other", label: "Other" },
+                      ].map(({ id, label }) => (
+                        <div key={id} className="flex items-center space-x-2">
+                          <input
+                            type="checkbox"
+                            id={id}
+                            name="services"
+                            value={id}
+                            className="h-4 w-4 rounded border-gray-300"
+                          />
+                          <Label htmlFor={id} className="text-sm font-normal">
+                            {label}
+                          </Label>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -173,7 +123,7 @@ export default function EstimatePage() {
                     name="photos"
                     accept="image/*"
                     multiple
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   />
                 </div>
 
@@ -203,33 +153,28 @@ export default function EstimatePage() {
         <div className="mt-12 space-y-6">
           <h2 className="text-2xl font-bold">Why Get a Free Estimate?</h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 rounded-full bg-primary/10 p-3">
-                <Check className="h-6 w-6 text-primary" />
+            {[
+              {
+                title: "No Obligation",
+                text: "Our estimates are completely free with no obligation to book our services.",
+              },
+              {
+                title: "Accurate Pricing",
+                text: "By providing details about your property, we can give you an accurate price tailored to your needs.",
+              },
+              {
+                title: "Quick Response",
+                text: "We typically respond with estimates within 24-48 hours of receiving your request.",
+              },
+            ].map((item, index) => (
+              <div key={index} className="flex flex-col items-center text-center">
+                <div className="mb-4 rounded-full bg-primary/10 p-3">
+                  <Check className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-medium">{item.title}</h3>
+                <p className="text-sm text-muted-foreground mt-2">{item.text}</p>
               </div>
-              <h3 className="text-lg font-medium">No Obligation</h3>
-              <p className="text-sm text-muted-foreground mt-2">
-                Our estimates are completely free with no obligation to book our services.
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 rounded-full bg-primary/10 p-3">
-                <Check className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-lg font-medium">Accurate Pricing</h3>
-              <p className="text-sm text-muted-foreground mt-2">
-                By providing details about your property, we can give you an accurate price tailored to your needs.
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 rounded-full bg-primary/10 p-3">
-                <Check className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-lg font-medium">Quick Response</h3>
-              <p className="text-sm text-muted-foreground mt-2">
-                We typically respond with estimates within 24-48 hours of receiving your request.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
