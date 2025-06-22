@@ -43,7 +43,7 @@ const galleryItems = [
   {
     id: 5,
     category: "deck",
-    title: "Wooden Deck",
+    title: "Wooden steps",
     photo: "/wooden-deck-1-beforeafter.jpg",
     orientation: "horizontal",
   },
