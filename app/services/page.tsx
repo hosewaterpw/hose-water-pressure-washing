@@ -7,11 +7,12 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Pressure Washing Services North Berwick Maine | House, Patio, Deck, Roof Cleaning",
   description:
-    "Professional pressure washing services in North Berwick Maine and York County. House washing, patio cleaning, deck restoration, roof cleaning, fence washing, and commercial services. Free estimates available.",
+    "Professional pressure washing services in North Berwick Maine and York County. House washing, patio cleaning, deck restoration, roof cleaning, walkway cleaning, and commercial services. Free estimates available.",
   keywords: [
     "pressure washing services North Berwick Maine",
     "house washing North Berwick",
     "patio cleaning service Maine",
+    "walkway cleaning North Berwick",
     "deck restoration North Berwick",
     "roof cleaning service York County",
     "fence washing Maine",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
     description:
-      "Complete pressure washing services including house washing, patio cleaning, deck restoration, and more in North Berwick Maine and York County.",
+      "Complete pressure washing services including house washing, patio cleaning, walkway cleaning, deck restoration, and more in North Berwick Maine and York County.",
   },
 }
 
@@ -61,6 +62,17 @@ export default function ServicesPage() {
               {
                 "@type": "Service",
                 position: 3,
+                name: "Patio and Walkway Cleaning",
+                description:
+                  "Patio and walkway pressure washing services for concrete, stone, and brick surfaces in North Berwick Maine",
+                provider: {
+                  "@type": "LocalBusiness",
+                  name: "Hose Water Pressure Washing LLC",
+                },
+              },
+              {
+                "@type": "Service",
+                position: 4,
                 name: "Commercial Pressure Washing",
                 description:
                   "Commercial pressure washing services for apartment buildings, duplexes, and rental properties in North Berwick Maine",
@@ -177,7 +189,61 @@ export default function ServicesPage() {
                 <Link href="/estimate">
                   <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
                 </Link>
-                <Link href="/gallery?filter=deck">
+                <Link href="/gallery?filter=deck-patio">
+                  <Button variant="outline" className="gap-2">
+                    View Before & After <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Patio & Walkway Cleaning */}
+        <section id="patio-walkway" className="mt-24 scroll-mt-20">
+          <div className="grid gap-8 md:grid-cols-2 items-center">
+            <div className="order-1 md:order-2 relative aspect-video overflow-hidden rounded-lg">
+              <Image
+                src="/patio-walkway-cleaning.png"
+                alt="Patio and walkway cleaning service in North Berwick Maine"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="order-2 md:order-1 space-y-4">
+              <h2 className="text-3xl font-bold">Patio & Walkway Cleaning</h2>
+              <p className="text-gray-500">
+                Our patio and walkway cleaning service restores concrete, stone, and brick surfaces by removing dirt,
+                stains, mold, and algae. We use appropriate pressure settings and techniques to clean without damaging
+                your hardscape surfaces.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-500 font-bold">•</span>
+                  <span>Removes dirt, stains, and organic growth from concrete surfaces</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-500 font-bold">•</span>
+                  <span>Safe for concrete, stone, brick, and paver surfaces</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-500 font-bold">•</span>
+                  <span>Improves safety by removing slippery algae and moss</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-500 font-bold">•</span>
+                  <span>Restores original appearance of outdoor living spaces</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-500 font-bold">•</span>
+                  <span>Also available: fence cleaning for vinyl and metal fences</span>
+                </li>
+              </ul>
+              <div className="flex gap-4">
+                <Link href="/estimate">
+                  <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
+                </Link>
+                <Link href="/gallery?filter=patio-walkway">
                   <Button variant="outline" className="gap-2">
                     View Before & After <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -190,7 +256,7 @@ export default function ServicesPage() {
         {/* Roof Cleaning */}
         <section id="roof" className="mt-24 scroll-mt-20">
           <div className="grid gap-8 md:grid-cols-2 items-center">
-            <div className="order-1 md:order-2 relative aspect-video overflow-hidden rounded-lg">
+            <div className="relative aspect-video overflow-hidden rounded-lg">
               <Image
                 src="/roof-cleaning.png"
                 alt="Roof cleaning service in North Berwick Maine"
@@ -198,7 +264,7 @@ export default function ServicesPage() {
                 className="object-cover"
               />
             </div>
-            <div className="order-2 md:order-1 space-y-4">
+            <div className="space-y-4">
               <h2 className="text-3xl font-bold">Roof Cleaning</h2>
               <p className="text-gray-500">
                 Our roof cleaning service safely removes black streaks, moss, and algae from your roof. We use
@@ -224,56 +290,6 @@ export default function ServicesPage() {
                   <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
                 </Link>
                 <Link href="/gallery?filter=roof">
-                  <Button variant="outline" className="gap-2">
-                    View Before & After <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Fence Washing */}
-        <section id="fence" className="mt-24 scroll-mt-20">
-          <div className="grid gap-8 md:grid-cols-2 items-center">
-            <div className="relative aspect-video overflow-hidden rounded-lg">
-              <Image
-                src="/fence-cleaning.png"
-                alt="Fence washing service in North Berwick Maine"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold">Fence Washing</h2>
-              <p className="text-gray-500">
-                Our fence washing service restores the appearance of vinyl or metal fences by removing dirt, mold,
-                mildew, and algae. We adjust our cleaning techniques based on your fence material to ensure safe and
-                effective cleaning.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Removes dirt, mold, and algae from fence surfaces</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Restores original fence appearance</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Extends fence life and durability</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-500 font-bold">•</span>
-                  <span>Safe for vinyl and metal fence materials</span>
-                </li>
-              </ul>
-              <div className="flex gap-4">
-                <Link href="/estimate">
-                  <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get a Quote</Button>
-                </Link>
-                <Link href="/gallery?filter=fence">
                   <Button variant="outline" className="gap-2">
                     View Before & After <ArrowRight className="h-4 w-4" />
                   </Button>

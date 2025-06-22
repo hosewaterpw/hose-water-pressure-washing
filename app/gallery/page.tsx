@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, X } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
@@ -15,7 +15,7 @@ const galleryItems = [
     category: "house",
     title: "House Exterior",
     photo: "/house-exterior-beforeafter.jpg",
-    orientation: "horizontal", // or "vertical"
+    orientation: "horizontal",
   },
   {
     id: 2,
@@ -61,9 +61,9 @@ const galleryItems = [
   },
   {
     id: 8,
-    category: "fence",
-    title: "Vinyl Fence",
-    photo: "/vinyl-fence-beforeafter.jpg",
+    category: "patio-walkway",
+    title: "Concrete Walkway",
+    photo: "/concrete-walkway-beforeafter.jpg",
     orientation: "vertical",
   },
   {
@@ -78,15 +78,17 @@ const galleryItems = [
 export default function GalleryPage() {
   const searchParams = useSearchParams()
   const [activeTab, setActiveTab] = useState("all")
+  const [selectedImage, setSelectedImage] = useState<(typeof galleryItems)[0] | null>(null)
   const filterParam = searchParams.get("filter")
 
   // Set the active tab based on URL parameter
   useEffect(() => {
-    if (filterParam && ["house", "deck-patio", "roof", "fence", "commercial"].includes(filterParam)) {
+    if (filterParam && ["house", "deck-patio", "roof", "patio-walkway", "commercial"].includes(filterParam)) {
       setActiveTab(filterParam)
     } else if (filterParam === "deck") {
-      // Redirect old "deck" filter to new "deck-patio"
       setActiveTab("deck-patio")
+    } else if (filterParam === "fence") {
+      setActiveTab("patio-walkway")
     }
   }, [filterParam])
 
@@ -99,8 +101,8 @@ export default function GalleryPage() {
         return "Deck & Patio Cleaning"
       case "roof":
         return "Roof Cleaning"
-      case "fence":
-        return "Fence Washing"
+      case "patio-walkway":
+        return "Patio & Walkway Cleaning"
       case "commercial":
         return "Commercial Services"
       default:
@@ -113,10 +115,39 @@ export default function GalleryPage() {
     return orientation === "vertical" ? "aspect-[3/4]" : "aspect-video"
   }
 
-  // Function to get the appropriate label position
+  // Function to get the appropriate label text
   const getLabelText = (orientation: string) => {
     return orientation === "vertical" ? "Before/After" : "Before & After"
   }
+
+  // Handle image click
+  const handleImageClick = (item: (typeof galleryItems)[0]) => {
+    setSelectedImage(item)
+  }
+
+  // Handle modal close
+  const handleCloseModal = () => {
+    setSelectedImage(null)
+  }
+
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleCloseModal()
+      }
+    }
+
+    if (selectedImage) {
+      document.addEventListener("keydown", handleEscape)
+      document.body.style.overflow = "hidden"
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape)
+      document.body.style.overflow = "unset"
+    }
+  }, [selectedImage])
 
   return (
     <div className="container px-4 py-12 md:px-6 md:py-24">
@@ -125,14 +156,16 @@ export default function GalleryPage() {
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{getServiceName()}</h1>
           <p className="max-w-[700px] text-gray-500 md:text-xl">
             See the dramatic difference our pressure washing services can make on properties throughout our service
-            area.
+            area. Click any photo to view it larger.
           </p>
         </div>
       </div>
 
       {filterParam && (
         <div className="mt-6 flex justify-center">
-          <Link href={`/services#${filterParam === "deck-patio" ? "deck" : filterParam}`}>
+          <Link
+            href={`/services#${filterParam === "deck-patio" ? "deck" : filterParam === "patio-walkway" ? "patio-walkway" : filterParam}`}
+          >
             <Button variant="outline" className="gap-2">
               <ArrowLeft className="h-4 w-4" /> Back to {getServiceName()}
             </Button>
@@ -146,8 +179,8 @@ export default function GalleryPage() {
             <TabsTrigger value="all">All</TabsTrigger>
             <TabsTrigger value="house">Houses</TabsTrigger>
             <TabsTrigger value="deck-patio">Decks & Patios</TabsTrigger>
+            <TabsTrigger value="patio-walkway">Patios & Walkways</TabsTrigger>
             <TabsTrigger value="roof">Roofs</TabsTrigger>
-            <TabsTrigger value="fence">Fences</TabsTrigger>
             <TabsTrigger value="commercial">Commercial</TabsTrigger>
           </TabsList>
         </div>
@@ -156,7 +189,10 @@ export default function GalleryPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {galleryItems.map((item) => (
               <div key={item.id} className="flex flex-col gap-4">
-                <div className={`relative ${getAspectRatio(item.orientation)} overflow-hidden rounded-md`}>
+                <div
+                  className={`relative ${getAspectRatio(item.orientation)} overflow-hidden rounded-md cursor-pointer hover:opacity-90 transition-opacity`}
+                  onClick={() => handleImageClick(item)}
+                >
                   <Image
                     src={item.photo || "/placeholder.svg"}
                     alt={`${item.title} before and after pressure washing`}
@@ -166,9 +202,8 @@ export default function GalleryPage() {
                   <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
                     {getLabelText(item.orientation)}
                   </div>
-                  {/* Optional: Add orientation indicator */}
                   <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 text-xs rounded">
-                    {item.orientation === "vertical" ? "↕" : "↔"}
+                    Click to enlarge
                   </div>
                 </div>
                 <h3 className="text-lg font-medium">{item.title}</h3>
@@ -177,14 +212,17 @@ export default function GalleryPage() {
           </div>
         </TabsContent>
 
-        {["house", "deck-patio", "roof", "fence", "commercial"].map((category) => (
+        {["house", "deck-patio", "patio-walkway", "roof", "commercial"].map((category) => (
           <TabsContent key={category} value={category} className="mt-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {galleryItems
                 .filter((item) => item.category === category)
                 .map((item) => (
                   <div key={item.id} className="flex flex-col gap-4">
-                    <div className={`relative ${getAspectRatio(item.orientation)} overflow-hidden rounded-md`}>
+                    <div
+                      className={`relative ${getAspectRatio(item.orientation)} overflow-hidden rounded-md cursor-pointer hover:opacity-90 transition-opacity`}
+                      onClick={() => handleImageClick(item)}
+                    >
                       <Image
                         src={item.photo || "/placeholder.svg"}
                         alt={`${item.title} before and after pressure washing`}
@@ -194,9 +232,8 @@ export default function GalleryPage() {
                       <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
                         {getLabelText(item.orientation)}
                       </div>
-                      {/* Optional: Add orientation indicator */}
                       <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 text-xs rounded">
-                        {item.orientation === "vertical" ? "↕" : "↔"}
+                        Click to enlarge
                       </div>
                     </div>
                     <h3 className="text-lg font-medium">{item.title}</h3>
@@ -206,6 +243,36 @@ export default function GalleryPage() {
           </TabsContent>
         ))}
       </Tabs>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" onClick={handleCloseModal}>
+          <div className="relative max-w-6xl max-h-[90vh] w-full h-full flex items-center justify-center">
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <div
+              className={`relative ${getAspectRatio(selectedImage.orientation)} w-full max-w-4xl`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={selectedImage.photo || "/placeholder.svg"}
+                alt={`${selectedImage.title} before and after pressure washing - enlarged view`}
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-lg">
+              <h3 className="text-lg font-medium text-center">{selectedImage.title}</h3>
+              <p className="text-sm text-gray-300 text-center">{getLabelText(selectedImage.orientation)}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* CTA Section */}
       <section className="mt-24 py-12 px-6 bg-[#333333] text-white rounded-lg">

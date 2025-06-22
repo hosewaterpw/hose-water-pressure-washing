@@ -1,0 +1,82 @@
+HOSE WATER PRESSURE WASHING LLC - UPDATED SERVICE & PHOTO GUIDE
+===============================================================
+
+SERVICE CHANGES MADE:
+====================
+✅ Changed "Fence Washing" to "Patio & Walkway Cleaning"
+✅ Added fence cleaning mention in patio/walkway section
+✅ Updated gallery categories accordingly
+✅ Added photo modal popup functionality
+
+NEW SERVICE STRUCTURE:
+=====================
+1. House Washing Services
+2. Deck Cleaning & Restoration  
+3. Patio & Walkway Cleaning (includes fence cleaning mention)
+4. Roof Cleaning
+5. Commercial Pressure Washing Services
+
+UPDATED PHOTO REQUIREMENTS:
+==========================
+
+MAIN SERVICE HEADERS:
+- house-washing.png
+- deck-cleaning.png
+- patio-walkway-cleaning.png (NEW - replaces fence-cleaning.png)
+- roof-cleaning.png
+- commercial-cleaning.png
+
+GALLERY PHOTOS WITH NEW CATEGORIES:
+==================================
+
+HOUSE WASHING:
+- house-exterior-beforeafter.jpg (horizontal)
+- vinyl-siding-beforeafter.jpg (vertical)
+
+DECKS & PATIOS:
+- wooden-deck-1-beforeafter.jpg (horizontal)
+- wooden-deck-2-beforeafter.jpg (vertical)
+- wooden-deck-3-beforeafter.jpg (horizontal)
+- patio-beforeafter.jpg (vertical)
+
+PATIOS & WALKWAYS (NEW CATEGORY):
+- concrete-walkway-beforeafter.jpg (vertical)
+- (You can add more patio/walkway photos here)
+
+ROOFS:
+- asphalt-roof-beforeafter.jpg (horizontal)
+
+COMMERCIAL:
+- commercial-garage-rental-beforeafter.jpg (horizontal)
+
+NEW GALLERY FEATURES:
+====================
+✅ Click any photo to view it larger in a modal popup
+✅ Modal shows full-size image with title
+✅ Click outside modal or press Escape to close
+✅ "Click to enlarge" indicator on each photo
+✅ Smooth hover effects
+
+GALLERY CATEGORIES:
+==================
+- All (shows everything)
+- Houses (house washing projects)
+- Decks & Patios (deck and patio work)
+- Patios & Walkways (concrete/stone surfaces)
+- Roofs (roof cleaning)
+- Commercial (commercial projects)
+
+FENCE CLEANING MENTION:
+======================
+Fence cleaning is now mentioned in the "Patio & Walkway Cleaning" section:
+"Also available: fence cleaning for vinyl and metal fences"
+
+This keeps fence cleaning as a service while making patios/walkways the main focus.
+
+UPLOAD CHECKLIST:
+================
+□ patio-walkway-cleaning.png (new service header image)
+□ concrete-walkway-beforeafter.jpg (new gallery photo)
+□ All other photos from previous list
+□ Test gallery modal functionality
+□ Verify all service links work correctly
