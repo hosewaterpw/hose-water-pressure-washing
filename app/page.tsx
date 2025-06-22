@@ -179,11 +179,11 @@ export default function Home() {
                 serviceId="roof"
               />
               <ServiceCard
-                title="Fence Washing"
-                description="Restore the appearance of wooden, vinyl, or metal fences with our fence washing service."
+                title="Patio & Walkway Cleaning"
+                description="Restore concrete, stone, and brick patios and walkways by removing dirt, stains, and organic growth."
                 icon="square"
-                imageSrc="/fence-cleaning.png"
-                serviceId="fence"
+                imageSrc="/patio-walkway-cleaning.png"
+                serviceId="patio-walkway"
               />
               <ServiceCard
                 title="Commercial Pressure Washing"
@@ -283,6 +283,59 @@ export default function Home() {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">Our Service Area</h2>
                 <p className="max-w-[700px] text-gray-500 text-base sm:text-lg md:text-xl leading-relaxed">
                   We provide professional pressure washing services throughout Southern Maine and New Hampshire.
+                </p>
+              </div>
+
+              {/* Service Area Towns */}
+              <div className="mt-8 max-w-4xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4 text-center">Maine Communities</h3>
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                      <span>North Berwick</span>
+                      <span>South Berwick</span>
+                      <span>Berwick</span>
+                      <span>Sanford</span>
+                      <span>Eliot</span>
+                      <span>Lebanon</span>
+                      <span>York Harbor</span>
+                      <span>Kennebunk</span>
+                      <span>Kennebunkport</span>
+                      <span>Hollis Center</span>
+                      <span>Saco</span>
+                      <span>Old Orchard Beach</span>
+                      <span>Newfield</span>
+                      <span>Limington</span>
+                      <span>Waterboro</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4 text-center">New Hampshire Communities</h3>
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                      <span>Portsmouth</span>
+                      <span>New Castle</span>
+                      <span>Greenland</span>
+                      <span>Dover</span>
+                      <span>Durham</span>
+                      <span>Milton</span>
+                      <span>Lee</span>
+                      <span>Barrington</span>
+                      <span>Farmington</span>
+                      <span>Rye</span>
+                      <span>Nottingham</span>
+                      <span>Northwood</span>
+                      <span>Epping</span>
+                      <span>Strafford</span>
+                      <span>Fremont</span>
+                      <span>Wakefield</span>
+                      <span>Exeter</span>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-xs text-gray-400 mt-6 leading-relaxed">
+                  Professional pressure washing services available in all listed communities and surrounding areas. Contact us to confirm service availability in your specific location.
                 </p>
               </div>
             </div>

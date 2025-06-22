@@ -43,7 +43,7 @@ export default function ServiceCard({ title, description, icon, imageSrc, servic
         <p className="text-gray-500 text-sm sm:text-base leading-relaxed flex-grow">{description}</p>
         {serviceId && (
           <div className="mt-4 flex flex-col sm:flex-row gap-2">
-            <Link href={`/services#${serviceId}`} className="flex-1">
+            <Link href={`/services#${serviceId === "patio-walkway" ? "patio-walkway" : serviceId}`} className="flex-1">
               <Button variant="outline" size="sm" className="w-full text-xs sm:text-sm">
                 Learn More
               </Button>

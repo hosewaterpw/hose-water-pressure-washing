@@ -55,8 +55,8 @@ export default function Footer() {
               <Link href="/services#roof" className="text-sm hover:text-yellow-400 transition-colors">
                 Roof Cleaning
               </Link>
-              <Link href="/services#fence" className="text-sm hover:text-yellow-400 transition-colors">
-                Fence Washing
+              <Link href="/services#patio-walkway" className="text-sm hover:text-yellow-400 transition-colors">
+                Patio & Walkway Cleaning
               </Link>
               <Link href="/services#commercial" className="text-sm hover:text-yellow-400 transition-colors">
                 Commercial Services
