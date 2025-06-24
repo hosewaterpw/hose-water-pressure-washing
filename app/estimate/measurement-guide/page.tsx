@@ -33,7 +33,7 @@ export default function MeasurementGuidePage() {
           </p>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
-              <span className="font-medium">Phone:</span> (555) 123-4567
+              <span className="font-medium">Phone:</span> (207) 370-8667
             </li>
             <li className="flex items-center gap-2">
               <span className="font-medium">Email:</span> info@hosewaterpw.com
