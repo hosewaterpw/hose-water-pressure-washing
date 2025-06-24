@@ -102,11 +102,10 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="text-xl font-bold">Phone</h3>
-              <p className="text-gray-500 mt-1">(555) 123-4567</p>
+              <p className="text-gray-500 mt-1">(207) 370-8667</p>
               <p className="text-sm text-muted-foreground mt-1">
-                Monday - Friday: 8am - 6pm
+                Monday - Saturday: 9am - 5pm
                 <br />
-                Saturday: 9am - 4pm
               </p>
             </div>
           </div>
@@ -130,7 +129,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold">Service Area</h3>
               <p className="text-gray-500 mt-1">Greater Metropolitan Area</p>
               <p className="text-sm text-muted-foreground mt-1">
-                We service residential and commercial properties within a 50-mile radius
+                We service residential and commercial properties within a 30-mile radius
               </p>
             </div>
           </div>
