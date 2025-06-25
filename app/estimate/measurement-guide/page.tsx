@@ -16,7 +16,6 @@ export default function MeasurementGuidePage() {
       </div>
       <div className="mx-auto mt-12 max-w-3xl">
         <MeasurementGuide />
-
         <div className="mt-8 flex justify-center">
           <Link href="/estimate">
             <Button className="gap-2">
@@ -24,7 +23,6 @@ export default function MeasurementGuidePage() {
             </Button>
           </Link>
         </div>
-
         <div className="mt-12 p-6 bg-muted/30 rounded-lg">
           <h2 className="text-xl font-bold mb-4">Need Help?</h2>
           <p className="mb-4">
