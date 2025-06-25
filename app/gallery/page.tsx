@@ -16,7 +16,7 @@ const galleryItems = [
     category: "house",
     title: "House Exterior",
     photo: "/house-exterior-beforeafter.jpg",
-    orientation: "horizontal",
+    orientation: "vertical",
   },
   {
     id: 2,
@@ -74,7 +74,7 @@ const galleryItems = [
     category: "patio-walkway",
     title: "Concrete Walkway",
     photo: "/concrete-walkway-beforeafter.jpg",
-    orientation: "vertical",
+    orientation: "horizontal",
   },
   // Solar Panels & Windows (2 photos)
   {
@@ -97,7 +97,7 @@ const galleryItems = [
     category: "roof",
     title: "Asphalt Roof",
     photo: "/asphalt-roof-beforeafter.jpg",
-    orientation: "horizontal",
+    orientation: "vertical",
   },
   // Commercial (1 photo)
   {
