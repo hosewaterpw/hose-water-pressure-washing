@@ -197,20 +197,20 @@ export default function Home() {
                 serviceId="roof"
               />
               <ServiceCard
-                title="Patio & Walkway Cleaning"
-                description="Restore concrete, stone, and brick patios and walkways by removing dirt, stains, and organic growth."
-                icon="square"
-                imageSrc="/patio-walkway-cleaning.png"
-                orientation="vertical"
-                serviceId="patio-walkway"
-              />
-              <ServiceCard
                 title="Commercial Pressure Washing"
                 description="Maintain your business property's appearance and safety with our commercial pressure washing services."
                 icon="building"
                 imageSrc="/commercial-cleaning.png"
                 orientation="horizontal"
-                serviceId="commercial"
+                serviceId="commercial"  
+              />
+              <ServiceCard
+                title="Patio & Walkway Cleaning"
+                description="Restore concrete, stone, and brick patios and walkways by removing dirt, stains, and organic growth."
+                icon="square"
+                imageSrc="/patio-walkway-cleaning.png"
+                orientation="vertical"
+                serviceId="patio-walkway" 
               />
             </div>
           </div>
