@@ -14,7 +14,6 @@ export default function MeasurementGuidePage() {
           </p>
         </div>
       </div>
-
       <div className="mx-auto mt-12 max-w-3xl">
         <MeasurementGuide />
 
