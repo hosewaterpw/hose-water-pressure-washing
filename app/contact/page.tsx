@@ -26,7 +26,7 @@ export default function ContactPage() {
             <form
               name="contact-form"
               method="POST"
-              action="/contact-success/"
+              action="/contact-success"
               data-netlify="true"
               netlify-honeypot="bot-field"
               className="space-y-6"
@@ -34,7 +34,7 @@ export default function ContactPage() {
               <input type="hidden" name="form-name" value="contact-form" />
               <p className="hidden">
                 <label>
-                  Don’t fill this out if you&apos;re human: <input name="bot-field" />
+                  Don't fill this out if you&apos;re human: <input name="bot-field" />
                 </label>
               </p>
               <div className="space-y-4">

@@ -26,7 +26,7 @@ export default function EstimatePage() {
             <form
               name="estimate-form"
               method="POST"
-              action="/estimate-success/"
+              action="/estimate-success"
               encType="multipart/form-data"
               data-netlify="true"
               netlify-honeypot="bot-field"
@@ -98,7 +98,7 @@ export default function EstimatePage() {
                     </select>
                   </div>
 
-                  {/* New Exterior House Dimensions Section */}
+                  {/* Exterior House Dimensions Section - Removed Average Wall Height */}
                   <div className="space-y-4 p-4 bg-white/50 rounded-md border border-gray-200">
                     <div className="flex items-center justify-between">
                       <h4 className="text-base font-medium">Exterior House Dimensions (Optional)</h4>
@@ -136,21 +136,6 @@ export default function EstimatePage() {
                           max="200"
                         />
                       </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="wallHeight">Average Wall Height (feet)</Label>
-                      <Input
-                        id="wallHeight"
-                        name="wallHeight"
-                        type="number"
-                        placeholder="e.g. 10 (per story)"
-                        min="1"
-                        max="50"
-                      />
-                      <p className="text-xs text-muted-foreground">
-                        Typical single story: 8-12 feet, Two story: 16-24 feet total
-                      </p>
                     </div>
                   </div>
 

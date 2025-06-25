@@ -18,7 +18,7 @@ export default function MeasurementGuide() {
               <div className="space-y-4">
                 <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg border">
                   <Image
-                    src="/placeholder.svg?height=400&width=600"
+                    src="/house-measurement-diagram.png"
                     alt="House measurement diagram showing front width, side width, and height"
                     fill
                     className="object-contain"
@@ -51,15 +51,10 @@ export default function MeasurementGuide() {
             <CardContent className="p-4">
               <div className="space-y-4">
                 <h4 className="font-medium text-lg">Tools You Can Use:</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="relative h-16 w-16 overflow-hidden rounded-md border">
-                      <Image
-                        src="/placeholder.svg?height=64&width=64"
-                        alt="Measuring tape"
-                        fill
-                        className="object-contain"
-                      />
+                    <div className="rounded-full bg-primary/10 p-2 mt-1">
+                      <span className="text-primary font-bold text-sm">•</span>
                     </div>
                     <div>
                       <h5 className="font-medium">Measuring Tape</h5>
@@ -69,50 +64,13 @@ export default function MeasurementGuide() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="relative h-16 w-16 overflow-hidden rounded-md border">
-                      <Image
-                        src="/placeholder.svg?height=64&width=64"
-                        alt="Laser measure"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <div>
-                      <h5 className="font-medium">Laser Measure</h5>
-                      <p className="text-sm text-muted-foreground">
-                        If available, a laser measure can make the job easier and more accurate.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="relative h-16 w-16 overflow-hidden rounded-md border">
-                      <Image
-                        src="/placeholder.svg?height=64&width=64"
-                        alt="Smartphone app"
-                        fill
-                        className="object-contain"
-                      />
+                    <div className="rounded-full bg-primary/10 p-2 mt-1">
+                      <span className="text-primary font-bold text-sm">•</span>
                     </div>
                     <div>
                       <h5 className="font-medium">Smartphone Apps</h5>
                       <p className="text-sm text-muted-foreground">
                         Several free apps can help measure distances using your phone's camera.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="relative h-16 w-16 overflow-hidden rounded-md border">
-                      <Image
-                        src="/placeholder.svg?height=64&width=64"
-                        alt="Yardstick or ruler"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <div>
-                      <h5 className="font-medium">Yardstick or Ruler</h5>
-                      <p className="text-sm text-muted-foreground">
-                        For smaller measurements or if no tape measure is available.
                       </p>
                     </div>
                   </div>
@@ -135,7 +93,7 @@ export default function MeasurementGuide() {
                     <div>
                       <h5 className="font-medium">Can't reach the top?</h5>
                       <p className="text-sm text-muted-foreground">
-                        Each house is differen't but averages are 10ft per story. So two storys is 20ft. 
+                        Each house is different but averages are 10ft per story. So two storys is 20ft.
                       </p>
                     </div>
                   </li>
