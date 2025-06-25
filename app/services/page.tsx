@@ -50,7 +50,7 @@ const services = [
     id: "deck",
     title: "Deck Cleaning & Restoration",
     image: "/deck-cleaning.png",
-    orientation: "vertical",
+    orientation: "horizontal",
     description:
       "Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew and other organic growth. We carefully adjust our pressure washing techniques based on the material of your deck to ensure safe and effective cleaning.",
     features: [
@@ -98,7 +98,7 @@ const services = [
     id: "roof",
     title: "Roof Cleaning",
     image: "/roof-cleaning.png",
-    orientation: "vertical",
+    orientation: "horizontal",
     description:
       "Our roof cleaning service safely removes black streaks, moss, and algae from your roof. We use low-pressure washing techniques and appropriate cleaning solutions to protect your roof while effectively removing unsightly growth and stains.",
     features: [

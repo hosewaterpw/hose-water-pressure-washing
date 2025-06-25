@@ -1,6 +1,7 @@
 "use client"
 
 import { Check } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -22,7 +23,21 @@ export default function EstimatePage() {
       <div className="mx-auto mt-12 max-w-3xl">
         <Card>
           <CardContent className="p-6">
-            <form action="/api/estimate" method="POST" encType="multipart/form-data" className="space-y-6">
+            <form
+              name="estimate-form"
+              method="POST"
+              action="/estimate-success/"
+              encType="multipart/form-data"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="estimate-form" />
+              <p className="hidden">
+                <label>
+                  Don't fill this out if you&apos;re human: <input name="bot-field" />
+                </label>
+              </p>
               <div className="space-y-4">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
@@ -83,6 +98,62 @@ export default function EstimatePage() {
                     </select>
                   </div>
 
+                  {/* New Exterior House Dimensions Section */}
+                  <div className="space-y-4 p-4 bg-white/50 rounded-md border border-gray-200">
+                    <div className="flex items-center justify-between">
+                      <h4 className="text-base font-medium">Exterior House Dimensions (Optional)</h4>
+                      <Link href="/estimate/measurement-guide" target="_blank" rel="noopener noreferrer">
+                        <Button type="button" variant="outline" size="sm" className="text-xs">
+                          Measurement Guide
+                        </Button>
+                      </Link>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Providing approximate dimensions helps us give you a more accurate estimate. Don't worry if you're
+                      not sure - we can always adjust later!
+                    </p>
+
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      <div className="space-y-2">
+                        <Label htmlFor="houseLength">House Length (feet)</Label>
+                        <Input
+                          id="houseLength"
+                          name="houseLength"
+                          type="number"
+                          placeholder="e.g. 40"
+                          min="1"
+                          max="200"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="houseWidth">House Width (feet)</Label>
+                        <Input
+                          id="houseWidth"
+                          name="houseWidth"
+                          type="number"
+                          placeholder="e.g. 30"
+                          min="1"
+                          max="200"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="wallHeight">Average Wall Height (feet)</Label>
+                      <Input
+                        id="wallHeight"
+                        name="wallHeight"
+                        type="number"
+                        placeholder="e.g. 10 (per story)"
+                        min="1"
+                        max="50"
+                      />
+                      <p className="text-xs text-muted-foreground">
+                        Typical single story: 8-12 feet, Two story: 16-24 feet total
+                      </p>
+                    </div>
+                  </div>
+
                   <div className="space-y-3">
                     <Label>Services Needed (Select all that apply)</Label>
                     <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -108,6 +179,18 @@ export default function EstimatePage() {
                         />
                         <Label htmlFor="deck" className="text-sm font-normal">
                           Deck/Patio Cleaning
+                        </Label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <input
+                          type="checkbox"
+                          id="solar-window"
+                          name="services"
+                          value="solar-window"
+                          className="h-4 w-4 rounded border-gray-300"
+                        />
+                        <Label htmlFor="solar-window" className="text-sm font-normal">
+                          Solar Panel/Window Cleaning
                         </Label>
                       </div>
                       <div className="flex items-center space-x-2">

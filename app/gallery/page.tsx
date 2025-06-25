@@ -16,7 +16,7 @@ const galleryItems = [
     category: "house",
     title: "House Exterior",
     photo: "/house-exterior-beforeafter.jpg",
-    orientation: "vertical",
+    orientation: "horizontal",
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const galleryItems = [
   {
     id: 5,
     category: "deck",
-    title: "Wooden Steps",
+    title: "Wooden Deck",
     photo: "/wooden-deck-1-beforeafter.jpg",
     orientation: "horizontal",
   },
@@ -74,7 +74,7 @@ const galleryItems = [
     category: "patio-walkway",
     title: "Concrete Walkway",
     photo: "/concrete-walkway-beforeafter.jpg",
-    orientation: "horizontal",
+    orientation: "vertical",
   },
   // Solar Panels & Windows (2 photos)
   {
@@ -89,7 +89,7 @@ const galleryItems = [
     category: "solar-window",
     title: "Exterior Window Cleaning",
     photo: "/exterior-window-beforeafter.jpg",
-    orientation: "horizontal",
+    orientation: "vertical",
   },
   // Roofs (1 photo)
   {
@@ -97,7 +97,7 @@ const galleryItems = [
     category: "roof",
     title: "Asphalt Roof",
     photo: "/asphalt-roof-beforeafter.jpg",
-    orientation: "vertical",
+    orientation: "horizontal",
   },
   // Commercial (1 photo)
   {

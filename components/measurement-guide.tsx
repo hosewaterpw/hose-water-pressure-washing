@@ -135,7 +135,7 @@ export default function MeasurementGuide() {
                     <div>
                       <h5 className="font-medium">Can't reach the top?</h5>
                       <p className="text-sm text-muted-foreground">
-                        Count rows of bricks (each row is typically 8 inches) or siding panels to estimate height.
+                        Each house is differen't but averages are 10ft per story. So two storys is 20ft. 
                       </p>
                     </div>
                   </li>

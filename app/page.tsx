@@ -179,7 +179,7 @@ export default function Home() {
                 description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
                 icon="layout"
                 imageSrc="/deck-cleaning.png"
-                orientation="vertical"
+                orientation="horizontal"
                 serviceId="deck"
               />
               <ServiceCard
@@ -195,16 +195,8 @@ export default function Home() {
                 description="Safely remove black streaks, moss, and algae from your roof with our professional roof cleaning."
                 icon="home"
                 imageSrc="/roof-cleaning.png"
-                orientation="vertical"
-                serviceId="roof"
-              />
-              <ServiceCard
-                title="Commercial Pressure Washing"
-                description="Maintain your business property's appearance and safety with our commercial pressure washing services."
-                icon="building"
-                imageSrc="/commercial-cleaning.png"
                 orientation="horizontal"
-                serviceId="commercial"
+                serviceId="roof"
               />
               <ServiceCard
                 title="Patio & Walkway Cleaning"
@@ -213,6 +205,14 @@ export default function Home() {
                 imageSrc="/patio-walkway-cleaning.png"
                 orientation="vertical"
                 serviceId="patio-walkway"
+              />
+              <ServiceCard
+                title="Commercial Pressure Washing"
+                description="Maintain your business property's appearance and safety with our commercial pressure washing services."
+                icon="building"
+                imageSrc="/commercial-cleaning.png"
+                orientation="horizontal"
+                serviceId="commercial"
               />
             </div>
           </div>
