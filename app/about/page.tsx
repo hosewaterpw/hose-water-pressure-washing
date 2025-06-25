@@ -8,8 +8,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "About Jonathan Bilodeau | Owner of Hose Water Pressure Washing LLC",
   description:
-    "Meet Jonathan Bilodeau, owner of Hose Water Pressure Washing LLC. Family-owned pressure washing business serving throughout
-              Southern Maine and New Hampshire since 2022. Personal service, honest work, quality results.",
+    "Meet Jonathan Bilodeau, owner of Hose Water Pressure Washing LLC. Family-owned pressure washing business serving throughout Southern Maine and New Hampshire since 2022. Personal service, honest work, quality results.",
   keywords: [
     "Jonathan Bilodeau",
     "Hose Water Pressure Washing owner",
