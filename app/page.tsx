@@ -114,9 +114,7 @@ export default function Home() {
                     Professional Pressure Washing Services
                   </h1>
                   <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-[600px] mx-auto lg:mx-0">
-                    Transform your property with our expert pressure washing services. We make the dirty surfaces of
-                    your home look brand new again. Family-owned and operated since 2022, serving residential and
-                    commercial properties throughout southern maine and new hampshire.
+                    At Hose Water Pressure Washing, we restore the beauty of your home or business—removing years of dirt, grime, and buildup to leave surfaces looking like new. Family-owned and operated since 2022, we proudly serve residential and commercial clients across Southern Maine and New Hampshire.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center lg:items-start">
@@ -176,7 +174,7 @@ export default function Home() {
               />
               <ServiceCard
                 title="Deck Cleaning"
-                description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
+                description="Revitalize your outdoor deck spaces and remove organic growth with our professional deck cleaning service."
                 icon="layout"
                 imageSrc="/deck-cleaning.png"
                 orientation="horizontal"
@@ -240,7 +238,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold mb-2">Experienced Professionals</h3>
                   <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                    Our team has years of experience in the pressure washing industry serving York County Maine
+                    Jonathan has years of experience in the pressure washing industry serving York County Maine
                     residents.
                   </p>
                 </CardContent>
