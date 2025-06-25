@@ -195,8 +195,16 @@ export default function Home() {
                 description="Safely remove black streaks, moss, and algae from your roof with our professional roof cleaning."
                 icon="home"
                 imageSrc="/roof-cleaning.png"
-                orientation="horizontal"
+                orientation="vertical"
                 serviceId="roof"
+              />
+              <ServiceCard
+                title="Commercial Pressure Washing"
+                description="Maintain your business property's appearance and safety with our commercial pressure washing services."
+                icon="building"
+                imageSrc="/commercial-cleaning.png"
+                orientation="horizontal"
+                serviceId="commercial"  
               />
               <ServiceCard
                 title="Patio & Walkway Cleaning"
@@ -205,14 +213,7 @@ export default function Home() {
                 imageSrc="/patio-walkway-cleaning.png"
                 orientation="vertical"
                 serviceId="patio-walkway"
-              />
-              <ServiceCard
-                title="Commercial Pressure Washing"
-                description="Maintain your business property's appearance and safety with our commercial pressure washing services."
-                icon="building"
-                imageSrc="/commercial-cleaning.png"
-                orientation="horizontal"
-                serviceId="commercial"
+    
               />
             </div>
           </div>
