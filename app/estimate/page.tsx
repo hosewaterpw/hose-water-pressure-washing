@@ -51,9 +51,32 @@ export default function EstimatePage() {
                     <Label htmlFor="phone">Phone Number</Label>
                     <Input id="phone" name="phone" type="tel" required />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="address">Property Address</Label>
-                    <Input id="address" name="address" required />
+                </div>
+
+                {/* Property Address Section */}
+                <div className="space-y-4 p-4 bg-muted/30 rounded-lg">
+                  <h3 className="text-lg font-medium">Property Address</h3>
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="streetAddress">Street Address</Label>
+                      <Input id="streetAddress" name="streetAddress" placeholder="123 Main Street" required />
+                    </div>
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      <div className="space-y-2">
+                        <Label htmlFor="city">City</Label>
+                        <Input id="city" name="city" placeholder="North Berwick" required />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="zipCode">ZIP Code</Label>
+                        <Input
+                          id="zipCode"
+                          name="zipCode"
+                          placeholder="03906"
+                          pattern="[0-9]{5}(-[0-9]{4})?"
+                          required
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
 
