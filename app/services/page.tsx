@@ -55,7 +55,7 @@ const services = [
       "Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew and other organic growth. We carefully adjust our pressure washing techniques based on the material of your deck to ensure safe and effective cleaning.",
     features: [
       "Removes dirt, mold, and weathering from deck surfaces",
-      "Safe for wood, composite, and stone deck surfaces",
+      "Safe for wood and composite style deck surfaces",
       "Prepares deck surfaces for staining or sealing",
       "Extends the life of your outdoor deck spaces",
     ],
@@ -73,7 +73,7 @@ const services = [
       "Safe for concrete, stone, brick, and paver surfaces",
       "Improves safety by removing slippery algae and moss",
       "Restores original appearance of outdoor living spaces",
-      "Also available: fence cleaning for vinyl and metal fences",
+      "Also available: Fence cleaning for vinyl and metal",
     ],
     galleryFilter: "patio-walkway",
   },
