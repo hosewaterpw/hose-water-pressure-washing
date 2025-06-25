@@ -35,27 +35,7 @@ export default function MeasurementGuide() {
                       <strong>Side Width:</strong> Measure the depth of your house from the front corner to the back
                       corner (how deep your house is).
                     </li>
-                    <li>
-                      <strong>Wall Height:</strong> For each story, measure from the ground (or floor) to where the wall
-                      meets the roof or ceiling.
-                    </li>
-                  </ol>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="tools" className="mt-4">
-          <Card>
-            <CardContent className="p-4">
-              <div className="space-y-4">
-                <h4 className="font-medium text-lg">Tools You Can Use:</h4>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="rounded-full bg-primary/10 p-2 mt-1">
-                      <span className="text-primary font-bold text-sm">•</span>
-                    </div>
+                                    </div>
                     <div>
                       <h5 className="font-medium">Measuring Tape</h5>
                       <p className="text-sm text-muted-foreground">

@@ -1,5 +1,3 @@
-"use client"
-
 import { Check } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -24,15 +22,14 @@ export default function EstimatePage() {
         <Card>
           <CardContent className="p-6">
             <form
-              name="estimate-form"
+              name="estimate"
               method="POST"
               action="/estimate-success"
-              encType="multipart/form-data"
               data-netlify="true"
               netlify-honeypot="bot-field"
               className="space-y-6"
             >
-              <input type="hidden" name="form-name" value="estimate-form" />
+              <input type="hidden" name="form-name" value="estimate" />
               <p className="hidden">
                 <label>
                   Don't fill this out if you&apos;re human: <input name="bot-field" />
@@ -98,7 +95,6 @@ export default function EstimatePage() {
                     </select>
                   </div>
 
-                  {/* Exterior House Dimensions Section - Removed Average Wall Height */}
                   <div className="space-y-4 p-4 bg-white/50 rounded-md border border-gray-200">
                     <div className="flex items-center justify-between">
                       <h4 className="text-base font-medium">Exterior House Dimensions (Optional)</h4>
@@ -228,21 +224,6 @@ export default function EstimatePage() {
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="space-y-3">
-                  <Label>Upload a Photo of Your House (Optional)</Label>
-                  <p className="text-sm text-muted-foreground">
-                    A photo helps us provide a more accurate estimate. You can upload a photo from the street view or
-                    from Google Maps.
-                  </p>
-                  <input
-                    type="file"
-                    name="photos"
-                    accept="image/*"
-                    multiple
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  />
                 </div>
 
                 <div className="space-y-2">

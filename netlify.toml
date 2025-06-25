@@ -8,15 +8,19 @@
 [build.environment]
   NEXT_PRIVATE_TARGET = "server"
 
-# Static file serving for success pages
+# Form redirects
 [[redirects]]
   from = "/contact-success"
   to = "/contact-success.html"
   status = 200
-  force = false
 
 [[redirects]]
   from = "/estimate-success"  
   to = "/estimate-success.html"
   status = 200
-  force = false
+
+# Catch-all redirect for Next.js
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,5 +1,3 @@
-"use client"
-
 import { Mail, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -24,14 +22,14 @@ export default function ContactPage() {
         <Card>
           <CardContent className="p-6">
             <form
-              name="contact-form"
+              name="contact"
               method="POST"
               action="/contact-success"
               data-netlify="true"
               netlify-honeypot="bot-field"
               className="space-y-6"
             >
-              <input type="hidden" name="form-name" value="contact-form" />
+              <input type="hidden" name="form-name" value="contact" />
               <p className="hidden">
                 <label>
                   Don't fill this out if you&apos;re human: <input name="bot-field" />
