@@ -179,7 +179,7 @@ export default function Home() {
                 description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
                 icon="layout"
                 imageSrc="/deck-cleaning.png"
-                orientation="horizontal"
+                orientation="vertical"
                 serviceId="deck"
               />
               <ServiceCard
