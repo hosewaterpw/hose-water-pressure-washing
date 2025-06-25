@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Netlify Forms Detection</title>
+</head>
+<body>
+    <!-- Contact Form for Netlify Detection -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <textarea name="message"></textarea>
+        <input name="bot-field" />
+    </form>
+
+    <!-- Estimate Form for Netlify Detection -->
+    <form name="estimate" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <input type="text" name="address" />
+        
+        <!-- Property Details -->
+        <select name="stories">
+            <option value="1">1 Story</option>
+            <option value="1.5">1.5 Stories</option>
+            <option value="2">2 Stories</option>
+            <option value="2.5">2.5 Stories</option>
+            <option value="3">3+ Stories</option>
+        </select>
+        
+        <select name="exteriorType">
+            <option value="vinyl">Vinyl Siding</option>
+            <option value="brick">Brick</option>
+            <option value="wood">Wood</option>
+            <option value="stucco">Stucco</option>
+            <option value="stone">Stone</option>
+            <option value="hardie">Hardie Board/Fiber Cement</option>
+            <option value="mixed">Mixed Materials</option>
+            <option value="other">Other</option>
+        </select>
+        
+        <!-- House Dimensions -->
+        <input type="number" name="houseLength" />
+        <input type="number" name="houseWidth" />
+        
+        <!-- Services Checkboxes -->
+        <input type="checkbox" name="services" value="house-washing" />
+        <input type="checkbox" name="services" value="deck" />
+        <input type="checkbox" name="services" value="solar-window" />
+        <input type="checkbox" name="services" value="roof" />
+        <input type="checkbox" name="services" value="fence" />
+        <input type="checkbox" name="services" value="gutters" />
+        <input type="checkbox" name="services" value="other" />
+        
+        <textarea name="description"></textarea>
+        <input name="bot-field" />
+    </form>
+</body>
+</html>
