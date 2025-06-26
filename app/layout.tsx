@@ -10,12 +10,13 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: "Hose Water Pressure Washing LLC | Professional Pressure Washing Services Southern Maine",
+    default: "Hose Water Pressure Washing LLC | Professional Pressure Washing Services in Southern Maine",
     template: "%s | Hose Water Pressure Washing LLC",
   },
   description:
-    "Professional pressure washing services for residential and commercial properties throughout Southern Maine and New Hampshire. House washing, patio cleaning, deck restoration, roof cleaning, and more. Serving within 40-mile radius of North Berwick since 2022.",
+    "Trusted pressure washing for homes and businesses in Southern Maine and New Hampshire. We offer house washing, deck and patio cleaning, roof washing, fence restoration, window cleaning, and more. Serving a 40-mile radius around North Berwick since 2022.",
   keywords: [
+    // Core Services + Main Location
     "pressure washing North Berwick Maine",
     "power washing York County",
     "house washing North Berwick",
@@ -23,13 +24,43 @@ export const metadata: Metadata = {
     "deck cleaning North Berwick",
     "roof cleaning York County",
     "fence washing Maine",
+    "soft washing North Berwick",
     "commercial pressure washing North Berwick",
-    "exterior cleaning Maine",
     "residential pressure washing York County",
+    "exterior cleaning Maine",
     "pressure washing 03906",
+
+    // Nearby Towns (Local SEO)
     "Wells Maine pressure washing",
     "Kennebunk pressure washing",
+    "Portland Maine power washing",
+    "South Berwick pressure washing",
+    "Sanford Maine pressure washing",
+    "York Maine pressure washing",
+    "Berwick ME pressure washing",
+    "Kittery ME house washing",
+    "Eliot Maine power washing",
+    "Lebanon ME pressure cleaning",
+    "Ogunquit pressure washing",
     "Portsmouth NH pressure washing",
+    "Rochester NH power washing",
+    "Dover NH house washing",
+
+    // Long-Tail & Buyer Intent
+    "best pressure washing company in Maine",
+    "affordable power washing York County",
+    "top-rated exterior cleaning North Berwick",
+    "licensed pressure washing Maine",
+    "family owned pressure washing business",
+    "safe house washing Maine",
+    "deck restoration and cleaning Southern Maine",
+    "roof mold removal York County",
+    "green algae removal North Berwick",
+    "eco-friendly soft washing Maine",
+    "gutter cleaning and pressure washing",
+    "driveway and sidewalk cleaning Maine",
+    "pressure washing near me North Berwick",
+    "professional house wash service Southern Maine"
   ],
   authors: [{ name: "Jonathan P. Bilodeau" }],
   creator: "Hose Water Pressure Washing LLC",
