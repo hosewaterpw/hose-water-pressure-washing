@@ -8,7 +8,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "About Jonathan Bilodeau | Owner of Hose Water Pressure Washing LLC",
   description:
-    "Meet Jonathan Bilodeau, owner of Hose Water Pressure Washing LLC. Family-owned pressure washing business serving Southern Maine and New Hampshire since 2022. Personal service, honest work, quality results.",
+    "Meet Jonathan Bilodeau, owner of Hose Water Pressure Washing LLC. Family-owned pressure washing business serving [Your City] since 2022. Personal service, honest work, quality results.",
   keywords: [
     "Jonathan Bilodeau",
     "Hose Water Pressure Washing owner",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Jonathan Bilodeau | Owner of Hose Water Pressure Washing LLC",
     description:
-      "Meet the owner of Hose Water Pressure Washing LLC. Family-owned business serving Southern Maine and New Hampshire with personal service and quality results.",
+      "Meet the owner of Hose Water Pressure Washing LLC. Family-owned business serving [Your City] with personal service and quality results.",
   },
 }
 
@@ -41,7 +41,7 @@ export default function AboutPage() {
               name: "Hose Water Pressure Washing LLC",
             },
             description:
-              "Owner of Hose Water Pressure Washing LLC, providing professional pressure washing services in Southern Maine and New Hampshire since 2022",
+              "Owner of Hose Water Pressure Washing LLC, providing professional pressure washing services in [Your City] since 2022",
             url: "https://hosewaterpw.com/about",
             sameAs: ["https://www.facebook.com/hosewaterpw", "https://www.instagram.com/hosewaterpw"],
           }),
@@ -85,7 +85,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   I started this pressure washing business in 2022 with a simple mission: offer reliable, honest
-                  exterior cleaning services that people throughout York County and surrounding counties can trust. I didn't start with a huge
+                  exterior cleaning services that people throughout York County can trust. I didn't start with a huge
                   team or a fleet of trucks — just a strong work ethic, the right tools, and a belief that if you do a
                   job right and treat people fairly, the rest will follow.
                 </p>
@@ -109,7 +109,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold">Our Approach</h2>
             <p className="mt-2 text-gray-500 max-w-2xl mx-auto">
-              What makes Hose Water Pressure Washing different from other services in Southern Maine and New Hampshire.
+              What makes Hose Water Pressure Washing different from other services in [Your City].
             </p>
           </div>
 
@@ -159,19 +159,19 @@ export default function AboutPage() {
                 What makes me different is simple: I show up, I do the work myself, and I treat every home like it's my
                 own. I'm not here to upsell or overpromise — just to give you a straightforward experience and results
                 you'll notice. Whether it's siding, walkways, decks, patios, or solar panels, I bring attention to
-                detail and a real sense of pride to every job throughout York County & Surrounding counties.
+                detail and a real sense of pride to every job throughout York County Maine.
               </p>
               <p>
                 When I'm not on the clock, I'm usually outside. I love to hunt, fish, forage, and play disc golf. I'm a
                 father of three, and I spend a lot of time with my kids around a backyard fire — it's one of our
                 favorite things to do together. And I get it — those little outdoor spaces matter. Having a clean place
                 to relax, gather, and enjoy life makes a difference. That's part of what drives me in this business:
-                helping people take care of their homes so they can enjoy them more.
+                helping people take care of their homes so they can enjoy them more in [Your City].
               </p>
               <p>
                 I'm not trying to be the biggest company out there — just one of the most dependable. If you're looking
                 for someone real who will treat your property with respect and do the job right the first time, I'd be
-                glad to earn your business anywhere in Southern Maine & New Hampshire.
+                glad to earn your business anywhere in York County Maine.
               </p>
               <p className="font-medium">
                 Thanks for visiting Hose Water Pressure Washing LLC. I look forward to working with you.
@@ -224,7 +224,7 @@ export default function AboutPage() {
             <h2 className="text-2xl md:text-3xl font-bold">Ready to Work Together?</h2>
             <p className="max-w-[600px]">
               Contact me today to schedule a service or request a free estimate for your pressure washing needs anywhere
-              in Southern Maine & New Hampshire.
+              in York County Maine.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link href="/estimate">

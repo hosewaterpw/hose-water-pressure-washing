@@ -34,6 +34,9 @@ export default function Footer() {
               <Link href="/about" className="text-sm hover:text-yellow-400 transition-colors">
                 About
               </Link>
+              <Link href="/faq" className="text-sm hover:text-yellow-400 transition-colors">
+                FAQ
+              </Link>
               <Link href="/contact" className="text-sm hover:text-yellow-400 transition-colors">
                 Contact
               </Link>
