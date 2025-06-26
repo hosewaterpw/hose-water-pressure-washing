@@ -159,7 +159,7 @@ export default function AboutPage() {
                 What makes me different is simple: I show up, I do the work myself, and I treat every home like it's my
                 own. I'm not here to upsell or overpromise — just to give you a straightforward experience and results
                 you'll notice. Whether it's siding, walkways, decks, patios, or solar panels, I bring attention to
-                detail and a real sense of pride to every job throughout York County Maine.
+                detail and a real sense of pride to every job throughout York County & Surrounding counties.
               </p>
               <p>
                 When I'm not on the clock, I'm usually outside. I love to hunt, fish, forage, and play disc golf. I'm a
@@ -171,7 +171,7 @@ export default function AboutPage() {
               <p>
                 I'm not trying to be the biggest company out there — just one of the most dependable. If you're looking
                 for someone real who will treat your property with respect and do the job right the first time, I'd be
-                glad to earn your business anywhere in York County Maine.
+                glad to earn your business anywhere in Southern Maine & New Hampshire.
               </p>
               <p className="font-medium">
                 Thanks for visiting Hose Water Pressure Washing LLC. I look forward to working with you.
@@ -224,7 +224,7 @@ export default function AboutPage() {
             <h2 className="text-2xl md:text-3xl font-bold">Ready to Work Together?</h2>
             <p className="max-w-[600px]">
               Contact me today to schedule a service or request a free estimate for your pressure washing needs anywhere
-              in York County Maine.
+              in Southern Maine & New Hampshire.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link href="/estimate">
