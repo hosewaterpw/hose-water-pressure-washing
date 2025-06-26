@@ -8,26 +8,74 @@ import { Card, CardContent } from "@/components/ui/card"
 import ServiceCard from "@/components/service-card"
 
 export const metadata: Metadata = {
-  title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
+  title: "Pressure Washing North Berwick Maine | House, Roof, & Deck Cleaning | Hose Water Pressure Washing LLC",
   description:
-    "Revitalize your property with our professional pressure washing services. At Hose Water Pressure Washing, we restore the beauty of your home or business—removing years of dirt, grime, and buildup to leave surfaces looking like new. Family-owned and operated since 2022, we proudly serve residential and commercial clients across Southern Maine and New Hampshire.",
+    "Get top-rated pressure washing in North Berwick, Maine. Hose Water Pressure Washing LLC offers expert house washing, roof cleaning, deck restoration, patio cleaning, and more throughout York County, Southern Maine, and New Hampshire. Family-owned and trusted since 2022.",
   keywords: [
+    // Local + Core Services
     "pressure washing North Berwick Maine",
-    "power washing services York County",
     "house washing North Berwick",
-    "patio cleaning Maine",
-    "deck restoration North Berwick",
     "roof cleaning services Maine",
-    "solar panel cleaning Maine",
+    "deck restoration North Berwick",
+    "patio cleaning Maine",
     "window cleaning North Berwick",
+    "soft wash North Berwick",
+    "power washing services York County",
     "residential pressure washing York County",
     "commercial pressure washing North Berwick",
     "exterior cleaning Maine 03906",
+    
+    // Service Extensions
+    "gutter cleaning North Berwick",
+    "vinyl siding cleaning Maine",
+    "driveway cleaning York County",
+    "sidewalk pressure washing North Berwick",
+    "fence pressure washing Maine",
+    "solar panel cleaning Maine",
+    "low pressure roof cleaning Maine",
+    "concrete cleaning services Maine",
+    "mildew removal North Berwick",
+    "algae removal pressure washing",
+    "brick cleaning services Maine",
+
+    // Service Area Expansion
+    "pressure washing Wells Maine",
+    "pressure washing South Berwick ME",
+    "pressure washing Kittery Maine",
+    "pressure washing Eliot ME",
+    "pressure washing Ogunquit Maine",
+    "pressure washing Sanford ME",
+    "pressure washing York Maine",
+    "pressure washing Southern Maine",
+    "power washing New Hampshire",
+    "pressure washing Portsmouth NH",
+    "house washing Seacoast NH",
+
+    // Buyer Intent + Phrases
+    "best pressure washing in Maine",
+    "top-rated pressure washing near me",
+    "affordable power washing York County",
+    "trusted pressure washing company North Berwick",
+    "licensed pressure washing service Maine",
+    "professional house washing near me",
+    "home exterior cleaning Maine",
+    "safe roof washing service",
+    "eco-friendly pressure washing company",
+    "family-owned pressure washing Maine",
+
+    // Alternate Phrase Matches
+    "pressure cleaning North Berwick",
+    "home washing services ME",
+    "mobile pressure washing York County",
+    "local power washing contractor Maine",
+    "surface restoration North Berwick",
+    "building washing York County",
+    "driveway and patio cleaning Maine"
   ],
   openGraph: {
     title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
     description:
-      "Transform your property with professional pressure washing services in North Berwick Maine. House washing, patio cleaning, deck restoration, solar panel cleaning, window cleaning, and more.",
+      "Revitalize your property with our professional pressure washing services. At Hose Water Pressure Washing, we restore the beauty of your home or business—removing years of dirt, grime, and buildup to leave surfaces looking like new. Family-owned and operated since 2022, we proudly serve residential and commercial clients across Southern Maine and New Hampshire.",
     images: ["/house-washing.png"],
   },
 }
@@ -114,9 +162,7 @@ export default function Home() {
                     Professional Pressure Washing Services
                   </h1>
                   <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-[600px] mx-auto lg:mx-0">
-                    Transform your property with our expert pressure washing services. We make the dirty surfaces of
-                    your home look brand new again. Family-owned and operated since 2022, serving residential and
-                    commercial properties throughout southern maine and new hampshire.
+                    Revitalize your property with our professional pressure washing services.At Hose Water Pressure Washing, we restore the beauty of your home or business—removing years of dirt, grime, and buildup to leave surfaces looking like new. Family-owned and operated since 2022, we proudly serve residential and commercial clients across Southern Maine and New Hampshire.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center lg:items-start">
@@ -179,7 +225,7 @@ export default function Home() {
                 description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
                 icon="layout"
                 imageSrc="/deck-cleaning.png"
-                orientation="horizontal"
+                orientation="vertical"
                 serviceId="deck"
               />
               <ServiceCard
@@ -195,7 +241,7 @@ export default function Home() {
                 description="Safely remove black streaks, moss, and algae from your roof with our professional roof cleaning."
                 icon="home"
                 imageSrc="/roof-cleaning.png"
-                orientation="horizontal"
+                orientation="vertical"
                 serviceId="roof"
               />
               <ServiceCard
@@ -345,10 +391,10 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
-                  What Our North Berwick Customers Say
+                  What Our Customers Say
                 </h2>
                 <p className="max-w-[700px] text-gray-500 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8">
-                  Read reviews from satisfied customers in York County Maine.
+                  Read reviews from satisfied customers in Southern Maine & New Hampshire.
                 </p>
               </div>
               <Link href="https://g.co/kgs/ehG2MEi" target="_blank" rel="noopener noreferrer">
