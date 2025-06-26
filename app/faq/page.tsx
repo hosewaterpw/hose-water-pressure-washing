@@ -4,22 +4,35 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Hose Water Pressure Washing LLC",
+  title: "Pressure Washing FAQ | North Berwick, Maine | Hose Water Pressure Washing LLC",
   description:
-    "Get answers to common questions about our pressure washing services in North Berwick Maine. Learn about pricing, scheduling, service areas, and what to expect from our professional cleaning services.",
+    "Find answers to frequently asked questions about our pressure washing services in North Berwick, Maine. Learn about pricing, scheduling, preparation, and what to expect from our house washing, roof cleaning, and exterior services in York County and beyond.",
   keywords: [
     "pressure washing FAQ North Berwick Maine",
+    "frequently asked questions power washing",
     "pressure washing questions York County",
     "house washing FAQ Maine",
+    "soft washing questions North Berwick",
+    "roof cleaning questions Maine",
+    "deck and patio cleaning FAQ",
     "pressure washing cost Maine",
+    "pressure washing estimates North Berwick",
+    "how to prepare for power washing",
     "pressure washing service area North Berwick",
     "pressure washing scheduling Maine",
-    "pressure washing preparation tips",
+    "how long does pressure washing take",
+    "is pressure washing safe for siding",
+    "pressure washing before and after care",
+    "exterior cleaning tips Maine",
+    "residential pressure washing questions",
+    "commercial pressure washing answers",
+    "eco-friendly pressure washing FAQ",
+    "Hose Water Pressure Washing FAQ"
   ],
   openGraph: {
     title: "Pressure Washing FAQ | Hose Water Pressure Washing LLC",
     description:
-      "Common questions and answers about professional pressure washing services in North Berwick Maine and York County.",
+      "Answers to the most common questions about pressure washing in Southern Maine & New Hampshire. Learn about pricing, scheduling, what to expect, and more.",
   },
 }
 
@@ -30,7 +43,7 @@ const faqData = [
       {
         question: "What pressure washing services do you offer?",
         answer:
-          "We offer comprehensive pressure washing services including house washing, deck cleaning and restoration, patio and walkway cleaning, roof cleaning, solar panel and window cleaning, fence cleaning, and commercial property cleaning. We serve both residential and commercial properties throughout Southern Maine and New Hampshire.",
+          "We offer comprehensive pressure washing services including house washing, deck cleaning, patio and walkway cleaning, roof cleaning, solar panel and window cleaning, fence cleaning, and commercial property cleaning. We serve both residential and commercial properties throughout Southern Maine and New Hampshire.",
       },
       {
         question: "How much do your services cost?",
