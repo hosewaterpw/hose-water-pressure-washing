@@ -10,7 +10,7 @@ import ServiceCard from "@/components/service-card"
 export const metadata: Metadata = {
   title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
   description:
-    "Transform your property with professional pressure washing services in North Berwick Maine and York County. House washing, patio cleaning, deck restoration, roof cleaning, solar panel cleaning, window cleaning. Free estimates. Family-owned since 2022.",
+    "Revitalize your property with our professional pressure washing services. At Hose Water Pressure Washing, we restore the beauty of your home or business—removing years of dirt, grime, and buildup to leave surfaces looking like new. Family-owned and operated since 2022, we proudly serve residential and commercial clients across Southern Maine and New Hampshire.",
   keywords: [
     "pressure washing North Berwick Maine",
     "power washing services York County",
