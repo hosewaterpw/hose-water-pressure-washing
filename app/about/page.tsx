@@ -6,21 +6,31 @@ import { Card, CardContent } from "@/components/ui/card"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "About Jonathan Bilodeau | Owner of Hose Water Pressure Washing LLC",
+  title: "About Jonathan Bilodeau | Hose Water Pressure Washing LLC | North Berwick, ME",
   description:
-    "Meet Jonathan Bilodeau, owner of Hose Water Pressure Washing LLC. Family-owned pressure washing business serving Southern Maine & New Hampshire since 2022. Personal service, honest work, quality results.",
+    "Meet Jonathan Bilodeau, founder of Hose Water Pressure Washing LLC. Based in North Berwick, Maine, we’re a family-owned business proudly serving Southern Maine and New Hampshire with trusted, high-quality pressure washing services since 2022.",
   keywords: [
     "Jonathan Bilodeau",
     "Hose Water Pressure Washing owner",
-    "pressure washing [Your City]",
-    "family owned pressure washing",
-    "local pressure washing business",
-    "[Your City] pressure washing company",
+    "about Hose Water Pressure Washing",
+    "North Berwick pressure washing company",
+    "Southern Maine power washing business",
+    "family owned pressure washing North Berwick",
+    "local pressure washing business Maine",
+    "pressure washing business owner North Berwick",
+    "meet the team Hose Water Pressure Washing",
+    "power washing company owner Southern Maine",
+    "trusted pressure washing expert Maine",
+    "Jonathan Bilodeau pressure washing",
+    "residential and commercial pressure washing",
+    "New Hampshire pressure washing owner",
+    "honest power washing North Berwick",
+    "best pressure washing company owner in Maine"
   ],
   openGraph: {
-    title: "About Jonathan Bilodeau | Owner of Hose Water Pressure Washing LLC",
+    title: "Meet Jonathan Bilodeau | Hose Water Pressure Washing LLC | North Berwick, ME",
     description:
-      "Meet the owner of Hose Water Pressure Washing LLC. Family-owned business serving Southern Maine & New Hampshire with professional pressure washing service and quality results.",
+      "Get to know Jonathan Bilodeau, owner of Hose Water Pressure Washing. Family-operated and proudly serving homes and businesses in Southern Maine and New Hampshire since 2022.",
   },
 }
 
