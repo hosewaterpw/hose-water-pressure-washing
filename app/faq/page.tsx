@@ -55,7 +55,7 @@ const faqData = [
       {
         question: "What areas do you serve?",
         answer:
-          "We serve Southern Maine and New Hampshire within a 40-mile radius of North Berwick, Maine. This includes York County communities like Wells, Kennebunk, Sanford, Biddeford, and extends into New Hampshire areas like Portsmouth and surrounding communities. Contact us to confirm service availability in your specific location.",
+          "We serve Southern Maine and New Hampshire within a 30-mile radius of North Berwick, Maine. This includes York County communities like Wells, Kennebunk, Sanford, Biddeford, and extends into New Hampshire areas like Portsmouth, Greenland, Stratham and surrounding communities. Contact us to confirm service availability in your specific location.",
       },
       {
         question: "How far in advance should I schedule service?",
@@ -65,12 +65,12 @@ const faqData = [
       {
         question: "What are your operating hours?",
         answer:
-          "We typically operate Monday through Friday from 8:00 AM to 6:00 PM, and Saturdays from 9:00 AM to 4:00 PM. We're closed on Sundays. However, we can sometimes accommodate special scheduling requests for commercial properties or urgent situations.",
+          "We typically operate Monday through Saturday from 9:00 AM to 5:00 PM. We're closed on Sundays. However, we can sometimes accommodate special scheduling requests for commercial properties or urgent situations.",
       },
       {
         question: "Do you work year-round?",
         answer:
-          "Our main operating season is from spring through fall when temperatures are consistently above freezing. We typically operate from March through November, depending on weather conditions. Winter services may be available for certain commercial applications - contact us to discuss your specific needs.",
+          "Our main operating season is from spring through fall when temperatures are consistently above freezing. We typically operate from April through November, depending on weather conditions.",
       },
     ],
   },
@@ -80,22 +80,22 @@ const faqData = [
       {
         question: "Do I need to be home during the service?",
         answer:
-          "You don't need to be home during most services, but we do recommend being available for the initial walkthrough and final inspection. We'll discuss access requirements and any special instructions during our estimate appointment.",
+          "You don't need to be home during most services. We'll discuss access requirements and any special instructions during our estimate appointment.",
       },
       {
         question: "What should I do to prepare for pressure washing?",
         answer:
-          "Please close all windows and doors, remove or secure outdoor furniture and decorations, trim back vegetation near the house, and ensure we have access to water and electrical outlets. We'll provide a detailed preparation checklist when we schedule your service.",
+          "Please close and lock all windows and doors, remove or secure outdoor furniture and decorations, and ensure we have access to water spigot. We'll provide any details when we schedule your service.",
       },
       {
         question: "Is pressure washing safe for my home and landscaping?",
         answer:
-          "Yes, when performed by professionals. We use appropriate pressure settings for different surfaces and materials. We also take precautions to protect your landscaping by pre-wetting plants and using eco-friendly cleaning solutions when possible.",
+          "Yes, when performed by professionals. We use appropriate pressure settings for different surfaces and materials. We also take precautions to protect your landscaping by pre-wetting plants and other surfaces.",
       },
       {
         question: "Are your cleaning solutions safe?",
         answer:
-          "We use professional-grade, biodegradable cleaning solutions that are safe for your family, pets, and landscaping when used properly. We follow all manufacturer guidelines and industry best practices for safe application.",
+          "We use professional-grade, cleaning solutions that are safe for your family, pets, and landscaping when used properly. We follow all manufacturer guidelines and industry best practices for safe application.",
       },
     ],
   },
@@ -110,7 +110,7 @@ const faqData = [
       {
         question: "What's the best time of year for pressure washing?",
         answer:
-          "Spring and fall are ideal times for pressure washing. Spring cleaning removes winter buildup and prepares your property for the warmer months. Fall cleaning removes summer growth and prepares surfaces for winter. However, we can provide services throughout our operating season based on your needs.",
+          "While spring and fall are popular times for house washing, the best time is always as soon as you notice organic growth. Mold, mildew, algae, and other contaminants can damage your exterior surfaces if left untreated—no matter the season. We provide professional pressure washing services throughout our operating season to help protect and maintain your home year-round.",
       },
       {
         question: "How long does the cleaning process take?",
