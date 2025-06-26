@@ -5,22 +5,69 @@ import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Pressure Washing Services North Berwick Maine | House, Patio, Deck, Roof, Solar Panel & Window Cleaning",
+  title: "Pressure Washing North Berwick Maine | House, Roof, & Deck Cleaning | Hose Water Pressure Washing LLC",
   description:
-    "Professional pressure washing services in North Berwick Maine and York County. House washing, patio cleaning, deck restoration, roof cleaning, solar panel cleaning, window cleaning, walkway cleaning, and commercial services. Free estimates available.",
+    "Get top-rated pressure washing in North Berwick, Maine. Hose Water Pressure Washing LLC offers expert house washing, roof cleaning, deck restoration, patio cleaning, and more throughout York County, Southern Maine, and New Hampshire. Family-owned and trusted since 2022.",
   keywords: [
-    "pressure washing services North Berwick Maine",
+    // Local + Core Services
+    "pressure washing North Berwick Maine",
     "house washing North Berwick",
-    "patio cleaning service Maine",
-    "walkway cleaning North Berwick",
+    "roof cleaning services Maine",
     "deck restoration North Berwick",
-    "roof cleaning service York County",
-    "solar panel cleaning Maine",
+    "patio cleaning Maine",
     "window cleaning North Berwick",
-    "exterior window cleaning Maine",
-    "fence washing Maine",
+    "soft wash North Berwick",
+    "power washing services York County",
+    "residential pressure washing York County",
     "commercial pressure washing North Berwick",
-    "exterior cleaning services 03906",
+    "exterior cleaning Maine 03906",
+    
+    // Service Extensions
+    "gutter cleaning North Berwick",
+    "vinyl siding cleaning Maine",
+    "driveway cleaning York County",
+    "sidewalk pressure washing North Berwick",
+    "fence pressure washing Maine",
+    "solar panel cleaning Maine",
+    "low pressure roof cleaning Maine",
+    "concrete cleaning services Maine",
+    "mildew removal North Berwick",
+    "algae removal pressure washing",
+    "brick cleaning services Maine",
+
+    // Service Area Expansion
+    "pressure washing Wells Maine",
+    "pressure washing South Berwick ME",
+    "pressure washing Kittery Maine",
+    "pressure washing Eliot ME",
+    "pressure washing Ogunquit Maine",
+    "pressure washing Sanford ME",
+    "pressure washing York Maine",
+    "pressure washing Southern Maine",
+    "power washing New Hampshire",
+    "pressure washing Portsmouth NH",
+    "house washing Seacoast NH",
+
+    // Buyer Intent + Phrases
+    "best pressure washing in Maine",
+    "top-rated pressure washing near me",
+    "affordable power washing York County",
+    "trusted pressure washing company North Berwick",
+    "licensed pressure washing service Maine",
+    "professional house washing near me",
+    "home exterior cleaning Maine",
+    "safe roof washing service",
+    "eco-friendly pressure washing company",
+    "family-owned pressure washing Maine",
+
+    // Alternate Phrase Matches
+    "pressure cleaning North Berwick",
+    "home washing services ME",
+    "mobile pressure washing York County",
+    "local power washing contractor Maine",
+    "surface restoration North Berwick",
+    "building washing York County",
+    "driveway and patio cleaning Maine"
   ],
   openGraph: {
     title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
@@ -50,12 +97,12 @@ const services = [
     id: "deck",
     title: "Deck Cleaning & Restoration",
     image: "/deck-cleaning.png",
-    orientation: "horizontal",
+    orientation: "vertical",
     description:
       "Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew and other organic growth. We carefully adjust our pressure washing techniques based on the material of your deck to ensure safe and effective cleaning.",
     features: [
       "Removes dirt, mold, and weathering from deck surfaces",
-      "Safe for wood, composite, and stone deck surfaces",
+      "Safe for wood and composite deck surfaces",
       "Prepares deck surfaces for staining or sealing",
       "Extends the life of your outdoor deck spaces",
     ],
@@ -73,7 +120,7 @@ const services = [
       "Safe for concrete, stone, brick, and paver surfaces",
       "Improves safety by removing slippery algae and moss",
       "Restores original appearance of outdoor living spaces",
-      "Also available: fence cleaning for vinyl and metal fences",
+      "Also available: Fence cleaning for vinyl, wood and metal fences",
     ],
     galleryFilter: "patio-walkway",
   },
@@ -98,7 +145,7 @@ const services = [
     id: "roof",
     title: "Roof Cleaning",
     image: "/roof-cleaning.png",
-    orientation: "horizontal",
+    orientation: "vertical",
     description:
       "Our roof cleaning service safely removes black streaks, moss, and algae from your roof. We use low-pressure washing techniques and appropriate cleaning solutions to protect your roof while effectively removing unsightly growth and stains.",
     features: [
