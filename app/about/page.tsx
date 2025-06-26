@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Jonathan Bilodeau | Owner of Hose Water Pressure Washing LLC",
     description:
-      "Meet the owner of Hose Water Pressure Washing LLC. Family-owned business serving [Your City] with personal service and quality results.",
+      "Meet the owner of Hose Water Pressure Washing LLC. Family-owned business serving Southern Maine & New Hampshire with professional pressure washing service and quality results.",
   },
 }
 
