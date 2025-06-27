@@ -75,7 +75,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold">Phone</h3>
               <p className="text-gray-500 mt-1">207-370-8667</p>
               <p className="text-sm text-muted-foreground mt-1">
-                Monday - Saturday: 9:00 AM - 5:00 PM
+                Monday - Saturday: 8:00 AM - 5:00 PM
                 <br />
                 Sunday: Closed
               </p>
