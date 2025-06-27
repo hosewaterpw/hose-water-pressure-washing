@@ -286,7 +286,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold mb-2">Experienced Professionals</h3>
                   <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                    Our team has years of experience in the pressure washing industry serving York County Maine
+                    Our team has years of experience in the pressure washing industry serving Southern Maine & New Hampshire
                     residents.
                   </p>
                 </CardContent>
