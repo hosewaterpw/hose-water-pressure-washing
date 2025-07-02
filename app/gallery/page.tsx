@@ -21,7 +21,7 @@ const galleryItems = [
   {
     id: 2,
     category: "house",
-    title: "Hosuse Wash in South Berwick, ME ",
+    title: "House Wash in South Berwick, ME ",
     photo: "/vinyl-siding-beforeafter.jpg",
     orientation: "vertical",
   },
