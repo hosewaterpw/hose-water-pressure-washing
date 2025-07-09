@@ -12,65 +12,20 @@ export const metadata: Metadata = {
   description:
     "Get top-rated pressure washing in North Berwick, Maine. Hose Water Pressure Washing LLC offers expert house washing, roof cleaning, deck restoration, patio cleaning, and more throughout York County, Southern Maine, and New Hampshire. Family-owned and trusted since 2022.",
   keywords: [
-    // Local + Core Services
-    "pressure washing North Berwick Maine",
-    "house washing North Berwick",
-    "roof cleaning services Maine",
-    "deck restoration North Berwick",
-    "patio cleaning Maine",
-    "window cleaning North Berwick",
-    "soft wash North Berwick",
-    "power washing services York County",
-    "residential pressure washing York County",
-    "commercial pressure washing North Berwick",
-    "exterior cleaning Maine 03906",
-    
+    // Expanded Local + Core Services
+    "pressure washing North Berwick Maine", "house washing North Berwick", "power washing North Berwick ME", "soft washing services 03906", "roof cleaning services North Berwick", "exterior house washing Maine", "pressure cleaning North Berwick", "soft wash pressure washing 03906", "residential pressure washing 03906", "commercial power washing North Berwick", "exterior home cleaning North Berwick", "roof moss removal North Berwick", "house pressure washing near 03906", "local power washing company Maine", "North Berwick pressure washing pros", "soft wash roof cleaning North Berwick", "exterior cleaning near me 03906", "professional power washing 03906", "house washing company near North Berwick", "North Berwick Maine home pressure washing",
+
     // Service Extensions
-    "gutter cleaning North Berwick",
-    "vinyl siding cleaning Maine",
-    "driveway cleaning York County",
-    "sidewalk pressure washing North Berwick",
-    "fence pressure washing Maine",
-    "solar panel cleaning Maine",
-    "low pressure roof cleaning Maine",
-    "concrete cleaning services Maine",
-    "mildew removal North Berwick",
-    "algae removal pressure washing",
-    "brick cleaning services Maine",
+    "deck restoration North Berwick", "gutter cleaning services 03906", "vinyl siding pressure washing North Berwick", "solar panel cleaning in York County", "fence cleaning and staining North Berwick", "driveway and patio pressure washing ME", "concrete pressure washing North Berwick", "sidewalk and walkway cleaning North Berwick", "brick house pressure washing York County", "low pressure roof cleaning Southern Maine", "mildew removal on siding Maine", "algae removal from roof Maine", "rust removal pressure washing Maine", "roof stain removal North Berwick", "pool patio cleaning services ME", "oil stain removal York County", "high pressure driveway cleaning ME", "wood fence soft wash cleaning Maine", "clogged gutter clearing North Berwick", "window washing and pressure cleaning Maine",
 
     // Service Area Expansion
-    "pressure washing Wells Maine",
-    "pressure washing South Berwick ME",
-    "pressure washing Kittery Maine",
-    "pressure washing Eliot ME",
-    "pressure washing Ogunquit Maine",
-    "pressure washing Sanford ME",
-    "pressure washing York Maine",
-    "pressure washing Southern Maine",
-    "power washing New Hampshire",
-    "pressure washing Portsmouth NH",
-    "house washing Seacoast NH",
+    "pressure washing Wells ME", "house washing South Berwick Maine", "soft washing Kittery ME", "power washing York Maine", "roof cleaning Sanford ME", "pressure washing Lebanon ME", "pressure washing Ogunquit Maine", "deck cleaning in Cape Neddick ME", "pressure washing Berwick ME", "patio cleaning Kennebunk ME", "pressure washing Kennebunkport ME", "roof washing Somersworth NH", "pressure washing Rochester NH", "house washing Portsmouth NH", "pressure washing Seacoast NH", "exterior cleaning Dover NH", "power washing New Hampshire Seacoast", "pressure washing Durham NH", "soft wash Wells Maine", "house washing Southern New Hampshire",
 
-    // Buyer Intent + Phrases
-    "best pressure washing in Maine",
-    "top-rated pressure washing near me",
-    "affordable power washing York County",
-    "trusted pressure washing company North Berwick",
-    "licensed pressure washing service Maine",
-    "professional house washing near me",
-    "home exterior cleaning Maine",
-    "safe roof washing service",
-    "eco-friendly pressure washing company",
-    "family-owned pressure washing Maine",
+    // Buyer Intent & Conversion Keywords
+    "best pressure washing in Southern Maine", "top-rated pressure washing company near me", "affordable house washing York County", "trusted local pressure washing 03906", "insured pressure washing services ME", "eco-friendly soft washing Maine", "family-owned pressure washing company", "professional deck cleaning North Berwick", "get a free quote pressure washing ME", "licensed roof washing company North Berwick", "affordable window and siding cleaning Maine", "best local house washers in York County", "top power washing business near me", "safe roof wash company Southern Maine", "cost-effective soft washing services", "guaranteed results pressure washing 03906", "same day pressure washing North Berwick", "emergency exterior cleaning ME", "highly rated power washing company Maine", "reliable pressure washing contractor 03906",
 
-    // Alternate Phrase Matches
-    "pressure cleaning North Berwick",
-    "home washing services ME",
-    "mobile pressure washing York County",
-    "local power washing contractor Maine",
-    "surface restoration North Berwick",
-    "building washing York County",
-    "driveway and patio cleaning Maine"
+    // Voice Search & FAQ Phrases
+    "who offers the best pressure washing near North Berwick?", "can I get same-day house washing in York County?", "what’s the cost of power washing in Southern Maine?", "how do I clean green algae off my siding?", "what's the best company for soft washing in ME?", "are there pressure washing services near 03906?", "how much does solar panel cleaning cost in Maine?", "can pressure washing damage my roof?", "who do I call for driveway cleaning near me?", "where to find affordable roof cleaning near York ME?", "is there a pressure washer near me for decks?", "how to remove mildew from siding in Maine?", "can I get a quote for pressure washing today?", "best rated pressure washing North Berwick Maine?", "who does patio and concrete cleaning near me?", "how far will Hose Water travel for pressure washing?", "local soft washing professionals for vinyl siding", "North Berwick house wash reviews 2025", "pressure washing for HOAs and apartments ME", "best business for roof algae removal ME"
   ],
   openGraph: {
     title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
