@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
@@ -128,6 +129,20 @@ export default function RootLayout({
         <meta name="geo.placename" content="North Berwick" />
         <meta name="geo.position" content="43.3048;-70.7342" />
         <meta name="ICBM" content="43.3048, -70.7342" />
+        
+{/* Google Analytics */}
+<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+  strategy="afterInteractive"
+/>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SW9ESX4H4G');
+  `}
+</Script>
 
         {/* Structured Data for Local Business */}
         <script
