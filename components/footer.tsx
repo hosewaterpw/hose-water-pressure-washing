@@ -109,7 +109,7 @@ export default function Footer() {
 
         <div className="mt-8 sm:mt-12 border-t border-gray-700 pt-4 sm:pt-6">
           <p className="text-center text-xs sm:text-sm text-gray-400">
-            © {new Date().getFullYear()} Hose Water Pressure Washing LLC. All rights reserved. Serving Southern Maine
+            © {new Date().getFullYear()} Hose Water Pressure Washing. All rights reserved. Serving Southern Maine
             and New Hampshire.
           </p>
         </div>
