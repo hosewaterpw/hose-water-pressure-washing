@@ -8,9 +8,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import ServiceCard from "@/components/service-card"
 
 export const metadata: Metadata = {
-  title: "Pressure Washing North Berwick Maine | House, Roof, & Deck Cleaning | Hose Water Pressure Washing LLC",
+  title: "Pressure Washing North Berwick Maine | House, Roof, & Deck Cleaning | Hose Water Pressure Washing",
   description:
-    "Get top-rated pressure washing in North Berwick, Maine. Hose Water Pressure Washing LLC offers expert house washing, roof cleaning, deck restoration, patio cleaning, and more throughout York County, Southern Maine, and New Hampshire. Family-owned and trusted since 2022.",
+    "Get top-rated pressure washing in North Berwick, Maine. Hose Water Pressure Washing offers expert house washing, roof cleaning, deck restoration, patio cleaning, and more throughout York County, Southern Maine, and New Hampshire. Family-owned and trusted since 2022.",
   keywords: [
     // Expanded Local + Core Services
     "pressure washing North Berwick Maine", "house washing North Berwick", "power washing North Berwick ME", "soft washing services 03906", "roof cleaning services North Berwick", "exterior house washing Maine", "pressure cleaning North Berwick", "soft wash pressure washing 03906", "residential pressure washing 03906", "commercial power washing North Berwick", "exterior home cleaning North Berwick", "roof moss removal North Berwick", "house pressure washing near 03906", "local power washing company Maine", "North Berwick pressure washing pros", "soft wash roof cleaning North Berwick", "exterior cleaning near me 03906", "professional power washing 03906", "house washing company near North Berwick", "North Berwick Maine home pressure washing",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "who offers the best pressure washing near North Berwick?", "can I get same-day house washing in York County?", "what’s the cost of power washing in Southern Maine?", "how do I clean green algae off my siding?", "what's the best company for soft washing in ME?", "are there pressure washing services near 03906?", "how much does solar panel cleaning cost in Maine?", "can pressure washing damage my roof?", "who do I call for driveway cleaning near me?", "where to find affordable roof cleaning near York ME?", "is there a pressure washer near me for decks?", "how to remove mildew from siding in Maine?", "can I get a quote for pressure washing today?", "best rated pressure washing North Berwick Maine?", "who does patio and concrete cleaning near me?", "how far will Hose Water travel for pressure washing?", "local soft washing professionals for vinyl siding", "North Berwick house wash reviews 2025", "pressure washing for HOAs and apartments ME", "best business for roof algae removal ME"
   ],
   openGraph: {
-    title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
+    title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing",
     description:
       "Revitalize your property with our professional pressure washing services. At Hose Water Pressure Washing, we restore the beauty of your home or business—removing years of dirt, grime, and buildup to leave surfaces looking like new. Family-owned and operated since 2022, we proudly serve residential and commercial clients across Southern Maine and New Hampshire.",
     images: ["/house-washing.png"],
@@ -48,7 +48,7 @@ export default function Home() {
             serviceType: "Pressure Washing Services",
             provider: {
               "@type": "LocalBusiness",
-              name: "Hose Water Pressure Washing LLC",
+              name: "Hose Water Pressure Washing",
             },
             areaServed: [
               {
@@ -228,7 +228,7 @@ export default function Home() {
                   Why Choose Hose Water Pressure Washing
                 </h2>
                 <p className="max-w-[700px] text-gray-500 text-base sm:text-lg md:text-xl leading-relaxed">
-                  Hose Water Pressure Washing LLC is committed to excellence in every aspect of our pressure washing
+                  Hose Water Pressure Washing is committed to excellence in every aspect of our pressure washing
                   service.
                 </p>
               </div>
