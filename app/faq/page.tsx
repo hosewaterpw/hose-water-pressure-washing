@@ -4,7 +4,7 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Pressure Washing FAQ | North Berwick, Maine | Hose Water Pressure Washing LLC",
+  title: "Pressure Washing FAQ | North Berwick, Maine | Hose Water Pressure Washing",
   description:
     "Find answers to frequently asked questions about our pressure washing services in North Berwick, Maine. Learn about pricing, scheduling, preparation, and what to expect from our house washing, roof cleaning, and exterior services in York County and beyond.",
   keywords: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Hose Water Pressure Washing FAQ"
   ],
   openGraph: {
-    title: "Pressure Washing FAQ | Hose Water Pressure Washing LLC",
+    title: "Pressure Washing FAQ | Hose Water Pressure Washing",
     description:
       "Answers to the most common questions about pressure washing in Southern Maine & New Hampshire. Learn about pricing, scheduling, what to expect, and more.",
   },
