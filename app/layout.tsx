@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: "Hose Water Pressure Washing LLC | Professional Pressure Washing Services in Southern Maine",
-    template: "%s | Hose Water Pressure Washing LLC",
+    default: "Hose Water Pressure Washing | Professional Pressure Washing Services in Southern Maine",
+    template: "%s | Hose Water Pressure Washing",
   },
   description:
     "Trusted pressure washing for homes and businesses in Southern Maine and New Hampshire. We offer house washing, deck and patio cleaning, roof washing, fence restoration, window cleaning, and more. Serving a 40-mile radius around North Berwick since 2022.",
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
     "professional house wash service Southern Maine"
   ],
   authors: [{ name: "Jonathan P. Bilodeau" }],
-  creator: "Hose Water Pressure Washing LLC",
-  publisher: "Hose Water Pressure Washing LLC",
+  creator: "Hose Water Pressure Washing",
+  publisher: "Hose Water Pressure Washing",
   formatDetection: {
     email: false,
     address: false,
@@ -79,22 +79,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://hosewaterpw.com",
-    title: "Hose Water Pressure Washing LLC | Professional Pressure Washing Services North Berwick Maine",
+    title: "Hose Water Pressure Washing | Professional Pressure Washing Services North Berwick Maine",
     description:
       "Professional pressure washing services for residential and commercial properties in North Berwick Maine and York County. House washing, patio cleaning, deck restoration, and more.",
-    siteName: "Hose Water Pressure Washing LLC",
+    siteName: "Hose Water Pressure Washing",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Hose Water Pressure Washing LLC - Professional Pressure Washing Services North Berwick Maine",
+        alt: "Hose Water Pressure Washing - Professional Pressure Washing Services North Berwick Maine",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hose Water Pressure Washing LLC | Professional Pressure Washing Services North Berwick Maine",
+    title: "Hose Water Pressure Washing | Professional Pressure Washing Services North Berwick Maine",
     description:
       "Professional pressure washing services for residential and commercial properties in North Berwick Maine and York County.",
     images: ["/og-image.png"],
@@ -181,7 +181,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "@id": "https://hosewaterpw.com",
-              name: "Hose Water Pressure Washing LLC",
+              name: "Hose Water Pressure Washing",
               image: "https://hosewaterpw.com/logo.png",
               description:
                 "Professional pressure washing services for residential and commercial properties throughout Southern Maine and New Hampshire",
