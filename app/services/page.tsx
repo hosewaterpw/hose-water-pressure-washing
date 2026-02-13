@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Pressure Washing North Berwick Maine | House, Roof, & Deck Cleaning | Hose Water Pressure Washing LLC",
+  title: "Pressure Washing North Berwick Maine | House, Roof, & Deck Cleaning | Hose Water Pressure Washing",
   description:
-    "Get top-rated pressure washing in North Berwick, Maine. Hose Water Pressure Washing LLC offers expert house washing, roof cleaning, deck restoration, patio cleaning, and more throughout York County, Southern Maine, and New Hampshire. Family-owned and trusted since 2022.",
+    "Get top-rated pressure washing in North Berwick, Maine. Hose Water Pressure Washing offers expert house washing, roof cleaning, deck restoration, patio cleaning, and more throughout York County, Southern Maine, and New Hampshire. Family-owned and trusted since 2022.",
   keywords: [
     // Local + Core Services
     "pressure washing North Berwick Maine",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     "driveway and patio cleaning Maine"
   ],
   openGraph: {
-    title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing LLC",
+    title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing",
     description:
       "Complete pressure washing services including house washing, patio cleaning, walkway cleaning, deck restoration, solar panel cleaning, window cleaning, and more in North Berwick Maine and York County.",
   },
