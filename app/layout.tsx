@@ -128,11 +128,10 @@ export default function RootLayout({
         <meta name="geo.region" content="US-ME" />
         <meta name="geo.placename" content="North Berwick" />
         <meta name="geo.position" content="43.3048;-70.7342" />
-        <meta name="ICBM" content="43.3048, -70.7342" />
-        
+        <meta name="ICBM" content="43.3048, -70.7342" />        
 {/* Google Analytics */}
 <Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+  src="https://www.googletagmanager.com/gtag/js?id=G-SW9ESX4H4G"
   strategy="afterInteractive"
 />
 <Script id="google-analytics" strategy="afterInteractive">
