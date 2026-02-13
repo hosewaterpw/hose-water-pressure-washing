@@ -6,9 +6,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "About Jonathan Bilodeau | Hose Water Pressure Washing LLC | North Berwick, ME",
+  title: "About Jonathan Bilodeau | Hose Water Pressure Washing | North Berwick, ME",
   description:
-    "Meet Jonathan Bilodeau, founder of Hose Water Pressure Washing LLC. Based in North Berwick, Maine, we’re a family-owned business proudly serving Southern Maine and New Hampshire with trusted, high-quality pressure washing services since 2022.",
+    "Meet Jonathan Bilodeau, founder of Hose Water Pressure Washing. Based in North Berwick, Maine, we’re a family-owned business proudly serving Southern Maine and New Hampshire with trusted, high-quality pressure washing services since 2022.",
   keywords: [
     "Jonathan Bilodeau",
     "Hose Water Pressure Washing owner",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "best pressure washing company owner in Maine"
   ],
   openGraph: {
-    title: "Meet Jonathan Bilodeau | Hose Water Pressure Washing LLC | North Berwick, ME",
+    title: "Meet Jonathan Bilodeau | Hose Water Pressure Washing | North Berwick, ME",
     description:
       "Get to know Jonathan Bilodeau, owner of Hose Water Pressure Washing. Family-operated and proudly serving homes and businesses in Southern Maine and New Hampshire since 2022.",
   },
@@ -48,10 +48,10 @@ export default function AboutPage() {
             jobTitle: "Owner",
             worksFor: {
               "@type": "LocalBusiness",
-              name: "Hose Water Pressure Washing LLC",
+              name: "Hose Water Pressure Washing",
             },
             description:
-              "Owner of Hose Water Pressure Washing LLC, providing professional pressure washing services in Southern Maine & New Hampshire since 2022",
+              "Owner of Hose Water Pressure Washing, providing professional pressure washing services in Southern Maine & New Hampshire since 2022",
             url: "https://hosewaterpw.com/about",
             sameAs: ["https://www.facebook.com/hosewaterpw", "https://www.instagram.com/hosewaterpw"],
           }),
@@ -62,7 +62,7 @@ export default function AboutPage() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              About Hose Water Pressure Washing LLC
+              About Hose Water Pressure Washing
             </h1>
             <p className="max-w-[700px] text-gray-500 md:text-xl">
               Meet Jonathan Bilodeau, the owner and operator providing personal pressure washing services throughout
@@ -77,7 +77,7 @@ export default function AboutPage() {
             <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-lg">
               <Image
                 src="/owner-portrait.png"
-                alt="Jonathan P. Bilodeau, Owner of Hose Water Pressure Washing LLC"
+                alt="Jonathan P. Bilodeau, Owner of Hose Water Pressure Washing"
                 fill
                 className="object-cover"
               />
@@ -85,11 +85,11 @@ export default function AboutPage() {
             <div className="space-y-6">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold">Jonathan P. Bilodeau</h2>
-                <p className="text-xl text-gray-500">Owner, Hose Water Pressure Washing LLC</p>
+                <p className="text-xl text-gray-500">Owner, Hose Water Pressure Washing</p>
               </div>
               <div className="space-y-4">
                 <p>
-                  Hi, I'm the owner of Hose Water Pressure Washing LLC — a hands-on, down-to-earth guy who enjoys hard
+                  Hi, I'm the owner of Hose Water Pressure Washing — a hands-on, down-to-earth guy who enjoys hard
                   work, being outdoors, and making things look like new again throughout Southern Maine and New
                   Hampshire.
                 </p>
@@ -184,11 +184,11 @@ export default function AboutPage() {
                 glad to earn your business anywhere in Southern Maine & New Hampshire.
               </p>
               <p className="font-medium">
-                Thanks for visiting Hose Water Pressure Washing LLC. I look forward to working with you.
+                Thanks for visiting Hose Water Pressure Washing. I look forward to working with you.
               </p>
               <div className="mt-6 pt-6 border-t border-gray-200">
                 <p className="font-bold">— Jonathan P. Bilodeau</p>
-                <p className="text-gray-500">Owner, Hose Water Pressure Washing LLC</p>
+                <p className="text-gray-500">Owner, Hose Water Pressure Washing</p>
               </div>
             </div>
           </div>
