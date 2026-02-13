@@ -128,7 +128,8 @@ export default function RootLayout({
         <meta name="geo.region" content="US-ME" />
         <meta name="geo.placename" content="North Berwick" />
         <meta name="geo.position" content="43.3048;-70.7342" />
-        <meta name="ICBM" content="43.3048, -70.7342" />        
+        <meta name="ICBM" content="43.3048, -70.7342" />   
+        
 {/* Google Analytics */}
 <Script
   src="https://www.googletagmanager.com/gtag/js?id=G-SW9ESX4H4G"
@@ -142,8 +143,26 @@ export default function RootLayout({
     gtag('config', 'G-SW9ESX4H4G');
   `}
 </Script>
-
-        {/* Structured Data for Local Business */}
+        
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2844768349066272');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2844768349066272&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  
+ {/* Structured Data for Local Business */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
