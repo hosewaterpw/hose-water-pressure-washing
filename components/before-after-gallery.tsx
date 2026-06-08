@@ -60,6 +60,12 @@ const galleryItems = [
     photo: "/house-wash-wells-beforeafter.jpg",
     orientation: "horizontal",
   },
+  {
+    id: 9,
+    title: "Deck Cleaning - Lebanon",
+    photo: "/deck-cleaning-lebanon-beforafter.jpg",
+    orientation: "horizontal",
+  },
 ]
 export default function BeforeAfterGallery() {
   const [activeItem, setActiveItem] = useState(galleryItems[0])
