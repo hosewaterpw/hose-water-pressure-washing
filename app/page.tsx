@@ -6,6 +6,7 @@ import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import ServiceCard from "@/components/service-card"
+import BeforeAfterGallery from "@/components/before-after-gallery"
 
 export const metadata: Metadata = {
   title: "Pressure Washing North Berwick Maine | House, Roof, & Deck Cleaning | Hose Water Pressure Washing",
@@ -364,6 +365,25 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Before & After Gallery */}
+<section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 bg-white">
+  <div className="container px-4 sm:px-6 md:px-8">
+    <div className="flex flex-col items-center text-center mb-8">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
+        Real Results
+      </h2>
+
+      <p className="max-w-[700px] text-gray-500 text-base sm:text-lg mt-4">
+        See the difference professional exterior cleaning can make.
+        These are real transformations completed throughout Southern Maine
+        and New Hampshire.
+      </p>
+    </div>
+
+    <BeforeAfterGallery />
+  </div>
+</section>
+        
         {/* CTA Section */}
         <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-[#333333] text-white">
           <div className="container px-4 sm:px-6 md:px-8">
