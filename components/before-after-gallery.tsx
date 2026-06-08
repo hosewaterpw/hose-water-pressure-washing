@@ -54,6 +54,12 @@ const galleryItems = [
     photo: "/commercial-garage-rental-beforeafter.jpg",
     orientation: "horizontal",
   },
+  {
+  id: 9,
+  title: "House Wash - Wells",
+  photo: "/house-wash-wells-beforeafter.jpg",
+  orientation: "horizontal",
+},
 ]
 export default function BeforeAfterGallery() {
   const [activeItem, setActiveItem] = useState(galleryItems[0])
