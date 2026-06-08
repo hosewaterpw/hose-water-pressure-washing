@@ -57,7 +57,7 @@ const galleryItems = [
   {
   id: 9,
   title: "House Wash - Wells",
-  photo: "/house-wash-wells-beforeafter.jpg",
+  photo: "/house-wash-wells-beforeafter.png",
   orientation: "horizontal",
 },
 ]
