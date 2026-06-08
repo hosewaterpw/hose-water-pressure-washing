@@ -22,13 +22,13 @@ const galleryItems = [
     id: 3,
     title: "House Wash",
     photo: "/house-exterior-3-beforeafter.jpg",
-    orientation: "horizontal",
+    orientation: "vertical",
   },
   {
     id: 4,
     title: "Patio Cleaning",
     photo: "/patio-beforeafter.jpg",
-    orientation: "horizontal",
+    orientation: "Vertical",
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const galleryItems = [
   {
   id: 9,
   title: "House Wash - Wells",
-  photo: "/house-wash-wells-beforeafter.jpg",
+  photo: "/house-wash-wells-beforeafter.png",
   orientation: "horizontal",
 },
 ]
