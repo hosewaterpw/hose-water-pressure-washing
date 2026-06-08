@@ -89,7 +89,7 @@ export default function BeforeAfterGallery() {
           </div>
         </CardContent>
       </Card>
-      <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
         {galleryItems.map((item) => (
           <button
             key={item.id}
