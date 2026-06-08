@@ -8,18 +8,53 @@ import { Card, CardContent } from "@/components/ui/card"
 const galleryItems = [
   {
     id: 1,
-    title: "House Exterior",
+    title: "House Wash",
     photo: "/house-exterior-beforeafter.jpg",
     orientation: "horizontal",
   },
   {
+    id: 2,
+    title: "House Wash",
+    photo: "/house-exterior-2-beforeafter.jpg",
+    orientation: "horizontal",
+  },
+  {
     id: 3,
-    title: "Wooden Deck",
-    photo: "/wooden-deck-1-beforeafter.jpg",
-    orientation: "vertical",
+    title: "House Wash",
+    photo: "/house-exterior-3-beforeafter.jpg",
+    orientation: "horizontal",
+  },
+  {
+    id: 4,
+    title: "Patio Cleaning",
+    photo: "/patio-beforeafter.jpg",
+    orientation: "horizontal",
+  },
+  {
+    id: 5,
+    title: "Concrete Cleaning",
+    photo: "/concrete-walkway-beforeafter.jpg",
+    orientation: "horizontal",
+  },
+  {
+    id: 6,
+    title: "Roof Cleaning",
+    photo: "/asphalt-roof-beforeafter.jpg",
+    orientation: "horizontal",
+  },
+  {
+    id: 7,
+    title: "Window Cleaning",
+    photo: "/exterior-window-beforeafter.jpg",
+    orientation: "horizontal",
+  },
+  {
+    id: 8,
+    title: "Commercial Cleaning",
+    photo: "/commercial-garage-rental-beforeafter.jpg",
+    orientation: "horizontal",
   },
 ]
-
 export default function BeforeAfterGallery() {
   const [activeItem, setActiveItem] = useState(galleryItems[0])
 
