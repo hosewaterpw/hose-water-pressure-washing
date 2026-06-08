@@ -10,7 +10,7 @@ const galleryItems = [
     id: 1,
     title: "House Wash",
     photo: "/house-exterior-beforeafter.jpg",
-    orientation: "horizontal",
+    orientation: "vertical",
   },
   {
     id: 2,
