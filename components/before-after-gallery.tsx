@@ -61,7 +61,7 @@ const galleryItems = [
     orientation: "horizontal",
   },
   {
-    id: 9,
+    id: 10,
     title: "Deck Cleaning - Lebanon",
     photo: "/deck-cleaning-lebanon-beforafter.jpg",
     orientation: "horizontal",
