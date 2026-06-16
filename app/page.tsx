@@ -6,6 +6,7 @@ import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import ServiceCard from "@/components/service-card"
+import GoogleReviews from "@/components/google-reviews"
 import BeforeAfterGallery from "@/components/before-after-gallery"
 
 export const metadata: Metadata = {
@@ -342,28 +343,21 @@ export default function Home() {
         </section>
 
         {/* Google Reviews Section */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32">
-          <div className="container px-4 sm:px-6 md:px-8">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
-                  What Our Customers Say
-                </h2>
-                <p className="max-w-[700px] text-gray-500 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8">
-                  Read reviews from satisfied customers in Southern Maine & New Hampshire.
-                </p>
-              </div>
-              <Link href="https://g.co/kgs/ehG2MEi" target="_blank" rel="noopener noreferrer">
-                <Button
-                  size="lg"
-                  className="gap-2 bg-yellow-400 text-[#333333] hover:bg-yellow-500 text-base px-6 py-3"
-                >
-                  Read Our Google Reviews <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
+        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gray-50">
+  <div className="container px-4 sm:px-6 md:px-8">
+    <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
+        What Our Customers Say
+      </h2>
+
+      <p className="max-w-[700px] text-gray-500 text-base sm:text-lg">
+        Real reviews from homeowners and businesses throughout Southern Maine and New Hampshire.
+      </p>
+    </div>
+
+    <GoogleReviews />
+  </div>
+</section>
 
         {/* Before & After Gallery */}
 <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 bg-white">
