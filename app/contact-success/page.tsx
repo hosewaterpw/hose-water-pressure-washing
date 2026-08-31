@@ -22,7 +22,10 @@ export default function ContactSuccessPage() {
             We've received your message and will get back to you within 24 hours.
           </p>
           <p className="text-gray-500">
-            For urgent matters, please call us at <strong>207-370-8667</strong>
+            For urgent matters, please call us at{" "}
+            <a href="tel:+12073708667" className="font-bold hover:underline">
+              (207) 370-8667
+            </a>
           </p>
         </div>
         <div className="flex flex-col gap-2 min-[400px]:flex-row">

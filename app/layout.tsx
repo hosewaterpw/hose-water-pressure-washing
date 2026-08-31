@@ -66,10 +66,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Jonathan P. Bilodeau" }],
   creator: "Hose Water Pressure Washing",
   publisher: "Hose Water Pressure Washing",
+  // telephone detection left on so any number not wrapped in an explicit
+  // tel: link is still tappable on mobile.
   formatDetection: {
     email: false,
     address: false,
-    telephone: false,
   },
   metadataBase: new URL("https://hosewaterpw.com"), // Replace with your actual domain
   alternates: {
@@ -184,7 +185,7 @@ export default function RootLayout({
               description:
                 "Professional pressure washing services for residential and commercial properties throughout Southern Maine and New Hampshire",
               url: "https://hosewaterpw.com",
-              telephone: "207-370-8667", // Replace with your actual phone number
+              telephone: "+1-207-370-8667",
               email: "hosewaterpw@gmail.com",
               address: {
                 "@type": "PostalAddress",

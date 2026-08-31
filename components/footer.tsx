@@ -72,11 +72,18 @@ export default function Footer() {
             <div className="flex flex-col gap-3 sm:gap-4">
               <div className="flex items-start gap-2">
                 <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 mt-0.5 flex-shrink-0" />
-                <span className="text-sm">(207) 370-8667</span>
+                <a href="tel:+12073708667" className="text-sm hover:text-yellow-400 transition-colors">
+                  (207) 370-8667
+                </a>
               </div>
               <div className="flex items-start gap-2">
                 <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 mt-0.5 flex-shrink-0" />
-                <span className="text-sm break-all">hosewaterpw@gmail.com</span>
+                <a
+                  href="mailto:hosewaterpw@gmail.com"
+                  className="text-sm break-all hover:text-yellow-400 transition-colors"
+                >
+                  hosewaterpw@gmail.com
+                </a>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 mt-0.5 flex-shrink-0" />

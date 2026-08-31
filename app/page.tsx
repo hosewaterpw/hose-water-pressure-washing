@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import ServiceCard from "@/components/service-card"
 import GoogleReviews from "@/components/google-reviews"
 import BeforeAfterGallery from "@/components/before-after-gallery"
+import CopyPhone from "@/components/copy-phone"
 
 export const metadata: Metadata = {
   title: "Pressure Washing North Berwick Maine | House, Roof, & Deck Cleaning | Hose Water Pressure Washing",
@@ -137,10 +138,11 @@ export default function Home() {
                       variant="outline"
                       className="w-full sm:w-auto text-white border-white hover:bg-white/10 bg-transparent text-base px-6 py-3"
                     >
-                      Call (207) 370-8667
+                      Contact Me
                     </Button>
                   </Link>
                 </div>
+                <CopyPhone className="justify-center lg:justify-start text-gray-200" />
               </div>
               <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden mt-6 lg:mt-0">
                 <Image

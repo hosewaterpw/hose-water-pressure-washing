@@ -40,10 +40,16 @@ export default function MeasurementGuidePage() {
           </p>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
-              <span className="font-medium">Phone:</span> (207) 370-8667
+              <span className="font-medium">Phone:</span>{" "}
+              <a href="tel:+12073708667" className="hover:text-primary hover:underline">
+                (207) 370-8667
+              </a>
             </li>
             <li className="flex items-center gap-2">
-              <span className="font-medium">Email:</span> info@hosewaterpw.com
+              <span className="font-medium">Email:</span>{" "}
+              <a href="mailto:info@hosewaterpw.com" className="hover:text-primary hover:underline">
+                info@hosewaterpw.com
+              </a>
             </li>
           </ul>
           <p className="mt-4 text-sm text-muted-foreground">

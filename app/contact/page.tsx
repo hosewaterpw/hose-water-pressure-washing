@@ -83,7 +83,11 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="text-xl font-bold">Phone</h3>
-              <p className="text-gray-500 mt-1">207-370-8667</p>
+              <p className="mt-1">
+                <a href="tel:+12073708667" className="text-gray-500 hover:text-primary hover:underline">
+                  (207) 370-8667
+                </a>
+              </p>
               <p className="text-sm text-muted-foreground mt-1">
                 Monday - Saturday: 8:00 AM - 5:00 PM
                 <br />
@@ -98,7 +102,14 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="text-xl font-bold">Email</h3>
-              <p className="text-gray-500 mt-1">hosewaterpw@gmail.com</p>
+              <p className="mt-1">
+                <a
+                  href="mailto:hosewaterpw@gmail.com"
+                  className="text-gray-500 hover:text-primary hover:underline break-all"
+                >
+                  hosewaterpw@gmail.com
+                </a>
+              </p>
               <p className="text-sm text-muted-foreground mt-1">We typically respond within 24 hours</p>
             </div>
           </div>

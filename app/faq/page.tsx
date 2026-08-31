@@ -242,7 +242,7 @@ export default function FAQPage() {
             <div className="mt-4 text-center">
               <p className="text-sm text-gray-300">
                 Call us at{" "}
-                <a href="tel:207-370-8667" className="text-yellow-400 hover:underline">
+                <a href="tel:+12073708667" className="text-yellow-400 hover:underline">
                   (207) 370-8667
                 </a>{" "}
                 or email{" "}
