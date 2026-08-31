@@ -110,9 +110,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code", // Add your Google Search Console verification code
-  },
+  // To verify in Google Search Console, uncomment and paste the real code:
+  // verification: { google: "..." },
     generator: 'v0.dev'
 }
 
@@ -124,7 +123,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://hosewaterpw.com" />
         <meta name="geo.region" content="US-ME" />
         <meta name="geo.placename" content="North Berwick" />
         <meta name="geo.position" content="43.3048;-70.7342" />

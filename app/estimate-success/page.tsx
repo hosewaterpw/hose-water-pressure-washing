@@ -1,6 +1,13 @@
 import Link from "next/link"
 import { CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import type { Metadata } from "next"
+
+// Post-submission confirmation page: no search value, keep it out of the index.
+export const metadata: Metadata = {
+  title: "Estimate Request Received",
+  robots: { index: false, follow: false },
+}
 
 export default function EstimateSuccessPage() {
   return (

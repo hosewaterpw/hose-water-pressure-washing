@@ -2,6 +2,16 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import MeasurementGuide from "@/components/measurement-guide"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "How to Measure Your House for a Wash Quote",
+  description:
+    "A simple step-by-step guide to measuring your home's exterior so you can get an accurate house washing quote. Includes a diagram and worked example.",
+  alternates: {
+    canonical: "/estimate/measurement-guide",
+  },
+}
 
 export default function MeasurementGuidePage() {
   return (

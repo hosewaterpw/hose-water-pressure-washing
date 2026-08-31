@@ -4,7 +4,10 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Pressure Washing FAQ | North Berwick, Maine | Hose Water Pressure Washing",
+  title: "Pressure Washing FAQ | North Berwick, Maine",
+  alternates: {
+    canonical: "/faq",
+  },
   description:
     "Find answers to frequently asked questions about our pressure washing services in North Berwick, Maine. Learn about pricing, scheduling, preparation, and what to expect from our house washing, roof cleaning, and exterior services in York County and beyond.",
   keywords: [

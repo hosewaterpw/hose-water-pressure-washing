@@ -4,6 +4,16 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Contact Us | North Berwick, Maine",
+  description:
+    "Contact Hose Water Pressure Washing in North Berwick, Maine. Call (207) 370-8667 or send a message for pressure washing across York County and the NH Seacoast.",
+  alternates: {
+    canonical: "/contact",
+  },
+}
 
 export default function ContactPage() {
   return (
