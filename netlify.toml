@@ -8,16 +8,9 @@
 [build.environment]
   NEXT_PRIVATE_TARGET = "server"
 
-# Form redirects
-[[redirects]]
-  from = "/contact-success"
-  to = "/contact-success.html"
-  status = 200
-
-[[redirects]]
-  from = "/estimate-success"  
-  to = "/estimate-success.html"
-  status = 200
+# Form success pages are served by the Next.js app (app/contact-success,
+# app/estimate-success). They previously rewrote to static files in public/,
+# which shadowed the real pages and could not carry their noindex metadata.
 
 # Catch-all redirect for Next.js
 [[redirects]]
