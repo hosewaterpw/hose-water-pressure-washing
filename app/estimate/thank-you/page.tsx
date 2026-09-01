@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <div className="container flex flex-col items-center justify-center px-4 py-24 md:px-6">
+    <div className="container flex flex-col items-center justify-center px-4 py-12 sm:px-6 md:px-8 md:py-16">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="rounded-full bg-primary/10 p-4">
           <CheckCircle className="h-12 w-12 text-primary" />

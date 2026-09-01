@@ -186,7 +186,7 @@ export default function GalleryClient() {
   }, [selectedImage])
 
   return (
-    <div className="container px-4 py-12 md:px-6 md:py-24">
+    <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-14 lg:py-20">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{getServiceName()}</h1>
@@ -312,7 +312,7 @@ export default function GalleryClient() {
       )}
 
       {/* CTA Section */}
-      <section className="mt-24 py-12 px-6 bg-[#333333] text-white rounded-lg">
+      <section className="mt-12 md:mt-16 py-12 px-6 bg-[#333333] text-white rounded-lg">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold">Ready to See These Results on Your Property?</h2>
           <p className="max-w-[600px]">

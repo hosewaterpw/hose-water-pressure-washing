@@ -1,10 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Check } from "lucide-react"
+import { ArrowRight, Award, Droplets, FileText, ThumbsUp, Wrench } from "lucide-react"
 import type { Metadata } from "next"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import ServiceCard from "@/components/service-card"
 import GoogleReviews from "@/components/google-reviews"
 import BeforeAfterGallery from "@/components/before-after-gallery"
@@ -111,7 +110,7 @@ export default function Home() {
 
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gradient-to-b from-[#333333] to-gray-800 text-white">
+        <section className="w-full py-8 md:py-14 lg:py-20 bg-gradient-to-b from-[#333333] to-gray-800 text-white">
           <div className="container px-4 sm:px-6 md:px-8">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
@@ -158,9 +157,9 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32">
+        <section className="w-full py-8 md:py-14 lg:py-20">
           <div className="container px-4 sm:px-6 md:px-8">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-12">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-8">
               <div className="space-y-2">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
                   Our Pressure Washing Services
@@ -175,48 +174,42 @@ export default function Home() {
                 title="House Washing"
                 description="Remove dirt, mold, and mildew from your home's exterior surfaces with our professional house washing service."
                 icon="home"
-                imageSrc="/house-washing-service.png"
-                orientation="horizontal"
+                imageSrc="/house-washing-service.png"
                 serviceId="house-washing"
               />
               <ServiceCard
                 title="Deck Cleaning"
                 description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
                 icon="layout"
-                imageSrc="/deck-cleaning.png"
-                orientation="vertical"
+                imageSrc="/deck-cleaning.png"
                 serviceId="deck"
               />
               <ServiceCard
                 title="Solar Panel & Window Cleaning"
                 description="Professional solar panel and exterior window cleaning using water-fed pole system with deionized water for spot-free results."
                 icon="square"
-                imageSrc="/solar-window-cleaning.png"
-                orientation="horizontal"
+                imageSrc="/solar-window-cleaning.png"
                 serviceId="solar-window"
               />
               <ServiceCard
                 title="Roof Cleaning"
                 description="Safely remove black streaks, moss, and algae from your roof with our professional roof cleaning."
                 icon="home"
-                imageSrc="/roof-cleaning.png"
-                orientation="vertical"
+                imageSrc="/roof-cleaning.png"
                 serviceId="roof"
               />
               <ServiceCard
                 title="Patio & Walkway Cleaning"
                 description="Restore concrete, stone, and brick patios and walkways by removing dirt, stains, and organic growth."
                 icon="square"
-                imageSrc="/patio-walkway-cleaning.png"
-                orientation="vertical"
+                imageSrc="/patio-walkway-cleaning.png"
                 serviceId="patio-walkway"
               />
               <ServiceCard
                 title="Commercial Pressure Washing"
                 description="Maintain your business property's appearance and safety with our commercial pressure washing services."
                 icon="building"
-                imageSrc="/commercial-cleaning.png"
-                orientation="horizontal"
+                imageSrc="/commercial-cleaning.png"
                 serviceId="commercial"
               />
             </div>
@@ -224,9 +217,9 @@ export default function Home() {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gray-50">
+        <section className="w-full py-8 md:py-14 lg:py-20 bg-gray-50">
           <div className="container px-4 sm:px-6 md:px-8">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-12">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-8">
               <div className="space-y-2">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
                   Why Choose Hose Water Pressure Washing
@@ -237,47 +230,53 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              <Card className="text-center">
-                <CardContent className="flex flex-col items-center p-4 sm:p-6">
-                  <div className="mb-4 rounded-full bg-yellow-400/10 p-3">
-                    <Check className="h-6 w-6 text-yellow-500" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">Experienced Professionals</h3>
-                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                    Our team has years of experience in the pressure washing industry serving Southern Maine & New Hampshire
-                    residents.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="text-center">
-                <CardContent className="flex flex-col items-center p-4 sm:p-6">
-                  <div className="mb-4 rounded-full bg-yellow-400/10 p-3">
-                    <Check className="h-6 w-6 text-yellow-500" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">Professional Equipment</h3>
-                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                    We use commercial-grade pressure washing equipment to deliver superior cleaning results.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="text-center md:col-span-2 lg:col-span-1">
-                <CardContent className="flex flex-col items-center p-4 sm:p-6">
-                  <div className="mb-4 rounded-full bg-yellow-400/10 p-3">
-                    <Check className="h-6 w-6 text-yellow-500" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">Satisfaction Guaranteed</h3>
-                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                    We're not happy until you're happy with the results of our pressure washing work.
-                  </p>
-                </CardContent>
-              </Card>
+            {/* Three across, then two centred beneath on desktop. */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+              <div className="flex flex-col items-center rounded-xl bg-teal-50 p-4 text-center sm:p-5">
+                <Award className="h-6 w-6 text-teal-700" aria-hidden="true" />
+                <h3 className="mt-3 text-base sm:text-lg font-bold text-teal-900">Experienced Professionals</h3>
+                <p className="mt-1.5 text-sm text-teal-800 leading-relaxed">
+                  Our team has years of experience in the pressure washing industry serving Southern Maine & New
+                  Hampshire residents.
+                </p>
+              </div>
+              <div className="flex flex-col items-center rounded-xl bg-sky-50 p-4 text-center sm:p-5">
+                <Wrench className="h-6 w-6 text-sky-700" aria-hidden="true" />
+                <h3 className="mt-3 text-base sm:text-lg font-bold text-sky-900">Professional Equipment</h3>
+                <p className="mt-1.5 text-sm text-sky-800 leading-relaxed">
+                  We use commercial-grade pressure washing equipment to deliver superior cleaning results.
+                </p>
+              </div>
+              <div className="flex flex-col items-center rounded-xl bg-amber-50 p-4 text-center sm:p-5">
+                <ThumbsUp className="h-6 w-6 text-amber-700" aria-hidden="true" />
+                <h3 className="mt-3 text-base sm:text-lg font-bold text-amber-900">Satisfaction Guaranteed</h3>
+                <p className="mt-1.5 text-sm text-amber-800 leading-relaxed">
+                  We're not happy until you're happy with the results of our pressure washing work.
+                </p>
+              </div>
+            </div>
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-6 sm:gap-6 md:mx-auto md:max-w-[66%] md:grid-cols-2">
+              <div className="flex flex-col items-center rounded-xl bg-violet-50 p-4 text-center sm:p-5">
+                <Droplets className="h-6 w-6 text-violet-700" aria-hidden="true" />
+                <h3 className="mt-3 text-base sm:text-lg font-bold text-violet-900">Safe Soft Wash Methods</h3>
+                <p className="mt-1.5 text-sm text-violet-800 leading-relaxed">
+                  We adjust our technique to the surface, using low-pressure soft washing where it matters to protect
+                  your property.
+                </p>
+              </div>
+              <div className="flex flex-col items-center rounded-xl bg-rose-50 p-4 text-center sm:p-5">
+                <FileText className="h-6 w-6 text-rose-700" aria-hidden="true" />
+                <h3 className="mt-3 text-base sm:text-lg font-bold text-rose-900">Free, No-Obligation Quotes</h3>
+                <p className="mt-1.5 text-sm text-rose-800 leading-relaxed">
+                  Request an estimate online or call us. Detailed pricing with nothing owed up front.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Service Area */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gray-50">
+        <section className="w-full py-8 md:py-14 lg:py-20 bg-gray-50">
           <div className="container px-4 sm:px-6 md:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -345,7 +344,7 @@ export default function Home() {
         </section>
 
         {/* Google Reviews Section */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gray-50">
+        <section className="w-full py-8 md:py-14 lg:py-20 bg-gray-50">
   <div className="container px-4 sm:px-6 md:px-8">
     <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
@@ -362,7 +361,7 @@ export default function Home() {
 </section>
 
         {/* Before & After Gallery */}
-<section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 bg-white">
+<section className="w-full py-8 md:py-14 lg:py-20 bg-white">
   <div className="container px-4 sm:px-6 md:px-8">
     <div className="flex flex-col items-center text-center mb-8">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
@@ -377,11 +376,19 @@ export default function Home() {
     </div>
 
     <BeforeAfterGallery />
+
+    <div className="mt-8 flex justify-center">
+      <Link href="/gallery">
+        <Button variant="outline" size="lg" className="gap-2">
+          See All Before &amp; Afters <ArrowRight className="h-4 w-4" />
+        </Button>
+      </Link>
+    </div>
   </div>
 </section>
         
         {/* CTA Section */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-[#333333] text-white">
+        <section className="w-full py-8 md:py-14 lg:py-20 bg-[#333333] text-white">
           <div className="container px-4 sm:px-6 md:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">

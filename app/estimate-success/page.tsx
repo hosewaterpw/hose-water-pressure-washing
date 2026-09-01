@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function EstimateSuccessPage() {
   return (
-    <div className="container flex flex-col items-center justify-center px-4 py-24 md:px-6">
+    <div className="container flex flex-col items-center justify-center px-4 py-12 sm:px-6 md:px-8 md:py-16">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="rounded-full bg-primary/10 p-4">
           <CheckCircle className="h-12 w-12 text-primary" />
@@ -33,6 +33,18 @@ export default function EstimateSuccessPage() {
           <Link href="/gallery">
             <Button variant="outline">View Our Gallery</Button>
           </Link>
+        </div>
+        <div className="pt-4 text-sm text-gray-500">
+          <p className="font-medium">Questions? Contact us directly:</p>
+          <p className="mt-1">
+            <a href="tel:+12073708667" className="hover:text-primary hover:underline">
+              (207) 370-8667
+            </a>
+            {" · "}
+            <a href="mailto:hosewaterpw@gmail.com" className="hover:text-primary hover:underline">
+              hosewaterpw@gmail.com
+            </a>
+          </p>
         </div>
       </div>
     </div>

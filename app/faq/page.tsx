@@ -186,8 +186,8 @@ export default function FAQPage() {
         }}
       />
 
-      <div className="container px-4 py-12 md:px-6 md:py-24">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+      <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-14 lg:py-20">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Frequently Asked Questions</h1>
             <p className="max-w-[700px] text-gray-500 md:text-xl">

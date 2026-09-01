@@ -8,8 +8,7 @@ interface ServiceCardProps {
   title: string
   description: string
   icon: string
-  imageSrc?: string
-  orientation?: "horizontal" | "vertical"
+  imageSrc?: string
   serviceId?: string
 }
 
@@ -17,8 +16,7 @@ export default function ServiceCard({
   title,
   description,
   icon,
-  imageSrc,
-  orientation = "horizontal",
+  imageSrc,
   serviceId,
 }: ServiceCardProps) {
   const getIcon = () => {
@@ -38,24 +36,29 @@ export default function ServiceCard({
     }
   }
 
-  // Function to get the appropriate aspect ratio class
-  const getAspectRatio = (orientation: string) => {
-    return orientation === "vertical" ? "aspect-[3/4]" : "aspect-video"
-  }
-
+  // One frame for every card regardless of the photo's shape, so the grid rows stay
+  // even. object-contain because these are before/after composites - cropping would
+  // cut off one of the two panels. The three side-by-side photos fill this frame; the
+  // three stacked ones letterbox until they are re-exported in a consistent format.
   return (
     <Card className="overflow-hidden h-full">
       {imageSrc && (
-        <div className={`relative ${getAspectRatio(orientation)} w-full`}>
-          <Image src={imageSrc || "/placeholder.svg"} alt={title} fill className="object-cover" />
+        <div className="relative aspect-[4/3] w-full bg-gray-100">
+          <Image
+            src={imageSrc || "/placeholder.svg"}
+            alt={title}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-contain"
+          />
         </div>
       )}
-      <CardContent className="p-4 sm:p-6 flex flex-col h-full">
-        <div className="mb-3 sm:mb-4">{getIcon()}</div>
-        <h3 className="text-lg sm:text-xl font-bold mb-2">{title}</h3>
-        <p className="text-gray-500 text-sm sm:text-base leading-relaxed flex-grow">{description}</p>
+      <CardContent className="p-4 flex flex-col h-full">
+        <div className="mb-2">{getIcon()}</div>
+        <h3 className="text-base sm:text-lg font-bold mb-1.5">{title}</h3>
+        <p className="text-gray-500 text-sm leading-relaxed flex-grow">{description}</p>
         {serviceId && (
-          <div className="mt-4 flex flex-col sm:flex-row gap-2">
+          <div className="mt-3 flex flex-row gap-2">
             <Link href={`/services#${serviceId === "patio-walkway" ? "patio-walkway" : serviceId}`} className="flex-1">
               <Button variant="outline" size="sm" className="w-full text-xs sm:text-sm">
                 Learn More

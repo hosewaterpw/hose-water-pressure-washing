@@ -204,7 +204,7 @@ export default function ServicesPage() {
         }}
       />
 
-      <div className="container px-4 py-12 md:px-6 md:py-24">
+      <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-14 lg:py-20">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -218,7 +218,7 @@ export default function ServicesPage() {
         </div>
 
         {services.map((service, index) => (
-          <section key={service.id} id={service.id} className="mt-16 scroll-mt-20">
+          <section key={service.id} id={service.id} className="mt-12 md:mt-16 scroll-mt-20">
             <div className="grid gap-8 md:grid-cols-2 items-center">
               <div
                 className={`relative ${getAspectRatio(service.orientation)} overflow-hidden rounded-lg ${index % 2 === 1 ? "order-1 md:order-2" : ""}`}
@@ -257,7 +257,7 @@ export default function ServicesPage() {
         ))}
 
         {/* CTA Section */}
-        <section className="mt-24 py-12 px-6 bg-[#333333] text-white rounded-lg">
+        <section className="mt-12 md:mt-16 py-12 px-6 bg-[#333333] text-white rounded-lg">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold">Ready to Transform Your Property?</h2>
             <p className="max-w-[600px]">

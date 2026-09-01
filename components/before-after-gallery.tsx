@@ -4,7 +4,8 @@ import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 
-// Updated sample data for homepage preview - supports both orientations
+// Homepage preview only: one photo per main service, with the full set on /gallery.
+// Kept to four deliberately - every thumbnail here is a full-size image download.
 const galleryItems = [
   {
     id: 1,
@@ -14,15 +15,15 @@ const galleryItems = [
   },
   {
     id: 2,
-    title: "House Wash - North Berwick",
-    photo: "/house-exterior-2-beforeafter.jpg",
+    title: "Roof Cleaning - Wells",
+    photo: "/asphalt-roof-beforeafter.jpg",
     orientation: "horizontal",
   },
   {
     id: 3,
-    title: "House Wash - North Berwick",
-    photo: "/house-exterior-3-beforeafter.jpg",
-    orientation: "vertical",
+    title: "Deck Cleaning - Lebanon",
+    photo: "/deck-cleaning-lebanon-beforeafter.jpg",
+    orientation: "horizontal",
   },
   {
     id: 4,
@@ -30,50 +31,14 @@ const galleryItems = [
     photo: "/patio-beforeafter.jpg",
     orientation: "vertical",
   },
-  {
-    id: 5,
-    title: "Walkway Cleaning - South Berwick",
-    photo: "/concrete-walkway-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  {
-    id: 6,
-    title: "Roof Cleaning - Wells",
-    photo: "/asphalt-roof-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  {
-    id: 7,
-    title: "Window Cleaning - York",
-    photo: "/exterior-window-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  {
-    id: 8,
-    title: "Commercial Cleaning - Berwick",
-    photo: "/commercial-garage-rental-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  {
-    id: 9,
-    title: "House Wash - Wells",
-    photo: "/house-wash-wells-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  {
-    id: 10,
-    title: "Deck Cleaning - Lebanon",
-    photo: "/deck-cleaning-lebanon-beforeafter.jpg",
-    orientation: "horizontal",
-  },
 ]
 export default function BeforeAfterGallery() {
   const [activeItem, setActiveItem] = useState(galleryItems[0])
 
-  // Function to get the appropriate aspect ratio class
-  const getAspectRatio = (orientation: string) => {
-    return orientation === "vertical" ? "aspect-[3/4]" : "aspect-video"
-  }
+  // Fixed viewer height rather than an aspect ratio: a 3/4 box at full container
+  // width rendered over 1500px tall on desktop. object-contain keeps portrait and
+  // landscape photos fully visible in the same frame.
+  const viewerHeight = "h-[280px] sm:h-[380px] lg:h-[460px]"
 
   // Function to get the appropriate label text
   const getLabelText = (orientation: string) => {
@@ -84,12 +49,13 @@ export default function BeforeAfterGallery() {
     <div className="w-full">
       <Card>
         <CardContent className="p-4">
-          <div className={`relative ${getAspectRatio(activeItem.orientation)} overflow-hidden rounded-md`}>
+          <div className={`relative ${viewerHeight} overflow-hidden rounded-md bg-gray-100`}>
             <Image
               src={activeItem.photo || "/placeholder.svg"}
               alt={`${activeItem.title} before and after pressure washing`}
               fill
-              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+              className="object-contain"
             />
             <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
               {getLabelText(activeItem.orientation)}

@@ -61,7 +61,7 @@ export default function AboutPage() {
         }}
       />
 
-      <div className="container px-4 py-12 md:px-6 md:py-24">
+      <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-14 lg:py-20">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -75,7 +75,7 @@ export default function AboutPage() {
         </div>
 
         {/* Owner Introduction */}
-        <section className="mt-16">
+        <section className="mt-12 md:mt-16">
           <div className="grid gap-8 md:grid-cols-2 items-center">
             <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-lg">
               <Image
@@ -118,8 +118,8 @@ export default function AboutPage() {
         </section>
 
         {/* Our Approach */}
-        <section className="mt-24">
-          <div className="text-center mb-12">
+        <section className="mt-12 md:mt-16">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-bold">Our Approach</h2>
             <p className="mt-2 text-gray-500 max-w-2xl mx-auto">
               What makes Hose Water Pressure Washing different from other services in Southern Maine & New Hampshire.
@@ -164,7 +164,7 @@ export default function AboutPage() {
         </section>
 
         {/* Owner Story */}
-        <section className="mt-24">
+        <section className="mt-12 md:mt-16">
           <div className="bg-gray-50 rounded-lg p-8 md:p-12">
             <div className="max-w-3xl mx-auto space-y-6">
               <h2 className="text-3xl font-bold text-center mb-8">My Story</h2>
@@ -198,7 +198,7 @@ export default function AboutPage() {
         </section>
 
         {/* Business Details */}
-        <section className="mt-24">
+        <section className="mt-12 md:mt-16">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="flex flex-col items-center text-center">
               <div className="mb-4 rounded-full bg-yellow-400/10 p-3">
@@ -232,7 +232,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-24 py-12 px-6 bg-[#333333] text-white rounded-lg">
+        <section className="mt-12 md:mt-16 py-12 px-6 bg-[#333333] text-white rounded-lg">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold">Ready to Work Together?</h2>
             <p className="max-w-[600px]">
