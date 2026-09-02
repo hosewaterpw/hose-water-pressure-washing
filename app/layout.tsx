@@ -243,7 +243,11 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="relative flex min-h-screen flex-col">
             <Navbar />
-            <main className="flex-1">{children}</main>
+            {/* Reserves room for the fixed footer. --footer-h is published by the
+                footer itself; the fallback covers the moment before hydration. */}
+            <main className="flex-1" style={{ paddingBottom: "var(--footer-h, 165px)" }}>
+              {children}
+            </main>
             <Footer />
           </div>
         </ThemeProvider>
