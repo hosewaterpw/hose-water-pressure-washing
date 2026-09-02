@@ -27,7 +27,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-6 text-lg font-semibold">
           <Link href="/" className="transition-colors hover:text-yellow-600">
             Home
           </Link>
@@ -51,7 +51,9 @@ export default function Navbar() {
         {/* Desktop CTA Button */}
         <div className="hidden md:flex">
           <Link href="/estimate">
-            <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get Free Estimate</Button>
+            <Button className="bg-yellow-400 text-[#333333] hover:bg-yellow-500 text-lg font-semibold">
+              Get Free Estimate
+            </Button>
           </Link>
         </div>
 
@@ -65,46 +67,46 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden border-t bg-white">
           <nav className="container px-4 py-4 flex flex-col gap-4">
-            <Link href="/" className="text-sm font-medium transition-colors hover:text-yellow-600" onClick={closeMenu}>
+            <Link href="/" className="text-lg font-semibold transition-colors hover:text-yellow-600" onClick={closeMenu}>
               Home
             </Link>
             <Link
               href="/services"
-              className="text-sm font-medium transition-colors hover:text-yellow-600"
+              className="text-lg font-semibold transition-colors hover:text-yellow-600"
               onClick={closeMenu}
             >
               Services
             </Link>
             <Link
               href="/gallery"
-              className="text-sm font-medium transition-colors hover:text-yellow-600"
+              className="text-lg font-semibold transition-colors hover:text-yellow-600"
               onClick={closeMenu}
             >
               Gallery
             </Link>
             <Link
               href="/about"
-              className="text-sm font-medium transition-colors hover:text-yellow-600"
+              className="text-lg font-semibold transition-colors hover:text-yellow-600"
               onClick={closeMenu}
             >
               About
             </Link>
             <Link
               href="/faq"
-              className="text-sm font-medium transition-colors hover:text-yellow-600"
+              className="text-lg font-semibold transition-colors hover:text-yellow-600"
               onClick={closeMenu}
             >
               FAQ
             </Link>
             <Link
               href="/contact"
-              className="text-sm font-medium transition-colors hover:text-yellow-600"
+              className="text-lg font-semibold transition-colors hover:text-yellow-600"
               onClick={closeMenu}
             >
               Contact
             </Link>
             <Link href="/estimate" onClick={closeMenu}>
-              <Button className="w-full bg-yellow-400 text-[#333333] hover:bg-yellow-500">Get Free Estimate</Button>
+              <Button className="w-full bg-yellow-400 text-[#333333] hover:bg-yellow-500 text-lg font-semibold">Get Free Estimate</Button>
             </Link>
           </nav>
         </div>
