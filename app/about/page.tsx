@@ -79,9 +79,10 @@ export default function AboutPage() {
           <div className="grid gap-8 md:grid-cols-2 items-center">
             <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-lg">
               <Image
-                src="/owner-portrait.png"
+                src="/owner-portrait.jpg"
                 alt="Jonathan P. Bilodeau, Owner of Hose Water Pressure Washing"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

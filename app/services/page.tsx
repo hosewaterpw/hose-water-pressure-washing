@@ -84,7 +84,7 @@ const services = [
   {
     id: "house-washing",
     title: "House Washing Services",
-    image: "/house-washing.png",
+    image: "/house-washing.jpg",
     orientation: "horizontal",
     description:
       "Our professional house washing service removes dirt, mold, mildew, and other organic material from your home's exterior surfaces. We use professional-grade equipment and techniques to safely clean vinyl siding, brick, stucco, and other exterior materials.",
@@ -99,7 +99,7 @@ const services = [
   {
     id: "deck",
     title: "Deck Cleaning & Restoration",
-    image: "/deck-cleaning.png",
+    image: "/deck-cleaning.jpg",
     orientation: "vertical",
     description:
       "Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew and other organic growth. We carefully adjust our pressure washing techniques based on the material of your deck to ensure safe and effective cleaning.",
@@ -114,7 +114,7 @@ const services = [
   {
     id: "patio-walkway",
     title: "Patio & Walkway Cleaning",
-    image: "/patio-walkway-cleaning.png",
+    image: "/patio-walkway-cleaning.jpg",
     orientation: "vertical",
     description:
       "Our patio and walkway cleaning service restores concrete, stone, and brick surfaces by removing dirt, stains, mold, and algae. We use appropriate pressure settings and techniques to clean without damaging your hardscape surfaces.",
@@ -130,7 +130,7 @@ const services = [
   {
     id: "solar-window",
     title: "Solar Panel & Window Cleaning",
-    image: "/solar-window-cleaning.png",
+    image: "/solar-window-cleaning.jpg",
     orientation: "horizontal",
     description:
       "Our specialized solar panel and exterior window cleaning service uses a water-fed pole system with deionized water to ensure a spot-free, streak-free finish. This method is safe for delicate surfaces and provides superior cleaning results.",
@@ -147,7 +147,7 @@ const services = [
   {
     id: "roof",
     title: "Roof Cleaning",
-    image: "/roof-cleaning.png",
+    image: "/roof-cleaning.jpg",
     orientation: "vertical",
     description:
       "Our roof cleaning service safely removes black streaks, moss, and algae from your roof. We use low-pressure washing techniques and appropriate cleaning solutions to protect your roof while effectively removing unsightly growth and stains.",
@@ -161,7 +161,7 @@ const services = [
   {
     id: "commercial",
     title: "Commercial Pressure Washing Services",
-    image: "/commercial-cleaning.png",
+    image: "/commercial-cleaning.jpg",
     orientation: "horizontal",
     description:
       "Our commercial pressure washing services help maintain your rental properties, apartment buildings, and multi-unit properties' appearance and value.",
@@ -227,6 +227,7 @@ export default function ServicesPage() {
                   src={service.image || "/placeholder.svg"}
                   alt={`${service.title} in North Berwick Maine`}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>

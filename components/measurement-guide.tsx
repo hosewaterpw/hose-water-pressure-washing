@@ -18,9 +18,10 @@ export default function MeasurementGuide() {
               <div className="space-y-4">
                 <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg border">
                   <Image
-                    src="/house-measurement-diagram.png"
+                    src="/house-measurement-diagram.jpg"
                     alt="House measurement diagram showing front width, side width, and height"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 800px"
                     className="object-contain"
                   />
                 </div>

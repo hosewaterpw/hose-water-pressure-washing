@@ -234,6 +234,7 @@ export default function GalleryClient() {
                     src={item.photo || "/placeholder.svg"}
                     alt={`${item.title} before and after pressure washing`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                   <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
@@ -264,6 +265,7 @@ export default function GalleryClient() {
                         src={item.photo || "/placeholder.svg"}
                         alt={`${item.title} before and after pressure washing`}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover"
                       />
                       <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
@@ -299,6 +301,7 @@ export default function GalleryClient() {
                 src={selectedImage.photo || "/placeholder.svg"}
                 alt={`${selectedImage.title} before and after pressure washing - enlarged view`}
                 fill
+                sizes="(max-width: 1024px) 100vw, 896px"
                 className="object-contain"
                 priority
               />

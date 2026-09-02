@@ -22,7 +22,13 @@ export default function Navbar() {
       <div className="container flex h-16 items-center justify-between px-4 sm:px-6 md:px-8">
         <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
           <div className="relative h-8 w-24 sm:h-10 sm:w-32 overflow-hidden">
-            <Image src="/logo.png" alt="Hose Water Pressure Washing LLC Logo" fill className="object-contain" />
+            <Image
+              src="/logo.png"
+              alt="Hose Water Pressure Washing LLC Logo"
+              fill
+              sizes="128px"
+              className="object-contain"
+            />
           </div>
         </Link>
 

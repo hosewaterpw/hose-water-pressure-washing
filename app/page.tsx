@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing",
     description:
       "Revitalize your property with our professional pressure washing services. At Hose Water Pressure Washing, we restore the beauty of your home or business—removing years of dirt, grime, and buildup to leave surfaces looking like new. Family-owned and operated since 2022, we proudly serve residential and commercial clients across Southern Maine and New Hampshire.",
-    images: ["/house-washing.png"],
+    images: ["/house-washing.jpg"],
   },
 }
 
@@ -145,9 +145,10 @@ export default function Home() {
               </div>
               <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden mt-6 lg:mt-0">
                 <Image
-                  src="/house-washing.png"
+                  src="/house-washing.jpg"
                   alt="Professional pressure washing services in North Berwick Maine - house washing in progress"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                   priority
                 />
@@ -174,42 +175,42 @@ export default function Home() {
                 title="House Washing"
                 description="Remove dirt, mold, and mildew from your home's exterior surfaces with our professional house washing service."
                 icon="home"
-                imageSrc="/house-washing-service.png"
+                imageSrc="/house-washing-service.jpg"
                 serviceId="house-washing"
               />
               <ServiceCard
                 title="Deck Cleaning"
                 description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
                 icon="layout"
-                imageSrc="/deck-cleaning.png"
+                imageSrc="/deck-cleaning.jpg"
                 serviceId="deck"
               />
               <ServiceCard
                 title="Solar Panel & Window Cleaning"
                 description="Professional solar panel and exterior window cleaning using water-fed pole system with deionized water for spot-free results."
                 icon="square"
-                imageSrc="/solar-window-cleaning.png"
+                imageSrc="/solar-window-cleaning.jpg"
                 serviceId="solar-window"
               />
               <ServiceCard
                 title="Roof Cleaning"
                 description="Safely remove black streaks, moss, and algae from your roof with our professional roof cleaning."
                 icon="home"
-                imageSrc="/roof-cleaning.png"
+                imageSrc="/roof-cleaning.jpg"
                 serviceId="roof"
               />
               <ServiceCard
                 title="Patio & Walkway Cleaning"
                 description="Restore concrete, stone, and brick patios and walkways by removing dirt, stains, and organic growth."
                 icon="square"
-                imageSrc="/patio-walkway-cleaning.png"
+                imageSrc="/patio-walkway-cleaning.jpg"
                 serviceId="patio-walkway"
               />
               <ServiceCard
                 title="Commercial Pressure Washing"
                 description="Maintain your business property's appearance and safety with our commercial pressure washing services."
                 icon="building"
-                imageSrc="/commercial-cleaning.png"
+                imageSrc="/commercial-cleaning.jpg"
                 serviceId="commercial"
               />
             </div>
