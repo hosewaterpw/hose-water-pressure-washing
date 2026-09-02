@@ -110,7 +110,7 @@ export default function Home() {
 
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section className="w-full py-8 md:py-14 lg:py-20 bg-gradient-to-b from-[#333333] to-gray-800 text-white">
+        <section className="w-full py-8 md:py-10 lg:py-12 bg-gradient-to-b from-[#333333] to-gray-800 text-white">
           <div className="container px-4 sm:px-6 md:px-8">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
@@ -157,7 +157,7 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="w-full py-8 md:py-14 lg:py-20">
+        <section className="w-full py-8 md:py-10 lg:py-12">
           <div className="container px-4 sm:px-6 md:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-8">
               <div className="space-y-2">
@@ -174,42 +174,42 @@ export default function Home() {
                 title="House Washing"
                 description="Remove dirt, mold, and mildew from your home's exterior surfaces with our professional house washing service."
                 icon="home"
-                imageSrc="/house-washing-service.png"
+                imageSrc="/house-washing-service.png"
                 serviceId="house-washing"
               />
               <ServiceCard
                 title="Deck Cleaning"
                 description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
                 icon="layout"
-                imageSrc="/deck-cleaning.png"
+                imageSrc="/deck-cleaning.png"
                 serviceId="deck"
               />
               <ServiceCard
                 title="Solar Panel & Window Cleaning"
                 description="Professional solar panel and exterior window cleaning using water-fed pole system with deionized water for spot-free results."
                 icon="square"
-                imageSrc="/solar-window-cleaning.png"
+                imageSrc="/solar-window-cleaning.png"
                 serviceId="solar-window"
               />
               <ServiceCard
                 title="Roof Cleaning"
                 description="Safely remove black streaks, moss, and algae from your roof with our professional roof cleaning."
                 icon="home"
-                imageSrc="/roof-cleaning.png"
+                imageSrc="/roof-cleaning.png"
                 serviceId="roof"
               />
               <ServiceCard
                 title="Patio & Walkway Cleaning"
                 description="Restore concrete, stone, and brick patios and walkways by removing dirt, stains, and organic growth."
                 icon="square"
-                imageSrc="/patio-walkway-cleaning.png"
+                imageSrc="/patio-walkway-cleaning.png"
                 serviceId="patio-walkway"
               />
               <ServiceCard
                 title="Commercial Pressure Washing"
                 description="Maintain your business property's appearance and safety with our commercial pressure washing services."
                 icon="building"
-                imageSrc="/commercial-cleaning.png"
+                imageSrc="/commercial-cleaning.png"
                 serviceId="commercial"
               />
             </div>
@@ -217,7 +217,7 @@ export default function Home() {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="w-full py-8 md:py-14 lg:py-20 bg-gray-50">
+        <section className="w-full py-8 md:py-10 lg:py-12 bg-gray-50">
           <div className="container px-4 sm:px-6 md:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-8">
               <div className="space-y-2">
@@ -276,7 +276,7 @@ export default function Home() {
         </section>
 
         {/* Service Area */}
-        <section className="w-full py-8 md:py-14 lg:py-20 bg-gray-50">
+        <section className="w-full py-8 md:py-10 lg:py-12 bg-gray-50">
           <div className="container px-4 sm:px-6 md:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -344,7 +344,7 @@ export default function Home() {
         </section>
 
         {/* Google Reviews Section */}
-        <section className="w-full py-8 md:py-14 lg:py-20 bg-gray-50">
+        <section className="w-full py-8 md:py-10 lg:py-12 bg-gray-50">
   <div className="container px-4 sm:px-6 md:px-8">
     <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
@@ -361,7 +361,7 @@ export default function Home() {
 </section>
 
         {/* Before & After Gallery */}
-<section className="w-full py-8 md:py-14 lg:py-20 bg-white">
+<section className="w-full py-8 md:py-10 lg:py-12 bg-white">
   <div className="container px-4 sm:px-6 md:px-8">
     <div className="flex flex-col items-center text-center mb-8">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
@@ -387,22 +387,21 @@ export default function Home() {
   </div>
 </section>
         
-        {/* CTA Section */}
-        <section className="w-full py-8 md:py-14 lg:py-20 bg-[#333333] text-white">
+        {/* CTA Section - brand yellow so it reads as part of the page, not the dark footer */}
+        <section className="w-full py-6 md:py-7 bg-yellow-400 text-[#333333]">
           <div className="container px-4 sm:px-6 md:px-8">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
-                  Ready to Transform Your Property?
-                </h2>
-                <p className="max-w-[700px] text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8">
+            <div className="flex flex-col items-center justify-center gap-3 text-center">
+              <div className="space-y-1">
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter">Ready to Transform Your Property?</h2>
+                {/* max-w-none so the sentence sits on one line on desktop */}
+                <p className="max-w-none text-base leading-snug">
                   Get a free pressure washing estimate today by answering a few simple questions about your property.
                 </p>
               </div>
               <Link href="/estimate" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto gap-2 bg-yellow-400 text-[#333333] hover:bg-yellow-500 text-base px-6 py-3"
+                  className="w-full sm:w-auto gap-2 bg-[#333333] text-white hover:bg-[#1f1f1f] text-base px-6 py-3"
                 >
                   Get Free Estimate <ArrowRight className="h-4 w-4" />
                 </Button>

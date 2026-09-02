@@ -1,88 +1,113 @@
 "use client"
 
-import { useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 // Homepage preview only: one photo per main service, with the full set on /gallery.
-// Kept to four deliberately - every thumbnail here is a full-size image download.
+// Kept to four deliberately - each one is a full-size image download.
 const galleryItems = [
   {
     id: 1,
     title: "House Wash - North Berwick",
     photo: "/house-exterior-beforeafter.jpg",
-    orientation: "vertical",
   },
   {
     id: 2,
     title: "Roof Cleaning - Wells",
     photo: "/asphalt-roof-beforeafter.jpg",
-    orientation: "horizontal",
   },
   {
     id: 3,
     title: "Deck Cleaning - Lebanon",
     photo: "/deck-cleaning-lebanon-beforeafter.jpg",
-    orientation: "horizontal",
   },
   {
     id: 4,
     title: "Patio Cleaning - Kittery",
     photo: "/patio-beforeafter.jpg",
-    orientation: "vertical",
   },
 ]
+
+// A sliding row of cards, matching the Google Reviews widget above it. A single
+// centred image left large empty margins, because these photos are much narrower
+// than the full container width.
 export default function BeforeAfterGallery() {
-  const [activeItem, setActiveItem] = useState(galleryItems[0])
+  const scroller = useRef<HTMLDivElement>(null)
+  const [atStart, setAtStart] = useState(true)
+  const [atEnd, setAtEnd] = useState(false)
 
-  // Fixed viewer height rather than an aspect ratio: a 3/4 box at full container
-  // width rendered over 1500px tall on desktop. object-contain keeps portrait and
-  // landscape photos fully visible in the same frame.
-  const viewerHeight = "h-[280px] sm:h-[380px] lg:h-[460px]"
+  const updateArrows = useCallback(() => {
+    const el = scroller.current
+    if (!el) return
+    setAtStart(el.scrollLeft <= 4)
+    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 4)
+  }, [])
 
-  // Function to get the appropriate label text
-  const getLabelText = (orientation: string) => {
-    return orientation === "vertical" ? "Before/After" : "Before & After"
+  useEffect(() => {
+    updateArrows()
+    window.addEventListener("resize", updateArrows)
+    return () => window.removeEventListener("resize", updateArrows)
+  }, [updateArrows])
+
+  const scrollByCard = (direction: 1 | -1) => {
+    const el = scroller.current
+    if (!el) return
+    const card = el.querySelector("li")
+    const step = card ? card.getBoundingClientRect().width + 16 : el.clientWidth * 0.8
+    el.scrollBy({ left: direction * step, behavior: "smooth" })
   }
 
   return (
-    <div className="w-full">
-      <Card>
-        <CardContent className="p-4">
-          <div className={`relative ${viewerHeight} overflow-hidden rounded-md bg-gray-100`}>
-            <Image
-              src={activeItem.photo || "/placeholder.svg"}
-              alt={`${activeItem.title} before and after pressure washing`}
-              fill
-              sizes="(max-width: 768px) 100vw, 800px"
-              className="object-contain"
-            />
-            <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
-              {getLabelText(activeItem.orientation)}
-            </div>
-            {/* Optional: Add orientation indicator */}
-            <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 text-xs rounded">
-              {activeItem.orientation === "vertical" ? "↕" : "↔"}
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
-        {galleryItems.map((item) => (
-          <button
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => scrollByCard(-1)}
+        disabled={atStart}
+        aria-label="Previous photos"
+        className="absolute -left-2 top-[110px] z-10 flex h-9 w-9 items-center justify-center rounded-full border bg-white text-[#333333] shadow transition-opacity hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-0 md:-left-4"
+      >
+        <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+      </button>
+      <button
+        type="button"
+        onClick={() => scrollByCard(1)}
+        disabled={atEnd}
+        aria-label="Next photos"
+        className="absolute -right-2 top-[110px] z-10 flex h-9 w-9 items-center justify-center rounded-full border bg-white text-[#333333] shadow transition-opacity hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-0 md:-right-4"
+      >
+        <ChevronRight className="h-5 w-5" aria-hidden="true" />
+      </button>
+
+      <ul
+        ref={scroller}
+        onScroll={updateArrows}
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {galleryItems.map((item, i) => (
+          <li
             key={item.id}
-            onClick={() => setActiveItem(item)}
-            className={`relative min-w-[100px] h-[60px] rounded-md overflow-hidden border-2 ${
-              activeItem.id === item.id ? "border-yellow-400" : "border-transparent"
-            }`}
+            // On large screens all four fill the row exactly (3 gaps of 1rem), so
+            // there is nothing to scroll and the arrows hide themselves.
+            className="w-[260px] flex-shrink-0 snap-start overflow-hidden rounded-xl border bg-white sm:w-[300px] lg:w-[calc((100%-3rem)/4)]"
           >
-            <Image src={item.photo || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <span className="text-white text-xs font-medium">{item.title}</span>
+            <div className="relative h-[200px] w-full bg-gray-100 sm:h-[220px]">
+              <Image
+                src={item.photo || "/placeholder.svg"}
+                alt={`${item.title} before and after pressure washing`}
+                fill
+                sizes="300px"
+                className="object-contain"
+                priority={i === 0}
+              />
+              <span className="absolute bottom-2 left-2 rounded bg-black/70 px-2 py-0.5 text-xs text-white">
+                Before &amp; After
+              </span>
             </div>
-          </button>
+            <p className="px-3 py-2.5 text-center text-sm font-medium">{item.title}</p>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

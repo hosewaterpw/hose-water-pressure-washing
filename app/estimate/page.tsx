@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function EstimatePage() {
   return (
-    <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-14 lg:py-20">
+    <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:py-12">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get a Free Estimate</h1>
