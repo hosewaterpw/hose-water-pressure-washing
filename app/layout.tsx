@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type React from "react"
+import { GoogleAnalytics } from "@next/third-parties/google"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
@@ -17,51 +18,9 @@ export const metadata: Metadata = {
   description:
     "Trusted pressure washing for homes and businesses in Southern Maine and New Hampshire. We offer house washing, deck and patio cleaning, roof washing, fence restoration, window cleaning, and more. Serving a 40-mile radius around North Berwick since 2022.",
   keywords: [
-    // Core Services + Main Location
     "pressure washing North Berwick Maine",
-    "power washing York County",
-    "house washing North Berwick",
-    "patio cleaning Maine",
-    "deck cleaning North Berwick",
-    "roof cleaning York County",
-    "fence washing Maine",
-    "soft washing North Berwick",
-    "commercial pressure washing North Berwick",
-    "residential pressure washing York County",
-    "exterior cleaning Maine",
-    "pressure washing 03906",
-
-    // Nearby Towns (Local SEO)
-    "Wells Maine pressure washing",
-    "Kennebunk pressure washing",
-    "Portland Maine power washing",
-    "South Berwick pressure washing",
-    "Sanford Maine pressure washing",
-    "York Maine pressure washing",
-    "Berwick ME pressure washing",
-    "Kittery ME house washing",
-    "Eliot Maine power washing",
-    "Lebanon ME pressure cleaning",
-    "Ogunquit pressure washing",
-    "Portsmouth NH pressure washing",
-    "Rochester NH power washing",
-    "Dover NH house washing",
-
-    // Long-Tail & Buyer Intent
-    "best pressure washing company in Maine",
-    "affordable power washing York County",
-    "top-rated exterior cleaning North Berwick",
-    "licensed pressure washing Maine",
-    "family owned pressure washing business",
-    "safe house washing Maine",
-    "deck restoration and cleaning Southern Maine",
-    "roof mold removal York County",
-    "green algae removal North Berwick",
-    "eco-friendly soft washing Maine",
-    "gutter cleaning and pressure washing",
-    "driveway and sidewalk cleaning Maine",
-    "pressure washing near me North Berwick",
-    "professional house wash service Southern Maine"
+    "house washing York County",
+    "roof cleaning Southern Maine",
   ],
   authors: [{ name: "Jonathan P. Bilodeau" }],
   creator: "Hose Water Pressure Washing",
@@ -73,9 +32,6 @@ export const metadata: Metadata = {
     address: false,
   },
   metadataBase: new URL("https://hosewaterpw.com"), // Replace with your actual domain
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -113,7 +69,6 @@ export const metadata: Metadata = {
   },
   // To verify in Google Search Console, uncomment and paste the real code:
   // verification: { google: "..." },
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -130,18 +85,7 @@ export default function RootLayout({
         <meta name="ICBM" content="43.3048, -70.7342" />   
         
 {/* Google Analytics */}
-<Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-SW9ESX4H4G"
-  strategy="afterInteractive"
-/>
-<Script id="google-analytics" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SW9ESX4H4G');
-  `}
-</Script>
+<GoogleAnalytics gaId="G-SW9ESX4H4G" />
         
 {/* Meta Pixel Code */}
 <Script
@@ -178,7 +122,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
+              "@type": "HomeAndConstructionBusiness",
               "@id": "https://hosewaterpw.com",
               name: "Hose Water Pressure Washing",
               image: "https://hosewaterpw.com/logo.png",
@@ -230,11 +174,6 @@ export default function RootLayout({
                 "https://www.facebook.com/hosewaterpw",
                 "https://www.instagram.com/hosewaterpw",
               ],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5.0",
-                reviewCount: "12", // Update with actual review count from Google
-              },
             }),
           }}
         />

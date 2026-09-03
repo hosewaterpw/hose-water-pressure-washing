@@ -7,28 +7,12 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "About Jonathan Bilodeau | North Berwick, ME",
-  alternates: {
-    canonical: "/about",
-  },
   description:
-    "Meet Jonathan Bilodeau, founder of Hose Water Pressure Washing. Based in North Berwick, Maine, we’re a family-owned business proudly serving Southern Maine and New Hampshire with trusted, high-quality pressure washing services since 2022.",
+    "Meet Jonathan Bilodeau, founder of Hose Water Pressure Washing. Based in North Berwick, Maine, we're a family-owned business proudly serving Southern Maine and New Hampshire with trusted, high-quality pressure washing services since 2022.",
   keywords: [
-    "Jonathan Bilodeau",
     "Hose Water Pressure Washing owner",
-    "about Hose Water Pressure Washing",
-    "North Berwick pressure washing company",
-    "Southern Maine power washing business",
-    "family owned pressure washing North Berwick",
-    "local pressure washing business Maine",
-    "pressure washing business owner North Berwick",
-    "meet the team Hose Water Pressure Washing",
-    "power washing company owner Southern Maine",
-    "trusted pressure washing expert Maine",
-    "Jonathan Bilodeau pressure washing",
-    "residential and commercial pressure washing",
-    "New Hampshire pressure washing owner",
-    "honest power washing North Berwick",
-    "best pressure washing company owner in Maine"
+    "pressure washing North Berwick Maine",
+    "family owned pressure washing business"
   ],
   openGraph: {
     title: "Meet Jonathan Bilodeau | Hose Water Pressure Washing | North Berwick, ME",

@@ -10,9 +10,6 @@ export const metadata: Metadata = {
   title: "Contact Us | North Berwick, Maine",
   description:
     "Contact Hose Water Pressure Washing in North Berwick, Maine. Call (207) 370-8667 or send a message for pressure washing across York County and the NH Seacoast.",
-  alternates: {
-    canonical: "/contact",
-  },
 }
 
 export default function ContactPage() {

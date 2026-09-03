@@ -5,32 +5,12 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Pressure Washing FAQ | North Berwick, Maine",
-  alternates: {
-    canonical: "/faq",
-  },
   description:
     "Find answers to frequently asked questions about our pressure washing services in North Berwick, Maine. Learn about pricing, scheduling, preparation, and what to expect from our house washing, roof cleaning, and exterior services in York County and beyond.",
   keywords: [
-    "pressure washing FAQ North Berwick Maine",
-    "frequently asked questions power washing",
-    "pressure washing questions York County",
-    "house washing FAQ Maine",
-    "soft washing questions North Berwick",
-    "roof cleaning questions Maine",
-    "deck and patio cleaning FAQ",
-    "pressure washing cost Maine",
-    "pressure washing estimates North Berwick",
-    "how to prepare for power washing",
-    "pressure washing service area North Berwick",
-    "pressure washing scheduling Maine",
-    "how long does pressure washing take",
-    "is pressure washing safe for siding",
-    "pressure washing before and after care",
-    "exterior cleaning tips Maine",
-    "residential pressure washing questions",
-    "commercial pressure washing answers",
-    "eco-friendly pressure washing FAQ",
-    "Hose Water Pressure Washing FAQ"
+    "pressure washing FAQ North Berwick",
+    "house washing questions Maine",
+    "power washing cost York County"
   ],
   openGraph: {
     title: "Pressure Washing FAQ | Hose Water Pressure Washing",
