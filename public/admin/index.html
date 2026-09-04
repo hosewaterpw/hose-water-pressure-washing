@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Hose Water — Site Admin</title>
+    <link rel="icon" href="/logo.png" />
+    <!-- Absolute path: served at /admin (no trailing slash), a relative lookup
+         would resolve to /config.yml at the site root and 404. -->
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+  </head>
+  <body>
+    <!-- Netlify Identity: provides the login for the CMS on the live site. -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://unpkg.com/decap-cms@^3.8.4/dist/decap-cms.js"></script>
+    <script>
+      // After a first-time invite, send the user straight into the CMS.
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/"
+            })
+          }
+        })
+      }
+    </script>
+  </body>
+</html>

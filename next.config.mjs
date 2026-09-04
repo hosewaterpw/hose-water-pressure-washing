@@ -13,6 +13,11 @@ const nextConfig = {
   images: {
     formats: ["image/webp"],
   },
+  // The CMS lives at public/admin/index.html. Next does not serve index.html
+  // from a public subfolder automatically, so /admin would 404 without this.
+  async rewrites() {
+    return [{ source: "/admin", destination: "/admin/index.html" }]
+  },
 }
 
 export default nextConfig

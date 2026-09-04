@@ -1,0 +1,20 @@
+{
+  "id": "solar-window",
+  "title": "Solar Panel & Window Cleaning",
+  "order": 4,
+  "image": "/solar-window-cleaning.jpg",
+  "description": "Our specialized solar panel and exterior window cleaning service uses a water-fed pole system with deionized water to ensure a spot-free, streak-free finish. This method is safe for delicate surfaces and provides superior cleaning results.",
+  "features": [
+    "Water-fed pole system for safe, ground-based cleaning",
+    "Deionized water system leaves no spots or streaks",
+    "Improves solar panel efficiency and energy output",
+    "Crystal clear windows with professional results",
+    "Safe cleaning method that won't damage panels or glass",
+    "Extends the life of solar panels and windows"
+  ],
+  "galleryFilter": "solar-window",
+  "seoTitle": "",
+  "metaDescription": "",
+  "cardTitle": "Solar Panel & Window Cleaning",
+  "cardDescription": "Professional solar panel and exterior window cleaning using water-fed pole system with deionized water for spot-free results."
+}

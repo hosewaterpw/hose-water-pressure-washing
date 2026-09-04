@@ -4,35 +4,19 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
-// Homepage preview only: one photo per main service, with the full set on /gallery.
-// Kept to four deliberately - each one is a full-size image download.
-const galleryItems = [
-  {
-    id: 1,
-    title: "House Wash - North Berwick",
-    photo: "/house-exterior-beforeafter.jpg",
-  },
-  {
-    id: 2,
-    title: "Roof Cleaning - Wells",
-    photo: "/asphalt-roof-beforeafter.jpg",
-  },
-  {
-    id: 3,
-    title: "Deck Cleaning - Lebanon",
-    photo: "/deck-cleaning-lebanon-beforeafter.jpg",
-  },
-  {
-    id: 4,
-    title: "Patio Cleaning - Kittery",
-    photo: "/patio-beforeafter.jpg",
-  },
-]
 
 // A sliding row of cards, matching the Google Reviews widget above it. A single
 // centred image left large empty margins, because these photos are much narrower
 // than the full container width.
-export default function BeforeAfterGallery() {
+type Item = {
+  title: string
+  image: string
+  alt: string
+}
+
+// Photos come from /content via the homepage, filtered to those ticked
+// "Show on homepage" in the CMS.
+export default function BeforeAfterGallery({ galleryItems }: { galleryItems: Item[] }) {
   const scroller = useRef<HTMLDivElement>(null)
   const [atStart, setAtStart] = useState(true)
   const [atEnd, setAtEnd] = useState(false)
@@ -86,15 +70,15 @@ export default function BeforeAfterGallery() {
       >
         {galleryItems.map((item, i) => (
           <li
-            key={item.id}
+            key={item.image}
             // On large screens all four fill the row exactly (3 gaps of 1rem), so
             // there is nothing to scroll and the arrows hide themselves.
             className="w-[260px] flex-shrink-0 snap-start overflow-hidden rounded-xl border bg-white sm:w-[300px] lg:w-[calc((100%-3rem)/4)]"
           >
             <div className="relative h-[200px] w-full bg-gray-100 sm:h-[220px]">
               <Image
-                src={item.photo || "/placeholder.svg"}
-                alt={`${item.title} before and after pressure washing`}
+                src={item.image || "/placeholder.svg"}
+                alt={item.alt}
                 fill
                 sizes="300px"
                 className="object-contain"

@@ -4,11 +4,12 @@ import { useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react"
+import type { Business, Social } from "@/lib/content"
 
 // Pinned to the viewport bottom. Its height changes as the contact row wraps at
 // different widths, so it publishes its own height as --footer-h and <main> pads
 // by that. Hardcoding the padding per breakpoint was off by 25px at some widths.
-export default function Footer() {
+export default function Footer({ business, social }: { business: Business; social: Social }) {
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -33,7 +34,7 @@ export default function Footer() {
             <div className="relative h-12 w-36 overflow-hidden sm:h-14 sm:w-40">
               <Image
                 src="/logo.png"
-                alt="Hose Water Pressure Washing LLC Logo"
+                alt={`${business.name} Logo`}
                 fill
                 sizes="160px"
                 className="object-contain"
@@ -46,27 +47,27 @@ export default function Footer() {
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
               <span className="flex items-center gap-2">
                 <Phone className="h-5 w-5 flex-shrink-0 text-yellow-400" aria-hidden="true" />
-                <a href="tel:+12073708667" className="text-base transition-colors hover:text-yellow-400">
-                  (207) 370-8667
+                <a href={`tel:${business.phoneDial}`} className="text-base transition-colors hover:text-yellow-400">
+                  {business.phoneDisplay}
                 </a>
               </span>
               <span className="flex items-center gap-2">
                 <Mail className="h-5 w-5 flex-shrink-0 text-yellow-400" aria-hidden="true" />
                 <a
-                  href="mailto:hosewaterpw@gmail.com"
+                  href={`mailto:${business.email}`}
                   className="break-all text-base transition-colors hover:text-yellow-400"
                 >
-                  hosewaterpw@gmail.com
+                  {business.email}
                 </a>
               </span>
               <span className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 flex-shrink-0 text-yellow-400" aria-hidden="true" />
-                <span className="text-base">Southern Maine &amp; New Hampshire</span>
+                <span className="text-base">{business.serviceArea}</span>
               </span>
 
               <span className="flex items-center gap-3">
                 <Link
-                  href="https://g.co/kgs/ehG2MEi"
+                  href={social.google || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Google Business Profile"
@@ -76,18 +77,18 @@ export default function Footer() {
                   </span>
                 </Link>
                 <Link
-                  href="https://www.facebook.com/profile.php?id=100083339862959"
+                  href={social.facebook || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Hose Water Pressure Washing on Facebook"
+                  aria-label={`${business.name} on Facebook`}
                 >
                   <Facebook className="h-7 w-7 text-gray-300 transition-colors hover:text-yellow-400" />
                 </Link>
                 <Link
-                  href="https://www.instagram.com/hosewaterpressurewashing"
+                  href={social.instagram || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Hose Water Pressure Washing on Instagram"
+                  aria-label={`${business.name} on Instagram`}
                 >
                   <Instagram className="h-7 w-7 text-gray-300 transition-colors hover:text-yellow-400" />
                 </Link>
@@ -96,7 +97,7 @@ export default function Footer() {
 
             {/* Line 2 - copyright */}
             <div className="mt-1 flex justify-center">
-              <p className="text-sm text-gray-400">© {new Date().getFullYear()} Hose Water Pressure Washing</p>
+              <p className="text-sm text-gray-400">© {new Date().getFullYear()} {business.name}</p>
             </div>
           </div>
         </div>
