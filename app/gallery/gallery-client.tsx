@@ -1,121 +1,31 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, X } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
-// Updated gallery data - added solar panel & window cleaning category
-const galleryItems = [
-  // Houses (4 photos)
-  {
-    id: 1,
-    category: "house",
-    title: "House Wash in North Berwick, ME",
-    photo: "/house-exterior-beforeafter.jpg",
-    orientation: "vertical",
-  },
-  {
-    id: 2,
-    category: "house",
-    title: "House Wash in South Berwick, ME ",
-    photo: "/vinyl-siding-beforeafter.jpg",
-    orientation: "vertical",
-  },
-  {
-    id: 3,
-    category: "house",
-    title: "House Wash in Sanford, ME",
-    photo: "/house-exterior-2-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  {
-    id: 4,
-    category: "house",
-    title: "House Wash in York, ME",
-    photo: "/house-exterior-3-beforeafter.jpg",
-    orientation: "vertical",
-  },
-  // Decks (3 photos)
-  {
-    id: 5,
-    category: "deck",
-    title: "Wooden Deck Cleaning in Kittery, ME",
-    photo: "/wooden-deck-1-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  {
-    id: 6,
-    category: "deck",
-    title: "Wooden Deck Cleaning in Kittery. ME",
-    photo: "/wooden-deck-2-beforeafter.jpg",
-    orientation: "vertical",
-  },
-  {
-    id: 7,
-    category: "deck",
-    title: "Wooden Deck Cleaning in Portsmouth, NH",
-    photo: "/wooden-deck-3-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  // Patios & Walkways (2 photos)
-  {
-    id: 8,
-    category: "patio-walkway",
-    title: "Patio Fireplace Cleaning in Eliot, ME",
-    photo: "/patio-fireplace-beforeafter.jpg",
-    orientation: "vertical",
-  },
-  {
-    id: 9,
-    category: "patio-walkway",
-    title: "Brick Walkway in Wells, ME",
-    photo: "/concrete-walkway-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  // Solar Panels & Windows (2 photos)
-  {
-    id: 10,
-    category: "solar-window",
-    title: "Solar Panel Cleaning in Kennebunk, ME",
-    photo: "/solar-panel-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  {
-    id: 11,
-    category: "solar-window",
-    title: "Exterior Window Cleaning in Greenland, NH",
-    photo: "/exterior-window-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-  // Roofs (1 photo)
-  {
-    id: 12,
-    category: "roof",
-    title: "Asphalt Roof Cleaning in Lebanon, ME",
-    photo: "/asphalt-roof-beforeafter.jpg",
-    orientation: "vertical",
-  },
-  // Commercial (1 photo)
-  {
-    id: 13,
-    category: "commercial",
-    title: "Commercial Garage with Rental Unit Cleaning in Berwick, ME",
-    photo: "/commercial-garage-rental-beforeafter.jpg",
-    orientation: "horizontal",
-  },
-]
+type Item = {
+  title: string
+  image: string
+  alt: string
+  category: string
+}
 
-export default function GalleryClient() {
-  const searchParams = useSearchParams()
+export default function GalleryClient({ galleryItems }: { galleryItems: Item[] }) {
   const [activeTab, setActiveTab] = useState("all")
-  const [selectedImage, setSelectedImage] = useState<(typeof galleryItems)[0] | null>(null)
-  const filterParam = searchParams.get("filter")
+  const [selectedImage, setSelectedImage] = useState<Item | null>(null)
+  const [filterParam, setFilterParam] = useState<string | null>(null)
 
-  // Set the active tab based on URL parameter
+  // Read ?filter= after hydration. Doing this with useSearchParams would make
+  // Next render the whole gallery on the client, leaving the photos out of the
+  // HTML that Google reads.
+  useEffect(() => {
+    setFilterParam(new URLSearchParams(window.location.search).get("filter"))
+  }, [])
+
   useEffect(() => {
     if (filterParam && ["house", "deck", "patio-walkway", "solar-window", "roof", "commercial"].includes(filterParam)) {
       setActiveTab(filterParam)
@@ -146,18 +56,8 @@ export default function GalleryClient() {
     }
   }
 
-  // Function to get the appropriate aspect ratio class
-  const getAspectRatio = (orientation: string) => {
-    return orientation === "vertical" ? "aspect-[3/4]" : "aspect-video"
-  }
-
-  // Function to get the appropriate label text
-  const getLabelText = (orientation: string) => {
-    return orientation === "vertical" ? "Before/After" : "Before & After"
-  }
-
   // Handle image click
-  const handleImageClick = (item: (typeof galleryItems)[0]) => {
+  const handleImageClick = (item: Item) => {
     setSelectedImage(item)
   }
 
@@ -225,20 +125,20 @@ export default function GalleryClient() {
         <TabsContent value="all" className="mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {galleryItems.map((item) => (
-              <div key={item.id} className="flex flex-col gap-4">
+              <div key={item.image} className="flex flex-col gap-4">
                 <div
-                  className={`relative ${getAspectRatio(item.orientation)} overflow-hidden rounded-md cursor-pointer hover:opacity-90 transition-opacity`}
+                  className={`relative aspect-[4/3] overflow-hidden rounded-md bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity`}
                   onClick={() => handleImageClick(item)}
                 >
                   <Image
-                    src={item.photo || "/placeholder.svg"}
-                    alt={`${item.title} before and after pressure washing`}
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
+                    className="object-contain"
                   />
                   <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
-                    {getLabelText(item.orientation)}
+                    Before &amp; After
                   </div>
                   <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 text-xs rounded">
                     Click to enlarge
@@ -256,20 +156,20 @@ export default function GalleryClient() {
               {galleryItems
                 .filter((item) => item.category === category)
                 .map((item) => (
-                  <div key={item.id} className="flex flex-col gap-4">
+                  <div key={item.image} className="flex flex-col gap-4">
                     <div
-                      className={`relative ${getAspectRatio(item.orientation)} overflow-hidden rounded-md cursor-pointer hover:opacity-90 transition-opacity`}
+                      className={`relative aspect-[4/3] overflow-hidden rounded-md bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity`}
                       onClick={() => handleImageClick(item)}
                     >
                       <Image
-                        src={item.photo || "/placeholder.svg"}
-                        alt={`${item.title} before and after pressure washing`}
+                        src={item.image || "/placeholder.svg"}
+                        alt={item.alt}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover"
+                        className="object-contain"
                       />
                       <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 text-sm rounded">
-                        {getLabelText(item.orientation)}
+                        Before &amp; After
                       </div>
                       <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 text-xs rounded">
                         Click to enlarge
@@ -294,12 +194,12 @@ export default function GalleryClient() {
               <X className="h-6 w-6" />
             </button>
             <div
-              className={`relative ${getAspectRatio(selectedImage.orientation)} w-full max-w-4xl`}
+              className={`relative aspect-[4/3] w-full max-w-4xl`}
               onClick={(e) => e.stopPropagation()}
             >
               <Image
-                src={selectedImage.photo || "/placeholder.svg"}
-                alt={`${selectedImage.title} before and after pressure washing - enlarged view`}
+                src={selectedImage.image || "/placeholder.svg"}
+                alt={selectedImage.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 896px"
                 className="object-contain"
@@ -308,7 +208,7 @@ export default function GalleryClient() {
             </div>
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-lg">
               <h3 className="text-lg font-medium text-center">{selectedImage.title}</h3>
-              <p className="text-sm text-gray-300 text-center">{getLabelText(selectedImage.orientation)}</p>
+              <p className="text-sm text-gray-300 text-center">Before &amp; After</p>
             </div>
           </div>
         </div>

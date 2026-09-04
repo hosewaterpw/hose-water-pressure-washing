@@ -8,6 +8,7 @@ import ServiceCard from "@/components/service-card"
 import GoogleReviews from "@/components/google-reviews"
 import BeforeAfterGallery from "@/components/before-after-gallery"
 import CopyPhone from "@/components/copy-phone"
+import { getFeaturedGallery, getServices } from "@/lib/content"
 
 export const metadata: Metadata = {
   title: "Pressure Washing & Roof Cleaning in North Berwick, ME | Hose Water",
@@ -26,7 +27,21 @@ export const metadata: Metadata = {
   },
 }
 
+// ServiceCard takes an icon name; map each service to one, falling back to "home"
+// so a service added in the CMS still renders.
+const SERVICE_ICONS: Record<string, string> = {
+  "house-washing": "home",
+  deck: "layout",
+  "patio-walkway": "road",
+  "solar-window": "square",
+  roof: "home",
+  commercial: "building",
+}
+const serviceIcon = (id: string) => SERVICE_ICONS[id] ?? "home"
+
 export default function Home() {
+  const services = getServices()
+  const featuredPhotos = getFeaturedGallery()
   return (
     <>
       {/* Structured Data for Services */}
@@ -160,48 +175,16 @@ export default function Home() {
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              <ServiceCard
-                title="House Washing"
-                description="Remove dirt, mold, and mildew from your home's exterior surfaces with our professional house washing service."
-                icon="home"
-                imageSrc="/house-washing-service.jpg"
-                serviceId="house-washing"
-              />
-              <ServiceCard
-                title="Deck Cleaning"
-                description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
-                icon="layout"
-                imageSrc="/deck-cleaning.jpg"
-                serviceId="deck"
-              />
-              <ServiceCard
-                title="Solar Panel & Window Cleaning"
-                description="Professional solar panel and exterior window cleaning using water-fed pole system with deionized water for spot-free results."
-                icon="square"
-                imageSrc="/solar-window-cleaning.jpg"
-                serviceId="solar-window"
-              />
-              <ServiceCard
-                title="Roof Cleaning"
-                description="Safely remove black streaks, moss, and algae from your roof with our professional roof cleaning."
-                icon="home"
-                imageSrc="/roof-cleaning.jpg"
-                serviceId="roof"
-              />
-              <ServiceCard
-                title="Patio & Walkway Cleaning"
-                description="Restore concrete, stone, and brick patios and walkways by removing dirt, stains, and organic growth."
-                icon="square"
-                imageSrc="/patio-walkway-cleaning.jpg"
-                serviceId="patio-walkway"
-              />
-              <ServiceCard
-                title="Commercial Pressure Washing"
-                description="Maintain your business property's appearance and safety with our commercial pressure washing services."
-                icon="building"
-                imageSrc="/commercial-cleaning.jpg"
-                serviceId="commercial"
-              />
+              {services.map((service) => (
+                <ServiceCard
+                  key={service.id}
+                  title={service.cardTitle || service.title}
+                  description={service.cardDescription || service.description}
+                  icon={serviceIcon(service.id)}
+                  imageSrc={service.image}
+                  serviceId={service.id}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -365,7 +348,7 @@ export default function Home() {
       </p>
     </div>
 
-    <BeforeAfterGallery />
+    <BeforeAfterGallery galleryItems={featuredPhotos} />
 
     <div className="mt-8 flex justify-center">
       <Link href="/gallery">

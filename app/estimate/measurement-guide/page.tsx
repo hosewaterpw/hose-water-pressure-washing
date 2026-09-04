@@ -5,6 +5,9 @@ import MeasurementGuide from "@/components/measurement-guide"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/estimate/measurement-guide",
+  },
   title: "How to Measure Your House for a Wash Quote",
   description:
     "A simple step-by-step guide to measuring your home's exterior so you can get an accurate house washing quote. Includes a diagram and worked example.",

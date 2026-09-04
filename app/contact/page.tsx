@@ -5,14 +5,20 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import type { Metadata } from "next"
+import { getBusiness } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/contact",
+  },
   title: "Contact Us | North Berwick, Maine",
   description:
     "Contact Hose Water Pressure Washing in North Berwick, Maine. Call (207) 370-8667 or send a message for pressure washing across York County and the NH Seacoast.",
 }
 
 export default function ContactPage() {
+  const business = getBusiness()
+
   return (
     <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:py-12">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -81,15 +87,14 @@ export default function ContactPage() {
             <div>
               <h3 className="text-xl font-bold">Phone</h3>
               <p className="mt-1">
-                <a href="tel:+12073708667" className="text-gray-500 hover:text-primary hover:underline">
-                  (207) 370-8667
+                <a
+                  href={`tel:${business.phoneDial}`}
+                  className="text-gray-500 hover:text-primary hover:underline"
+                >
+                  {business.phoneDisplay}
                 </a>
               </p>
-              <p className="text-sm text-muted-foreground mt-1">
-                Monday - Saturday: 8:00 AM - 5:00 PM
-                <br />
-                Sunday: Closed
-              </p>
+              <p className="text-sm text-muted-foreground mt-1 whitespace-pre-line">{business.hoursDisplay}</p>
             </div>
           </div>
 
@@ -101,10 +106,10 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold">Email</h3>
               <p className="mt-1">
                 <a
-                  href="mailto:hosewaterpw@gmail.com"
+                  href={`mailto:${business.email}`}
                   className="text-gray-500 hover:text-primary hover:underline break-all"
                 >
-                  hosewaterpw@gmail.com
+                  {business.email}
                 </a>
               </p>
               <p className="text-sm text-muted-foreground mt-1">We typically respond within 24 hours</p>

@@ -6,6 +6,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/about",
+  },
   title: "About Jonathan Bilodeau | North Berwick, ME",
   description:
     "Meet Jonathan Bilodeau, founder of Hose Water Pressure Washing. Based in North Berwick, Maine, we're a family-owned business proudly serving Southern Maine and New Hampshire with trusted, high-quality pressure washing services since 2022.",

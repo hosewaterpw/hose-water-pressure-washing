@@ -7,10 +7,14 @@ import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
+import { getBusiness, getSocial, getSocialUrls } from "@/lib/content"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Hose Water Pressure Washing | Professional Pressure Washing Services in Southern Maine",
     template: "%s | Hose Water Pressure Washing",
@@ -76,6 +80,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const business = getBusiness()
+  const social = getSocial()
+
   return (
     <html lang="en">
       <head>
@@ -124,19 +131,19 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "HomeAndConstructionBusiness",
               "@id": "https://hosewaterpw.com",
-              name: "Hose Water Pressure Washing",
+              name: business.name,
               image: "https://hosewaterpw.com/logo.png",
               description:
                 "Professional pressure washing services for residential and commercial properties throughout Southern Maine and New Hampshire",
               url: "https://hosewaterpw.com",
-              telephone: "+1-207-370-8667",
-              email: "hosewaterpw@gmail.com",
+              telephone: business.phoneDial,
+              email: business.email,
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "North Berwick",
-                addressRegion: "ME",
-                postalCode: "03906",
-                addressCountry: "US",
+                addressLocality: business.addressLocality,
+                addressRegion: business.addressRegion,
+                postalCode: business.postalCode,
+                addressCountry: business.addressCountry,
               },
               geo: {
                 "@type": "GeoCoordinates",
@@ -163,17 +170,20 @@ export default function RootLayout({
                 "Commercial Cleaning",
               ],
               priceRange: "$$",
-              openingHours: "Mo-Fr 08:00-18:00, Sa 09:00-16:00",
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: business.hoursDays,
+                  opens: business.hoursOpens,
+                  closes: business.hoursCloses,
+                },
+              ],
               founder: {
                 "@type": "Person",
-                name: "Jonathan P. Bilodeau",
+                name: business.ownerName,
               },
-              foundingDate: "2022",
-              sameAs: [
-                "https://g.co/kgs/ehG2MEi",
-                "https://www.facebook.com/hosewaterpw",
-                "https://www.instagram.com/hosewaterpw",
-              ],
+              foundingDate: business.foundingYear,
+              sameAs: getSocialUrls(),
             }),
           }}
         />
@@ -187,7 +197,7 @@ export default function RootLayout({
             <main className="flex-1" style={{ paddingBottom: "var(--footer-h, 165px)" }}>
               {children}
             </main>
-            <Footer />
+            <Footer business={business} social={social} />
           </div>
         </ThemeProvider>
       </body>

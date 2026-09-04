@@ -8,6 +8,9 @@ import { Textarea } from "@/components/ui/textarea"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/estimate",
+  },
   title: "Free Pressure Washing Estimate | Southern Maine & NH",
   description:
     "Request a free, no-obligation pressure washing estimate. Family-owned and serving North Berwick, York County, Southern Maine, and the New Hampshire Seacoast since 2022.",

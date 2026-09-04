@@ -3,8 +3,12 @@ import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
+import { getServices } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services",
+  },
   title: "Pressure Washing Services | North Berwick, Maine",
   description:
     "Get top-rated pressure washing in North Berwick, Maine. Hose Water Pressure Washing offers expert house washing, roof cleaning, deck restoration, patio cleaning, and more throughout York County, Southern Maine, and New Hampshire. Family-owned and trusted since 2022.",
@@ -21,108 +25,9 @@ export const metadata: Metadata = {
   },
 }
 
-// Service data with orientations
-const services = [
-  {
-    id: "house-washing",
-    title: "House Washing Services",
-    image: "/house-washing.jpg",
-    orientation: "horizontal",
-    description:
-      "Our professional house washing service removes dirt, mold, mildew, and other organic material from your home's exterior surfaces. We use professional-grade equipment and techniques to safely clean vinyl siding, brick, stucco, and other exterior materials.",
-    features: [
-      "Removes dirt, mold, mildew, and algae from house exteriors",
-      "Safe for all exterior surfaces including vinyl, brick, and stucco",
-      "Improves curb appeal and property value",
-      "Prevents damage from built-up contaminants",
-    ],
-    galleryFilter: "house",
-  },
-  {
-    id: "deck",
-    title: "Deck Cleaning & Restoration",
-    image: "/deck-cleaning.jpg",
-    orientation: "vertical",
-    description:
-      "Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew and other organic growth. We carefully adjust our pressure washing techniques based on the material of your deck to ensure safe and effective cleaning.",
-    features: [
-      "Removes dirt, mold, and weathering from deck surfaces",
-      "Safe for wood and composite deck surfaces",
-      "Prepares deck surfaces for staining or sealing",
-      "Extends the life of your outdoor deck spaces",
-    ],
-    galleryFilter: "deck",
-  },
-  {
-    id: "patio-walkway",
-    title: "Patio & Walkway Cleaning",
-    image: "/patio-walkway-cleaning.jpg",
-    orientation: "vertical",
-    description:
-      "Our patio and walkway cleaning service restores concrete, stone, and brick surfaces by removing dirt, stains, mold, and algae. We use appropriate pressure settings and techniques to clean without damaging your hardscape surfaces.",
-    features: [
-      "Removes dirt, stains, and organic growth from concrete surfaces",
-      "Safe for concrete, stone, brick, and paver surfaces",
-      "Improves safety by removing slippery algae and moss",
-      "Restores original appearance of outdoor living spaces",
-      "Also available: Fence cleaning for vinyl, wood and metal fences",
-    ],
-    galleryFilter: "patio-walkway",
-  },
-  {
-    id: "solar-window",
-    title: "Solar Panel & Window Cleaning",
-    image: "/solar-window-cleaning.jpg",
-    orientation: "horizontal",
-    description:
-      "Our specialized solar panel and exterior window cleaning service uses a water-fed pole system with deionized water to ensure a spot-free, streak-free finish. This method is safe for delicate surfaces and provides superior cleaning results.",
-    features: [
-      "Water-fed pole system for safe, ground-based cleaning",
-      "Deionized water system leaves no spots or streaks",
-      "Improves solar panel efficiency and energy output",
-      "Crystal clear windows with professional results",
-      "Safe cleaning method that won't damage panels or glass",
-      "Extends the life of solar panels and windows",
-    ],
-    galleryFilter: "solar-window",
-  },
-  {
-    id: "roof",
-    title: "Roof Cleaning",
-    image: "/roof-cleaning.jpg",
-    orientation: "vertical",
-    description:
-      "Our roof cleaning service safely removes black streaks, moss, and algae from your roof. We use low-pressure washing techniques and appropriate cleaning solutions to protect your roof while effectively removing unsightly growth and stains.",
-    features: [
-      "Removes black streaks, moss, and algae from roofs",
-      "Prevents damage from organic growth",
-      "Extends roof life and improves appearance",
-    ],
-    galleryFilter: "roof",
-  },
-  {
-    id: "commercial",
-    title: "Commercial Pressure Washing Services",
-    image: "/commercial-cleaning.jpg",
-    orientation: "horizontal",
-    description:
-      "Our commercial pressure washing services help maintain your rental properties, apartment buildings, and multi-unit properties' appearance and value.",
-    features: [
-      "Apartment building and duplex exterior cleaning",
-      "Rental property maintenance and cleaning",
-      "Multi-unit property exterior restoration",
-      "Property management company services",
-    ],
-    galleryFilter: "commercial",
-  },
-]
+const services = getServices()
 
 export default function ServicesPage() {
-  // Function to get the appropriate aspect ratio class
-  const getAspectRatio = (orientation: string) => {
-    return orientation === "vertical" ? "aspect-[3/4]" : "aspect-video"
-  }
-
   return (
     <>
       {/* Structured Data for Service Pages */}
@@ -163,7 +68,7 @@ export default function ServicesPage() {
           <section key={service.id} id={service.id} className="mt-12 md:mt-16 scroll-mt-20">
             <div className="grid gap-8 md:grid-cols-2 items-center">
               <div
-                className={`relative ${getAspectRatio(service.orientation)} overflow-hidden rounded-lg ${index % 2 === 1 ? "order-1 md:order-2" : ""}`}
+                className={`relative ${"aspect-video"} overflow-hidden rounded-lg ${index % 2 === 1 ? "order-1 md:order-2" : ""}`}
               >
                 <Image
                   src={service.image || "/placeholder.svg"}
