@@ -8,7 +8,7 @@ interface ServiceCardProps {
   title: string
   description: string
   icon: string
-  imageSrc?: string
+  imageSrc?: string
   serviceId?: string
 }
 
@@ -16,7 +16,7 @@ export default function ServiceCard({
   title,
   description,
   icon,
-  imageSrc,
+  imageSrc,
   serviceId,
 }: ServiceCardProps) {
   const getIcon = () => {
@@ -59,14 +59,24 @@ export default function ServiceCard({
         <p className="text-gray-500 text-sm leading-relaxed flex-grow">{description}</p>
         {serviceId && (
           <div className="mt-3 flex flex-row gap-2">
-            <Link href={`/services#${serviceId === "patio-walkway" ? "patio-walkway" : serviceId}`} className="flex-1">
+            {/* aria-label carries the service name: six cards of bare "Learn More"
+                tells crawlers and screen readers nothing about the destination. */}
+            <Link
+              href={`/services#${serviceId === "patio-walkway" ? "patio-walkway" : serviceId}`}
+              className="flex-1"
+              aria-label={`Learn more about ${title}`}
+            >
               <Button variant="outline" size="sm" className="w-full text-xs sm:text-sm">
-                Learn More
+                Learn More<span className="sr-only"> about {title}</span>
               </Button>
             </Link>
-            <Link href={`/gallery?filter=${serviceId}`} className="flex-1">
+            <Link
+              href={`/gallery?filter=${serviceId}`}
+              className="flex-1"
+              aria-label={`View ${title} photo gallery`}
+            >
               <Button variant="ghost" size="sm" className="w-full text-xs sm:text-sm">
-                View Gallery
+                View Gallery<span className="sr-only"> for {title}</span>
               </Button>
             </Link>
           </div>

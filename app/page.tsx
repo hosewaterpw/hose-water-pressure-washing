@@ -307,7 +307,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <p className="text-xs text-gray-400 mt-6 leading-relaxed">
+                {/* gray-400 on this light background was 2.43:1, below the 4.5:1
+                    minimum. gray-600 is 7.2:1. */}
+                <p className="text-xs text-gray-600 mt-6 leading-relaxed">
                   Professional pressure washing services available in all listed communities and surrounding areas.
                   Contact us to confirm service availability in your specific location.
                 </p>

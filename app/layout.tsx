@@ -1,12 +1,12 @@
 import Script from "next/script";
 import type React from "react"
-import { GoogleAnalytics } from "@next/third-parties/google"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
+import DeferredAnalytics from "@/components/deferred-analytics"
 import { getBusiness, getSocial, getSocialUrls } from "@/lib/content"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -91,39 +91,20 @@ export default function RootLayout({
         <meta name="geo.position" content="43.3048;-70.7342" />
         <meta name="ICBM" content="43.3048, -70.7342" />   
         
-{/* Google Analytics */}
-<GoogleAnalytics gaId="G-SW9ESX4H4G" />
-        
-{/* Meta Pixel Code */}
-<Script
-  id="meta-pixel"
-  strategy="afterInteractive"
->
-  {`
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}
-    (window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2844768349066272');
-    fbq('track', 'PageView');
-  `}
-</Script>
+{/* Analytics load on first interaction - see components/deferred-analytics.tsx */}
+        <DeferredAnalytics />
 
-<noscript>
-  <img
-    height="1"
-    width="1"
-    style={{ display: 'none' }}
-    src="https://www.facebook.com/tr?id=2844768349066272&ev=PageView&noscript=1"
-  />
-</noscript>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=2844768349066272&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
 
- {/* Structured Data for Local Business */}
+        {/* Structured Data for Local Business */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
