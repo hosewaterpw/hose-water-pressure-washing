@@ -69,7 +69,7 @@ export default function ServiceCard({
             {/* aria-label carries the service name: six cards of bare "Learn More"
                 tells crawlers and screen readers nothing about the destination. */}
             <Link
-              href={`/services#${serviceId === "patio-walkway" ? "patio-walkway" : serviceId}`}
+              href={`/services#${serviceId}`}
               className="flex-1"
               aria-label={`Learn more about ${title}`}
             >

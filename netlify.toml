@@ -12,8 +12,6 @@
 # app/estimate-success). They previously rewrote to static files in public/,
 # which shadowed the real pages and could not carry their noindex metadata.
 
-# Catch-all redirect for Next.js
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# No catch-all redirect here on purpose. @netlify/plugin-nextjs handles all
+# routing itself; a "/* -> /index.html" rule would serve the homepage for every
+# address on the site if it ever took effect.

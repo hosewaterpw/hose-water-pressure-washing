@@ -51,8 +51,13 @@ pnpm build && pnpm start
 files with no Netlify account involved. In a **second terminal**:
 
 ```bash
-npx decap-server
+npx decap-server@3.11.0
 ```
+
+> The version pin is deliberate. `decap-server@3.11.1` was published with
+> unresolved pnpm `catalog:` markers instead of real version numbers, so npm
+> fails with `EUNSUPPORTEDPROTOCOL`. 3.11.0 is the newest working release; drop
+> the pin once upstream publishes a fix.
 
 Then open http://localhost:3000/admin. Edits write straight to `content/` and
 `public/` on disk. Nothing is committed for you — `git status` afterwards and

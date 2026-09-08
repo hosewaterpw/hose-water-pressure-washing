@@ -108,7 +108,7 @@ export default function GalleryClient({ galleryItems }: { galleryItems: Item[] }
       {filterParam && (
         <div className="mt-6 flex justify-center">
           <Link
-            href={`/services#${filterParam === "deck" ? "deck" : filterParam === "patio-walkway" ? "patio-walkway" : filterParam === "solar-window" ? "solar-window" : filterParam}`}
+            href={`/services#${filterParam}`}
           >
             <Button variant="outline" className="gap-2">
               <ArrowLeft className="h-4 w-4" /> Back to {getServiceName()}
