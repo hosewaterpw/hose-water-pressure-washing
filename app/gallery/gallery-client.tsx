@@ -152,7 +152,7 @@ export default function GalleryClient({ galleryItems }: { galleryItems: Item[] }
                     Click to enlarge
                   </div>
                 </div>
-                <h3 className="text-lg font-medium">{item.title}</h3>
+                <h2 className="text-lg font-medium">{item.title}</h2>
               </div>
             ))}
           </div>
@@ -183,7 +183,7 @@ export default function GalleryClient({ galleryItems }: { galleryItems: Item[] }
                         Click to enlarge
                       </div>
                     </div>
-                    <h3 className="text-lg font-medium">{item.title}</h3>
+                    <h2 className="text-lg font-medium">{item.title}</h2>
                   </div>
                 ))}
             </div>
@@ -215,7 +215,7 @@ export default function GalleryClient({ galleryItems }: { galleryItems: Item[] }
               />
             </div>
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-lg">
-              <h3 className="text-lg font-medium text-center">{selectedImage.title}</h3>
+              <h2 className="text-lg font-medium text-center">{selectedImage.title}</h2>
               <p className="text-sm text-gray-300 text-center">Before &amp; After</p>
             </div>
           </div>

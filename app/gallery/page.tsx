@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   title: "Before & After Photo Gallery | Southern Maine & NH",
   description:
-    "Browse real before-and-after photos of our pressure washing work on houses, decks, patios, roofs, and solar panels across York County, Maine and the NH Seacoast.",
+    "Real before-and-after photos of our pressure washing work on houses, decks, patios, roofs and solar panels across York County and the NH Seacoast.",
 }
 
 export default function GalleryPage() {

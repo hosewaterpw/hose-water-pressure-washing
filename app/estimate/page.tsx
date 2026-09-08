@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   title: "Free Pressure Washing Estimate | Southern Maine & NH",
   description:
-    "Request a free, no-obligation pressure washing estimate. Family-owned and serving North Berwick, York County, Southern Maine, and the New Hampshire Seacoast since 2022.",
+    "Request a free, no-obligation pressure washing estimate. Serving North Berwick, York County, Southern Maine and the New Hampshire Seacoast.",
 }
 
 export default function EstimatePage() {
@@ -71,7 +71,7 @@ export default function EstimatePage() {
 
                 {/* Property Address Section */}
                 <div className="space-y-4 p-4 bg-muted/30 rounded-lg">
-                  <h3 className="text-lg font-medium">Property Address</h3>
+                  <h2 className="text-lg font-medium">Property Address</h2>
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="streetAddress">Street Address</Label>
@@ -97,7 +97,7 @@ export default function EstimatePage() {
                 </div>
 
                 <div className="space-y-4 p-4 bg-muted/30 rounded-lg">
-                  <h3 className="text-lg font-medium">Property Details</h3>
+                  <h2 className="text-lg font-medium">Property Details</h2>
 
                   <div className="space-y-3">
                     <Label htmlFor="stories">Number of Stories</Label>
@@ -136,7 +136,7 @@ export default function EstimatePage() {
 
                   <div className="space-y-4 p-4 bg-white/50 rounded-md border border-gray-200">
                     <div className="flex items-center justify-between">
-                      <h4 className="text-base font-medium">Exterior House Dimensions (Optional)</h4>
+                      <h3 className="text-base font-medium">Exterior House Dimensions (Optional)</h3>
                       <Link href="/estimate/measurement-guide" target="_blank" rel="noopener noreferrer">
                         <Button type="button" variant="outline" size="sm" className="text-xs">
                           Measurement Guide

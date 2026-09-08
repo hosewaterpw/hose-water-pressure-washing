@@ -153,23 +153,14 @@ which isn't fixable from here.
 
 ---
 
-## Not done yet
+## Notes for whoever works on this next
 
-Honest list, roughly in order of value:
-
-- **Individual service pages** (`/services/[slug]`) — none exist. All six
-  services share one page, so none of them can rank for its own search term.
-  Biggest remaining SEO gain.
-- **Location pages** for the towns served — targeted in copy, no pages for them.
-- Four meta descriptions run past the ~160-character display limit.
-- No custom 404 page.
-- Heading order skips h1→h3 on `/gallery`, `/contact`, `/estimate`.
-- `next.config.mjs` has an invalid `eslint` key (warns on every build) and
-  `typescript.ignoreBuildErrors: true`.
-- `netlify.toml` still has a dead catch-all `/* → /index.html` redirect.
-- ~35 MB of unused images in `public/` (`work-1`, `work-2`, `fence-cleaning`)
-  pending the owner's decision on whether to use them.
-- `styles/globals.css` is unused (the live one is `app/globals.css`).
-- Six stray `*-guide.txt` photo-naming notes in the repo root.
-- `package.json` is still named `my-v0-project`; `netlify.toml` calls
-  `npm run build` while the project uses pnpm.
+- `typescript.ignoreBuildErrors` is on in `next.config.mjs`. Type errors won't
+  fail the build, so run `pnpm tsc --noEmit` yourself before trusting a change.
+- `netlify.toml` runs `npm run build` while the project uses pnpm. Netlify
+  installs with pnpm (it reads `pnpm-lock.yaml`) and `npm run` just executes the
+  script, so it works — but don't take it as a sign npm is safe to use here.
+- `public/` holds three unused images (`work-1`, `work-2`, `fence-cleaning`,
+  ~35 MB) kept pending a decision on whether to use them on the site.
+- `hooks/use-mobile.tsx` and `hooks/use-toast.ts` are unused scaffolding and are
+  duplicated under `components/ui/`.

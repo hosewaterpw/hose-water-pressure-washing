@@ -92,7 +92,7 @@ export default function ContactPage() {
               <Phone className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="text-xl font-bold">Phone</h3>
+              <h2 className="text-xl font-bold">Phone</h2>
               <p className="mt-1">
                 <a
                   href={`tel:${business.phoneDial}`}
@@ -110,7 +110,7 @@ export default function ContactPage() {
               <Mail className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="text-xl font-bold">Email</h3>
+              <h2 className="text-xl font-bold">Email</h2>
               <p className="mt-1">
                 <a
                   href={`mailto:${business.email}`}
@@ -128,7 +128,7 @@ export default function ContactPage() {
               <MapPin className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="text-xl font-bold">Service Area</h3>
+              <h2 className="text-xl font-bold">Service Area</h2>
               <p className="text-gray-500 mt-1">Southern Maine and New Hampshire</p>
               <p className="text-sm text-muted-foreground mt-1">
                 We service residential and commercial properties throughout Southern Maine and New Hampshire

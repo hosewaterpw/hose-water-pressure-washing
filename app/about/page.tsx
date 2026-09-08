@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   title: "About Jonathan Bilodeau | North Berwick, ME",
   description:
-    "Meet Jonathan Bilodeau, founder of Hose Water Pressure Washing. Based in North Berwick, Maine, we're a family-owned business proudly serving Southern Maine and New Hampshire with trusted, high-quality pressure washing services since 2022.",
+    "Meet Jonathan Bilodeau, owner of Hose Water Pressure Washing in North Berwick, Maine. Family-owned since 2022, serving Southern Maine and New Hampshire.",
   keywords: [
     "Hose Water Pressure Washing owner",
     "pressure washing North Berwick Maine",

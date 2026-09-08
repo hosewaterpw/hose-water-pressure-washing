@@ -20,7 +20,7 @@ import { getBusiness, getFeaturedGallery, getServices } from "@/lib/content"
 export const metadata: Metadata = {
   title: "Pressure Washing & Roof Cleaning in North Berwick, ME | Hose Water",
   description:
-    "Get top-rated pressure washing in North Berwick, Maine. Hose Water Pressure Washing offers expert house washing, roof cleaning, deck restoration, patio cleaning, and more throughout York County, Southern Maine, and New Hampshire. Family-owned and trusted since 2022.",
+    "Pressure washing in North Berwick, ME. House washing, roof cleaning, decks and patios across York County and the NH Seacoast. Free quotes, family-owned.",
   keywords: [
     "pressure washing North Berwick Maine",
     "house washing York County",

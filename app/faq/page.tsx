@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   title: "Pressure Washing FAQ | North Berwick, Maine",
   description:
-    "Find answers to frequently asked questions about our pressure washing services in North Berwick, Maine. Learn about pricing, scheduling, preparation, and what to expect from our house washing, roof cleaning, and exterior services in York County and beyond.",
+    "Answers to common pressure washing questions: how to prepare, scheduling, safety, and what to expect. Serving York County, Maine and the NH Seacoast.",
   keywords: [
     "pressure washing FAQ North Berwick",
     "house washing questions Maine",

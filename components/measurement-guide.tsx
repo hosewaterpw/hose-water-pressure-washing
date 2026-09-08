@@ -32,7 +32,7 @@ export default function MeasurementGuide() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <h4 className="font-medium text-lg">How to Measure Your House:</h4>
+                  <h2 className="font-medium text-lg">How to Measure Your House:</h2>
                   <ol className="list-decimal pl-5 space-y-3">
                     <li>
                       <strong>Front Width:</strong> Measure the width of the front of your house from one corner to the
@@ -53,14 +53,14 @@ export default function MeasurementGuide() {
           <Card>
             <CardContent className="p-4">
               <div className="space-y-4">
-                <h4 className="font-medium text-lg">What You'll Need:</h4>
+                <h2 className="font-medium text-lg">What You'll Need:</h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="rounded-full bg-primary/10 p-2 mt-1">
                       <span className="text-primary font-bold text-sm">•</span>
                     </div>
                     <div>
-                      <h5 className="font-medium">Measuring Tape</h5>
+                      <h3 className="font-medium">Measuring Tape</h3>
                       <p className="text-sm text-muted-foreground">
                         A 25ft or longer tape measure works best for most houses.
                       </p>
@@ -71,7 +71,7 @@ export default function MeasurementGuide() {
                       <span className="text-primary font-bold text-sm">•</span>
                     </div>
                     <div>
-                      <h5 className="font-medium">Smartphone Apps</h5>
+                      <h3 className="font-medium">Smartphone Apps</h3>
                       <p className="text-sm text-muted-foreground">
                         Several free apps can help measure distances using your phone's camera.
                       </p>
@@ -87,14 +87,14 @@ export default function MeasurementGuide() {
           <Card>
             <CardContent className="p-4">
               <div className="space-y-4">
-                <h4 className="font-medium text-lg">Helpful Measurement Tips:</h4>
+                <h2 className="font-medium text-lg">Helpful Measurement Tips:</h2>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <div className="rounded-full bg-primary/10 p-2 mt-0.5">
                       <span className="text-primary font-bold text-sm">1</span>
                     </div>
                     <div>
-                      <h5 className="font-medium">Can't reach the top?</h5>
+                      <h3 className="font-medium">Can't reach the top?</h3>
                       <p className="text-sm text-muted-foreground">
                         Each house is different but averages are 10ft per story. So two storys is 20ft.
                       </p>
@@ -105,7 +105,7 @@ export default function MeasurementGuide() {
                       <span className="text-primary font-bold text-sm">2</span>
                     </div>
                     <div>
-                      <h5 className="font-medium">Irregular shaped house?</h5>
+                      <h3 className="font-medium">Irregular shaped house?</h3>
                       <p className="text-sm text-muted-foreground">
                         Break it down into rectangles and measure each section separately.
                       </p>
@@ -116,7 +116,7 @@ export default function MeasurementGuide() {
                       <span className="text-primary font-bold text-sm">3</span>
                     </div>
                     <div>
-                      <h5 className="font-medium">Get help if needed</h5>
+                      <h3 className="font-medium">Get help if needed</h3>
                       <p className="text-sm text-muted-foreground">
                         Ask a family member or neighbor to hold one end of the measuring tape.
                       </p>
@@ -127,7 +127,7 @@ export default function MeasurementGuide() {
                       <span className="text-primary font-bold text-sm">4</span>
                     </div>
                     <div>
-                      <h5 className="font-medium">Measure in sections</h5>
+                      <h3 className="font-medium">Measure in sections</h3>
                       <p className="text-sm text-muted-foreground">
                         If your measuring tool isn't long enough, measure in sections and add the numbers together.
                       </p>
@@ -138,7 +138,7 @@ export default function MeasurementGuide() {
                       <span className="text-primary font-bold text-sm">5</span>
                     </div>
                     <div>
-                      <h5 className="font-medium">Not sure? It's okay!</h5>
+                      <h3 className="font-medium">Not sure? It's okay!</h3>
                       <p className="text-sm text-muted-foreground">
                         If you're having trouble, provide your best estimate and we can always adjust the quote later.
                       </p>

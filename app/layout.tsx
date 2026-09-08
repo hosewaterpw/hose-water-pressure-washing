@@ -27,8 +27,10 @@ export const metadata: Metadata = {
     default: "Hose Water Pressure Washing | Professional Pressure Washing Services in Southern Maine",
     template: "%s | Hose Water Pressure Washing",
   },
+  // Kept under ~160 characters so Google shows it in full rather than cutting
+  // it off mid-sentence. Same applies to every page's description.
   description:
-    "Trusted pressure washing for homes and businesses in Southern Maine and New Hampshire. We offer house washing, deck and patio cleaning, roof washing, fence restoration, window cleaning, and more. Serving a 40-mile radius around North Berwick since 2022.",
+    "Pressure washing for homes and businesses across Southern Maine and New Hampshire. House, roof, deck and patio cleaning. Free quotes, family-owned since 2022.",
   keywords: [
     "pressure washing North Berwick Maine",
     "house washing York County",

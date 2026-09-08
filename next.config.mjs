@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // No `eslint` key here: Next 16 dropped it and warns twice on every build if
+  // it is present. Linting is a separate step now (`pnpm lint`).
   typescript: {
     ignoreBuildErrors: true,
   },
