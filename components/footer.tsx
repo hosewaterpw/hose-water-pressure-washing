@@ -1,117 +1,109 @@
+"use client"
+
+import { useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react"
+import type { Business, Social } from "@/lib/content"
 
-export default function Footer() {
+/**
+ * The bar pinned to the bottom of every page: logo on the left, then the phone
+ * number, email, service area and social icons across the middle, with the
+ * copyright line underneath. All the details come from the admin area.
+ * It measures how tall it is and tells the rest of the page to leave exactly
+ * that much room, so nothing gets hidden behind it on any screen size.
+ */
+export default function Footer({ business, social }: { business: Business; social: Social }) {
+  const ref = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const setHeight = () => document.documentElement.style.setProperty("--footer-h", `${el.offsetHeight}px`)
+    setHeight()
+    const observer = new ResizeObserver(setHeight)
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <footer className="w-full border-t bg-[#333333] text-white">
-      <div className="container px-4 sm:px-6 md:px-8 py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          <div className="flex flex-col gap-3 sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="relative h-8 w-24 sm:h-10 sm:w-32 overflow-hidden">
-                <Image src="/logo.png" alt="Hose Water Pressure Washing LLC Logo" fill className="object-contain" />
-              </div>
-            </Link>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              Professional pressure washing services for residential and commercial properties throughout Southern Maine
-              and New Hampshire.
-            </p>
-          </div>
+    <footer
+      ref={ref}
+      className="fixed bottom-0 left-0 right-0 z-40 w-full border-t border-gray-700 bg-[#333333] text-white"
+    >
+      <div className="container px-4 py-3 sm:px-6 md:px-8">
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-5">
+          {/* Logo on the left */}
+          <Link href="/" className="flex-shrink-0">
+            <div className="relative h-12 w-36 overflow-hidden sm:h-14 sm:w-40">
+              <Image
+                src="/logo.png"
+                alt={`${business.name} Logo`}
+                fill
+                sizes="160px"
+                className="object-contain"
+              />
+            </div>
+          </Link>
 
-          <div>
-            <h3 className="text-base sm:text-lg font-medium mb-3 sm:mb-4 text-yellow-400">Quick Links</h3>
-            <nav className="flex flex-col gap-2">
-              <Link href="/" className="text-sm hover:text-yellow-400 transition-colors">
-                Home
-              </Link>
-              <Link href="/services" className="text-sm hover:text-yellow-400 transition-colors">
-                Services
-              </Link>
-              <Link href="/gallery" className="text-sm hover:text-yellow-400 transition-colors">
-                Gallery
-              </Link>
-              <Link href="/about" className="text-sm hover:text-yellow-400 transition-colors">
-                About
-              </Link>
-              <Link href="/faq" className="text-sm hover:text-yellow-400 transition-colors">
-                FAQ
-              </Link>
-              <Link href="/contact" className="text-sm hover:text-yellow-400 transition-colors">
-                Contact
-              </Link>
-              <Link href="/estimate" className="text-sm hover:text-yellow-400 transition-colors">
-                Free Estimate
-              </Link>
-            </nav>
-          </div>
+          <div className="min-w-0 flex-1">
+            {/* Line 1 - contact details and social icons */}
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+              <span className="flex items-center gap-2">
+                <Phone className="h-5 w-5 flex-shrink-0 text-yellow-400" aria-hidden="true" />
+                <a href={`tel:${business.phoneDial}`} className="text-base transition-colors hover:text-yellow-400">
+                  {business.phoneDisplay}
+                </a>
+              </span>
+              <span className="flex items-center gap-2">
+                <Mail className="h-5 w-5 flex-shrink-0 text-yellow-400" aria-hidden="true" />
+                <a
+                  href={`mailto:${business.email}`}
+                  className="break-all text-base transition-colors hover:text-yellow-400"
+                >
+                  {business.email}
+                </a>
+              </span>
+              <span className="flex items-center gap-2">
+                <MapPin className="h-5 w-5 flex-shrink-0 text-yellow-400" aria-hidden="true" />
+                <span className="text-base">{business.serviceArea}</span>
+              </span>
 
-          <div>
-            <h3 className="text-base sm:text-lg font-medium mb-3 sm:mb-4 text-yellow-400">Services</h3>
-            <nav className="flex flex-col gap-2">
-              <Link href="/services#house-washing" className="text-sm hover:text-yellow-400 transition-colors">
-                House Washing
-              </Link>
-              <Link href="/services#deck" className="text-sm hover:text-yellow-400 transition-colors">
-                Deck Cleaning
-              </Link>
-              <Link href="/services#roof" className="text-sm hover:text-yellow-400 transition-colors">
-                Roof Cleaning
-              </Link>
-              <Link href="/services#patio-walkway" className="text-sm hover:text-yellow-400 transition-colors">
-                Patio & Walkway Cleaning
-              </Link>
-              <Link href="/services#commercial" className="text-sm hover:text-yellow-400 transition-colors">
-                Commercial Services
-              </Link>
-            </nav>
-          </div>
-
-          <div>
-            <h3 className="text-base sm:text-lg font-medium mb-3 sm:mb-4 text-yellow-400">Contact Us</h3>
-            <div className="flex flex-col gap-3 sm:gap-4">
-              <div className="flex items-start gap-2">
-                <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 mt-0.5 flex-shrink-0" />
-                <span className="text-sm">(207) 370-8667</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 mt-0.5 flex-shrink-0" />
-                <span className="text-sm break-all">hosewaterpw@gmail.com</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 mt-0.5 flex-shrink-0" />
-                <span className="text-sm">Serving Southern Maine and New Hampshire</span>
-              </div>
-              <div className="flex gap-3 sm:gap-4 mt-2">
-                <Link href="https://g.co/kgs/ehG2MEi" target="_blank" rel="noopener noreferrer">
-                  <div className="h-8 w-8 text-gray-300 hover:text-yellow-400 flex items-center justify-center bg-blue-600 rounded text-xs font-bold transition-colors">
+              <span className="flex items-center gap-3">
+                <Link
+                  href={social.google || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Google Business Profile"
+                >
+                  <span className="flex h-7 w-7 items-center justify-center rounded bg-blue-600 text-sm font-bold text-white transition-colors hover:bg-blue-500">
                     G
-                  </div>
+                  </span>
                 </Link>
                 <Link
-                  href="https://www.facebook.com/profile.php?id=100083339862959"
+                  href={social.facebook || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`${business.name} on Facebook`}
                 >
-                  <Facebook className="h-8 w-8 text-gray-300 hover:text-yellow-400 transition-colors" />
+                  <Facebook className="h-7 w-7 text-gray-300 transition-colors hover:text-yellow-400" />
                 </Link>
                 <Link
-                  href="https://www.instagram.com/hosewaterpressurewashing"
+                  href={social.instagram || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`${business.name} on Instagram`}
                 >
-                  <Instagram className="h-8 w-8 text-gray-300 hover:text-yellow-400 transition-colors" />
+                  <Instagram className="h-7 w-7 text-gray-300 transition-colors hover:text-yellow-400" />
                 </Link>
-              </div>
+              </span>
+            </div>
+
+            {/* Line 2 - copyright */}
+            <div className="mt-1 flex justify-center">
+              <p className="text-sm text-gray-400">© {new Date().getFullYear()} {business.name}</p>
             </div>
           </div>
-        </div>
-
-        <div className="mt-8 sm:mt-12 border-t border-gray-700 pt-4 sm:pt-6">
-          <p className="text-center text-xs sm:text-sm text-gray-400">
-            © {new Date().getFullYear()} Hose Water Pressure Washing. All rights reserved. Serving Southern Maine
-            and New Hampshire.
-          </p>
         </div>
       </div>
     </footer>

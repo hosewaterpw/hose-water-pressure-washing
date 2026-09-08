@@ -1,43 +1,55 @@
+/**
+ * The homepage at hosewaterpw.com: the headline and main photo, the service
+ * cards, the "why choose us" boxes, the towns served, Google reviews, the
+ * before-and-after photos, and the yellow estimate bar at the bottom.
+ * The services and photos shown here come from the admin area, so Jon can
+ * change them without anyone editing this file.
+ */
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Check } from "lucide-react"
+import { ArrowRight, Award, Droplets, FileText, ThumbsUp, Wrench } from "lucide-react"
 import type { Metadata } from "next"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import ServiceCard from "@/components/service-card"
 import GoogleReviews from "@/components/google-reviews"
 import BeforeAfterGallery from "@/components/before-after-gallery"
+import CopyPhone from "@/components/copy-phone"
+import { getBusiness, getFeaturedGallery, getServices } from "@/lib/content"
 
 export const metadata: Metadata = {
-  title: "Pressure Washing North Berwick Maine | House, Roof, & Deck Cleaning | Hose Water Pressure Washing",
+  title: "Pressure Washing & Roof Cleaning in North Berwick, ME | Hose Water",
   description:
-    "Get top-rated pressure washing in North Berwick, Maine. Hose Water Pressure Washing offers expert house washing, roof cleaning, deck restoration, patio cleaning, and more throughout York County, Southern Maine, and New Hampshire. Family-owned and trusted since 2022.",
+    "Pressure washing in North Berwick, ME. House washing, roof cleaning, decks and patios across York County and the NH Seacoast. Free quotes, family-owned.",
   keywords: [
-    // Expanded Local + Core Services
-    "pressure washing North Berwick Maine", "house washing North Berwick", "power washing North Berwick ME", "soft washing services 03906", "roof cleaning services North Berwick", "exterior house washing Maine", "pressure cleaning North Berwick", "soft wash pressure washing 03906", "residential pressure washing 03906", "commercial power washing North Berwick", "exterior home cleaning North Berwick", "roof moss removal North Berwick", "house pressure washing near 03906", "local power washing company Maine", "North Berwick pressure washing pros", "soft wash roof cleaning North Berwick", "exterior cleaning near me 03906", "professional power washing 03906", "house washing company near North Berwick", "North Berwick Maine home pressure washing",
-
-    // Service Extensions
-    "deck restoration North Berwick", "gutter cleaning services 03906", "vinyl siding pressure washing North Berwick", "solar panel cleaning in York County", "fence cleaning and staining North Berwick", "driveway and patio pressure washing ME", "concrete pressure washing North Berwick", "sidewalk and walkway cleaning North Berwick", "brick house pressure washing York County", "low pressure roof cleaning Southern Maine", "mildew removal on siding Maine", "algae removal from roof Maine", "rust removal pressure washing Maine", "roof stain removal North Berwick", "pool patio cleaning services ME", "oil stain removal York County", "high pressure driveway cleaning ME", "wood fence soft wash cleaning Maine", "clogged gutter clearing North Berwick", "window washing and pressure cleaning Maine",
-
-    // Service Area Expansion
-    "pressure washing Wells ME", "house washing South Berwick Maine", "soft washing Kittery ME", "power washing York Maine", "roof cleaning Sanford ME", "pressure washing Lebanon ME", "pressure washing Ogunquit Maine", "deck cleaning in Cape Neddick ME", "pressure washing Berwick ME", "patio cleaning Kennebunk ME", "pressure washing Kennebunkport ME", "roof washing Somersworth NH", "pressure washing Rochester NH", "house washing Portsmouth NH", "pressure washing Seacoast NH", "exterior cleaning Dover NH", "power washing New Hampshire Seacoast", "pressure washing Durham NH", "soft wash Wells Maine", "house washing Southern New Hampshire",
-
-    // Buyer Intent & Conversion Keywords
-    "best pressure washing in Southern Maine", "top-rated pressure washing company near me", "affordable house washing York County", "trusted local pressure washing 03906", "insured pressure washing services ME", "eco-friendly soft washing Maine", "family-owned pressure washing company", "professional deck cleaning North Berwick", "get a free quote pressure washing ME", "licensed roof washing company North Berwick", "affordable window and siding cleaning Maine", "best local house washers in York County", "top power washing business near me", "safe roof wash company Southern Maine", "cost-effective soft washing services", "guaranteed results pressure washing 03906", "same day pressure washing North Berwick", "emergency exterior cleaning ME", "highly rated power washing company Maine", "reliable pressure washing contractor 03906",
-
-    // Voice Search & FAQ Phrases
-    "who offers the best pressure washing near North Berwick?", "can I get same-day house washing in York County?", "what’s the cost of power washing in Southern Maine?", "how do I clean green algae off my siding?", "what's the best company for soft washing in ME?", "are there pressure washing services near 03906?", "how much does solar panel cleaning cost in Maine?", "can pressure washing damage my roof?", "who do I call for driveway cleaning near me?", "where to find affordable roof cleaning near York ME?", "is there a pressure washer near me for decks?", "how to remove mildew from siding in Maine?", "can I get a quote for pressure washing today?", "best rated pressure washing North Berwick Maine?", "who does patio and concrete cleaning near me?", "how far will Hose Water travel for pressure washing?", "local soft washing professionals for vinyl siding", "North Berwick house wash reviews 2025", "pressure washing for HOAs and apartments ME", "best business for roof algae removal ME"
+    "pressure washing North Berwick Maine",
+    "house washing York County",
+    "roof cleaning Southern Maine"
   ],
   openGraph: {
     title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing",
     description:
       "Revitalize your property with our professional pressure washing services. At Hose Water Pressure Washing, we restore the beauty of your home or business—removing years of dirt, grime, and buildup to leave surfaces looking like new. Family-owned and operated since 2022, we proudly serve residential and commercial clients across Southern Maine and New Hampshire.",
-    images: ["/house-washing.png"],
+    images: ["/og-image.png"],
   },
 }
 
+// ServiceCard takes an icon name; map each service to one, falling back to "home"
+// so a service added in the CMS still renders.
+const SERVICE_ICONS: Record<string, string> = {
+  "house-washing": "home",
+  deck: "layout",
+  "patio-walkway": "road",
+  "solar-window": "square",
+  roof: "home",
+  commercial: "building",
+}
+const serviceIcon = (id: string) => SERVICE_ICONS[id] ?? "home"
+
 export default function Home() {
+  const services = getServices()
+  const featuredPhotos = getFeaturedGallery()
+  const business = getBusiness()
   return (
     <>
       {/* Structured Data for Services */}
@@ -110,13 +122,13 @@ export default function Home() {
 
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gradient-to-b from-[#333333] to-gray-800 text-white">
+        <section className="w-full py-8 md:py-10 lg:py-12 bg-gradient-to-b from-[#333333] to-gray-800 text-white">
           <div className="container px-4 sm:px-6 md:px-8">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
                 <div className="space-y-3">
                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter leading-tight">
-                    Professional Pressure Washing Services
+                    Professional Pressure Washing Services in North Berwick, ME
                   </h1>
                   <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-[600px] mx-auto lg:mx-0">
                     Revitalize your property with our professional pressure washing services. At Hose Water Pressure Washing, we restore the beauty of your home or business—removing years of dirt, grime, and buildup to leave surfaces looking like new. Family-owned and operated since 2022, we proudly serve residential and commercial clients across Southern Maine and New Hampshire.
@@ -137,16 +149,21 @@ export default function Home() {
                       variant="outline"
                       className="w-full sm:w-auto text-white border-white hover:bg-white/10 bg-transparent text-base px-6 py-3"
                     >
-                      Call (207) 370-8667
+                      Contact Me
                     </Button>
                   </Link>
                 </div>
+                <CopyPhone
+                  phone={business.phoneDisplay}
+                  className="justify-center lg:justify-start text-gray-200"
+                />
               </div>
               <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden mt-6 lg:mt-0">
                 <Image
-                  src="/house-washing.png"
+                  src="/house-washing.jpg"
                   alt="Professional pressure washing services in North Berwick Maine - house washing in progress"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                   priority
                 />
@@ -156,9 +173,9 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32">
+        <section className="w-full py-8 md:py-10 lg:py-12">
           <div className="container px-4 sm:px-6 md:px-8">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-12">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-8">
               <div className="space-y-2">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
                   Our Pressure Washing Services
@@ -169,62 +186,24 @@ export default function Home() {
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              <ServiceCard
-                title="House Washing"
-                description="Remove dirt, mold, and mildew from your home's exterior surfaces with our professional house washing service."
-                icon="home"
-                imageSrc="/house-washing-service.png"
-                orientation="horizontal"
-                serviceId="house-washing"
-              />
-              <ServiceCard
-                title="Deck Cleaning"
-                description="Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
-                icon="layout"
-                imageSrc="/deck-cleaning.png"
-                orientation="vertical"
-                serviceId="deck"
-              />
-              <ServiceCard
-                title="Solar Panel & Window Cleaning"
-                description="Professional solar panel and exterior window cleaning using water-fed pole system with deionized water for spot-free results."
-                icon="square"
-                imageSrc="/solar-window-cleaning.png"
-                orientation="horizontal"
-                serviceId="solar-window"
-              />
-              <ServiceCard
-                title="Roof Cleaning"
-                description="Safely remove black streaks, moss, and algae from your roof with our professional roof cleaning."
-                icon="home"
-                imageSrc="/roof-cleaning.png"
-                orientation="vertical"
-                serviceId="roof"
-              />
-              <ServiceCard
-                title="Patio & Walkway Cleaning"
-                description="Restore concrete, stone, and brick patios and walkways by removing dirt, stains, and organic growth."
-                icon="square"
-                imageSrc="/patio-walkway-cleaning.png"
-                orientation="vertical"
-                serviceId="patio-walkway"
-              />
-              <ServiceCard
-                title="Commercial Pressure Washing"
-                description="Maintain your business property's appearance and safety with our commercial pressure washing services."
-                icon="building"
-                imageSrc="/commercial-cleaning.png"
-                orientation="horizontal"
-                serviceId="commercial"
-              />
+              {services.map((service) => (
+                <ServiceCard
+                  key={service.id}
+                  title={service.cardTitle || service.title}
+                  description={service.cardDescription || service.description}
+                  icon={serviceIcon(service.id)}
+                  imageSrc={service.image}
+                  serviceId={service.id}
+                />
+              ))}
             </div>
           </div>
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gray-50">
+        <section className="w-full py-8 md:py-10 lg:py-12 bg-gray-50">
           <div className="container px-4 sm:px-6 md:px-8">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-12">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 sm:mb-8">
               <div className="space-y-2">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
                   Why Choose Hose Water Pressure Washing
@@ -235,47 +214,53 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              <Card className="text-center">
-                <CardContent className="flex flex-col items-center p-4 sm:p-6">
-                  <div className="mb-4 rounded-full bg-yellow-400/10 p-3">
-                    <Check className="h-6 w-6 text-yellow-500" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">Experienced Professionals</h3>
-                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                    Our team has years of experience in the pressure washing industry serving Southern Maine & New Hampshire
-                    residents.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="text-center">
-                <CardContent className="flex flex-col items-center p-4 sm:p-6">
-                  <div className="mb-4 rounded-full bg-yellow-400/10 p-3">
-                    <Check className="h-6 w-6 text-yellow-500" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">Professional Equipment</h3>
-                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                    We use commercial-grade pressure washing equipment to deliver superior cleaning results.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="text-center md:col-span-2 lg:col-span-1">
-                <CardContent className="flex flex-col items-center p-4 sm:p-6">
-                  <div className="mb-4 rounded-full bg-yellow-400/10 p-3">
-                    <Check className="h-6 w-6 text-yellow-500" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">Satisfaction Guaranteed</h3>
-                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                    We're not happy until you're happy with the results of our pressure washing work.
-                  </p>
-                </CardContent>
-              </Card>
+            {/* Three across, then two centred beneath on desktop. */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+              <div className="flex flex-col items-center rounded-xl bg-teal-50 p-4 text-center sm:p-5">
+                <Award className="h-6 w-6 text-teal-700" aria-hidden="true" />
+                <h3 className="mt-3 text-base sm:text-lg font-bold text-teal-900">Experienced Professionals</h3>
+                <p className="mt-1.5 text-sm text-teal-800 leading-relaxed">
+                  Our team has years of experience in the pressure washing industry serving Southern Maine & New
+                  Hampshire residents.
+                </p>
+              </div>
+              <div className="flex flex-col items-center rounded-xl bg-sky-50 p-4 text-center sm:p-5">
+                <Wrench className="h-6 w-6 text-sky-700" aria-hidden="true" />
+                <h3 className="mt-3 text-base sm:text-lg font-bold text-sky-900">Professional Equipment</h3>
+                <p className="mt-1.5 text-sm text-sky-800 leading-relaxed">
+                  We use commercial-grade pressure washing equipment to deliver superior cleaning results.
+                </p>
+              </div>
+              <div className="flex flex-col items-center rounded-xl bg-amber-50 p-4 text-center sm:p-5">
+                <ThumbsUp className="h-6 w-6 text-amber-700" aria-hidden="true" />
+                <h3 className="mt-3 text-base sm:text-lg font-bold text-amber-900">Satisfaction Guaranteed</h3>
+                <p className="mt-1.5 text-sm text-amber-800 leading-relaxed">
+                  We're not happy until you're happy with the results of our pressure washing work.
+                </p>
+              </div>
+            </div>
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-6 sm:gap-6 md:mx-auto md:max-w-[66%] md:grid-cols-2">
+              <div className="flex flex-col items-center rounded-xl bg-violet-50 p-4 text-center sm:p-5">
+                <Droplets className="h-6 w-6 text-violet-700" aria-hidden="true" />
+                <h3 className="mt-3 text-base sm:text-lg font-bold text-violet-900">Safe Soft Wash Methods</h3>
+                <p className="mt-1.5 text-sm text-violet-800 leading-relaxed">
+                  We adjust our technique to the surface, using low-pressure soft washing where it matters to protect
+                  your property.
+                </p>
+              </div>
+              <div className="flex flex-col items-center rounded-xl bg-rose-50 p-4 text-center sm:p-5">
+                <FileText className="h-6 w-6 text-rose-700" aria-hidden="true" />
+                <h3 className="mt-3 text-base sm:text-lg font-bold text-rose-900">Free, No-Obligation Quotes</h3>
+                <p className="mt-1.5 text-sm text-rose-800 leading-relaxed">
+                  Request an estimate online or call us. Detailed pricing with nothing owed up front.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Service Area */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gray-50">
+        <section className="w-full py-8 md:py-10 lg:py-12 bg-gray-50">
           <div className="container px-4 sm:px-6 md:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -333,7 +318,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <p className="text-xs text-gray-400 mt-6 leading-relaxed">
+                {/* gray-400 on this light background was 2.43:1, below the 4.5:1
+                    minimum. gray-600 is 7.2:1. */}
+                <p className="text-xs text-gray-600 mt-6 leading-relaxed">
                   Professional pressure washing services available in all listed communities and surrounding areas.
                   Contact us to confirm service availability in your specific location.
                 </p>
@@ -343,7 +330,7 @@ export default function Home() {
         </section>
 
         {/* Google Reviews Section */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-gray-50">
+        <section className="w-full py-8 md:py-10 lg:py-12 bg-gray-50">
   <div className="container px-4 sm:px-6 md:px-8">
     <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
@@ -360,7 +347,7 @@ export default function Home() {
 </section>
 
         {/* Before & After Gallery */}
-<section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 bg-white">
+<section className="w-full py-8 md:py-10 lg:py-12 bg-white">
   <div className="container px-4 sm:px-6 md:px-8">
     <div className="flex flex-col items-center text-center mb-8">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
@@ -374,26 +361,33 @@ export default function Home() {
       </p>
     </div>
 
-    <BeforeAfterGallery />
+    <BeforeAfterGallery galleryItems={featuredPhotos} />
+
+    <div className="mt-8 flex justify-center">
+      <Link href="/gallery">
+        <Button variant="outline" size="lg" className="gap-2">
+          See All Before &amp; Afters <ArrowRight className="h-4 w-4" />
+        </Button>
+      </Link>
+    </div>
   </div>
 </section>
         
-        {/* CTA Section */}
-        <section className="w-full py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 bg-[#333333] text-white">
+        {/* CTA Section - brand yellow so it reads as part of the page, not the dark footer */}
+        <section className="w-full py-6 md:py-7 bg-yellow-400 text-[#333333]">
           <div className="container px-4 sm:px-6 md:px-8">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter">
-                  Ready to Transform Your Property?
-                </h2>
-                <p className="max-w-[700px] text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8">
+            <div className="flex flex-col items-center justify-center gap-3 text-center">
+              <div className="space-y-1">
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter">Ready to Transform Your Property?</h2>
+                {/* max-w-none so the sentence sits on one line on desktop */}
+                <p className="max-w-none text-base leading-snug">
                   Get a free pressure washing estimate today by answering a few simple questions about your property.
                 </p>
               </div>
               <Link href="/estimate" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto gap-2 bg-yellow-400 text-[#333333] hover:bg-yellow-500 text-base px-6 py-3"
+                  className="w-full sm:w-auto gap-2 bg-[#333333] text-white hover:bg-[#1f1f1f] text-base px-6 py-3"
                 >
                   Get Free Estimate <ArrowRight className="h-4 w-4" />
                 </Button>

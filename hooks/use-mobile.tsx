@@ -1,3 +1,9 @@
+/**
+ * Reports whether the browser window is phone-sized (narrower than 768px) and
+ * keeps track if it's resized.
+ * Part of the project's starting scaffolding. Nothing on this site actually
+ * uses it - the pages handle phone screens through styling instead.
+ */
 import * as React from "react"
 
 const MOBILE_BREAKPOINT = 768

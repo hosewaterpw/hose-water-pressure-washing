@@ -1,0 +1,18 @@
+{
+  "id": "commercial",
+  "title": "Commercial Pressure Washing Services",
+  "order": 6,
+  "image": "/commercial-cleaning.jpg",
+  "description": "Our commercial pressure washing services help maintain your rental properties, apartment buildings, and multi-unit properties' appearance and value.",
+  "features": [
+    "Apartment building and duplex exterior cleaning",
+    "Rental property maintenance and cleaning",
+    "Multi-unit property exterior restoration",
+    "Property management company services"
+  ],
+  "galleryFilter": "commercial",
+  "seoTitle": "",
+  "metaDescription": "",
+  "cardTitle": "Commercial Pressure Washing",
+  "cardDescription": "Maintain your business property's appearance and safety with our commercial pressure washing services."
+}

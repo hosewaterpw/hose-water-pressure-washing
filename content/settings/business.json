@@ -1,0 +1,24 @@
+{
+  "serviceArea": "Southern Maine and New Hampshire",
+  "addressCountry": "US",
+  "hoursDays": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ],
+  "addressRegion": "ME",
+  "hoursCloses": "17:00",
+  "name": "Hose Water Pressure Washing",
+  "hoursDisplay": "Monday - Saturday: 8:00 AM - 5:00 PM\nSunday: Closed",
+  "phoneDisplay": "(207) 370-8667",
+  "addressLocality": "North Berwick",
+  "postalCode": "03906",
+  "hoursOpens": "08:00",
+  "email": "hosewaterpw@gmail.com",
+  "foundingYear": "2022",
+  "phoneDial": "+12073708667",
+  "ownerName": "Jonathan P. Bilodeau"
+}
