@@ -1,3 +1,10 @@
+/**
+ * One service card - photo, icon, name, short description, and the "Learn
+ * More" and "View Gallery" buttons. The homepage uses six of these.
+ * Every card gets an identically sized photo frame so the rows line up, and
+ * the whole photo is shown rather than cropped, because these are
+ * before-and-after pairs and cropping would cut one half off.
+ */
 import { Building, Home, Layout, RouteIcon as Road, Square } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"

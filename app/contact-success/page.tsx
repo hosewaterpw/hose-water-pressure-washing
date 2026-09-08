@@ -1,7 +1,14 @@
+/**
+ * The thank-you page a visitor lands on after sending the contact form. It
+ * confirms the message arrived and gives Jon's number for anything urgent.
+ * It's deliberately hidden from Google, since there's no reason for a
+ * thank-you page to turn up in search results.
+ */
 import Link from "next/link"
 import { CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
+import { getBusiness } from "@/lib/content"
 
 // Post-submission confirmation page: no search value, keep it out of the index.
 export const metadata: Metadata = {
@@ -10,6 +17,8 @@ export const metadata: Metadata = {
 }
 
 export default function ContactSuccessPage() {
+  const business = getBusiness()
+
   return (
     <div className="container flex flex-col items-center justify-center px-4 py-12 sm:px-6 md:px-8 md:py-16">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -23,8 +32,8 @@ export default function ContactSuccessPage() {
           </p>
           <p className="text-gray-500">
             For urgent matters, please call us at{" "}
-            <a href="tel:+12073708667" className="font-bold hover:underline">
-              (207) 370-8667
+            <a href={`tel:${business.phoneDial}`} className="font-bold hover:underline">
+              {business.phoneDisplay}
             </a>
           </p>
         </div>
@@ -38,8 +47,8 @@ export default function ContactSuccessPage() {
         </div>
         <div className="pt-4 text-sm text-gray-500">
           <p>
-            <a href="mailto:hosewaterpw@gmail.com" className="hover:text-primary hover:underline">
-              hosewaterpw@gmail.com
+            <a href={`mailto:${business.email}`} className="hover:text-primary hover:underline">
+              {business.email}
             </a>
           </p>
           <p className="mt-1">Serving Southern Maine and New Hampshire</p>

@@ -1,6 +1,10 @@
+/**
+ * The details used when a visitor saves the site to their phone's home screen:
+ * the name shown under the icon, which icon to use, and the background colour.
+ * It has no effect on the website itself - it only matters to someone who
+ * chooses "Add to Home Screen" on their phone.
+ */
 import type { MetadataRoute } from "next"
-
-// Lets the site be saved to a phone home screen with a proper name and icon.
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Hose Water Pressure Washing",

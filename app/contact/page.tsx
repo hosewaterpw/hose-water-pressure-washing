@@ -1,3 +1,10 @@
+/**
+ * The Contact page: the message form on the left, and Jon's phone number,
+ * email and service area on the right - all taken from the admin area.
+ * Sending the form is handled by Netlify, the company that hosts the site: it
+ * emails Jon, keeps a copy in his account in case an email goes astray, and
+ * then shows the visitor a thank-you page.
+ */
 import { Mail, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"

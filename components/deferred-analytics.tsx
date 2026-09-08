@@ -8,14 +8,13 @@ const GA_ID = "G-SW9ESX4H4G"
 const META_PIXEL_ID = "2844768349066272"
 
 /**
- * Google Analytics and the Meta Pixel together weigh ~340KB and were the single
- * biggest contributor to Total Blocking Time - more than every image and script
- * of our own combined. Loading them on first interaction (or after a short
- * fallback delay) keeps the main thread free while the page is still painting.
- *
- * Trade-off: a visitor who leaves within the first few seconds without touching
- * anything is not counted. That is a small share of traffic, and the delay is
- * invisible to anyone who actually reads the page.
+ * Loads the Google Analytics and Facebook tracking code, which is what tells
+ * Jon how many people visit and where they came from.
+ * It holds off until the visitor scrolls or taps something - or four seconds
+ * pass, whichever comes first - because together these weigh about 340KB and
+ * were the biggest single thing slowing the site down.
+ * The trade-off: someone who leaves within a few seconds without touching
+ * anything doesn't get counted.
  */
 export default function DeferredAnalytics() {
   const [shouldLoad, setShouldLoad] = useState(false)

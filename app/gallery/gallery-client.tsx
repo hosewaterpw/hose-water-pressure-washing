@@ -1,5 +1,13 @@
 "use client"
 
+/**
+ * The photo grid on the Gallery page: the filter tabs along the top (All,
+ * Houses, Decks and so on) and the enlarged view when a photo is clicked.
+ * When someone arrives from a "View Gallery" button elsewhere on the site, it
+ * reads which category they wanted from the web address and opens that tab.
+ * Careful: it deliberately reads that address the long way round. The obvious
+ * shortcut hides every photo from Google - a bug we have already fixed once.
+ */
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"

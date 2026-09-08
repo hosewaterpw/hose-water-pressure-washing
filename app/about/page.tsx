@@ -1,9 +1,16 @@
+/**
+ * The About page: Jon's photo and introduction, his own account of how the
+ * business started, and four boxes covering when he began and where he works.
+ * The wording here is fixed rather than editable in the admin area, because
+ * it's written in his own voice and rarely needs changing.
+ */
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Award, Calendar, CheckCircle, Clock, Heart, Star, ThumbsUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import type { Metadata } from "next"
+import { getBusiness, getSocialUrls } from "@/lib/content"
 
 export const metadata: Metadata = {
   alternates: {
@@ -25,6 +32,8 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
+  const business = getBusiness()
+
   return (
     <>
       {/* Structured Data for Person/Business Owner */}
@@ -34,16 +43,16 @@ export default function AboutPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            name: "Jonathan P. Bilodeau",
+            name: business.ownerName,
             jobTitle: "Owner",
             worksFor: {
               "@type": "LocalBusiness",
-              name: "Hose Water Pressure Washing",
+              name: business.name,
             },
             description:
               "Owner of Hose Water Pressure Washing, providing professional pressure washing services in Southern Maine & New Hampshire since 2022",
             url: "https://hosewaterpw.com/about",
-            sameAs: ["https://www.facebook.com/hosewaterpw", "https://www.instagram.com/hosewaterpw"],
+            sameAs: getSocialUrls(),
           }),
         }}
       />

@@ -1,3 +1,10 @@
+/**
+ * The Services page: all six services listed one after another, each with its
+ * photo, description, bullet points, and buttons for a quote or the matching
+ * before-and-after photos.
+ * The services come from the admin area, so anything Jon adds there appears
+ * here on its own - nobody needs to edit this file.
+ */
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"

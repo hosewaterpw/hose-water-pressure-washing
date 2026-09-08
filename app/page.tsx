@@ -1,3 +1,10 @@
+/**
+ * The homepage at hosewaterpw.com: the headline and main photo, the service
+ * cards, the "why choose us" boxes, the towns served, Google reviews, the
+ * before-and-after photos, and the yellow estimate bar at the bottom.
+ * The services and photos shown here come from the admin area, so Jon can
+ * change them without anyone editing this file.
+ */
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Award, Droplets, FileText, ThumbsUp, Wrench } from "lucide-react"
@@ -8,7 +15,7 @@ import ServiceCard from "@/components/service-card"
 import GoogleReviews from "@/components/google-reviews"
 import BeforeAfterGallery from "@/components/before-after-gallery"
 import CopyPhone from "@/components/copy-phone"
-import { getFeaturedGallery, getServices } from "@/lib/content"
+import { getBusiness, getFeaturedGallery, getServices } from "@/lib/content"
 
 export const metadata: Metadata = {
   title: "Pressure Washing & Roof Cleaning in North Berwick, ME | Hose Water",
@@ -42,6 +49,7 @@ const serviceIcon = (id: string) => SERVICE_ICONS[id] ?? "home"
 export default function Home() {
   const services = getServices()
   const featuredPhotos = getFeaturedGallery()
+  const business = getBusiness()
   return (
     <>
       {/* Structured Data for Services */}
@@ -145,7 +153,10 @@ export default function Home() {
                     </Button>
                   </Link>
                 </div>
-                <CopyPhone className="justify-center lg:justify-start text-gray-200" />
+                <CopyPhone
+                  phone={business.phoneDisplay}
+                  className="justify-center lg:justify-start text-gray-200"
+                />
               </div>
               <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden mt-6 lg:mt-0">
                 <Image

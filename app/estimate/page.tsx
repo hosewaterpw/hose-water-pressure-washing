@@ -1,3 +1,9 @@
+/**
+ * The "Get a Free Estimate" page - the longer form asking about the property,
+ * which services are wanted, and how to reach the visitor.
+ * As with the contact form, Netlify handles the sending: Jon gets an email, a
+ * copy is kept in his account, and the visitor lands on a thank-you page.
+ */
 import { Check } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"

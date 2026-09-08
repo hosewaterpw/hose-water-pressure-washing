@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * The "Real Results" row of before-and-after photos on the homepage, with the
+ * round arrows either side for sliding along it.
+ * It shows only the photos Jon has ticked "Show on homepage" in the admin area.
+ * On a wide screen four fit exactly, so the arrows hide themselves; on a phone
+ * you swipe sideways instead.
+ */
 import { useCallback, useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"

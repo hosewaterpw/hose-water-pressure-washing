@@ -4,9 +4,12 @@ import { useEffect, useRef, useState } from "react"
 import Script from "next/script"
 
 /**
- * The Elfsight reviews widget is a full third-party app and sits below the fold.
- * Loading it only when it scrolls into view keeps it off the critical path.
- * The reserved min-height prevents the page jumping when it appears.
+ * The "What Our Customers Say" section on the homepage - Jon's real Google
+ * reviews, supplied by an outside service called Elfsight.
+ * It's a heavy thing to load, so it waits until the visitor scrolls near it,
+ * and the space is held open in advance so the page doesn't jump.
+ * The five-second timer below is a safety net: if the scroll trigger ever
+ * fails, the reviews load anyway rather than silently vanishing.
  */
 export default function GoogleReviews() {
   const ref = useRef<HTMLDivElement>(null)

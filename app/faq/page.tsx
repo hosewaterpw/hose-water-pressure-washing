@@ -1,8 +1,15 @@
+/**
+ * The FAQ page - the questions that expand when clicked, grouped under
+ * headings. All of it comes from the admin area, so Jon can add or reword a
+ * question himself.
+ * It also hands Google a tidy list of every question and answer, which is how
+ * they can end up shown directly on the search results page.
+ */
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import type { Metadata } from "next"
-import { getFaqsByCategory } from "@/lib/content"
+import { getBusiness, getFaqsByCategory } from "@/lib/content"
 
 export const metadata: Metadata = {
   alternates: {
@@ -26,6 +33,8 @@ export const metadata: Metadata = {
 const faqData = getFaqsByCategory()
 
 export default function FAQPage() {
+  const business = getBusiness()
+
   return (
     <>
       {/* Structured Data for FAQ */}
@@ -105,12 +114,12 @@ export default function FAQPage() {
             <div className="mt-4 text-center">
               <p className="text-sm text-gray-300">
                 Call us at{" "}
-                <a href="tel:+12073708667" className="text-yellow-400 hover:underline">
-                  (207) 370-8667
+                <a href={`tel:${business.phoneDial}`} className="text-yellow-400 hover:underline">
+                  {business.phoneDisplay}
                 </a>{" "}
                 or email{" "}
-                <a href="mailto:hosewaterpw@gmail.com" className="text-yellow-400 hover:underline">
-                  hosewaterpw@gmail.com
+                <a href={`mailto:${business.email}`} className="text-yellow-400 hover:underline">
+                  {business.email}
                 </a>
               </p>
             </div>

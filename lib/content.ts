@@ -2,9 +2,12 @@ import fs from "node:fs"
 import path from "node:path"
 
 /**
- * Reads site content from JSON files under /content, which is what the CMS at
- * /admin edits. Everything here runs at build time in Server Components, so the
- * public pages stay static HTML - no database and no client-side fetching.
+ * The bridge between the admin area and the website.
+ * When Jon saves a photo, service or FAQ at /admin, it's stored as a file in
+ * the "content" folder - this reads those files and hands them to the pages.
+ * It runs once when the site is rebuilt, not every time someone visits, which
+ * is why the pages load fast and why a change takes a minute or two to appear.
+ * There is no database involved anywhere.
  */
 
 const CONTENT_DIR = path.join(process.cwd(), "content")

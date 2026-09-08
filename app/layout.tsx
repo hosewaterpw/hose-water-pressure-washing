@@ -1,3 +1,11 @@
+/**
+ * The frame every single page sits inside: the navigation bar at the top, the
+ * page itself in the middle, and the pinned footer at the bottom.
+ * It also sets the title and description Google shows in its results, and
+ * hands Google the business details - phone number, address, opening hours,
+ * social profiles - taken from the admin area. Those details are what let a
+ * business panel appear beside the search results.
+ */
 import Script from "next/script";
 import type React from "react"
 import type { Metadata } from "next"
@@ -35,7 +43,7 @@ export const metadata: Metadata = {
     email: false,
     address: false,
   },
-  metadataBase: new URL("https://hosewaterpw.com"), // Replace with your actual domain
+  metadataBase: new URL("https://hosewaterpw.com"),
   openGraph: {
     type: "website",
     locale: "en_US",

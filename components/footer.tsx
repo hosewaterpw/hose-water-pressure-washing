@@ -6,9 +6,13 @@ import Image from "next/image"
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react"
 import type { Business, Social } from "@/lib/content"
 
-// Pinned to the viewport bottom. Its height changes as the contact row wraps at
-// different widths, so it publishes its own height as --footer-h and <main> pads
-// by that. Hardcoding the padding per breakpoint was off by 25px at some widths.
+/**
+ * The bar pinned to the bottom of every page: logo on the left, then the phone
+ * number, email, service area and social icons across the middle, with the
+ * copyright line underneath. All the details come from the admin area.
+ * It measures how tall it is and tells the rest of the page to leave exactly
+ * that much room, so nothing gets hidden behind it on any screen size.
+ */
 export default function Footer({ business, social }: { business: Business; social: Social }) {
   const ref = useRef<HTMLElement>(null)
 

@@ -1,3 +1,9 @@
+/**
+ * The three-tab guide showing visitors how to measure their own house, what to
+ * measure it with, and a few tips - used on the measurement guide page.
+ * The point of it is to help someone fill in the estimate form accurately, so
+ * Jon can quote without having to visit first.
+ */
 import Image from "next/image"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"

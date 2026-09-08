@@ -1,5 +1,11 @@
 "use client"
 
+/**
+ * The bar across the top of every page: the logo, the six page links, and the
+ * yellow "Get Free Estimate" button.
+ * It stays put as you scroll down the page. On phones the links collapse
+ * behind the three-line menu button, which opens and closes when tapped.
+ */
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"

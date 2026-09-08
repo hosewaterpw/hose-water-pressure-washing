@@ -1,8 +1,15 @@
+/**
+ * The "House Measurement Guide" page, reached from a link on the estimate
+ * form. It holds the measuring instructions and a button back to the form.
+ * The point of it is to get accurate numbers onto the form, so Jon can give a
+ * realistic quote without driving out to every enquiry first.
+ */
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import MeasurementGuide from "@/components/measurement-guide"
 import type { Metadata } from "next"
+import { getBusiness } from "@/lib/content"
 
 export const metadata: Metadata = {
   alternates: {
@@ -14,6 +21,8 @@ export const metadata: Metadata = {
 }
 
 export default function MeasurementGuidePage() {
+  const business = getBusiness()
+
   return (
     <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:py-12">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -41,14 +50,14 @@ export default function MeasurementGuidePage() {
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
               <span className="font-medium">Phone:</span>{" "}
-              <a href="tel:+12073708667" className="hover:text-primary hover:underline">
-                (207) 370-8667
+              <a href={`tel:${business.phoneDial}`} className="hover:text-primary hover:underline">
+                {business.phoneDisplay}
               </a>
             </li>
             <li className="flex items-center gap-2">
               <span className="font-medium">Email:</span>{" "}
-              <a href="mailto:info@hosewaterpw.com" className="hover:text-primary hover:underline">
-                info@hosewaterpw.com
+              <a href={`mailto:${business.email}`} className="hover:text-primary hover:underline">
+                {business.email}
               </a>
             </li>
           </ul>

@@ -1,3 +1,9 @@
+/**
+ * NOT IN USE. An older thank-you page for the estimate form, left over from
+ * before the form was pointed at /estimate-success instead.
+ * Nothing on the site links here, so no visitor will ever see it. It can be
+ * deleted; it's kept for now only so nobody wonders where it went.
+ */
 import Link from "next/link"
 import { CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
