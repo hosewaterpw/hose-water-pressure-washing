@@ -1,13 +1,33 @@
+/**
+ * The Contact page: the message form on the left, and Jon's phone number,
+ * email and service area on the right - all taken from the admin area.
+ * Sending the form is handled by Netlify, the company that hosts the site: it
+ * emails Jon, keeps a copy in his account in case an email goes astray, and
+ * then shows the visitor a thank-you page.
+ */
 import { Mail, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import type { Metadata } from "next"
+import { getBusiness } from "@/lib/content"
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/contact",
+  },
+  title: "Contact Us | North Berwick, Maine",
+  description:
+    "Contact Hose Water Pressure Washing in North Berwick, Maine. Call (207) 370-8667 or send a message for pressure washing across York County and the NH Seacoast.",
+}
 
 export default function ContactPage() {
+  const business = getBusiness()
+
   return (
-    <div className="container px-4 py-12 md:px-6 md:py-24">
+    <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:py-12">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact Us</h1>
@@ -72,13 +92,16 @@ export default function ContactPage() {
               <Phone className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="text-xl font-bold">Phone</h3>
-              <p className="text-gray-500 mt-1">207-370-8667</p>
-              <p className="text-sm text-muted-foreground mt-1">
-                Monday - Saturday: 8:00 AM - 5:00 PM
-                <br />
-                Sunday: Closed
+              <h2 className="text-xl font-bold">Phone</h2>
+              <p className="mt-1">
+                <a
+                  href={`tel:${business.phoneDial}`}
+                  className="text-gray-500 hover:text-primary hover:underline"
+                >
+                  {business.phoneDisplay}
+                </a>
               </p>
+              <p className="text-sm text-muted-foreground mt-1 whitespace-pre-line">{business.hoursDisplay}</p>
             </div>
           </div>
 
@@ -87,8 +110,15 @@ export default function ContactPage() {
               <Mail className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="text-xl font-bold">Email</h3>
-              <p className="text-gray-500 mt-1">hosewaterpw@gmail.com</p>
+              <h2 className="text-xl font-bold">Email</h2>
+              <p className="mt-1">
+                <a
+                  href={`mailto:${business.email}`}
+                  className="text-gray-500 hover:text-primary hover:underline break-all"
+                >
+                  {business.email}
+                </a>
+              </p>
               <p className="text-sm text-muted-foreground mt-1">We typically respond within 24 hours</p>
             </div>
           </div>
@@ -98,7 +128,7 @@ export default function ContactPage() {
               <MapPin className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="text-xl font-bold">Service Area</h3>
+              <h2 className="text-xl font-bold">Service Area</h2>
               <p className="text-gray-500 mt-1">Southern Maine and New Hampshire</p>
               <p className="text-sm text-muted-foreground mt-1">
                 We service residential and commercial properties throughout Southern Maine and New Hampshire

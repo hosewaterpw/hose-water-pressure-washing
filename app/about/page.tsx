@@ -1,31 +1,28 @@
+/**
+ * The About page: Jon's photo and introduction, his own account of how the
+ * business started, and four boxes covering when he began and where he works.
+ * The wording here is fixed rather than editable in the admin area, because
+ * it's written in his own voice and rarely needs changing.
+ */
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Award, Calendar, CheckCircle, Clock, Heart, Star, ThumbsUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import type { Metadata } from "next"
+import { getBusiness, getSocialUrls } from "@/lib/content"
 
 export const metadata: Metadata = {
-  title: "About Jonathan Bilodeau | Hose Water Pressure Washing | North Berwick, ME",
+  alternates: {
+    canonical: "/about",
+  },
+  title: "About Jonathan Bilodeau | North Berwick, ME",
   description:
-    "Meet Jonathan Bilodeau, founder of Hose Water Pressure Washing. Based in North Berwick, Maine, we’re a family-owned business proudly serving Southern Maine and New Hampshire with trusted, high-quality pressure washing services since 2022.",
+    "Meet Jonathan Bilodeau, owner of Hose Water Pressure Washing in North Berwick, Maine. Family-owned since 2022, serving Southern Maine and New Hampshire.",
   keywords: [
-    "Jonathan Bilodeau",
     "Hose Water Pressure Washing owner",
-    "about Hose Water Pressure Washing",
-    "North Berwick pressure washing company",
-    "Southern Maine power washing business",
-    "family owned pressure washing North Berwick",
-    "local pressure washing business Maine",
-    "pressure washing business owner North Berwick",
-    "meet the team Hose Water Pressure Washing",
-    "power washing company owner Southern Maine",
-    "trusted pressure washing expert Maine",
-    "Jonathan Bilodeau pressure washing",
-    "residential and commercial pressure washing",
-    "New Hampshire pressure washing owner",
-    "honest power washing North Berwick",
-    "best pressure washing company owner in Maine"
+    "pressure washing North Berwick Maine",
+    "family owned pressure washing business"
   ],
   openGraph: {
     title: "Meet Jonathan Bilodeau | Hose Water Pressure Washing | North Berwick, ME",
@@ -35,6 +32,8 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
+  const business = getBusiness()
+
   return (
     <>
       {/* Structured Data for Person/Business Owner */}
@@ -44,21 +43,21 @@ export default function AboutPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            name: "Jonathan P. Bilodeau",
+            name: business.ownerName,
             jobTitle: "Owner",
             worksFor: {
               "@type": "LocalBusiness",
-              name: "Hose Water Pressure Washing",
+              name: business.name,
             },
             description:
               "Owner of Hose Water Pressure Washing, providing professional pressure washing services in Southern Maine & New Hampshire since 2022",
             url: "https://hosewaterpw.com/about",
-            sameAs: ["https://www.facebook.com/hosewaterpw", "https://www.instagram.com/hosewaterpw"],
+            sameAs: getSocialUrls(),
           }),
         }}
       />
 
-      <div className="container px-4 py-12 md:px-6 md:py-24">
+      <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:py-12">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -72,13 +71,14 @@ export default function AboutPage() {
         </div>
 
         {/* Owner Introduction */}
-        <section className="mt-16">
+        <section className="mt-12 md:mt-16">
           <div className="grid gap-8 md:grid-cols-2 items-center">
             <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-lg">
               <Image
-                src="/owner-portrait.png"
+                src="/owner-portrait.jpg"
                 alt="Jonathan P. Bilodeau, Owner of Hose Water Pressure Washing"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -115,8 +115,8 @@ export default function AboutPage() {
         </section>
 
         {/* Our Approach */}
-        <section className="mt-24">
-          <div className="text-center mb-12">
+        <section className="mt-12 md:mt-16">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-bold">Our Approach</h2>
             <p className="mt-2 text-gray-500 max-w-2xl mx-auto">
               What makes Hose Water Pressure Washing different from other services in Southern Maine & New Hampshire.
@@ -161,7 +161,7 @@ export default function AboutPage() {
         </section>
 
         {/* Owner Story */}
-        <section className="mt-24">
+        <section className="mt-12 md:mt-16">
           <div className="bg-gray-50 rounded-lg p-8 md:p-12">
             <div className="max-w-3xl mx-auto space-y-6">
               <h2 className="text-3xl font-bold text-center mb-8">My Story</h2>
@@ -195,7 +195,7 @@ export default function AboutPage() {
         </section>
 
         {/* Business Details */}
-        <section className="mt-24">
+        <section className="mt-12 md:mt-16">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="flex flex-col items-center text-center">
               <div className="mb-4 rounded-full bg-yellow-400/10 p-3">
@@ -229,7 +229,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-24 py-12 px-6 bg-[#333333] text-white rounded-lg">
+        <section className="mt-12 md:mt-16 py-12 px-6 bg-[#333333] text-white rounded-lg">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold">Ready to Work Together?</h2>
             <p className="max-w-[600px]">

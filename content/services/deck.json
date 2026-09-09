@@ -1,0 +1,18 @@
+{
+  "id": "deck",
+  "title": "Deck Cleaning & Restoration",
+  "order": 2,
+  "image": "/deck-cleaning.jpg",
+  "description": "Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew and other organic growth. We carefully adjust our pressure washing techniques based on the material of your deck to ensure safe and effective cleaning.",
+  "features": [
+    "Removes dirt, mold, and weathering from deck surfaces",
+    "Safe for wood and composite deck surfaces",
+    "Prepares deck surfaces for staining or sealing",
+    "Extends the life of your outdoor deck spaces"
+  ],
+  "galleryFilter": "deck",
+  "seoTitle": "",
+  "metaDescription": "",
+  "cardTitle": "Deck Cleaning",
+  "cardDescription": "Revitalize your outdoor deck spaces and remove weathering with our professional deck cleaning service."
+}

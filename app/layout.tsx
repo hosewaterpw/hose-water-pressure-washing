@@ -1,3 +1,11 @@
+/**
+ * The frame every single page sits inside: the navigation bar at the top, the
+ * page itself in the middle, and the pinned footer at the bottom.
+ * It also sets the title and description Google shows in its results, and
+ * hands Google the business details - phone number, address, opening hours,
+ * social profiles - taken from the admin area. Those details are what let a
+ * business panel appear beside the search results.
+ */
 import Script from "next/script";
 import type React from "react"
 import type { Metadata } from "next"
@@ -6,75 +14,38 @@ import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
+import DeferredAnalytics from "@/components/deferred-analytics"
+import { getBusiness, getSocial, getSocialUrls } from "@/lib/content"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Hose Water Pressure Washing | Professional Pressure Washing Services in Southern Maine",
     template: "%s | Hose Water Pressure Washing",
   },
+  // Kept under ~160 characters so Google shows it in full rather than cutting
+  // it off mid-sentence. Same applies to every page's description.
   description:
-    "Trusted pressure washing for homes and businesses in Southern Maine and New Hampshire. We offer house washing, deck and patio cleaning, roof washing, fence restoration, window cleaning, and more. Serving a 40-mile radius around North Berwick since 2022.",
+    "Pressure washing for homes and businesses across Southern Maine and New Hampshire. House, roof, deck and patio cleaning. Free quotes, family-owned since 2022.",
   keywords: [
-    // Core Services + Main Location
     "pressure washing North Berwick Maine",
-    "power washing York County",
-    "house washing North Berwick",
-    "patio cleaning Maine",
-    "deck cleaning North Berwick",
-    "roof cleaning York County",
-    "fence washing Maine",
-    "soft washing North Berwick",
-    "commercial pressure washing North Berwick",
-    "residential pressure washing York County",
-    "exterior cleaning Maine",
-    "pressure washing 03906",
-
-    // Nearby Towns (Local SEO)
-    "Wells Maine pressure washing",
-    "Kennebunk pressure washing",
-    "Portland Maine power washing",
-    "South Berwick pressure washing",
-    "Sanford Maine pressure washing",
-    "York Maine pressure washing",
-    "Berwick ME pressure washing",
-    "Kittery ME house washing",
-    "Eliot Maine power washing",
-    "Lebanon ME pressure cleaning",
-    "Ogunquit pressure washing",
-    "Portsmouth NH pressure washing",
-    "Rochester NH power washing",
-    "Dover NH house washing",
-
-    // Long-Tail & Buyer Intent
-    "best pressure washing company in Maine",
-    "affordable power washing York County",
-    "top-rated exterior cleaning North Berwick",
-    "licensed pressure washing Maine",
-    "family owned pressure washing business",
-    "safe house washing Maine",
-    "deck restoration and cleaning Southern Maine",
-    "roof mold removal York County",
-    "green algae removal North Berwick",
-    "eco-friendly soft washing Maine",
-    "gutter cleaning and pressure washing",
-    "driveway and sidewalk cleaning Maine",
-    "pressure washing near me North Berwick",
-    "professional house wash service Southern Maine"
+    "house washing York County",
+    "roof cleaning Southern Maine",
   ],
   authors: [{ name: "Jonathan P. Bilodeau" }],
   creator: "Hose Water Pressure Washing",
   publisher: "Hose Water Pressure Washing",
+  // telephone detection left on so any number not wrapped in an explicit
+  // tel: link is still tappable on mobile.
   formatDetection: {
     email: false,
     address: false,
-    telephone: false,
   },
-  metadataBase: new URL("https://hosewaterpw.com"), // Replace with your actual domain
-  alternates: {
-    canonical: "/",
-  },
+  metadataBase: new URL("https://hosewaterpw.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -110,10 +81,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code", // Add your Google Search Console verification code
-  },
-    generator: 'v0.dev'
+  // To verify in Google Search Console, uncomment and paste the real code:
+  // verification: { google: "..." },
 }
 
 export default function RootLayout({
@@ -121,79 +90,51 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const business = getBusiness()
+  const social = getSocial()
+
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://hosewaterpw.com" />
         <meta name="geo.region" content="US-ME" />
         <meta name="geo.placename" content="North Berwick" />
         <meta name="geo.position" content="43.3048;-70.7342" />
         <meta name="ICBM" content="43.3048, -70.7342" />   
         
-{/* Google Analytics */}
-<Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-SW9ESX4H4G"
-  strategy="afterInteractive"
-/>
-<Script id="google-analytics" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SW9ESX4H4G');
-  `}
-</Script>
-        
-{/* Meta Pixel Code */}
-<Script
-  id="meta-pixel"
-  strategy="afterInteractive"
->
-  {`
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}
-    (window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2844768349066272');
-    fbq('track', 'PageView');
-  `}
-</Script>
+{/* Analytics load on first interaction - see components/deferred-analytics.tsx */}
+        <DeferredAnalytics />
 
-<noscript>
-  <img
-    height="1"
-    width="1"
-    style={{ display: 'none' }}
-    src="https://www.facebook.com/tr?id=2844768349066272&ev=PageView&noscript=1"
-  />
-</noscript>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=2844768349066272&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
 
- {/* Structured Data for Local Business */}
+        {/* Structured Data for Local Business */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
+              "@type": "HomeAndConstructionBusiness",
               "@id": "https://hosewaterpw.com",
-              name: "Hose Water Pressure Washing",
+              name: business.name,
               image: "https://hosewaterpw.com/logo.png",
               description:
                 "Professional pressure washing services for residential and commercial properties throughout Southern Maine and New Hampshire",
               url: "https://hosewaterpw.com",
-              telephone: "207-370-8667", // Replace with your actual phone number
-              email: "hosewaterpw@gmail.com",
+              telephone: business.phoneDial,
+              email: business.email,
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "North Berwick",
-                addressRegion: "ME",
-                postalCode: "03906",
-                addressCountry: "US",
+                addressLocality: business.addressLocality,
+                addressRegion: business.addressRegion,
+                postalCode: business.postalCode,
+                addressCountry: business.addressCountry,
               },
               geo: {
                 "@type": "GeoCoordinates",
@@ -220,22 +161,20 @@ export default function RootLayout({
                 "Commercial Cleaning",
               ],
               priceRange: "$$",
-              openingHours: "Mo-Fr 08:00-18:00, Sa 09:00-16:00",
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: business.hoursDays,
+                  opens: business.hoursOpens,
+                  closes: business.hoursCloses,
+                },
+              ],
               founder: {
                 "@type": "Person",
-                name: "Jonathan P. Bilodeau",
+                name: business.ownerName,
               },
-              foundingDate: "2022",
-              sameAs: [
-                "https://g.co/kgs/ehG2MEi",
-                "https://www.facebook.com/hosewaterpw",
-                "https://www.instagram.com/hosewaterpw",
-              ],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5.0",
-                reviewCount: "12", // Update with actual review count from Google
-              },
+              foundingDate: business.foundingYear,
+              sameAs: getSocialUrls(),
             }),
           }}
         />
@@ -244,8 +183,12 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="relative flex min-h-screen flex-col">
             <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
+            {/* Reserves room for the fixed footer. --footer-h is published by the
+                footer itself; the fallback covers the moment before hydration. */}
+            <main className="flex-1" style={{ paddingBottom: "var(--footer-h, 165px)" }}>
+              {children}
+            </main>
+            <Footer business={business} social={social} />
           </div>
         </ThemeProvider>
       </body>

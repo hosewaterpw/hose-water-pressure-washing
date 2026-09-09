@@ -1,5 +1,11 @@
 "use client"
 
+/**
+ * Machinery for the small pop-up messages that slide in to confirm something
+ * happened ("Message sent", and so on).
+ * Part of the project's starting scaffolding. This site doesn't use pop-ups -
+ * the forms send visitors to a thank-you page instead - so nothing here runs.
+ */
 // Inspired by react-hot-toast library
 import * as React from "react"
 

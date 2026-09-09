@@ -1,33 +1,27 @@
+/**
+ * The FAQ page - the questions that expand when clicked, grouped under
+ * headings. All of it comes from the admin area, so Jon can add or reword a
+ * question himself.
+ * It also hands Google a tidy list of every question and answer, which is how
+ * they can end up shown directly on the search results page.
+ */
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import type { Metadata } from "next"
+import { getBusiness, getFaqsByCategory } from "@/lib/content"
 
 export const metadata: Metadata = {
-  title: "Pressure Washing FAQ | North Berwick, Maine | Hose Water Pressure Washing",
+  alternates: {
+    canonical: "/faq",
+  },
+  title: "Pressure Washing FAQ | North Berwick, Maine",
   description:
-    "Find answers to frequently asked questions about our pressure washing services in North Berwick, Maine. Learn about pricing, scheduling, preparation, and what to expect from our house washing, roof cleaning, and exterior services in York County and beyond.",
+    "Answers to common pressure washing questions: how to prepare, scheduling, safety, and what to expect. Serving York County, Maine and the NH Seacoast.",
   keywords: [
-    "pressure washing FAQ North Berwick Maine",
-    "frequently asked questions power washing",
-    "pressure washing questions York County",
-    "house washing FAQ Maine",
-    "soft washing questions North Berwick",
-    "roof cleaning questions Maine",
-    "deck and patio cleaning FAQ",
-    "pressure washing cost Maine",
-    "pressure washing estimates North Berwick",
-    "how to prepare for power washing",
-    "pressure washing service area North Berwick",
-    "pressure washing scheduling Maine",
-    "how long does pressure washing take",
-    "is pressure washing safe for siding",
-    "pressure washing before and after care",
-    "exterior cleaning tips Maine",
-    "residential pressure washing questions",
-    "commercial pressure washing answers",
-    "eco-friendly pressure washing FAQ",
-    "Hose Water Pressure Washing FAQ"
+    "pressure washing FAQ North Berwick",
+    "house washing questions Maine",
+    "power washing cost York County"
   ],
   openGraph: {
     title: "Pressure Washing FAQ | Hose Water Pressure Washing",
@@ -36,130 +30,11 @@ export const metadata: Metadata = {
   },
 }
 
-const faqData = [
-  {
-    category: "Services & Pricing",
-    questions: [
-      {
-        question: "What pressure washing services do you offer?",
-        answer:
-          "We offer comprehensive pressure washing services including house washing, deck cleaning, patio and walkway cleaning, roof cleaning, solar panel and window cleaning, fence cleaning, and commercial property cleaning. We serve both residential and commercial properties throughout Southern Maine and New Hampshire.",
-      },
-      {
-        question: "How much do your services cost?",
-        answer:
-          "Our pricing varies based on the size of the property, type of service, and specific cleaning requirements. We provide free, no-obligation estimates for all services. Contact us or fill out our online estimate form to receive a customized quote for your property.",
-      },
-      {
-        question: "Do you offer free estimates?",
-        answer:
-          "Yes! We provide completely free, no-obligation estimates for all our services. You can request an estimate through our online form, call us at (207) 370-8667, or email us at hosewaterpw@gmail.com.",
-      },
-      {
-        question: "What's included in a typical house washing service?",
-        answer:
-          "Our house washing service includes cleaning exterior surfaces of your home including siding, trim, windows, doors, and accessible areas. We remove dirt, mold, mildew, algae, and other organic growth. We use appropriate pressure settings and cleaning solutions safe for your home's exterior materials.",
-      },
-    ],
-  },
-  {
-    category: "Service Area & Scheduling",
-    questions: [
-      {
-        question: "What areas do you serve?",
-        answer:
-          "We serve Southern Maine and New Hampshire within a 30-mile radius of North Berwick, Maine. This includes York County communities like Wells, Kennebunk, Sanford, Biddeford, and extends into New Hampshire areas like Portsmouth, Greenland, Stratham and surrounding communities. Contact us to confirm service availability in your specific location.",
-      },
-      {
-        question: "How far in advance should I schedule service?",
-        answer:
-          "We recommend scheduling 1-2 weeks in advance, especially during our busy spring and summer seasons. However, we often have availability for urgent requests. Contact us to check our current schedule and availability.",
-      },
-      {
-        question: "What are your operating hours?",
-        answer:
-          "We typically operate Monday through Saturday from 9:00 AM to 5:00 PM. We're closed on Sundays. However, we can sometimes accommodate special scheduling requests for commercial properties or urgent situations.",
-      },
-      {
-        question: "Do you work year-round?",
-        answer:
-          "Our main operating season is from spring through fall when temperatures are consistently above freezing. We typically operate from April through November, depending on weather conditions.",
-      },
-    ],
-  },
-  {
-    category: "Preparation & Safety",
-    questions: [
-      {
-        question: "Do I need to be home during the service?",
-        answer:
-          "You don't need to be home during most services. We'll discuss access requirements and any special instructions during our estimate appointment.",
-      },
-      {
-        question: "What should I do to prepare for pressure washing?",
-        answer:
-          "Please close and lock all windows and doors, remove or secure outdoor furniture and decorations, and ensure we have access to water spigot. We'll provide any details when we schedule your service.",
-      },
-      {
-        question: "Is pressure washing safe for my home and landscaping?",
-        answer:
-          "Yes, when performed by professionals. We use appropriate pressure settings for different surfaces and materials. We also take precautions to protect your landscaping by pre-wetting plants and other surfaces.",
-      },
-      {
-        question: "Are your cleaning solutions safe?",
-        answer:
-          "We use professional-grade, cleaning solutions that are safe for your family, pets, and landscaping when used properly. We follow all manufacturer guidelines and industry best practices for safe application.",
-      },
-    ],
-  },
-  {
-    category: "Weather & Timing",
-    questions: [
-      {
-        question: "What happens if it rains on my scheduled service day?",
-        answer:
-          "Light rain usually doesn't prevent us from working, but heavy rain or storms will cause us to reschedule for safety reasons. We monitor weather forecasts closely and will contact you in advance if we need to reschedule due to weather conditions.",
-      },
-      {
-        question: "What's the best time of year for pressure washing?",
-        answer:
-          "While spring and fall are popular times for house washing, the best time is always as soon as you notice organic growth. Mold, mildew, algae, and other contaminants can damage your exterior surfaces if left untreated—no matter the season. We provide professional pressure washing services throughout our operating season to help protect and maintain your home year-round.",
-      },
-      {
-        question: "How long does the cleaning process take?",
-        answer:
-          "Service time varies based on property size and services requested. A typical house washing takes 2-4 hours, while smaller services like patio cleaning might take 1-2 hours. We'll provide an estimated timeframe when we schedule your service.",
-      },
-    ],
-  },
-  {
-    category: "Results & Maintenance",
-    questions: [
-      {
-        question: "How long do the results last?",
-        answer:
-          "Results typically last 1-2 years for most services, depending on environmental factors like shade, moisture, and local climate conditions. Properties in heavily shaded or humid areas may need more frequent cleaning. We can recommend a maintenance schedule based on your specific property.",
-      },
-      {
-        question: "Will pressure washing damage my surfaces?",
-        answer:
-          "When performed correctly by professionals, pressure washing should not damage your surfaces. We adjust pressure settings and techniques based on the material being cleaned. We have experience with all common exterior materials including vinyl, wood, concrete, brick, and composite materials.",
-      },
-      {
-        question: "What if I'm not satisfied with the results?",
-        answer:
-          "Customer satisfaction is our top priority. If you're not completely satisfied with our work, please contact us within 24 hours and we'll return to address any concerns at no additional charge. We stand behind our work and want every customer to be happy with the results.",
-      },
-      {
-        question: "Do you offer maintenance programs?",
-        answer:
-          "Yes! We can set up regular maintenance schedules for both residential and commercial properties. Regular maintenance helps keep your property looking its best year-round and can be more cost-effective than one-time services. Contact us to discuss a maintenance plan that fits your needs and budget.",
-      },
-    ],
-  },
-]
+const faqData = getFaqsByCategory()
 
 export default function FAQPage() {
+  const business = getBusiness()
+
   return (
     <>
       {/* Structured Data for FAQ */}
@@ -183,8 +58,8 @@ export default function FAQPage() {
         }}
       />
 
-      <div className="container px-4 py-12 md:px-6 md:py-24">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+      <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:py-12">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Frequently Asked Questions</h1>
             <p className="max-w-[700px] text-gray-500 md:text-xl">
@@ -239,12 +114,12 @@ export default function FAQPage() {
             <div className="mt-4 text-center">
               <p className="text-sm text-gray-300">
                 Call us at{" "}
-                <a href="tel:207-370-8667" className="text-yellow-400 hover:underline">
-                  (207) 370-8667
+                <a href={`tel:${business.phoneDial}`} className="text-yellow-400 hover:underline">
+                  {business.phoneDisplay}
                 </a>{" "}
                 or email{" "}
-                <a href="mailto:hosewaterpw@gmail.com" className="text-yellow-400 hover:underline">
-                  hosewaterpw@gmail.com
+                <a href={`mailto:${business.email}`} className="text-yellow-400 hover:underline">
+                  {business.email}
                 </a>
               </p>
             </div>

@@ -1,73 +1,29 @@
+/**
+ * The Services page: all six services listed one after another, each with its
+ * photo, description, bullet points, and buttons for a quote or the matching
+ * before-and-after photos.
+ * The services come from the admin area, so anything Jon adds there appears
+ * here on its own - nobody needs to edit this file.
+ */
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
+import { getServices } from "@/lib/content"
 
 export const metadata: Metadata = {
-  title: "Pressure Washing North Berwick Maine | House, Roof, & Deck Cleaning | Hose Water Pressure Washing",
+  alternates: {
+    canonical: "/services",
+  },
+  title: "Pressure Washing Services | North Berwick, Maine",
   description:
-    "Get top-rated pressure washing in North Berwick, Maine. Hose Water Pressure Washing offers expert house washing, roof cleaning, deck restoration, patio cleaning, and more throughout York County, Southern Maine, and New Hampshire. Family-owned and trusted since 2022.",
+    "Our pressure washing services: house washing, roof cleaning, deck restoration, patio and walkway cleaning, solar panels and windows. Southern Maine and NH.",
   keywords: [
-    // Local + Core Services
-    "pressure washing North Berwick Maine",
-    "house washing North Berwick",
-    "roof cleaning services Maine",
-    "deck restoration North Berwick",
-    "patio cleaning Maine",
-    "window cleaning North Berwick",
-    "soft wash North Berwick",
-    "power washing services York County",
-    "residential pressure washing York County",
-    "commercial pressure washing North Berwick",
-    "exterior cleaning Maine 03906",
-    
-    // Service Extensions
-    "gutter cleaning North Berwick",
-    "vinyl siding cleaning Maine",
-    "driveway cleaning York County",
-    "sidewalk pressure washing North Berwick",
-    "fence pressure washing Maine",
-    "solar panel cleaning Maine",
-    "low pressure roof cleaning Maine",
-    "concrete cleaning services Maine",
-    "mildew removal North Berwick",
-    "algae removal pressure washing",
-    "brick cleaning services Maine",
-
-    // Service Area Expansion
-    "pressure washing Wells Maine",
-    "pressure washing South Berwick ME",
-    "pressure washing Kittery Maine",
-    "pressure washing Eliot ME",
-    "pressure washing Ogunquit Maine",
-    "pressure washing Sanford ME",
-    "pressure washing York Maine",
-    "pressure washing Southern Maine",
-    "power washing New Hampshire",
-    "pressure washing Portsmouth NH",
-    "house washing Seacoast NH",
-
-    // Buyer Intent + Phrases
-    "best pressure washing in Maine",
-    "top-rated pressure washing near me",
-    "affordable power washing York County",
-    "trusted pressure washing company North Berwick",
-    "licensed pressure washing service Maine",
-    "professional house washing near me",
-    "home exterior cleaning Maine",
-    "safe roof washing service",
-    "eco-friendly pressure washing company",
-    "family-owned pressure washing Maine",
-
-    // Alternate Phrase Matches
-    "pressure cleaning North Berwick",
-    "home washing services ME",
-    "mobile pressure washing York County",
-    "local power washing contractor Maine",
-    "surface restoration North Berwick",
-    "building washing York County",
-    "driveway and patio cleaning Maine"
+    "pressure washing services North Berwick",
+    "house washing Maine",
+    "deck restoration York County",
+    "roof cleaning services Maine"
   ],
   openGraph: {
     title: "Professional Pressure Washing Services North Berwick Maine | Hose Water Pressure Washing",
@@ -76,108 +32,9 @@ export const metadata: Metadata = {
   },
 }
 
-// Service data with orientations
-const services = [
-  {
-    id: "house-washing",
-    title: "House Washing Services",
-    image: "/house-washing.png",
-    orientation: "horizontal",
-    description:
-      "Our professional house washing service removes dirt, mold, mildew, and other organic material from your home's exterior surfaces. We use professional-grade equipment and techniques to safely clean vinyl siding, brick, stucco, and other exterior materials.",
-    features: [
-      "Removes dirt, mold, mildew, and algae from house exteriors",
-      "Safe for all exterior surfaces including vinyl, brick, and stucco",
-      "Improves curb appeal and property value",
-      "Prevents damage from built-up contaminants",
-    ],
-    galleryFilter: "house",
-  },
-  {
-    id: "deck",
-    title: "Deck Cleaning & Restoration",
-    image: "/deck-cleaning.png",
-    orientation: "vertical",
-    description:
-      "Our deck cleaning service revitalizes your outdoor deck spaces by removing dirt, mold, mildew and other organic growth. We carefully adjust our pressure washing techniques based on the material of your deck to ensure safe and effective cleaning.",
-    features: [
-      "Removes dirt, mold, and weathering from deck surfaces",
-      "Safe for wood and composite deck surfaces",
-      "Prepares deck surfaces for staining or sealing",
-      "Extends the life of your outdoor deck spaces",
-    ],
-    galleryFilter: "deck",
-  },
-  {
-    id: "patio-walkway",
-    title: "Patio & Walkway Cleaning",
-    image: "/patio-walkway-cleaning.png",
-    orientation: "vertical",
-    description:
-      "Our patio and walkway cleaning service restores concrete, stone, and brick surfaces by removing dirt, stains, mold, and algae. We use appropriate pressure settings and techniques to clean without damaging your hardscape surfaces.",
-    features: [
-      "Removes dirt, stains, and organic growth from concrete surfaces",
-      "Safe for concrete, stone, brick, and paver surfaces",
-      "Improves safety by removing slippery algae and moss",
-      "Restores original appearance of outdoor living spaces",
-      "Also available: Fence cleaning for vinyl, wood and metal fences",
-    ],
-    galleryFilter: "patio-walkway",
-  },
-  {
-    id: "solar-window",
-    title: "Solar Panel & Window Cleaning",
-    image: "/solar-window-cleaning.png",
-    orientation: "horizontal",
-    description:
-      "Our specialized solar panel and exterior window cleaning service uses a water-fed pole system with deionized water to ensure a spot-free, streak-free finish. This method is safe for delicate surfaces and provides superior cleaning results.",
-    features: [
-      "Water-fed pole system for safe, ground-based cleaning",
-      "Deionized water system leaves no spots or streaks",
-      "Improves solar panel efficiency and energy output",
-      "Crystal clear windows with professional results",
-      "Safe cleaning method that won't damage panels or glass",
-      "Extends the life of solar panels and windows",
-    ],
-    galleryFilter: "solar-window",
-  },
-  {
-    id: "roof",
-    title: "Roof Cleaning",
-    image: "/roof-cleaning.png",
-    orientation: "vertical",
-    description:
-      "Our roof cleaning service safely removes black streaks, moss, and algae from your roof. We use low-pressure washing techniques and appropriate cleaning solutions to protect your roof while effectively removing unsightly growth and stains.",
-    features: [
-      "Removes black streaks, moss, and algae from roofs",
-      "Prevents damage from organic growth",
-      "Extends roof life and improves appearance",
-    ],
-    galleryFilter: "roof",
-  },
-  {
-    id: "commercial",
-    title: "Commercial Pressure Washing Services",
-    image: "/commercial-cleaning.png",
-    orientation: "horizontal",
-    description:
-      "Our commercial pressure washing services help maintain your rental properties, apartment buildings, and multi-unit properties' appearance and value.",
-    features: [
-      "Apartment building and duplex exterior cleaning",
-      "Rental property maintenance and cleaning",
-      "Multi-unit property exterior restoration",
-      "Property management company services",
-    ],
-    galleryFilter: "commercial",
-  },
-]
+const services = getServices()
 
 export default function ServicesPage() {
-  // Function to get the appropriate aspect ratio class
-  const getAspectRatio = (orientation: string) => {
-    return orientation === "vertical" ? "aspect-[3/4]" : "aspect-video"
-  }
-
   return (
     <>
       {/* Structured Data for Service Pages */}
@@ -201,7 +58,7 @@ export default function ServicesPage() {
         }}
       />
 
-      <div className="container px-4 py-12 md:px-6 md:py-24">
+      <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:py-12">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -215,15 +72,16 @@ export default function ServicesPage() {
         </div>
 
         {services.map((service, index) => (
-          <section key={service.id} id={service.id} className="mt-16 scroll-mt-20">
+          <section key={service.id} id={service.id} className="mt-12 md:mt-16 scroll-mt-20">
             <div className="grid gap-8 md:grid-cols-2 items-center">
               <div
-                className={`relative ${getAspectRatio(service.orientation)} overflow-hidden rounded-lg ${index % 2 === 1 ? "order-1 md:order-2" : ""}`}
+                className={`relative ${"aspect-video"} overflow-hidden rounded-lg ${index % 2 === 1 ? "order-1 md:order-2" : ""}`}
               >
                 <Image
                   src={service.image || "/placeholder.svg"}
                   alt={`${service.title} in North Berwick Maine`}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -254,7 +112,7 @@ export default function ServicesPage() {
         ))}
 
         {/* CTA Section */}
-        <section className="mt-24 py-12 px-6 bg-[#333333] text-white rounded-lg">
+        <section className="mt-12 md:mt-16 py-12 px-6 bg-[#333333] text-white rounded-lg">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold">Ready to Transform Your Property?</h2>
             <p className="max-w-[600px]">

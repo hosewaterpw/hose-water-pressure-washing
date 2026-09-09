@@ -1,0 +1,181 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'Add {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: "Upload {{path}}"
+    deleteMedia: "Delete {{path}}"
+
+# Lets the CMS run on your own machine against local files during development.
+# Start it with:  npx decap-server   (alongside pnpm dev)
+local_backend: true
+
+media_folder: public
+public_folder: /
+
+# Uploaded photos land in public/ and are served through Next's image optimizer,
+# which resizes them and converts to WebP - so a large phone photo does not slow
+# the site down.
+
+collections:
+  # ------------------------------------------------------------------ services
+  - name: services
+    label: Services
+    label_singular: Service
+    folder: content/services
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{title}}"
+    identifier_field: title
+    summary: "{{title}}"
+    description: >-
+      Each service shown on the Services page. Add, edit or remove them freely.
+    fields:
+      - { name: title, label: Service name, widget: string, hint: "e.g. Roof Cleaning" }
+      - name: image
+        label: Photo
+        widget: image
+        required: false
+        hint: "Before/after photo. Max 1600px wide and under 500KB is ideal - phone photos are usually much larger."
+      - { name: description, label: Full description, widget: text, hint: "Shown on the Services page." }
+      - name: cardTitle
+        label: Short name (homepage card)
+        widget: string
+        required: false
+        hint: "Optional. Leave blank to use the service name. Keeps homepage cards compact."
+      - name: cardDescription
+        label: Short description (homepage card)
+        widget: text
+        required: false
+        pattern: ['^.{0,140}$', "Keep to 140 characters or fewer so homepage cards stay even"]
+        hint: "Optional. Leave blank to use the full description. Around 100 characters works best."
+      - name: features
+        label: Key points
+        widget: list
+        required: false
+        hint: "Short bullet points shown under the description."
+        field: { name: item, label: Point, widget: string }
+      - name: galleryFilter
+        label: Gallery category
+        widget: select
+        required: false
+        options: [house, deck, patio-walkway, solar-window, roof, commercial]
+        hint: "Which gallery category the 'View Gallery' button links to."
+
+  # ------------------------------------------------------------------- gallery
+  - name: gallery
+    label: Gallery photos
+    label_singular: Photo
+    folder: content/gallery
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: title
+    summary: "{{title}}"
+    description: >-
+      Before and after photos. Tick "Show on homepage" for the few that appear
+      in the homepage strip.
+    fields:
+      - { name: title, label: Title, widget: string, hint: "e.g. House Wash in Wells, ME" }
+      - name: image
+        label: Photo
+        widget: image
+        hint: "Max 1600px wide and under 500KB is ideal. Phone photos are usually much larger - resize first if you can."
+      - name: alt
+        label: Photo description for screen readers
+        widget: string
+        hint: "Describes the photo for visually impaired visitors and for Google. e.g. 'Vinyl siding before and after pressure washing in Wells, Maine'"
+      - name: category
+        label: Category
+        widget: select
+        options: [house, deck, patio-walkway, solar-window, roof, commercial]
+      - { name: featuredOnHomepage, label: Show on homepage, widget: boolean, default: false }
+
+  # ----------------------------------------------------------------------- faq
+  - name: faq
+    label: FAQ
+    label_singular: Question
+    folder: content/faq
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: question
+    summary: "{{question}}"
+    description: >-
+      Questions on the FAQ page.
+    fields:
+      - { name: question, label: Question, widget: string }
+      - { name: answer, label: Answer, widget: text }
+      - name: category
+        label: Section
+        widget: select
+        default: Services & Pricing
+        options:
+          - Services & Pricing
+          - Service Area & Scheduling
+          - Preparation & Safety
+          - Weather & Timing
+          - Results & Maintenance
+        hint: "Questions are grouped under this heading on the FAQ page."
+
+  # ------------------------------------------------------------------ settings
+  - name: settings
+    label: Site settings
+    files:
+      - name: business
+        label: Contact information
+        file: content/settings/business.json
+        description: >-
+          Used across the site - footer, contact page, and the business details
+          Google reads.
+        fields:
+          - { name: name, label: Business name, widget: string }
+          - { name: phoneDisplay, label: Phone number (as shown), widget: string, hint: "e.g. (207) 370-8667" }
+          - name: phoneDial
+            label: Phone number (for tap-to-call)
+            widget: string
+            pattern: ['^\+[0-9]+$', "Must start with + and contain digits only - e.g. +12073708667"]
+            hint: "Country code, no spaces or brackets."
+          - { name: email, label: Email, widget: string }
+          - { name: addressLocality, label: Town, widget: string }
+          - { name: addressRegion, label: State, widget: string, hint: "Two letters, e.g. ME" }
+          - { name: postalCode, label: ZIP code, widget: string }
+          - { name: addressCountry, label: Country, widget: string, default: US }
+          - { name: serviceArea, label: Service area, widget: string, hint: "e.g. Southern Maine and New Hampshire" }
+          - name: hoursDisplay
+            label: Opening hours (as shown)
+            widget: text
+            hint: "Shown on the contact page. Put each line on its own row."
+          - { name: hoursOpens, label: Opening time, widget: string, hint: "24-hour, e.g. 08:00" }
+          - { name: hoursCloses, label: Closing time, widget: string, hint: "24-hour, e.g. 17:00" }
+          - name: hoursDays
+            label: Days open
+            widget: select
+            multiple: true
+            options: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]
+          - { name: foundingYear, label: Year founded, widget: string }
+          - { name: ownerName, label: Owner name, widget: string }
+
+      - name: social
+        label: Social links
+        file: content/settings/social.json
+        description: >-
+          These appear in the footer and tell Google which profiles belong to the
+          business. A wrong link is worse than none.
+        fields:
+          - { name: google, label: Google Business Profile, widget: string, required: false }
+          - { name: facebook, label: Facebook, widget: string, required: false }
+          - { name: instagram, label: Instagram, widget: string, required: false }
+          - name: other
+            label: Other links
+            widget: list
+            required: false
+            fields:
+              - { name: label, label: Name, widget: string }
+              - { name: url, label: Link, widget: string }

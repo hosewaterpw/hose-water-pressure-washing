@@ -1,0 +1,17 @@
+{
+  "id": "roof",
+  "title": "Roof Cleaning",
+  "order": 5,
+  "image": "/roof-cleaning.jpg",
+  "description": "Our roof cleaning service safely removes black streaks, moss, and algae from your roof. We use low-pressure washing techniques and appropriate cleaning solutions to protect your roof while effectively removing unsightly growth and stains.",
+  "features": [
+    "Removes black streaks, moss, and algae from roofs",
+    "Prevents damage from organic growth",
+    "Extends roof life and improves appearance"
+  ],
+  "galleryFilter": "roof",
+  "seoTitle": "",
+  "metaDescription": "",
+  "cardTitle": "Roof Cleaning",
+  "cardDescription": "Safely remove black streaks, moss, and algae from your roof with our professional roof cleaning."
+}

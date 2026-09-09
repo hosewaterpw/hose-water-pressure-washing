@@ -1,3 +1,9 @@
+/**
+ * The "Get a Free Estimate" page - the longer form asking about the property,
+ * which services are wanted, and how to reach the visitor.
+ * As with the contact form, Netlify handles the sending: Jon gets an email, a
+ * copy is kept in his account, and the visitor lands on a thank-you page.
+ */
 import { Check } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -5,10 +11,20 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/estimate",
+  },
+  title: "Free Pressure Washing Estimate | Southern Maine & NH",
+  description:
+    "Request a free, no-obligation pressure washing estimate. Serving North Berwick, York County, Southern Maine and the New Hampshire Seacoast.",
+}
 
 export default function EstimatePage() {
   return (
-    <div className="container px-4 py-12 md:px-6 md:py-24">
+    <div className="container px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:py-12">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get a Free Estimate</h1>
@@ -55,7 +71,7 @@ export default function EstimatePage() {
 
                 {/* Property Address Section */}
                 <div className="space-y-4 p-4 bg-muted/30 rounded-lg">
-                  <h3 className="text-lg font-medium">Property Address</h3>
+                  <h2 className="text-lg font-medium">Property Address</h2>
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="streetAddress">Street Address</Label>
@@ -81,7 +97,7 @@ export default function EstimatePage() {
                 </div>
 
                 <div className="space-y-4 p-4 bg-muted/30 rounded-lg">
-                  <h3 className="text-lg font-medium">Property Details</h3>
+                  <h2 className="text-lg font-medium">Property Details</h2>
 
                   <div className="space-y-3">
                     <Label htmlFor="stories">Number of Stories</Label>
@@ -120,7 +136,7 @@ export default function EstimatePage() {
 
                   <div className="space-y-4 p-4 bg-white/50 rounded-md border border-gray-200">
                     <div className="flex items-center justify-between">
-                      <h4 className="text-base font-medium">Exterior House Dimensions (Optional)</h4>
+                      <h3 className="text-base font-medium">Exterior House Dimensions (Optional)</h3>
                       <Link href="/estimate/measurement-guide" target="_blank" rel="noopener noreferrer">
                         <Button type="button" variant="outline" size="sm" className="text-xs">
                           Measurement Guide

@@ -1,0 +1,18 @@
+{
+  "id": "house-washing",
+  "title": "House Washing Services",
+  "order": 1,
+  "image": "/house-washing.jpg",
+  "description": "Our professional house washing service removes dirt, mold, mildew, and other organic material from your home's exterior surfaces. We use professional-grade equipment and techniques to safely clean vinyl siding, brick, stucco, and other exterior materials.",
+  "features": [
+    "Removes dirt, mold, mildew, and algae from house exteriors",
+    "Safe for all exterior surfaces including vinyl, brick, and stucco",
+    "Improves curb appeal and property value",
+    "Prevents damage from built-up contaminants"
+  ],
+  "galleryFilter": "house",
+  "seoTitle": "",
+  "metaDescription": "",
+  "cardTitle": "House Washing",
+  "cardDescription": "Remove dirt, mold, and mildew from your home's exterior surfaces with our professional house washing service."
+}
