@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+  DO NOT DELETE THIS FILE, AND DO NOT REPLACE IT WITH A NEXT.JS PAGE.
+
+  The contact form posts to /contact-success. netlify.toml rewrites that
+  address to THIS static file. That matters: Netlify can only capture a form
+  submission when the POST lands on a static file. If the address resolves to
+  a Next.js page instead, the Next.js server answers the POST first, Netlify
+  never sees it, and the submission is silently thrown away - the visitor
+  still gets a thank-you page, so nobody notices.
+
+  That is exactly what happened in September 2026. A Next.js page at
+  app/contact-success/ replaced this file, and every enquiry was lost for
+  nearly three weeks before a customer complained.
+
+  app/contact-success/page.tsx still exists as a fallback for the case where
+  the rewrite is missing, but the rewrite must stay, and so must this file.
+
+  Note: the phone number and email below are written into this file, so they
+  do NOT update from /admin. Change them here too if they ever change.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Message Sent - Hose Water Pressure Washing LLC</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f9fafb;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 16px;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .button {
+            display: inline-block;
+            background: #FFCC00;
+            color: #333;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            margin: 0 8px 8px;
+        }
+        .contact-info {
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .contact-info a {
+            color: #666;
+        }
+        .checkmark {
+            font-size: 48px;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="checkmark">&#10003;</div>
+        <h1>Thank You for Contacting Us!</h1>
+        <p>We've received your message and will get back to you within 24 hours.</p>
+        <p>For anything urgent, please call us directly on the number below.</p>
+
+        <a href="/" class="button">Return to Website</a>
+        <a href="/services" class="button">View Our Services</a>
+
+        <div class="contact-info">
+            <p><strong>Contact us directly:</strong><br>
+            Phone: <a href="tel:+12073708667">(207) 370-8667</a><br>
+            Email: <a href="mailto:hosewaterpw@gmail.com">hosewaterpw@gmail.com</a></p>
+            <p>Serving Southern Maine and New Hampshire</p>
+        </div>
+    </div>
+</body>
+</html>

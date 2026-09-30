@@ -8,9 +8,32 @@
 [build.environment]
   NEXT_PRIVATE_TARGET = "server"
 
-# Form success pages are served by the Next.js app (app/contact-success,
-# app/estimate-success). They previously rewrote to static files in public/,
-# which shadowed the real pages and could not carry their noindex metadata.
+# ---------------------------------------------------------------------------
+# THESE TWO REWRITES ARE WHAT MAKE THE FORMS WORK. DO NOT REMOVE THEM.
+#
+# Both forms post to /contact-success and /estimate-success. Netlify can only
+# capture a form submission when the POST lands on a STATIC file, so these
+# rewrites send those addresses to the static pages in public/.
+#
+# Without them, the addresses resolve to the Next.js pages instead. Next.js
+# answers the POST before Netlify sees it, and the submission is silently
+# discarded - the visitor still gets a thank-you page, so nobody notices.
+#
+# That happened in September 2026: these rewrites were removed, and every
+# enquiry through both forms was lost for nearly three weeks.
+#
+# If you change a form's action, change the matching rewrite too, and then
+# test by actually submitting the form on the deployed site.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/contact-success"
+  to = "/contact-success.html"
+  status = 200
+
+[[redirects]]
+  from = "/estimate-success"
+  to = "/estimate-success.html"
+  status = 200
 
 # No catch-all redirect here on purpose. @netlify/plugin-nextjs handles all
 # routing itself; a "/* -> /index.html" rule would serve the homepage for every
